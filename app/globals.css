@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --gold: #c9a96e;
+  --noir: #15110f;
+}
+
+html,
+body {
+  background-color: #FBF8F6;
+  color: #2B2321;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+}
+
+.felinda-serif {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+}
+
+.felinda-sans {
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+}
+
+.felinda-rule {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.felinda-rule::before,
+.felinda-rule::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(201, 169, 110, 0) 0%,
+    rgba(201, 169, 110, 0.85) 50%,
+    rgba(201, 169, 110, 0) 100%
+  );
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Body copy on legal / policy pages */
+.legal-prose p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.legal-prose p:last-child {
+  margin-bottom: 0;
+}
+.legal-prose ul,
+.legal-prose ol {
+  margin: 0.75em 0 1em 1.25em;
+  padding: 0;
+}
+.legal-prose ul {
+  list-style-type: disc;
+}
+.legal-prose ol {
+  list-style-type: decimal;
+}
+.legal-prose li {
+  margin: 0.4em 0;
+  padding-left: 0.25em;
+}
+.legal-prose li::marker {
+  color: #cf938b;
+}
+.legal-prose a {
+  color: #c88f87;
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 143, 135, 0.45);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+.legal-prose a:hover {
+  color: #b3736a;
+  text-decoration-color: #b3736a;
+}
+.legal-prose strong {
+  color: #4f413a;
+  font-weight: 600;
+}
