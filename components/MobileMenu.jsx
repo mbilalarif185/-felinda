@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import Logo from "./Logo";
@@ -68,9 +69,10 @@ const SOCIALS = [
  *   • Hamburger trigger (visible < lg)
  *   • Full-screen overlay panel rendered via portal at <body>
  *     (escapes the header's backdrop-filter containing block)
- *   • Smooth fade + slide animation, staggered nav items
+ *   • Nav items with children render as a tap-to-expand accordion
+ *   • Nav body is independently scrollable so the menu can't overflow
+ *   • Auto-closes on every route change (so the menu can never be left open)
  *   • Body scroll lock, ESC to close, focus trap, focus return to trigger
- *   • Cream / rose Felinda palette via inline styles for visual resilience
  */
 export default function MobileMenu({
   activeHref = "/",
@@ -79,10 +81,22 @@ export default function MobileMenu({
 }) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [expanded, setExpanded] = useState(() => {
+    // Auto-expand the parent that contains the active route on first render
+    const out = {};
+    navItems.forEach((item) => {
+      if (item.children?.some((c) => c.href === activeHref)) {
+        out[item.label] = true;
+      }
+    });
+    return out;
+  });
 
   const triggerRef = useRef(null);
   const closeRef = useRef(null);
   const panelRef = useRef(null);
+
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -90,6 +104,13 @@ export default function MobileMenu({
 
   const close = useCallback(() => setOpen(false), []);
   const toggle = useCallback(() => setOpen((v) => !v), []);
+
+  // Auto-close on every route change — bulletproofs the close behaviour.
+  // Even if a Link's onClick is swallowed, the route change still fires
+  // and we always end up with a closed menu on the new page.
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   // Lock body scroll while the menu is open
   useEffect(() => {
@@ -141,6 +162,20 @@ export default function MobileMenu({
     };
   }, [open, close]);
 
+  // Build a flat list of render rows, with collapsible groups for parents
+  // that have children. Each row carries an `index` for stagger animation.
+  const rows = useMemo(() => {
+    const out = [];
+    navItems.forEach((item) => {
+      if (item.children?.length) {
+        out.push({ kind: "group", label: item.label, children: item.children });
+      } else {
+        out.push({ kind: "link", label: item.label, href: item.href });
+      }
+    });
+    return out;
+  }, []);
+
   const overlayUI = (
     <>
       {/* ── Backdrop ─────────────────────────────────────────────────────── */}
@@ -169,7 +204,7 @@ export default function MobileMenu({
         }`}
       >
         {/* Top bar — close button */}
-        <div className="flex items-center justify-end px-5 pt-5 sm:px-6 sm:pt-6">
+        <div className="flex shrink-0 items-center justify-end px-5 pt-5 sm:px-6 sm:pt-6">
           <button
             ref={closeRef}
             type="button"
@@ -197,60 +232,27 @@ export default function MobileMenu({
         </div>
 
         {/* Logo with rose hairline divider */}
-        <div className="flex flex-col items-center px-6 pb-8">
+        <div className="flex shrink-0 flex-col items-center px-6 pb-6">
           <Logo />
           <span
             aria-hidden
             style={{
               backgroundImage: `linear-gradient(90deg, rgba(216,162,154,0) 0%, ${COLORS.rose} 50%, rgba(216,162,154,0) 100%)`,
             }}
-            className="mt-6 block h-px w-16"
+            className="mt-5 block h-px w-16"
           />
         </div>
 
-        {/* Nav links — large, centered, staggered */}
+        {/* Nav links — scrollable, accordions for groups */}
         <nav
           aria-label="Mobile primary"
-          className="flex flex-1 flex-col items-center justify-center gap-2 px-6"
+          className="flex-1 overflow-y-auto overscroll-contain px-6 pb-4"
         >
-          <ul className="flex w-full max-w-sm flex-col items-stretch">
-            {(() => {
-              // Flatten nav into render rows so staggered transitionDelay works
-              // across both top-level items and dropdown children.
-              const rows = [];
-              navItems.forEach((item) => {
-                if (item.children?.length) {
-                  rows.push({ kind: "section", label: item.label });
-                  item.children.forEach((child) =>
-                    rows.push({ kind: "link", ...child })
-                  );
-                } else {
-                  rows.push({ kind: "link", ...item });
-                }
-              });
+          <ul className="mx-auto flex w-full max-w-sm flex-col items-stretch">
+            {rows.map((row, i) => {
+              const stagger = open ? `${220 + i * 60}ms` : "0ms";
 
-              return rows.map((row, i) => {
-                if (row.kind === "section") {
-                  return (
-                    <li key={`section-${row.label}`}>
-                      <div
-                        style={{
-                          color: COLORS.clay,
-                          letterSpacing: "0.28em",
-                          transitionDelay: open ? `${260 + i * 70}ms` : "0ms",
-                        }}
-                        className={`felinda-sans flex min-h-[40px] items-center justify-center pt-4 text-[11px] uppercase transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                          open
-                            ? "translate-y-0 opacity-100"
-                            : "translate-y-4 opacity-0"
-                        }`}
-                      >
-                        {row.label}
-                      </div>
-                    </li>
-                  );
-                }
-
+              if (row.kind === "link") {
                 const isActive = row.href === activeHref;
                 return (
                   <li key={row.label}>
@@ -260,13 +262,13 @@ export default function MobileMenu({
                       aria-current={isActive ? "page" : undefined}
                       style={{
                         color: isActive ? COLORS.rose : COLORS.ink,
-                        transitionDelay: open ? `${260 + i * 70}ms` : "0ms",
+                        transitionDelay: stagger,
                       }}
-                      className={`felinda-serif group flex min-h-[56px] items-center justify-center px-4 py-3 text-3xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:text-4xl ${
+                      className={`felinda-serif group flex min-h-[52px] items-center justify-center px-4 py-2.5 text-2xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:text-3xl ${
                         open
                           ? "translate-y-0 opacity-100"
                           : "translate-y-4 opacity-0"
-                      } hover:!text-[var(--rose,#D8A29A)] focus:!text-[var(--rose,#D8A29A)]`}
+                      }`}
                     >
                       <span className="relative">
                         {row.label}
@@ -283,39 +285,125 @@ export default function MobileMenu({
                     </Link>
                   </li>
                 );
-              });
-            })()}
+              }
+
+              // Group with children → accordion
+              const isOpen = !!expanded[row.label];
+              const containsActive = row.children.some(
+                (c) => c.href === activeHref
+              );
+              return (
+                <li key={`group-${row.label}`} className="w-full">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setExpanded((prev) => ({
+                        ...prev,
+                        [row.label]: !prev[row.label],
+                      }))
+                    }
+                    aria-expanded={isOpen}
+                    aria-controls={`mobile-group-${row.label}`}
+                    style={{
+                      color: containsActive ? COLORS.rose : COLORS.ink,
+                      transitionDelay: stagger,
+                    }}
+                    className={`felinda-serif group flex min-h-[52px] w-full items-center justify-center gap-3 px-4 py-2.5 text-2xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:text-3xl ${
+                      open
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-4 opacity-0"
+                    }`}
+                  >
+                    <span>{row.label}</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="18"
+                      height="18"
+                      aria-hidden
+                      className={`transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      <path
+                        d="M6 9l6 6 6-6"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+
+                  {/* Children — animated height collapse */}
+                  <div
+                    id={`mobile-group-${row.label}`}
+                    className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="min-h-0">
+                      <ul className="flex flex-col items-stretch pb-2 pt-1">
+                        {row.children.map((child) => {
+                          const isChildActive = child.href === activeHref;
+                          return (
+                            <li key={child.href}>
+                              <Link
+                                href={child.href}
+                                onClick={close}
+                                aria-current={
+                                  isChildActive ? "page" : undefined
+                                }
+                                style={{
+                                  color: isChildActive
+                                    ? COLORS.rose
+                                    : COLORS.muted,
+                                }}
+                                className="felinda-sans flex min-h-[40px] items-center justify-center px-4 py-2 text-[15px] tracking-[0.02em] transition hover:!text-[var(--rose,#D8A29A)]"
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
         {/* CTA + social icons */}
-        <div className="px-6 pb-10 pt-4 sm:pb-12">
+        <div className="shrink-0 border-t px-6 pb-8 pt-5 sm:pb-10"
+             style={{ borderColor: COLORS.line }}>
           <div
-            className={`flex flex-col items-center gap-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            className={`flex flex-col items-center gap-5 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               open
                 ? "translate-y-0 opacity-100"
                 : "translate-y-4 opacity-0"
             }`}
             style={{
-              transitionDelay: open
-                ? `${260 + navItems.length * 70 + 60}ms`
-                : "0ms",
+              transitionDelay: open ? `${220 + rows.length * 60 + 60}ms` : "0ms",
             }}
           >
             <Link
               href={ctaHref}
               onClick={close}
               style={{ backgroundColor: COLORS.rose, color: COLORS.white }}
-              className="felinda-sans inline-flex w-full max-w-xs items-center justify-center gap-3 rounded-full px-8 py-4 text-[12px] font-medium uppercase tracking-[0.28em] shadow-[0_10px_30px_rgba(216,162,154,0.35)] transition hover:opacity-90 focus:opacity-90"
+              className="felinda-sans inline-flex w-full max-w-xs items-center justify-center gap-3 rounded-full px-8 py-3.5 text-[12px] font-medium uppercase tracking-[0.28em] shadow-[0_10px_30px_rgba(216,162,154,0.35)] transition hover:opacity-90 focus:opacity-90"
             >
               {ctaLabel}
               <span aria-hidden>→</span>
             </Link>
 
             {/* Social icons — Facebook & Instagram */}
-            <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-2">
               <span
-                className="felinda-sans text-[11px] uppercase"
+                className="felinda-sans text-[10px] uppercase"
                 style={{ color: COLORS.clay, letterSpacing: "0.28em" }}
               >
                 Follow
@@ -333,7 +421,7 @@ export default function MobileMenu({
                         color: COLORS.ink,
                         borderColor: COLORS.line,
                       }}
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border bg-white transition hover:!text-white hover:!border-transparent"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border bg-white transition hover:!text-white hover:!border-transparent"
                       onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = COLORS.rose;
                       }}
