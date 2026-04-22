@@ -9,6 +9,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import CreationsGallery from "@/components/CreationsGallery";
 
 /**
  * Shared layout for every Creations / Bespoke gallery page.
@@ -74,24 +75,8 @@ export default function CreationsPage({
               {/* Divider */}
               <div className="mt-12 border-t border-[#ece1dc]" />
 
-              {/* Gallery */}
-              <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {galleryItems.map((item, index) => (
-                  <div
-                    key={index}
-                    className="overflow-hidden rounded-[18px] border border-[#eee3de] bg-[#fefcfa] shadow-[0_4px_15px_rgba(90,70,60,0.04)]"
-                  >
-                    <div className="aspect-[1.22/1] overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              {/* Gallery (with lightbox + pagination) */}
+              <CreationsGallery items={galleryItems} />
 
               {/* CTA strip */}
               <div className="mt-7 flex flex-col gap-5 rounded-[18px] border border-[#eaded8] bg-[#f8f3ef] px-6 py-6 lg:flex-row lg:items-center lg:justify-between">

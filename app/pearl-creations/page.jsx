@@ -6,38 +6,46 @@ export const metadata = {
     "Felinda's pearl atelier — South Sea, Akoya and freshwater pearls, hand-strung and re-imagined into modern heirlooms.",
 };
 
-const galleryItems = [
-  {
-    title: "South Sea Strand",
-    image:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Akoya Studs",
-    image:
-      "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Pearl Drop Pendant",
-    image:
-      "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Baroque Cuff",
-    image:
-      "https://images.unsplash.com/photo-1612460289436-bdc14e2c5365?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Layered Pearl Necklace",
-    image:
-      "https://images.unsplash.com/photo-1620912189865-9d24cd5fc4f1?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Mother of Pearl Ring",
-    image:
-      "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1200&q=80",
-  },
+const pearlFiles = [
+  
+  "916-gold-jewellery-malaysia__18k-white-akoya-earrings.webp",
+  "925-sterling-silver-malaysia__18k-south-sea-pearl-earrings.webp",
+  "999-gold-malaysia__18k-cream-akoya-earrings.webp",
+  "bracelet-malaysia__18k-gold-peacock-tahitian-pearl-diamond-necklace-ring.webp",
+  "buy-jewellery-online-malaysia__amora-18k-gold-south-sea-mabe-pearl-diamond-ring.webp",
+  "couple-ring-malaysia__18k-south-sea-mabe-pearl-diamond-earrings.webp",
+  "custom-ring-malaysia__18k-akoya-necklace.webp",
+  "diamond-pendant-malaysia__18k-grey-akoya-earrings.webp",
+  "diamond-ring-malaysia__anya-18k-gold-tahitian-pearl-diamond-pendant-necklace.webp",
+  "earrings-malaysia__zinnia-18k-gold-south-sea-pearl-sapphire-diamond-ring.webp",
+  "engagement-ring-malaysia__akoya-pearl-necklace-4-to-4-5mm.webp",
+  "gold-bangle-malaysia__18k-gold-fresh-water-baroque-pearl-name-necklace.webp",
+  "gold-ring-malaysia__18k-gold-fresh-water-pearl-dangling-earrings.webp",
+  "jade-jewellery-malaysia__18k-gold-south-sea-mabe-diamond-pendant.webp",
+  "jewelry-online-malaysia__adela-18k-gold-south-sea-mabe-pearl-diamond-ring-earring.webp",
+  "men-gold-ring-malaysia__18k-gold-south-sea-mabe-pearl-black-and-white-diamond-pendant.webp",
+  "necklace-malaysia__meri-18k-gold-fresh-water-pearl-diamond-ring.webp",
+  "pearl-necklace-malaysia__18k-gold-south-sea-mabe-diamond-floral-pendant.webp",
+  "pendant-malaysia__18k-gold-akoya-necklace.webp",
+  "silver-jewellery-malaysia__anya-18k-gold-south-sea-pearl-diamond-pendant-necklace.webp",
+  "stackable-rings-malaysia__18k-south-sea-pearl-necklace.webp",
+  "wedding-ring-malaysia__18k-akoya-bracelet.webp",
 ];
+
+function titleFromFilename(filename) {
+  const base = filename.replace(/\.webp$/i, "");
+  const productPart = base.includes("__") ? base.split("__").pop() : base;
+  return productPart
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+const galleryItems = pearlFiles.map((file) => ({
+  title: titleFromFilename(file),
+  image: `/images/felinda-jewelry/Pearl-Series/${encodeURIComponent(file)}`,
+}));
 
 export default function PearlCreationsPage() {
   return (

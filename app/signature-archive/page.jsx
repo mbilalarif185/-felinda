@@ -6,38 +6,31 @@ export const metadata = {
     "Felinda's signature and archive pieces — limited heritage designs, museum-grade gemstones and one-of-a-kind couture commissions.",
 };
 
-const galleryItems = [
-  {
-    title: "Archive Solitaire",
-    image:
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Heritage Necklace",
-    image:
-      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Couture Drop Earrings",
-    image:
-      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Limited Bloom Brooch",
-    image:
-      "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Signature Cuff",
-    image:
-      "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Museum-Grade Pendant",
-    image:
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80",
-  },
+const archiveFiles = [
+  "buy-jewellery-in-malaysia.webp",
+  "jewelry-online-malaysia__felinda-jewelry-01.webp",
+  "buy-jewellery-online-malaysia__felinda-jewelry-02.webp",
+  "silver-jewellery-malaysia__felinda-jewelry-03.webp",
+  "diamond-ring-malaysia__felinda-jewelry-04.webp",
+  "gold-ring-malaysia__felinda-jewelry-05.webp",
+  "necklace-malaysia__felinda-jewelry-06.webp",
+  "earrings-malaysia__felinda-jewelry-07.webp",
 ];
+
+function titleFromFilename(filename) {
+  const base = filename.replace(/\.webp$/i, "");
+  const productPart = base.includes("__") ? base.split("__").pop() : base;
+  return productPart
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+const galleryItems = archiveFiles.map((file) => ({
+  title: titleFromFilename(file),
+  image: `/images/felinda-jewelry/Regal-Revivals/${encodeURIComponent(file)}`,
+}));
 
 export default function SignatureArchivePage() {
   return (

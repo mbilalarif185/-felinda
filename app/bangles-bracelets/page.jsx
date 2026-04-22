@@ -6,38 +6,32 @@ export const metadata = {
     "Felinda's bangles & bracelets — sculpted cuffs, eternity tennis lines and stackable bands in rose gold and rare gemstones.",
 };
 
-const galleryItems = [
-  {
-    title: "Rose Gold Cuff",
-    image:
-      "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Eternity Tennis",
-    image:
-      "https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Petal Bangle",
-    image:
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Layered Stack",
-    image:
-      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Charmed Romance",
-    image:
-      "https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Sapphire Link",
-    image:
-      "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1200&q=80",
-  },
+const bangleFiles = [
+  
+  
+  "gold shop Petaling Jaya.webp",
+  "gold shop Petaling Jaya-.webp",
+  "jewellery boutique Bangsar.webp",
+  "jewellery shop Kuala Lumpur.webp",
+  "jewellery shop Selangor.webp",
+  "jewellery shop Johor Bahru.webp",
+  "sustainable jewellery Malaysia.webp",
 ];
+
+function titleFromFilename(filename) {
+  const base = filename.replace(/\.webp$/i, "");
+  const productPart = base.includes("__") ? base.split("__").pop() : base;
+  return productPart
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+const galleryItems = bangleFiles.map((file) => ({
+  title: titleFromFilename(file),
+  image: `/images/felinda-jewelry/Bangles-Bracelets/${encodeURIComponent(file)}`,
+}));
 
 export default function BanglesAndBraceletsPage() {
   return (

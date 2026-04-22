@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
+import Image from "next/image";
 import {
   ChevronDown,
   CalendarDays,
@@ -8,6 +10,9 @@ import {
   ShieldCheck,
   Gem,
   ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  X,
 } from "lucide-react";
 
 const filters = [
@@ -17,92 +22,306 @@ const filters = [
   "Engagement Rings",
 ];
 
-const galleryItems = [
-  {
-    title: "Pink Brilliance Solitaire",
-    category: "Daring Dazzlers",
-    image:
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Rose Halo Statement",
-    category: "Daring Dazzlers",
-    image:
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Crystal Couture",
-    category: "Daring Dazzlers",
-    image:
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Onyx Signet",
-    category: "Men's Rings",
-    image:
-      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Brushed Titanium Band",
-    category: "Men's Rings",
-    image:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Heritage Gold Ring",
-    category: "Men's Rings",
-    image:
-      "https://images.unsplash.com/photo-1551446591-142875a901a1?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Eternity Wedding Band",
-    category: "Wedding Rings",
-    image:
-      "https://images.unsplash.com/photo-1606293459339-dc4f87c9c5d8?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Twin Promise Bands",
-    category: "Wedding Rings",
-    image:
-      "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Vow Diamond Trio",
-    category: "Wedding Rings",
-    image:
-      "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Classic Brilliant Solitaire",
-    category: "Engagement Rings",
-    image:
-      "https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Vintage Halo Promise",
-    category: "Engagement Rings",
-    image:
-      "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Pear-Cut Whisper",
-    category: "Engagement Rings",
-    image:
-      "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+const categoryFolders = {
+  "Daring Dazzlers": "daring-dazzlers",
+  "Men's Rings": "Men's Rings",
+  "Wedding Rings": "Wedding Brands",
+  "Engagement Rings": "Engagement Rings",
+};
+
+const galleryFilesByCategory = {
+  "Daring Dazzlers": [
+    "18K-AIYANA-Felindas-Signature-Ring-Kunzite-malaysia.webp",
+    "18K-Amethyst-Lavender-and-Spinel-Ring-malaysia.webp",
+    "18K-Amethyst-Ring-malaysia.webp",
+    "18K-Amethyst-with-Diamond-Ring-BUY.webp",
+    "18K-Bi-Colour-Sapphire-Ring-kl.webp",
+    "18K-Blue-Topaz-Ring-scaled.webp",
+    "18K-Cabochon-Emerald-Ring-kl.webp",
+    "18K-Citrine-and-Spinel-Stack-Rings-KL.webp",
+    "18K-Cornflower-Blue-Sapphire-Rings-kl.webp",
+    "18K-Dark-Pink-Sapphire-Ring-malaysia.webp",
+    "18K-Garnet-and-Citrine-Rings-malaysia.webp",
+    "18k-Gold-Ruby-with-Pave-Diamond-Ring-pave.webp",
+    "18k-Gold-Ruby-with-Pave-Diamond-Ring.webp",
+    "18K-Gred-Garnet-with-Spinel-and-Diamond-Ring-Malaysia.webp",
+    "18K-Green-Tourmaline-Ring-malaysia.webp",
+    "18K-Jede-ring-malaysia.webp",
+    "18K-London-Blue-Topaz-Ring-malaysia.webp",
+    "18K-Opal-Ring-1-malaysia.webp",
+    "18K-Pink-Garnet-Ring-1-kl.webp",
+    "18K-Pink-Tourmaline-Ring-kl.webp",
+    "18K-Pink-Tourmaline-with-Ruby-Ring-malaysia.webp",
+    "18K-Red-Garnet-and-Diamond-Ring-kl.webp",
+    "18K-Salt-and-Pepper-Rings-kl.webp",
+    "18K-Special-Cut-Garnet-Ring-malaysia.webp",
+    "18K-Tanzanite-and-Pink-Sapphire-Ring-kl.webp",
+    "18K-Tanzanite-Ring-in-kl.webp",
+    "18K-Tanzanite-Vintage-Ring-kl.webp",
+    "18K-Triple-Ring-Black-Diamond-Emerald-and-Mabe-Pearl-kl.webp",
+    "18K-Watermelon-Tourmaline-Ring-in-malaysia.webp",
+    "916 gold ring Malaysia.webp",
+    "916-gold jewellery Malaysia.webp",
+    "999 gold Malaysia.webp",
+    "999-gold-Malaysia.webp",
+    "ADA-18k-Gold-with-Imperial-Topaz-Diamond-Ring-kl.webp",
+    "buy -gold- ring -Subang- Jaya.webp",
+    "buy gold ring KL.webp",
+    "buy gold ring Subang Jaya.webp",
+    "buy gold ring Subang-jaya.webp",
+    "buy jewellery online Malaysia.webp",
+    "buy ring in k.webp",
+    "buy ring in malayisa.webp",
+    "buy Subang Jaya gold ring.webp",
+    "buy-gold-ring-Subang-Jaya.webp",
+    "engagement ring Malaysia.webp",
+    "engagement ring-Malaysia.webp",
+    "engagement-ring Malaysia.webp",
+    "gold  jewellery Malaysia.webp",
+    "gold jewellery Malaysia.webp",
+    "gold Malaysia 999.webp",
+    "gold ring KL.webp",
+    "gold ring Subang Jaya.webp",
+    "gold shop kl.webp",
+    "gold shop Petaling Jaya.webp",
+    "gold shop Petaling-Jaya.webp",
+    "gold shop-Petaling Jaya.webp",
+    "gold shop.webp",
+    "gold- jewellery Malaysia.webp",
+    "gold-Malaysia.webp",
+    "jewellery gift set Malaysia.webp",
+    "jewellery gift-set Malaysia.webp",
+    "jewellery gold Malaysia.webp",
+    "jewellery Malaysia gold.webp",
+    "jewellery Malaysia silver.webp",
+    "jewellery Malaysia.webp",
+    "jewellery shop Kl.webp",
+    "jewellery shop Kuala Lumpur.webp",
+    "jewellery store Penang.webp",
+    "jewellery-gift set Malaysia.webp",
+    "jewelry online Malaysia.webp",
+    "personalised jewellery in Malaysia.webp",
+    "personalised jewellery Malaysia.webp",
+    "personalised-jewellery Malaysia.webp",
+    "Petaling Jaya gold shop.webp",
+    "ring Malaysia.webp",
+    "RIngs-malaysia.webp",
+    "silver jewellery Malaysia.webp",
+    "silver-jewellery-malaysia.webp",
+    "stackable rings Malaysia.webp",
+    "stackable-rings Malaysia.webp",
+  ],
+  "Men's Rings": [
+    "18K-Agate-with-Diamond-Ring-KL.webp",
+    "18K-Bi-colour-Sapphire-Ring-KL.webp",
+    "18K-Black-Diamond-Ring-Malaysia.webp",
+    "18K-Blue-Sapphire-Ring-KL.webp",
+    "18K-Citrine-and-Diamond-Ring-KL.webp",
+    "18K-Citrine-with-Diamond-Ring-KL.webp",
+    "18k-Gold-Emerald-with-Diamond-Ring-2-malaysia.webp",
+    "18k-Gold-Jade-Ring-in kl.webp",
+    "18k-Gold-Mens-Diamond-Rings-in malaysia.webp",
+    "18k-Gold-Mens-Rings-malaysia.webp",
+    "18k-Gold-with-Topaz-Diamond-Ring-malaysia.webp",
+    "18K-Grey-Spinel-with-Diamond-Ring-KL.webp",
+    "Buy mens rings in kl.webp",
+    "Gold-with-Pave-Diamond-Ring-KL.webp",
+    "jewellery store Penang-.webp",
+    "jewellery store Penang.webp",
+  ],
+  "Wedding Rings": [
+    "Wedding-Bands.webp",
+    "916-gold-jewellery-malaysia__felinda-19.webp",
+    "925-sterling-silver-malaysia__felinda-18.webp",
+    "999-gold-malaysia__felinda-20.webp",
+    "affordable-gold-jewellery-malaysia__felinda-wedding-ring-43.webp",
+    "birthstone-necklace-malaysia__felinda-wedding-ring-38.webp",
+    "bracelet-malaysia__felinda-08.webp",
+    "buy-gold-ring-subang-jaya__felinda-wedding-ring-54.webp",
+    "buy-jewellery-online-malaysia__felinda-02.webp",
+    "couple-ring-malaysia__felinda-14.webp",
+    "custom-name-necklace-malaysia__felinda-wedding-ring-36b.webp",
+    "custom-ring-malaysia__felinda-17.webp",
+    "diamond-pendant-malaysia__felinda-21.webp",
+    "diamond-ring-malaysia__felinda-04.webp",
+    "earrings-malaysia__felinda-07.webp",
+    "engagement-ring-malaysia__felinda-15.webp",
+    "gold-bangle-malaysia__felinda-10.webp",
+    "gold-ring-malaysia__felinda-05.webp",
+    "gold-shop-petaling-jaya__felinda-wedding-ring-51.webp",
+    "jade-jewellery-malaysia__felinda-12.webp",
+    "jewellery-boutique-bangsar__felinda-wedding-ring-53.webp",
+    "jewellery-gift-set-malaysia__felinda-wedding-ring-46.webp",
+    "jewellery-shop-johor-bahru__felinda-wedding-ring-50.webp",
+    "jewellery-shop-kuala-lumpur__felinda-wedding-ring-48.webp",
+    "jewellery-shop-selangor__felinda-wedding-ring-45.webp",
+    "jewellery-store-penang__felinda-wedding-ring-49.webp",
+    "jewelry-online-malaysia__felinda-01.webp",
+    "korean-style-jewellery-malaysia__felinda-24.webp",
+    "men-gold-ring-malaysia__felinda-13.webp",
+    "minimalist-jewellery-malaysia__felinda-23.webp",
+    "necklace-malaysia__felinda-06.webp",
+    "pearl-necklace-malaysia__felinda-11.webp",
+    "pendant-malaysia__felinda-09.webp",
+    "personalised-jewellery-malaysia__felinda-wedding-ring-39.webp",
+    "silver-jewellery-malaysia__felinda-03.webp",
+    "stackable-rings-malaysia__felinda-22.webp",
+    "sustainable-jewellery-malaysia__felinda-wedding-ring-35c.webp",
+    "wedding-ring-malaysia__felinda-16.webp",
+    "zirconia-ring-malaysia__felinda-wedding-ring-44.webp",
+  ],
+  "Engagement Rings": [
+    "Engagement-ring.webp",
+    "916-gold-jewellery-malaysia__18k-dual-colour-halo-diamond-ring.webp",
+    "925-sterling-silver-malaysia__18k-dual-colour-halo-diamond-ring.webp",
+    "999-gold-malaysia__18k-dual-colour-leaf-diamond-ring.webp",
+    "affordable-gold-jewellery-malaysia__18k-heart-shape-halo-engagement-ring.webp",
+    "birthstone-necklace-malaysia__18k-halo-diamond-ring.webp",
+    "bracelet-malaysia__18k-6-prongs-engagement-and-twist-wedding-rings.webp",
+    "bracelet-malaysia__18k-heart-engagement-ring.webp",
+    "buy-gold-ring-subang-jaya__18k-vintage-engagement-and-wedding-rings.webp",
+    "buy-jewellery-online-malaysia__18k-3-stones-diamond-ring.webp",
+    "buy-jewellery-online-malaysia__18k-crown-engagement-ring.webp",
+    "couple-ring-malaysia__18k-dual-colour-diamond-ring.webp",
+    "custom-name-necklace-malaysia__18k-halo-diamond-ring.webp",
+    "custom-ring-malaysia__18k-dual-colour-engagement-ring.webp",
+    "diamond-pendant-malaysia__18k-dual-colour-marquise-diamond-ring.webp",
+    "diamond-ring-malaysia__18k-5-stones-diamond-ring.webp",
+    "diamond-ring-malaysia__18k-diamond-and-pink-sapphire-engagement-ring.webp",
+    "earrings-malaysia__18k-6-prongs-engagement-and-twist-wedding-rings.webp",
+    "earrings-malaysia__18k-dual-colour-pink-zircon-engagement-ring.webp",
+    "engagement-ring-malaysia__18k-dual-colour-engagement-ring.webp",
+    "gold-bangle-malaysia__18k-6-prongs-pave-engagement-and-wedding-ring.webp",
+    "gold-ring-malaysia__18k-6-prongs-diamond-and-fancy-wedding-ring.webp",
+    "gold-ring-malaysia__18k-engagement-ring.webp",
+    "gold-shop-petaling-jaya__18k-twist-diamond-ring.webp",
+    "jade-jewellery-malaysia__18k-diamond-and-ruby-ring.webp",
+    "jewellery-boutique-bangsar__18k-vintage-diamond-engagement-ring.webp",
+    "jewellery-gift-set-malaysia__18k-pave-diamond-ring.webp",
+    "jewellery-shop-johor-bahru__18k-gold-oval-tulip-prongs-ring.webp",
+    "jewellery-shop-kuala-lumpur__18k-pave-diamond-ring.webp",
+    "jewellery-shop-selangor__18k-gold-dual-colour-hello-kitty-ring.webp",
+    "jewellery-store-penang__18k-roman-numeral-diamond-ring.webp",
+    "jewelry-online-malaysia__18k-2-stones-diamond-ring.webp",
+    "jewelry-online-malaysia__18k-oval-engagement-ring.webp",
+    "korean-style-jewellery-malaysia__18k-engagement-and-wedding-rings.webp",
+    "men-gold-ring-malaysia__18k-dual-colour-crown-diamond-ring.webp",
+    "minimalist-jewellery-malaysia__18k-emerald-and-tapered-baguette-cut-diamond-ring.webp",
+    "necklace-malaysia__18k-6-prongs-diamond-ring.webp",
+    "necklace-malaysia__18k-twist-engagement-ring.webp",
+    "pearl-necklace-malaysia__18k-6-prongs-pave-engagement-ring.webp",
+    "pendant-malaysia__18k-6-prongs-engagement-and-stacking-wedding-rings.webp",
+    "pendant-malaysia__18k-diamond-with-sapphire-engagement-ring.webp",
+    "personalised-jewellery-malaysia__18k-halo-diamond-ring.webp",
+    "silver-jewellery-malaysia__18k-3-stones-diamond-ring.webp",
+    "silver-jewellery-malaysia__18k-diamond-with-ruby-engagement-ring.webp",
+    "stackable-rings-malaysia__18k-dual-colour-pave-diamond-ring.webp",
+    "sustainable-jewellery-malaysia__18k-gold-oval-pave-diamond-ring.webp",
+    "wedding-ring-malaysia__18k-dual-colour-engagement-ring.webp",
+    "zirconia-ring-malaysia__18k-gold-twist-diamond-ring.webp",
+  ],
+};
+
+function titleFromFilename(filename) {
+  const base = filename.replace(/\.webp$/i, "");
+  const productPart = base.includes("__") ? base.split("__").pop() : base;
+  return productPart
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function imageSrc(category, filename) {
+  const folder = categoryFolders[category];
+  return (
+    "/images/felinda-jewelry/Custom-Rings/" +
+    encodeURIComponent(folder) +
+    "/" +
+    encodeURIComponent(filename)
+  );
+}
+
+const galleryItems = Object.entries(galleryFilesByCategory).flatMap(
+  ([category, files]) =>
+    files.map((file) => ({
+      title: titleFromFilename(file),
+      category,
+      image: imageSrc(category, file),
+    }))
+);
 
 const sortOptions = ["Newest", "Featured", "Price: Low to High", "Price: High to Low"];
+
+const INITIAL_VISIBLE = 15;
+const PAGE_STEP = 15;
 
 export default function CustomRingsContent() {
   const [activeFilter, setActiveFilter] = useState(filters[0]);
   const [sortOpen, setSortOpen] = useState(false);
   const [sort, setSort] = useState(sortOptions[0]);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [mounted, setMounted] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const visibleItems = useMemo(
     () => galleryItems.filter((item) => item.category === activeFilter),
     [activeFilter]
   );
+
+  const paginatedItems = useMemo(
+    () => visibleItems.slice(0, visibleCount),
+    [visibleItems, visibleCount]
+  );
+
+  const hasMore = visibleCount < visibleItems.length;
+
+  // Reset pagination when the user switches categories
+  useEffect(() => {
+    setVisibleCount(INITIAL_VISIBLE);
+  }, [activeFilter]);
+
+  const lightboxOpen = lightboxIndex !== null;
+  const currentItem = lightboxOpen ? visibleItems[lightboxIndex] : null;
+
+  const closeLightbox = () => setLightboxIndex(null);
+  const showPrev = () =>
+    setLightboxIndex((i) =>
+      i === null ? i : (i - 1 + visibleItems.length) % visibleItems.length
+    );
+  const showNext = () =>
+    setLightboxIndex((i) =>
+      i === null ? i : (i + 1) % visibleItems.length
+    );
+
+  // Reset lightbox if the active filter changes while it's open
+  useEffect(() => {
+    setLightboxIndex(null);
+  }, [activeFilter]);
+
+  // Keyboard navigation + body scroll lock while lightbox is open
+  useEffect(() => {
+    if (!lightboxOpen) return;
+
+    const onKey = (e) => {
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "ArrowRight") showNext();
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [lightboxOpen, visibleItems.length]);
 
   return (
     <section className="relative z-10 px-6 pb-12">
@@ -220,25 +439,52 @@ export default function CustomRingsContent() {
           </div>
         </div>
 
-        {/* ── Gallery (filtered) ── */}
+        {/* ── Gallery (filtered + paginated) ── */}
         {visibleItems.length > 0 ? (
-          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {visibleItems.map((item) => (
-              <div
-                key={item.title}
-                className="overflow-hidden rounded-[18px] border border-[#eee3de] bg-[#fefcfa] shadow-[0_4px_15px_rgba(90,70,60,0.04)]"
-              >
-                <div className="aspect-[1.22/1] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+          <>
+            <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {paginatedItems.map((item, index) => (
+                <button
+                  type="button"
+                  key={item.image}
+                  onClick={() => setLightboxIndex(index)}
+                  aria-label={`View ${item.title}`}
+                  className="group block overflow-hidden rounded-[18px] border border-[#eee3de] bg-[#fefcfa] text-left shadow-[0_4px_15px_rgba(90,70,60,0.04)] transition hover:shadow-[0_10px_28px_rgba(110,90,80,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d29189]"
+                >
+                  <div className="relative aspect-[1.22/1] overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      loading={index < 3 ? "eager" : "lazy"}
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {hasMore && (
+              <div className="mt-8 flex flex-col items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setVisibleCount((n) =>
+                      Math.min(n + PAGE_STEP, visibleItems.length)
+                    )
+                  }
+                  className="inline-flex items-center gap-2 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-3 text-[14px] tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[15px]"
+                >
+                  VIEW MORE
+                  <ChevronDown size={16} />
+                </button>
+                <span className="text-[13px] text-[#8a7a71]">
+                  Showing {paginatedItems.length} of {visibleItems.length}
+                </span>
               </div>
-            ))}
-          </div>
+            )}
+          </>
         ) : (
           <div className="mt-12 rounded-[18px] border border-dashed border-[#eee3de] bg-[#fefcfa] py-16 text-center text-[15px] text-[#8a7a71]">
             No pieces in this category yet — please check back soon.
@@ -321,6 +567,74 @@ export default function CustomRingsContent() {
           </div>
         </div>
       </div>
+
+      {/* ── Lightbox (portaled to body so it sits above the sticky header) ── */}
+      {mounted && lightboxOpen && currentItem &&
+        createPortal(
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={currentItem.title}
+          onClick={closeLightbox}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/85 px-4 py-6 backdrop-blur-sm"
+        >
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              closeLightbox();
+            }}
+            aria-label="Close"
+            className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full text-white/90 transition hover:bg-white/10 hover:text-white md:right-8 md:top-8"
+          >
+            <X size={26} strokeWidth={1.6} />
+          </button>
+
+          {visibleItems.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  showPrev();
+                }}
+                aria-label="Previous image"
+                className="absolute left-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white md:left-6"
+              >
+                <ChevronLeft size={32} strokeWidth={1.6} />
+              </button>
+
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  showNext();
+                }}
+                aria-label="Next image"
+                className="absolute right-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white md:right-6"
+              >
+                <ChevronRight size={32} strokeWidth={1.6} />
+              </button>
+            </>
+          )}
+
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="flex max-h-full max-w-[1100px] flex-col items-center"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={currentItem.image}
+              alt={currentItem.title}
+              className="h-auto max-h-[82vh] w-auto max-w-full rounded-[8px] object-contain shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+            />
+            <div className="mt-4 text-center text-[13px] tracking-[0.08em] text-white/70">
+              {lightboxIndex + 1} / {visibleItems.length}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </section>
   );
 }

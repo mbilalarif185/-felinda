@@ -6,38 +6,39 @@ export const metadata = {
     "Felinda's earring atelier — luminous studs, drops and hoops, hand-finished in rose gold and pink gemstones.",
 };
 
-const galleryItems = [
-  {
-    title: "Rose Pearl Studs",
-    image:
-      "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Petal Drop Earrings",
-    image:
-      "https://images.unsplash.com/photo-1612460289436-bdc14e2c5365?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Whisper Hoops",
-    image:
-      "https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Sapphire Chandelier",
-    image:
-      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Garden Climbers",
-    image:
-      "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Heritage Drops",
-    image:
-      "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=1200&q=80",
-  },
+const earringFiles = [
+  
+  "bracelet-malaysia__18k-gold-south-sea-mabe-pearl-diamond-earrings.webp",
+  "buy-jewellery-online-malaysia__anya-18k-gold-tahitian-pearl-diamond-earrings.webp",
+  "couple-ring-malaysia__18k-spinel-studs.webp",
+  "diamond-ring-malaysia__18k-gold-diamond-studs.webp",
+  "earrings-malaysia__18k-gold-halo-diamond-studs.webp",
+  "engagement-ring-malaysia__18k-citrine-with-diamond-studs.webp",
+  "gold-bangle-malaysia__18k-gold-south-sea-mabe-pearl-diamond-royal-earrings.webp",
+  "gold-ring-malaysia__18k-gold-double-sided-earrings-yellow-zircons.webp",
+  "jade-jewellery-malaysia__18k-diamond-long-studs.webp",
+  "jewelry-online-malaysia__anya-18k-gold-south-sea-pearl-diamond-earrings.webp",
+  "men-gold-ring-malaysia__18k-fj-diamond-hoop.webp",
+  "necklace-malaysia__18k-gold-fresh-water-pearl-dangling-earrings.webp",
+  "pearl-necklace-malaysia__18k-diamond-hoop-earrings.webp",
+  "pendant-malaysia__18k-gold-south-sea-mabe-pearl-diamond-royal-earrings.webp",
+  "silver-jewellery-malaysia__18k-gold-diamond-studs.webp",
 ];
+
+function titleFromFilename(filename) {
+  const base = filename.replace(/\.webp$/i, "");
+  const productPart = base.includes("__") ? base.split("__").pop() : base;
+  return productPart
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+const galleryItems = earringFiles.map((file) => ({
+  title: titleFromFilename(file),
+  image: `/images/felinda-jewelry/EarRings/${encodeURIComponent(file)}`,
+}));
 
 export default function EarringsPage() {
   return (

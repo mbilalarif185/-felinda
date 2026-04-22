@@ -22,27 +22,51 @@ export const metadata = {
  */
 const videoTestimonials = [
   {
-    url: "https://www.youtube.com/watch?v=ScMzIvxBSi4",
+    url: "https://youtu.be/Fktcu-bvvSk",
     title: "Designing Sara's engagement ring",
     name: "Sara & Ahmad",
     role: "Bespoke engagement ring",
   },
   {
-    url: "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+    url: "https://youtu.be/-hYwP-FeuR4",
     title: "A pearl heirloom, reimagined",
     name: "Datin Liyana",
     role: "South Sea pearl restoration",
   },
   {
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    url: "https://youtu.be/FdPMOmd5p1g",
     title: "From sketch to finished cuff",
     name: "Alia M.",
     role: "Signature bangle commission",
   },
   {
-    url: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+    url: "https://youtu.be/mC-8U4HbFtA",
     title: "Behind the atelier doors",
     name: "Felinda Studio",
+    role: "Studio film",
+  },
+  {
+    url: "https://youtu.be/7huMgNyV7zQ",
+    title: "Stones, settings & second chances",
+    name: "Aishah R.",
+    role: "Heirloom redesign",
+  },
+  {
+    url: "https://youtu.be/TdizF2pRo90",
+    title: "A wedding band, a quiet promise",
+    name: "Imran & Dania",
+    role: "Bespoke wedding bands",
+  },
+  {
+    url: "https://youtu.be/FSGL7Ix-gbA",
+    title: "Notes from a private commission",
+    name: "Priya N.",
+    role: "Couture pendant",
+  },
+  {
+    url: "https://youtu.be/HvF6Mh5Cpno",
+    title: "The making of a signature piece",
+    name: "Felinda Atelier",
     role: "Studio film",
   },
 ];
