@@ -1,11 +1,16 @@
-import FelindaGalleryPage from "../../preview";
+import { permanentRedirect } from "next/navigation";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = {
-  title: "Bespoke Jewelry Gallery — Felinda",
-  description:
-    "Explore Felinda's bespoke jewelry gallery — luminous pink gemstones set in radiant rose gold, inspired by nature's finest blooms.",
-};
+export const metadata = buildPageMetadata({
+  title: "Bespoke",
+  description: "Legacy bespoke page. Canonical custom rings collection now lives at /custom-rings.",
+  path: "/bespoke",
+  noIndex: true,
+});
 
+/**
+ * Bespoke gallery is not linked in navigation; old URLs redirect to Custom Rings.
+ */
 export default function BespokePage() {
-  return <FelindaGalleryPage />;
+  permanentRedirect("/custom-rings");
 }

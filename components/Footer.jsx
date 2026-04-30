@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { CONTACT } from "@/lib/contact";
+
 function InstagramIcon({ size = 17 }) {
   return (
     <svg
@@ -39,12 +41,12 @@ function FacebookIcon({ size = 17 }) {
 const socials = [
   {
     label: "Instagram",
-    href: "https://instagram.com/felindajewelry",
+    href: CONTACT.instagram,
     Icon: InstagramIcon,
   },
   {
     label: "Facebook",
-    href: "https://facebook.com/felindajewelry",
+    href: CONTACT.facebook,
     Icon: FacebookIcon,
   },
 ];
@@ -61,8 +63,7 @@ export default function Footer() {
             JEWELRY
           </div>
           <p className="felinda-sans mt-5 max-w-sm text-[15px] leading-7 text-muted">
-            A private bespoke jewelry atelier creating meaningful pieces with
-            softness, refinement, and timeless emotional value.
+            A private bespoke jewelry atelier. Handcrafted fine jewelry, made one story at a time.
           </p>
 
           <ul className="mt-6 flex items-center gap-3" aria-label="Follow Felinda">
@@ -97,8 +98,12 @@ export default function Footer() {
                 About
               </Link>
             </li>
-            <li>Bespoke Jewelry</li>
-            <li>Our Creations</li>
+
+            <li>
+              <Link href="/custom-rings" className="hover:text-ink">
+                Our Creations
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -107,20 +112,48 @@ export default function Footer() {
             Contact
           </div>
           <ul className="felinda-sans mt-4 space-y-3 text-[15px] text-muted">
-            <li>WhatsApp</li>
-            <li>Email</li>
-            <li>Instagram</li>
-            <li>Book Appointment</li>
+            <li>
+              <a
+                href={CONTACT.whatsappWaMe}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-ink"
+              >
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${CONTACT.email}`} className="hover:text-ink">
+                Email
+              </a>
+            </li>
+            <li>
+              <a
+                href={CONTACT.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-ink"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-ink">
+                Book Appointment
+              </Link>
+            </li>
           </ul>
         </div>
 
         <div>
           <div className="felinda-sans text-sm font-semibold uppercase tracking-[0.14em] text-ink">
-            Atelier Notes
+            Studio
           </div>
           <p className="felinda-sans mt-4 text-[15px] leading-7 text-muted">
-            Quiet luxury, bespoke craftsmanship, and story-led design for
-            clients seeking intimate jewelry experiences.
+            {CONTACT.address}
+          </p>
+          <p className="felinda-sans mt-3 text-[15px] leading-7 text-muted">
+            {CONTACT.hours}
           </p>
         </div>
       </div>
@@ -128,6 +161,16 @@ export default function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-xs uppercase tracking-[0.18em] text-muted lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div>
             © {new Date().getFullYear()} Felinda Jewelry • By appointment only
+            {" "}
+            Developed by{" "}
+            <Link
+              href="https://cressoft.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink underline decoration-muted/50 underline-offset-2 transition hover:text-rose hover:decoration-rose/60"
+            >
+              Cressoft
+            </Link>
           </div>
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <li>

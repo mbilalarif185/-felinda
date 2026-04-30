@@ -6,6 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import Logo from "./Logo";
+import { CONTACT } from "@/lib/contact";
 import { navItems } from "@/lib/navigation";
 
 // Felinda brand palette (mirrors tailwind.config.js — inline so the menu
@@ -60,8 +61,8 @@ function InstagramIcon(props) {
 }
 
 const SOCIALS = [
-  { label: "Facebook", href: "https://facebook.com/", Icon: FacebookIcon },
-  { label: "Instagram", href: "https://instagram.com/", Icon: InstagramIcon },
+  { label: "Facebook", href: CONTACT.facebook, Icon: FacebookIcon },
+  { label: "Instagram", href: CONTACT.instagram, Icon: InstagramIcon },
 ];
 
 /**
@@ -126,6 +127,8 @@ export default function MobileMenu({
   useEffect(() => {
     if (!open) return undefined;
 
+    const triggerEl = triggerRef.current;
+
     const onKey = (e) => {
       if (e.key === "Escape") {
         e.preventDefault();
@@ -158,7 +161,7 @@ export default function MobileMenu({
     return () => {
       window.removeEventListener("keydown", onKey);
       cancelAnimationFrame(raf);
-      triggerRef.current?.focus();
+      triggerEl?.focus();
     };
   }, [open, close]);
 
@@ -231,16 +234,8 @@ export default function MobileMenu({
           </button>
         </div>
 
-        {/* Logo with rose hairline divider */}
         <div className="flex shrink-0 flex-col items-center px-6 pb-6">
           <Logo />
-          <span
-            aria-hidden
-            style={{
-              backgroundImage: `linear-gradient(90deg, rgba(216,162,154,0) 0%, ${COLORS.rose} 50%, rgba(216,162,154,0) 100%)`,
-            }}
-            className="mt-5 block h-px w-16"
-          />
         </div>
 
         {/* Nav links — scrollable, accordions for groups */}

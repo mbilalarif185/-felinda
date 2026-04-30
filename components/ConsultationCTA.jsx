@@ -1,12 +1,35 @@
 import Link from "next/link";
 
+import { CONTACT, consultationBookingHref } from "@/lib/contact";
+
+function CtaButton({ href, className, children }) {
+  const isExternal = href.startsWith("http");
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
+
 export default function ConsultationCTA({
-  eyebrow = "Book a Private Consultation",
-  title = "Begin your bespoke journey",
-  description = "Book an appointment to discuss your vision, preferred gemstones, and the story behind the piece you want to create.",
-  note = "By appointment only • Personalized guidance • Malaysia-focused clientele",
-  primary = { label: "Book Appointment", href: "/contact" },
-  secondary = { label: "Chat on WhatsApp", href: "/contact" },
+  eyebrow = "Begin Here",
+  title = "The Right Piece Doesn't Exist Yet Let's Make It.",
+  description = "Most people who contact us arrive with something between a certainty and a feeling a moment they know is coming, a person they want to honour, an idea that isn't fully formed yet. That is exactly the right place to start.",
+  note = "By appointment only • Private • One-on-One Consultations • Serving clients across Malaysia ",
+  primary = { label: "Book Your Private Appointment", href: consultationBookingHref },
+  secondary = { label: "Send a WhatsApp Message", href: CONTACT.whatsappWaMe },
 }) {
   return (
     <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
@@ -20,18 +43,18 @@ export default function ConsultationCTA({
             {description}
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-            <Link
+            <CtaButton
               href={primary.href}
               className="felinda-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90"
             >
               {primary.label}
-            </Link>
-            <Link
+            </CtaButton>
+            <CtaButton
               href={secondary.href}
               className="felinda-sans rounded-full border border-line bg-white px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-ink transition hover:bg-shell"
             >
               {secondary.label}
-            </Link>
+            </CtaButton>
           </div>
           {note && (
             <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.18em] text-[#8B7A73]">

@@ -39,12 +39,6 @@ export default function LegalPage({
                   </div>
                 )}
 
-                <div className="mx-auto mt-5 flex items-center justify-center gap-4">
-                  <div className="h-px w-14 bg-[#e4c9c0]" />
-                  <div className="text-[#d49a92]">✦</div>
-                  <div className="h-px w-14 bg-[#e4c9c0]" />
-                </div>
-
                 {intro && (
                   <p className="mx-auto mt-6 max-w-[700px] font-serif text-[17px] leading-[1.85] text-[#78675f] md:text-[19px]">
                     {intro}
@@ -87,11 +81,8 @@ export default function LegalPage({
                     id={s.id}
                     className="scroll-mt-32 border-t border-[#ece1dc] pt-8 first:border-t-0 first:pt-0"
                   >
-                    <div className="flex items-baseline gap-3 text-[#c88f87]">
-                      <span className="text-[14px] tracking-[0.18em]">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="h-px flex-1 bg-[#e3c8bf]" />
+                    <div className="text-[14px] tracking-[0.18em] text-[#c88f87]">
+                      {String(i + 1).padStart(2, "0")}
                     </div>
                     <h2 className="mt-3 font-serif text-[26px] font-light leading-tight text-[#4f413a] md:text-[32px]">
                       {s.title}

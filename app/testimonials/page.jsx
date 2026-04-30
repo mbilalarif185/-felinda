@@ -5,12 +5,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import YouTubeCard from "@/components/YouTubeCard";
+import { consultationBookingHref } from "@/lib/contact";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { testimonialsMeta } from "@/lib/seo/meta-copy";
 
-export const metadata = {
-  title: "Testimonials — Felinda Jewelry",
-  description:
-    "Stories from Felinda clients — written reflections and short films from the people who wear our bespoke pieces every day.",
-};
+export const metadata = buildPageMetadata({
+  absoluteTitle: testimonialsMeta.absoluteTitle,
+  description: testimonialsMeta.description,
+  path: "/testimonials",
+});
+
+export const revalidate = 86400;
 
 /**
  * Replace the `url` values with your real YouTube links.
@@ -127,12 +132,6 @@ export default function TestimonialsPage() {
                 , passed on.
               </h2>
 
-              <div className="mx-auto mt-6 flex items-center justify-center gap-4">
-                <div className="h-px w-14 bg-[#e4c9c0]" />
-                <div className="text-[#d49a92]">✦</div>
-                <div className="h-px w-14 bg-[#e4c9c0]" />
-              </div>
-
               <p className="mx-auto mt-7 max-w-[760px] font-serif text-[18px] leading-[1.8] text-[#78675f] md:text-[20px]">
                 Every Felinda piece begins with a conversation and ends with a
                 story. These are a few of the people who carry ours — in their
@@ -223,7 +222,7 @@ export default function TestimonialsPage() {
               </div>
 
               <Link
-                href="/bespoke"
+                href={consultationBookingHref}
                 className="inline-flex shrink-0 items-center justify-center gap-3 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[16px]"
               >
                 BOOK A CONSULTATION

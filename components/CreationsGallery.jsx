@@ -43,10 +43,16 @@ export default function CreationsGallery({ items = [] }) {
   useEffect(() => {
     if (!lightboxOpen) return;
 
+    const len = items.length;
     const onKey = (e) => {
-      if (e.key === "Escape") closeLightbox();
-      else if (e.key === "ArrowLeft") showPrev();
-      else if (e.key === "ArrowRight") showNext();
+      if (e.key === "Escape") setLightboxIndex(null);
+      else if (e.key === "ArrowLeft") {
+        setLightboxIndex((i) =>
+          i === null ? i : (i - 1 + len) % len
+        );
+      } else if (e.key === "ArrowRight") {
+        setLightboxIndex((i) => (i === null ? i : (i + 1) % len));
+      }
     };
 
     const previousOverflow = document.body.style.overflow;
@@ -162,13 +168,15 @@ export default function CreationsGallery({ items = [] }) {
 
             <div
               onClick={(e) => e.stopPropagation()}
-              className="flex max-h-full max-w-[1100px] flex-col items-center"
+              className="relative flex h-[min(82vh,900px)] w-full max-w-[1100px] flex-col items-center"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={currentItem.image}
                 alt={currentItem.title}
-                className="h-auto max-h-[82vh] w-auto max-w-full rounded-[8px] object-contain shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+                fill
+                sizes="100vw"
+                className="object-contain object-center shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+                priority
               />
               <div className="mt-4 text-center text-[13px] tracking-[0.08em] text-white/70">
                 {lightboxIndex + 1} / {items.length}

@@ -3,17 +3,56 @@
 import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   ChevronDown,
   CalendarDays,
-  Truck,
   ShieldCheck,
   Gem,
+  Sparkles,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
   X,
 } from "lucide-react";
+
+import {
+  customRingsClosingBody,
+  customRingsClosingLead,
+  customRingsClosingTitle,
+  customRingsConsultationHref,
+  customRingsJourneyHref,
+  customRingsFaqItems,
+  customRingsFaqTitle,
+  customRingsIntroCtaConsultation,
+  customRingsIntroCtaJourney,
+  customRingsIntroHeadline,
+  customRingsIntroParagraphs,
+  customRingsProcessSteps,
+  customRingsProcessSubtitle,
+  customRingsProcessTitle,
+  customRingsStripBody,
+  customRingsStripConsultation,
+  customRingsStripJourney,
+  customRingsStripTitle,
+  customRingsWhyLead,
+  customRingsWhyPillars,
+  customRingsWhyTitle,
+} from "@/lib/content/custom-rings-page";
+import {
+  CUSTOM_RINGS_TAB_PARAM,
+  customRingsFilterToSlug,
+  customRingsTabBySlug,
+} from "@/lib/customRingsTabs";
+
+const scriptAccent = {
+  fontFamily: "var(--font-great-vibes), 'Great Vibes', 'Allura', cursive",
+  fontWeight: 400,
+  fontStyle: "italic",
+};
+
+const whyIcons = [Sparkles, Gem, ShieldCheck, CalendarDays];
 
 const filters = [
   "Daring Dazzlers",
@@ -31,106 +70,87 @@ const categoryFolders = {
 
 const galleryFilesByCategory = {
   "Daring Dazzlers": [
-    "18K-AIYANA-Felindas-Signature-Ring-Kunzite-malaysia.webp",
-    "18K-Amethyst-Lavender-and-Spinel-Ring-malaysia.webp",
-    "18K-Amethyst-Ring-malaysia.webp",
-    "18K-Amethyst-with-Diamond-Ring-BUY.webp",
-    "18K-Bi-Colour-Sapphire-Ring-kl.webp",
-    "18K-Blue-Topaz-Ring-scaled.webp",
-    "18K-Cabochon-Emerald-Ring-kl.webp",
-    "18K-Citrine-and-Spinel-Stack-Rings-KL.webp",
-    "18K-Cornflower-Blue-Sapphire-Rings-kl.webp",
-    "18K-Dark-Pink-Sapphire-Ring-malaysia.webp",
-    "18K-Garnet-and-Citrine-Rings-malaysia.webp",
-    "18k-Gold-Ruby-with-Pave-Diamond-Ring-pave.webp",
-    "18k-Gold-Ruby-with-Pave-Diamond-Ring.webp",
-    "18K-Gred-Garnet-with-Spinel-and-Diamond-Ring-Malaysia.webp",
-    "18K-Green-Tourmaline-Ring-malaysia.webp",
-    "18K-Jede-ring-malaysia.webp",
-    "18K-London-Blue-Topaz-Ring-malaysia.webp",
-    "18K-Opal-Ring-1-malaysia.webp",
-    "18K-Pink-Garnet-Ring-1-kl.webp",
-    "18K-Pink-Tourmaline-Ring-kl.webp",
-    "18K-Pink-Tourmaline-with-Ruby-Ring-malaysia.webp",
-    "18K-Red-Garnet-and-Diamond-Ring-kl.webp",
-    "18K-Salt-and-Pepper-Rings-kl.webp",
-    "18K-Special-Cut-Garnet-Ring-malaysia.webp",
-    "18K-Tanzanite-and-Pink-Sapphire-Ring-kl.webp",
-    "18K-Tanzanite-Ring-in-kl.webp",
-    "18K-Tanzanite-Vintage-Ring-kl.webp",
-    "18K-Triple-Ring-Black-Diamond-Emerald-and-Mabe-Pearl-kl.webp",
-    "18K-Watermelon-Tourmaline-Ring-in-malaysia.webp",
-    "916 gold ring Malaysia.webp",
-    "916-gold jewellery Malaysia.webp",
-    "999 gold Malaysia.webp",
-    "999-gold-Malaysia.webp",
-    "ADA-18k-Gold-with-Imperial-Topaz-Diamond-Ring-kl.webp",
-    "buy -gold- ring -Subang- Jaya.webp",
-    "buy gold ring KL.webp",
-    "buy gold ring Subang Jaya.webp",
-    "buy gold ring Subang-jaya.webp",
-    "buy jewellery online Malaysia.webp",
-    "buy ring in k.webp",
-    "buy ring in malayisa.webp",
-    "buy Subang Jaya gold ring.webp",
-    "buy-gold-ring-Subang-Jaya.webp",
-    "engagement ring Malaysia.webp",
-    "engagement ring-Malaysia.webp",
-    "engagement-ring Malaysia.webp",
-    "gold  jewellery Malaysia.webp",
-    "gold jewellery Malaysia.webp",
-    "gold Malaysia 999.webp",
-    "gold ring KL.webp",
-    "gold ring Subang Jaya.webp",
-    "gold shop kl.webp",
-    "gold shop Petaling Jaya.webp",
-    "gold shop Petaling-Jaya.webp",
-    "gold shop-Petaling Jaya.webp",
-    "gold shop.webp",
-    "gold- jewellery Malaysia.webp",
-    "gold-Malaysia.webp",
-    "jewellery gift set Malaysia.webp",
-    "jewellery gift-set Malaysia.webp",
-    "jewellery gold Malaysia.webp",
-    "jewellery Malaysia gold.webp",
-    "jewellery Malaysia silver.webp",
-    "jewellery Malaysia.webp",
-    "jewellery shop Kl.webp",
-    "jewellery shop Kuala Lumpur.webp",
-    "jewellery store Penang.webp",
-    "jewellery-gift set Malaysia.webp",
-    "jewelry online Malaysia.webp",
-    "personalised jewellery in Malaysia.webp",
-    "personalised jewellery Malaysia.webp",
-    "personalised-jewellery Malaysia.webp",
-    "Petaling Jaya gold shop.webp",
-    "ring Malaysia.webp",
-    "RIngs-malaysia.webp",
-    "silver jewellery Malaysia.webp",
-    "silver-jewellery-malaysia.webp",
-    "stackable rings Malaysia.webp",
-    "stackable-rings Malaysia.webp",
+    "Aquamarine Vintage Ring 2.webp",
+    "FJ Insta- Bi colour sapphire Rng 3.webp",
+    "FJ Insta- Bi colour sapphire Rng 5.webp",
+    "FJ Insta- Bi colour sapphire Rng.webp",
+    "FJ Insta- Friendship and Spinel Rings.webp",
+    "FJ Insta- Friendship Rings.webp",
+    "FJ Insta- Green Tourmaline Ring.webp",
+    "FJ Insta- Ice Jade Ring.webp",
+    "FJ Insta- Imperial Topaz Ring.webp",
+    "FJ Insta- Lab Diamond Ring.webp",
+    "FJ Insta- Mint Tourmaline Ring.webp",
+    "FJ Insta- Opal Ring.webp",
+    "FJ Insta- Peridot Diamond Ring.webp",
+    "FJ Insta- Pink Garnet Rng.webp",
+    "FJ Insta- Pink Heart Tourmaline Ring.webp",
+    "FJ Insta- Rubellite Tourmaline Ring.webp",
+    "FJ Insta- Star Ruby Ring.webp",
+    "FJ Insta- Tanzanite Diamond Ring.webp",
+    "FJ Insta- Tourmaline & Emerald Pendant.webp",
+    "FJ Insta-ADELA Mabe.webp",
+    "FJ Insta-ADELA Ring 1.webp",
+    "FJ Insta-AMORA.webp",
+    "FJ Insta-Blue Sapphire Rng.webp",
+    "FJ Insta-Blue Topaz Ring.webp",
+    "FJ Insta-Cat's Eye Ring 2.webp",
+    "FJ Insta-Cat's Eye Ring 3.webp",
+    "FJ Insta-Citrine Ring.webp",
+    "FJ Insta-Cornflower Blue Sapphire Rng.webp",
+    "FJ Insta-Dandelion Ring 2.webp",
+    "FJ Insta-Dark Pink Sapphire-3.webp",
+    "FJ Insta-Dark Pink Sapphire.webp",
+    "FJ Insta-Emerald Ring 2.webp",
+    "FJ Insta-Emerald Ring 3.webp",
+    "FJ Insta-Green Garnet.webp",
+    "FJ Insta-Jede ring 6.webp",
+    "FJ Insta-Jede ring.webp",
+    "FJ Insta-Jede ring4.webp",
+    "FJ Insta-Kunzite Ring.webp",
+    "FJ Insta-Leaf Ring.webp",
+    "FJ Insta-London Blue Topaz Ring 2.webp",
+    "FJ Insta-London Blue Topaz Ring.webp",
+    "FJ Insta-Malachite Ring 2.webp",
+    "FJ Insta-Mix Gemstones Ring.webp",
+    "FJ Insta-Padparacha Sapphire Diamond Ring.webp",
+    "FJ Insta-Pink Sapphire.webp",
+    "FJ Insta-Red Garnet 6.webp",
+    "FJ Insta-Red Ruby 4.webp",
+    "FJ Insta-Red Ruby 5.webp",
+    "FJ Insta-Red Ruby 6.webp",
+    "FJ Insta-Rome Numbers Ring 2.webp",
+    "FJ Insta-Salt and Pepper Ring 2.webp",
+    "FJ Insta-Salt and Pepper Ring 3.webp",
+    "FJ Insta-Spinel Ring.webp",
+    "FJ Insta-Tanzanite Rng 2.webp",
+    "FJ Insta-Tanzanite Rng 4.webp",
+    "FJ Insta-Triple Ring 8.webp",
   ],
   "Men's Rings": [
-    "18K-Agate-with-Diamond-Ring-KL.webp",
-    "18K-Bi-colour-Sapphire-Ring-KL.webp",
-    "18K-Black-Diamond-Ring-Malaysia.webp",
-    "18K-Blue-Sapphire-Ring-KL.webp",
-    "18K-Citrine-and-Diamond-Ring-KL.webp",
-    "18K-Citrine-with-Diamond-Ring-KL.webp",
-    "18k-Gold-Emerald-with-Diamond-Ring-2-malaysia.webp",
-    "18k-Gold-Jade-Ring-in kl.webp",
-    "18k-Gold-Mens-Diamond-Rings-in malaysia.webp",
-    "18k-Gold-Mens-Rings-malaysia.webp",
-    "18k-Gold-with-Topaz-Diamond-Ring-malaysia.webp",
-    "18K-Grey-Spinel-with-Diamond-Ring-KL.webp",
-    "Buy mens rings in kl.webp",
-    "Gold-with-Pave-Diamond-Ring-KL.webp",
-    "jewellery store Penang-.webp",
-    "jewellery store Penang.webp",
+    "FJ Insta- Horse Brooch.webp",
+    "FJ Insta- Watermelon Tourmaline Pendant Necklace 1.webp",
+    "FJ Insta-Citrine Mens Ring.webp",
+    "FJ Insta-Emerald Men's Ring.webp",
+    "FJ Insta-Emerald Ring 4.webp",
+    "FJ Insta-Mens Agate Ring.webp",
+    "FJ Insta-Mens Alexandrite Ring.webp",
+    "FJ Insta-Mens Bi-colour Sapphire Ring.webp",
+    "FJ Insta-Mens Black Diamond Ring 2.webp",
+    "FJ Insta-Mens Black Spinel Pendant 2.webp",
+    "FJ Insta-Mens Blue Grey Spinel Ring.webp",
+    "FJ Insta-Mens Blue Sapphire Ring 2.webp",
+    "FJ Insta-Mens Blue Sapphire Ring.webp",
+    "FJ Insta-Mens Blue Topaz Ring-2.webp",
+    "FJ Insta-Mens Diamond Ring 2.webp",
+    "FJ Insta-Mens Garnet Ring 2.webp",
+    "FJ Insta-Mens Garnet Ring 3A.webp",
+    "FJ Insta-Name Bracelet.webp",
+    "FJ Insta-Sapphire Mens Ring 2.webp",
+    "FJ Insta-Teal Sapphire Diamond Ring.webp",
   ],
   "Wedding Rings": [
-    "Wedding-Bands.webp",
+    
     "916-gold-jewellery-malaysia__felinda-19.webp",
     "925-sterling-silver-malaysia__felinda-18.webp",
     "999-gold-malaysia__felinda-20.webp",
@@ -171,59 +191,61 @@ const galleryFilesByCategory = {
     "zirconia-ring-malaysia__felinda-wedding-ring-44.webp",
   ],
   "Engagement Rings": [
-    "Engagement-ring.webp",
-    "916-gold-jewellery-malaysia__18k-dual-colour-halo-diamond-ring.webp",
-    "925-sterling-silver-malaysia__18k-dual-colour-halo-diamond-ring.webp",
-    "999-gold-malaysia__18k-dual-colour-leaf-diamond-ring.webp",
-    "affordable-gold-jewellery-malaysia__18k-heart-shape-halo-engagement-ring.webp",
-    "birthstone-necklace-malaysia__18k-halo-diamond-ring.webp",
-    "bracelet-malaysia__18k-6-prongs-engagement-and-twist-wedding-rings.webp",
-    "bracelet-malaysia__18k-heart-engagement-ring.webp",
-    "buy-gold-ring-subang-jaya__18k-vintage-engagement-and-wedding-rings.webp",
-    "buy-jewellery-online-malaysia__18k-3-stones-diamond-ring.webp",
-    "buy-jewellery-online-malaysia__18k-crown-engagement-ring.webp",
-    "couple-ring-malaysia__18k-dual-colour-diamond-ring.webp",
-    "custom-name-necklace-malaysia__18k-halo-diamond-ring.webp",
-    "custom-ring-malaysia__18k-dual-colour-engagement-ring.webp",
-    "diamond-pendant-malaysia__18k-dual-colour-marquise-diamond-ring.webp",
-    "diamond-ring-malaysia__18k-5-stones-diamond-ring.webp",
-    "diamond-ring-malaysia__18k-diamond-and-pink-sapphire-engagement-ring.webp",
-    "earrings-malaysia__18k-6-prongs-engagement-and-twist-wedding-rings.webp",
-    "earrings-malaysia__18k-dual-colour-pink-zircon-engagement-ring.webp",
-    "engagement-ring-malaysia__18k-dual-colour-engagement-ring.webp",
-    "gold-bangle-malaysia__18k-6-prongs-pave-engagement-and-wedding-ring.webp",
-    "gold-ring-malaysia__18k-6-prongs-diamond-and-fancy-wedding-ring.webp",
-    "gold-ring-malaysia__18k-engagement-ring.webp",
-    "gold-shop-petaling-jaya__18k-twist-diamond-ring.webp",
-    "jade-jewellery-malaysia__18k-diamond-and-ruby-ring.webp",
-    "jewellery-boutique-bangsar__18k-vintage-diamond-engagement-ring.webp",
-    "jewellery-gift-set-malaysia__18k-pave-diamond-ring.webp",
-    "jewellery-shop-johor-bahru__18k-gold-oval-tulip-prongs-ring.webp",
-    "jewellery-shop-kuala-lumpur__18k-pave-diamond-ring.webp",
-    "jewellery-shop-selangor__18k-gold-dual-colour-hello-kitty-ring.webp",
-    "jewellery-store-penang__18k-roman-numeral-diamond-ring.webp",
-    "jewelry-online-malaysia__18k-2-stones-diamond-ring.webp",
-    "jewelry-online-malaysia__18k-oval-engagement-ring.webp",
-    "korean-style-jewellery-malaysia__18k-engagement-and-wedding-rings.webp",
-    "men-gold-ring-malaysia__18k-dual-colour-crown-diamond-ring.webp",
-    "minimalist-jewellery-malaysia__18k-emerald-and-tapered-baguette-cut-diamond-ring.webp",
-    "necklace-malaysia__18k-6-prongs-diamond-ring.webp",
-    "necklace-malaysia__18k-twist-engagement-ring.webp",
-    "pearl-necklace-malaysia__18k-6-prongs-pave-engagement-ring.webp",
-    "pendant-malaysia__18k-6-prongs-engagement-and-stacking-wedding-rings.webp",
-    "pendant-malaysia__18k-diamond-with-sapphire-engagement-ring.webp",
-    "personalised-jewellery-malaysia__18k-halo-diamond-ring.webp",
-    "silver-jewellery-malaysia__18k-3-stones-diamond-ring.webp",
-    "silver-jewellery-malaysia__18k-diamond-with-ruby-engagement-ring.webp",
-    "stackable-rings-malaysia__18k-dual-colour-pave-diamond-ring.webp",
-    "sustainable-jewellery-malaysia__18k-gold-oval-pave-diamond-ring.webp",
-    "wedding-ring-malaysia__18k-dual-colour-engagement-ring.webp",
-    "zirconia-ring-malaysia__18k-gold-twist-diamond-ring.webp",
+    "FJ Insta- Bi colour sapphire Rng 4.webp",
+    "FJ Insta-Engagemen ring 19.webp",
+    "FJ Insta-Engagemen ring 22.webp",
+    "FJ Insta-Engagemen ring 23.webp",
+    "FJ Insta-Engagemen ring 29.webp",
+    "FJ Insta-Engagemen ring 32.webp",
+    "FJ Insta-Engagemen ring 33.webp",
+    "FJ Insta-Engagemen ring 34.webp",
+    "FJ Insta-Engagemen ring 36.webp",
+    "FJ Insta-Engagemen ring 38.webp",
+    "FJ Insta-Engagemen ring 40.webp",
+    "FJ Insta-Engagemen ring 43.webp",
+    "FJ Insta-Engagemen ring 47.webp",
+    "FJ Insta-Engagemen ring 48.webp",
+    "FJ Insta-Engagemen ring 49.webp",
+    "FJ Insta-Engagement ring 53.webp",
+    "FJ Insta-Engagement ring 54.webp",
+    "FJ Insta-Engagement ring 57.webp",
+    "FJ Insta-Engagement ring 61.webp",
+    "FJ Insta-Engagement ring 63.webp",
+    "FJ Insta-Engagement ring 64.webp",
+    "FJ Insta-Engagement ring 66.webp",
+    "FJ Insta-Engagement ring 68.webp",
+    "FJ Insta-Engagement ring 69.webp",
+    "FJ Insta-Engagement ring 71.webp",
+    "FJ Insta-Engagement ring 74.webp",
+    "FJ Insta-Engagement ring 77.webp",
+    "FJ Insta-Engagement ring 79.webp",
+    "FJ Insta-Engagement ring 80.webp",
+    "FJ Insta-Engagement ring 83.webp",
+    "FJ Insta-Engagement ring 84.webp",
+    "FJ Insta-female wedding ring 58.webp",
+    "FJ Insta-female wedding ring 59.webp",
+    "FJ Insta-female&male wedding ring 35C.webp",
+    "FJ Insta-female&male wedding ring 36B.webp",
+    "FJ Insta-female&male wedding ring 38.webp",
+    "FJ Insta-female&male wedding ring 43.webp",
+    "FJ Insta-female&male wedding ring 44.webp",
+    "FJ Insta-female&male wedding ring 46.webp",
+    "FJ Insta-female&male wedding ring 51.webp",
+    "FJ Insta-female&male wedding ring 54.webp",
+    "FJ Insta-female&male wedding ring 55.webp",
+    "FJ Insta-female&male wedding ring 56.webp",
+    "FJ Insta-female&male wedding ring 57.webp",
+    "FJ Insta-Rome Numbers Ring 3.webp",
+    "FJ Insta-Rome Numbers Ring.webp",
+    "FJ Insta-wedding ring 63.webp",
+    "FJ Insta-wedding ring 64.webp",
+    "FJ Insta-wedding ring 65.webp",
+    "FJ Insta-Yellow Sapphire Ring 3.webp",
   ],
 };
 
 function titleFromFilename(filename) {
-  const base = filename.replace(/\.webp$/i, "");
+  const base = filename.replace(/\.(webp|jpg|jpeg|png)$/i, "");
   const productPart = base.includes("__") ? base.split("__").pop() : base;
   return productPart
     .replace(/[-_]+/g, " ")
@@ -256,17 +278,34 @@ const sortOptions = ["Newest", "Featured", "Price: Low to High", "Price: High to
 const INITIAL_VISIBLE = 15;
 const PAGE_STEP = 15;
 
+function activeFilterFromSearchParams(searchParams) {
+  const tab = searchParams.get(CUSTOM_RINGS_TAB_PARAM);
+  if (tab && customRingsTabBySlug[tab]) return customRingsTabBySlug[tab];
+  return filters[0];
+}
+
 export default function CustomRingsContent() {
-  const [activeFilter, setActiveFilter] = useState(filters[0]);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const [activeFilter, setActiveFilter] = useState(() =>
+    activeFilterFromSearchParams(searchParams)
+  );
   const [sortOpen, setSortOpen] = useState(false);
   const [sort, setSort] = useState(sortOptions[0]);
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [mounted, setMounted] = useState(false);
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    setActiveFilter(activeFilterFromSearchParams(searchParams));
+  }, [searchParams]);
 
   const visibleItems = useMemo(
     () => galleryItems.filter((item) => item.category === activeFilter),
@@ -307,10 +346,16 @@ export default function CustomRingsContent() {
   useEffect(() => {
     if (!lightboxOpen) return;
 
+    const len = visibleItems.length;
     const onKey = (e) => {
-      if (e.key === "Escape") closeLightbox();
-      else if (e.key === "ArrowLeft") showPrev();
-      else if (e.key === "ArrowRight") showNext();
+      if (e.key === "Escape") setLightboxIndex(null);
+      else if (e.key === "ArrowLeft") {
+        setLightboxIndex((i) =>
+          i === null ? i : (i - 1 + len) % len
+        );
+      } else if (e.key === "ArrowRight") {
+        setLightboxIndex((i) => (i === null ? i : (i + 1) % len));
+      }
     };
 
     const previousOverflow = document.body.style.overflow;
@@ -326,41 +371,46 @@ export default function CustomRingsContent() {
   return (
     <section className="relative z-10 px-6 pb-12">
       <div className="mx-auto max-w-[1320px] rounded-[30px] border border-[#e7dbd5] bg-[#fbf7f4] px-6 py-10 shadow-[0_10px_30px_rgba(110,90,80,0.04)] md:px-10 md:py-12">
-        {/* ── Intro ── */}
+        {/* ── Intro (typography matches CreationsPage) ── */}
         <div className="mx-auto max-w-[900px] text-center">
           <h2 className="font-serif text-[44px] font-light leading-[1.05] tracking-[-0.03em] text-[#4f413a] md:text-[64px]">
-            Designed{" "}
-            <span
-              className="text-[#d59a92]"
-              style={{
-                fontFamily:
-                  "var(--font-great-vibes), 'Great Vibes', 'Allura', cursive",
-                fontWeight: 400,
-                fontStyle: "italic",
-              }}
-            >
-              for Felinda
+            {customRingsIntroHeadline.beforeScript}{" "}
+            <span className="text-[#d59a92]" style={scriptAccent}>
+              {customRingsIntroHeadline.script}
             </span>
           </h2>
 
-          <div className="mx-auto mt-6 flex items-center justify-center gap-4">
-            <div className="h-px w-14 bg-[#e4c9c0]" />
-            <div className="text-[#d49a92]">✦</div>
-            <div className="h-px w-14 bg-[#e4c9c0]" />
+          <div className="mx-auto mt-7 max-w-[760px] space-y-6">
+            {customRingsIntroParagraphs.map((para, idx) => (
+              <p
+                key={idx}
+                className="font-serif text-[18px] leading-[1.8] text-[#78675f] md:text-[20px] [&:last-of-type]:text-[#6e5c54]"
+              >
+                {para}
+              </p>
+            ))}
           </div>
 
-          <p className="mx-auto mt-7 max-w-[760px] font-serif text-[18px] leading-[1.8] text-[#78675f] md:text-[20px]">
-            Every ring is shaped around a moment, a person, a promise. From
-            daring dazzlers to quiet vows, our custom ring atelier crafts each
-            piece with intention, light, and craftsmanship that lasts a
-            lifetime.
-          </p>
-
-          <button className="mt-9 inline-flex items-center gap-3 rounded-[8px] bg-[#d29189] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] md:text-[17px]">
-            <CalendarDays size={18} />
-            BOOK A CONSULTATION
-          </button>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
+            <Link
+              href={customRingsJourneyHref}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#c88f87] transition hover:border-[#c88f87] hover:bg-[#fdf8f6] sm:w-auto md:text-[15px]"
+            >
+              {customRingsIntroCtaJourney}
+              <ArrowRight size={17} aria-hidden />
+            </Link>
+            <Link
+              href={customRingsConsultationHref}
+              className="inline-flex w-full items-center justify-center gap-3 rounded-[8px] bg-[#d29189] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] sm:w-auto md:text-[17px]"
+            >
+              <CalendarDays size={18} aria-hidden />
+              {customRingsIntroCtaConsultation}
+            </Link>
+          </div>
         </div>
+
+        {/* ── Why Felinda (section type matches BespokeStorySections) ── */}
+      
 
         {/* ── Divider ── */}
         <div className="mt-12 border-t border-[#ece1dc]" />
@@ -368,6 +418,7 @@ export default function CustomRingsContent() {
         {/* ── Filters (functional) ── */}
         <div className="mt-8 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           <div
+            id="custom-rings-tabs"
             role="tablist"
             aria-label="Ring categories"
             className="flex flex-wrap items-center gap-x-7 gap-y-3"
@@ -379,7 +430,16 @@ export default function CustomRingsContent() {
                   key={item}
                   role="tab"
                   aria-selected={isActive}
-                  onClick={() => setActiveFilter(item)}
+                  onClick={() => {
+                    setActiveFilter(item);
+                    const slug = customRingsFilterToSlug[item];
+                    if (!slug) return;
+                    const next = new URLSearchParams(searchParams.toString());
+                    next.set(CUSTOM_RINGS_TAB_PARAM, slug);
+                    router.replace(`${pathname}?${next.toString()}`, {
+                      scroll: false,
+                    });
+                  }}
                   className={
                     isActive
                       ? "rounded-[8px] bg-[#d29189] px-7 py-3 text-[15px] text-white transition md:text-[16px]"
@@ -392,8 +452,7 @@ export default function CustomRingsContent() {
             })}
           </div>
 
-          {/* Sort dropdown */}
-          <div className="relative self-start">
+          {/* <div className="relative self-start">
             <button
               type="button"
               onClick={() => setSortOpen((open) => !open)}
@@ -436,7 +495,7 @@ export default function CustomRingsContent() {
                 })}
               </ul>
             )}
-          </div>
+          </div> */}
         </div>
 
         {/* ── Gallery (filtered + paginated) ── */}
@@ -491,80 +550,160 @@ export default function CustomRingsContent() {
           </div>
         )}
 
-        {/* ── CTA strip ── */}
-        <div className="mt-7 flex flex-col gap-5 rounded-[18px] border border-[#eaded8] bg-[#f8f3ef] px-6 py-6 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex items-center gap-5">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#dfc5bc] text-[#cf938b]">
-              <Gem size={22} strokeWidth={1.8} />
-            </div>
-
-            <div>
-              <h3 className="font-serif text-[26px] font-light text-[#54463f] md:text-[38px]">
-                Create something truly yours.
-              </h3>
-              <p className="mt-1 text-[16px] text-[#807069] md:text-[20px]">
-                Our designers are here to bring your vision to life.
-              </p>
-            </div>
+          <div className="mt-14 border-t border-[#ece1dc] pt-12">
+          <div className="mx-auto max-w-[720px] text-center">
+            <h2 className="font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#4f413a] md:text-[44px]">
+              {customRingsWhyTitle}
+            </h2>
+            <p className="mx-auto mt-6 max-w-[720px] font-serif text-[17px] leading-[1.85] text-[#78675f] md:text-[19px]">
+              {customRingsWhyLead}
+            </p>
           </div>
 
-          <button className="inline-flex shrink-0 items-center justify-center gap-3 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[17px]">
-            START YOUR BESPOKE JOURNEY
-            <ArrowRight size={18} />
-          </button>
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6 xl:grid-cols-4">
+            {customRingsWhyPillars.map((pillar, i) => {
+              const Icon = whyIcons[i] ?? Gem;
+              return (
+                <div
+                  key={pillar.title}
+                  className="group flex h-full min-h-[220px] flex-col rounded-[18px] border border-[#ebe0db] bg-[#fffdfb] p-6 shadow-[0_6px_22px_rgba(110,90,80,0.04)] transition duration-300 hover:border-[#dfc9c0] hover:shadow-[0_12px_32px_rgba(110,90,80,0.07)]"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#ead6d0] bg-[#fdf9f7] text-[#c88f87] transition group-hover:border-[#e0c4bc] group-hover:bg-white">
+                    <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden />
+                  </div>
+                  <h3 className="mt-5 font-serif text-[19px] font-light leading-snug text-[#4f413a] md:text-[21px]">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-3 flex-1 font-serif text-[14px] leading-relaxed text-[#756860] md:text-[15px]">
+                    {pillar.body}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* ── Benefits ── */}
-        <div className="mt-7 border-t border-[#ece1dc] pt-6">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-            <div className="flex items-start gap-4">
-              <Truck className="mt-1 text-[#d0938a]" size={22} />
-              <div>
-                <div className="font-serif text-[20px] font-light text-[#564840] md:text-[24px]">
-                  Complimentary Shipping
+
+        {/* ── Process (step typography matches BespokeStorySections) ── */}
+        <div className="mt-14 border-t border-[#ece1dc] pt-12">
+          <div className="mx-auto max-w-[800px] text-center">
+            <h2 className="font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#4f413a] md:text-[44px]">
+              {customRingsProcessTitle}
+            </h2>
+            <p className="mx-auto mt-6 max-w-[760px] font-serif text-[17px] leading-[1.85] text-[#78675f] md:text-[18px]">
+              {customRingsProcessSubtitle}
+            </p>
+          </div>
+
+          <ol className="mx-auto mt-12 grid max-w-[1100px] list-none gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-6">
+            {customRingsProcessSteps.map((step, index) => (
+              <li key={step.title}>
+                <div className="flex h-full flex-col rounded-[16px] border border-[#eaded8] bg-[#fffdfb] px-5 py-6 text-center shadow-[0_4px_18px_rgba(110,90,80,0.04)] md:px-4 md:py-7">
+                  <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-[#dfc5bc] bg-[#fbf7f4] font-serif text-[15px] text-[#c88f87]">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+                  <h3 className="mt-5 font-serif text-[19px] font-light leading-snug text-[#54463f] md:text-[21px]">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-center font-serif text-[14px] leading-relaxed text-[#807069] md:text-[15px]">
+                    {step.body}
+                  </p>
                 </div>
-                <div className="text-[14px] italic text-[#8e7b73] md:text-[16px]">
-                  On all orders
-                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* ── CTA strip (matches CreationsPage) ── */}
+        <div className="mt-7 rounded-[18px] border border-[#eaded8] bg-[#f8f3ef] px-6 py-6">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex min-w-0 flex-1 items-center gap-5">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#dfc5bc] text-[#cf938b]">
+                <Gem size={22} strokeWidth={1.8} aria-hidden />
+              </div>
+              <div className="min-w-0">
+                <h3 className="font-serif text-[26px] font-light text-[#54463f] md:text-[38px]">
+                  {customRingsStripTitle}
+                </h3>
+                <p className="mt-1 text-[16px] text-[#807069] md:text-[20px]">
+                  {customRingsStripBody}
+                </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4">
-              <ShieldCheck className="mt-1 text-[#d0938a]" size={22} />
-              <div>
-                <div className="font-serif text-[20px] font-light text-[#564840] md:text-[24px]">
-                  Lifetime Craftsmanship
-                </div>
-                <div className="text-[14px] italic text-[#8e7b73] md:text-[16px]">
-                  Guaranteed for life
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <Gem className="mt-1 text-[#d0938a]" size={22} />
-              <div>
-                <div className="font-serif text-[20px] font-light text-[#564840] md:text-[24px]">
-                  Finest Materials
-                </div>
-                <div className="text-[14px] italic text-[#8e7b73] md:text-[16px]">
-                  Ethically sourced gemstones
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <CalendarDays className="mt-1 text-[#d0938a]" size={22} />
-              <div>
-                <div className="font-serif text-[20px] font-light text-[#564840] md:text-[24px]">
-                  Book a Consultation
-                </div>
-                <div className="text-[14px] italic text-[#8e7b73] md:text-[16px]">
-                  Virtual or in-person
-                </div>
-              </div>
+            <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row sm:justify-end lg:w-auto">
+              <Link
+                href={customRingsJourneyHref}
+                className="inline-flex items-center justify-center gap-2 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[16px]"
+              >
+                {customRingsStripJourney}
+                <ArrowRight size={18} aria-hidden />
+              </Link>
+              <Link
+                href={customRingsConsultationHref}
+                className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#d29189] px-8 py-4 text-[14px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] md:px-10 md:text-[16px]"
+              >
+                <CalendarDays size={18} aria-hidden />
+                {customRingsStripConsultation}
+              </Link>
             </div>
           </div>
+        </div>
+
+        {/* ── FAQ ── */}
+        <div className="mt-12 border-t border-[#ece1dc] pt-10">
+          <h2 className="text-center font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#4f413a] md:text-[44px]">
+            {customRingsFaqTitle}
+          </h2>
+          <div className="mx-auto mt-8 max-w-[720px] divide-y divide-[#ece1dc] border-y border-[#ece1dc]">
+            {customRingsFaqItems.map((item, i) => {
+              const open = openFaqIndex === i;
+              return (
+                <div key={item.question} className="py-1">
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaqIndex(open ? null : i)}
+                    aria-expanded={open}
+                    className="flex w-full items-start justify-between gap-4 py-4 text-left transition hover:text-[#4f413a]"
+                  >
+                    <span className="font-serif text-[18px] font-light leading-snug text-[#54463f] md:text-[20px]">
+                      {item.question}
+                    </span>
+                    <ChevronDown
+                      size={20}
+                      className={`mt-0.5 shrink-0 text-[#c88f87] transition-transform ${open ? "rotate-180" : ""}`}
+                      aria-hidden
+                    />
+                  </button>
+                  {open ? (
+                    <p className="pb-4 font-serif text-[16px] leading-[1.75] text-[#78675f] md:text-[17px]">
+                      {item.answer}
+                    </p>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ── Closing ── */}
+        <div className="mt-12 rounded-[20px] border border-[#e8d9d3] bg-gradient-to-b from-[#fffdfb] to-[#fbf6f3] px-6 py-10 text-center md:px-12 md:py-12">
+          <h2 className="font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#4f413a] md:text-[44px]">
+            {customRingsClosingTitle}
+          </h2>
+          <p className="mx-auto mt-6 max-w-[560px] font-serif text-[18px] leading-[1.85] text-[#78675f] md:text-[20px]">
+            {customRingsClosingLead}
+          </p>
+          <p className="mx-auto mt-5 max-w-[640px] font-serif text-[16px] leading-[1.85] text-[#78675f] md:text-[17px]">
+            {customRingsClosingBody}
+          </p>
+          <Link
+            href={customRingsConsultationHref}
+            className="mt-9 inline-flex items-center gap-3 rounded-[8px] bg-[#d29189] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] md:text-[17px]"
+          >
+            <CalendarDays size={18} aria-hidden />
+            {customRingsIntroCtaConsultation}
+          </Link>
         </div>
       </div>
 

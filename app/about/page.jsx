@@ -4,12 +4,16 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { aboutMeta } from "@/lib/seo/meta-copy";
 
-export const metadata = {
-  title: "About — Felinda Jewelry",
-  description:
-    "A cinematic look inside Felinda — a private bespoke jewelry atelier built on emotion, craftsmanship, and quiet refinement.",
-};
+export const metadata = buildPageMetadata({
+  absoluteTitle: aboutMeta.absoluteTitle,
+  description: aboutMeta.description,
+  path: "/about",
+});
+
+export const revalidate = 86400;
 
 /* ──────────── Decorative ornaments (inline SVG) ──────────── */
 
@@ -133,58 +137,48 @@ function IconHand() {
 
 const valueStrip = [
   {
-    title: "A Private Atelier",
-    text: "Felinda operates by appointment only — a quiet studio where time is given without measure.",
-  },
+    title: "Appointment Only",
+    text: "The atelier does not operate as a storefront. Every engagement begins with a direct conversation private, personal, and without distraction."  },
   {
-    title: "Founder-Led, by Hand",
-    text: "Each piece passes through the founder's direct attention, from first conversation to final reveal.",
-  },
+    title: "Made by One Pair of Hands",
+    text: "There is no delegation here. The founder is present at every stage from the earliest conversation through to the moment the finished piece is placed in your hands."  },
   {
-    title: "Made for Memory",
-    text: "Designed to be inherited, returned to, and remembered across years and generations.",
-  },
+    title: "Designed to Be Inherited",
+    text: "Nothing at Felinda is made for a season. Every commission is conceived with the weight of decades in mind a piece to be returned to, not replaced."  },
 ];
 
 const craftPillars = [
   {
     Icon: IconAtelier,
-    title: "The Atelier",
-    text: "A private studio in Kuala Lumpur, opened only by appointment, intentionally kept small.",
-  },
+    title: "The Studio",
+    text: "A deliberately intimate space one that keeps the work close, the clients fewer, and the attention undivided. Felinda will never scale beyond what one pair of hands can do with integrity."  },
   {
     Icon: IconConsultation,
-    title: "Quiet Consultation",
-    text: "Conversations begin with story and intention, never with a catalog or a template.",
-  },
+    title: "The Conversation",
+    text: "Every commission begins not with a price list, but with a question: what are you trying to hold onto? That question guides everything that follows the design, the stones, the form." , },
   {
     Icon: IconStone,
     title: "Considered Stones",
-    text: "Gemstones are sourced for character and proportion, not only for size or rarity.",
-  },
+    text: "Gemstones are not selected for their carat weight or their category. They are chosen for the quality of their light, the depth of their character, and the way they speak to the specific piece being made."  },
   {
     Icon: IconHand,
     title: "Handcrafted Finish",
-    text: "Refined by hand at every stage, until each piece feels rightful in its wearer's hand.",
-  },
+    text: "Every Felinda piece is refined by hand through every stage of its making. There is a point in the process where the piece begins to feel inevitable and we do not stop until we reach it.",  },
 ];
 
 const signatureMoments = [
   {
-    eyebrow: "I · Origin",
-    title: "An idea before a brand",
-    text: "Felinda begins as a private practice — a few pieces, a few clients, one conversation at a time. From the start, the work is shaped by feeling rather than formula.",
-  },
+    eyebrow: "I · The Beginning",
+    title: "Before There was a Name, There was a Standard.",
+    text: "Felinda did not begin with a business plan. It began with a refusal a refusal to make jewelry that was merely acceptable, that filled a brief without filling a need, that looked like something rather than meaning something. From the very first piece, the work was shaped by a single question: is this exactly right? Not good. Not close. Exactly right."  },
   {
-    eyebrow: "II · The Hand",
-    title: "Founder-led, in every detail",
-    text: "There is no production floor. Every Felinda creation moves through a single set of hands, ensuring each piece carries an unmistakably personal signature.",
-  },
+    eyebrow: "II · The Practice",
+    title: "One Maker One Client One Piece at a Time",
+    text: "There is no team behind the curtain at Felinda. There is no factory floor, no production quota, no handoff point where the founder's attention ends and a process begins. Every commission from the first sketch to the final polish is held by a single set of hands. This is not a limitation. It is the entire point. The intimacy of that involvement is what makes a Felinda piece feel different from anything else in the world."  },
   {
-    eyebrow: "III · The Future",
-    title: "Made to outlast a season",
-    text: "The atelier resists trend. Each piece is created to remain meaningful long after the moment it was received — to become part of a wearer's identity.",
-  },
+    eyebrow: "III · The Intention",
+    title: "Made to Outlive the Moment",
+    text: "Trends are a distraction Felinda has no interest in following. The atelier creates pieces designed to remain meaningful not just in the week they are received, but in the decade they are worn and the generation they are passed to. That requires a different kind of discipline one that asks not is this beautiful now? but will this still be the right object in thirty years?  It almost always takes longer. It is always worth it."  },
 ];
 
 export default function AboutPage() {
@@ -202,9 +196,8 @@ export default function AboutPage() {
         <section className="bg-[#f6f0ec] pb-16 pt-2 lg:pb-20">
           <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
             <p className="felinda-serif text-xl leading-[1.7] text-[#5b4d44] lg:text-2xl lg:leading-[1.7]">
-              A house of quiet jewelry — a private bespoke atelier creating
-              personal pieces with softness, refinement, and timeless emotional
-              value, founder-led and by appointment in Kuala Lumpur.
+              Felinda is a founder led private atelier a place where fine jewelry is created without
+               haste, without compromise, and without ever losing sight of the person it is made for.
             </p>
           </div>
         </section>
@@ -243,7 +236,7 @@ export default function AboutPage() {
                 The Four Pillars
               </div>
               <h2 className="felinda-serif mt-4 text-4xl leading-tight lg:text-6xl">
-                What shapes the work
+                The Beliefs that Shape Every Piece.
               </h2>
               <Flourish className="mx-auto mt-8 h-3 w-48 text-clay/70 lg:w-60" />
             </div>
@@ -257,7 +250,6 @@ export default function AboutPage() {
                   <h3 className="felinda-serif mt-7 text-2xl leading-snug text-ink lg:text-[1.7rem]">
                     {title}
                   </h3>
-                  <div className="mx-auto mt-3 h-px w-10 bg-clay/40" />
                   <p className="felinda-sans mt-5 text-[15px] leading-7 text-muted">
                     {text}
                   </p>
@@ -276,7 +268,7 @@ export default function AboutPage() {
                   <div className="overflow-hidden rounded-[2rem] border border-line bg-white p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
                     <div className="relative h-[500px] overflow-hidden rounded-[1.5rem] lg:h-[640px]">
                       <Image
-                        src="/images/gold-jewellery-malaysia-premium.webp"
+                        src="/images/malaysia.webp"
                         alt="Felinda atelier studio"
                         fill
                         sizes="(min-width: 1024px) 40vw, 90vw"
@@ -302,9 +294,9 @@ export default function AboutPage() {
                   Our Story
                 </div>
                 <h2 className="felinda-serif mt-4 text-4xl leading-tight lg:text-6xl">
-                  A jewelry house built
+                    Not a brand  
                   <br />
-                  on <span className="italic text-rose">feeling</span>, not formula.
+                  A <span className="italic text-rose">belief</span> in doing things properly.
                 </h2>
 
                 <div className="mt-10 space-y-6">
@@ -347,7 +339,7 @@ export default function AboutPage() {
                 The Felinda Promise
               </div>
               <h2 className="felinda-serif mt-4 text-4xl leading-tight text-cream lg:text-6xl">
-                Three quiet commitments
+                Three Things we will never compromise
               </h2>
               <Flourish className="mx-auto mt-8 h-3 w-48 text-rose/80 lg:w-60" />
             </div>
@@ -356,19 +348,16 @@ export default function AboutPage() {
               {[
                 {
                   no: "01",
-                  title: "Privacy",
-                  text: "Each consultation, design, and piece is held in confidence. The atelier is open only to those it speaks with directly.",
-                },
+                  title: "Discretion",
+                  text: "Your commission, your conversations, and your story belong to you. Felinda does not showcase client work without permission, does not share personal details, and does not treat what you share as material for a portfolio. What passes between client and atelier stays there.",                },
                 {
                   no: "02",
-                  title: "Patience",
-                  text: "Every creation is given the time it requires. The work is never rushed to meet a calendar or a quota.",
-                },
+                  title: "Time",
+                  text: "A Felinda piece is finished when it is right — not when a production schedule demands it. If a stone needs to be recut, a proportion reconsidered, or a setting rebuilt, that is what happens. The work is never hurried toward a deadline it has not earned."                },
                 {
                   no: "03",
-                  title: "Permanence",
-                  text: "Pieces are made to be inherited and returned to — designed to remain meaningful long after the moment they were given.",
-                },
+                  title: "Integrity of Material",
+                  text: "Only stones and metals that meet the atelier's own standard make it into a Felinda piece. That standard is not defined by a certificate or a category. It is defined by what the founder would accept for themselves which means it is exceptionally high."                },
               ].map((p) => (
                 <article
                   key={p.no}
@@ -401,22 +390,23 @@ export default function AboutPage() {
                 <h2 className="felinda-serif mt-4 text-4xl leading-tight lg:text-6xl">
                   Founder-led,
                   <br />
-                  in every <span className="italic text-rose">detail.</span>
+                  in every <span className="italic text-rose">Sense of the Word</span>
                 </h2>
 
                 <Flourish className="mt-8 h-3 w-48 text-clay/70 lg:w-60" />
 
                 <p className="felinda-serif mt-10 text-2xl leading-relaxed text-ink lg:text-3xl">
-                  &ldquo;I work slowly, on purpose. The pieces I help shape
-                  are intended to be lived with, returned to, and
-                  remembered.&rdquo;
+                  &ldquo;I am not interested in making beautiful things quickly. I am interested in making the right thing once, completely, for the person who will carry it for the rest of their life..&rdquo;
                 </p>
 
                 <p className="felinda-sans mt-8 max-w-xl text-lg leading-8 text-muted">
-                  Every Felinda creation passes through the founder&rsquo;s
-                  direct attention — from the first conversation, through
-                  stone selection, to the final reveal. It is a slower way of
-                  working, and an entirely intentional one.
+                  The founder of Felinda came to jewelry through an obsession not with adornment, 
+                  but with precision. With the question of how much intention a small object can 
+                  carry. With the discovery that a ring or a pendant, made properly, can hold a
+                   specific quality of light, a specific memory, a specific person and keep them 
+                   close in a way that nothing else quite manages.
+
+                  
                 </p>
 
                 <div className="mt-10 flex items-center gap-5 border-t border-line pt-7">
@@ -515,7 +505,7 @@ export default function AboutPage() {
 
             <Flourish className="mx-auto mt-14 h-3 w-48 text-rose/60 lg:w-60" />
             <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.32em] text-cream/50">
-              Felinda Atelier · Kuala Lumpur · MMXXVI
+              Felinda Atelier · Petaling Jaya · MMXXVI
             </div>
           </div>
         </section>

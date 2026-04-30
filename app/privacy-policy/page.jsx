@@ -1,10 +1,15 @@
 import LegalPage from "@/components/LegalPage";
+import { CONTACT } from "@/lib/contact";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { privacyMeta } from "@/lib/seo/meta-copy";
 
-export const metadata = {
-  title: "Privacy Policy — Felinda Jewelry",
-  description:
-    "How Felinda Jewelry collects, uses and protects the personal information of our clients and visitors.",
-};
+export const metadata = buildPageMetadata({
+  absoluteTitle: privacyMeta.absoluteTitle,
+  description: privacyMeta.description,
+  path: "/privacy-policy",
+});
+
+export const revalidate = 86400;
 
 const sections = [
   {
@@ -15,7 +20,7 @@ const sections = [
         <p>
           Felinda Jewelry (&ldquo;Felinda&rdquo;, &ldquo;we&rdquo;,
           &ldquo;us&rdquo; or &ldquo;our&rdquo;) is a private bespoke jewelry
-          atelier based in Kuala Lumpur, Malaysia. We respect your privacy and
+          atelier based in Petaling Jaya, Selangor, Malaysia. We respect your privacy and
           are committed to protecting the personal information you share with
           us — whether you are a client, a prospective client, or simply a
           visitor to our website.
@@ -171,8 +176,8 @@ const sections = [
         </ul>
         <p>
           To exercise any of these rights, please write to us at{" "}
-          <a href="mailto:atelier@felindajewelry.com">
-            atelier@felindajewelry.com
+          <a href="mailto:info@felindajewelry.com">
+            info@felindajewelry.com
           </a>
           .
         </p>
@@ -203,13 +208,13 @@ const sections = [
           handle your information, we would be glad to hear from you:
         </p>
         <p>
-          Maison Felinda · Bangsar, Kuala Lumpur
+          {CONTACT.address}
           <br />
-          <a href="mailto:atelier@felindajewelry.com">
-            atelier@felindajewelry.com
+          <a href="mailto:info@felindajewelry.com">
+            info@felindajewelry.com
           </a>
           <br />
-          +60 3 2201 0088
+          +60 16-825 7826
         </p>
       </>
     ),

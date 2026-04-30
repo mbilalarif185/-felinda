@@ -28,37 +28,57 @@ body {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
 }
 
-.felinda-rule {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.felinda-rule::before,
-.felinda-rule::after {
-  content: "";
-  width: 28px;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(201, 169, 110, 0) 0%,
-    rgba(201, 169, 110, 0.85) 50%,
-    rgba(201, 169, 110, 0) 100%
-  );
-}
-
 html {
   scroll-behavior: smooth;
 }
 
+/* Homepage value strip — excluded from reduced-motion * reset so it can still scroll */
+@keyframes felinda-value-strip-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.felinda-value-marquee-track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  align-items: center;
+  column-gap: 3rem;
+  white-space: nowrap;
+  animation: felinda-value-strip-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .felinda-value-marquee-track {
+    column-gap: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .felinda-value-marquee-track {
+    column-gap: 5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  /* Do not target .felinda-value-marquee-track — global duration:0.001ms kills horizontal marquees */
+  *:not(.felinda-value-marquee-track),
+  *:not(.felinda-value-marquee-track)::before,
+  *:not(.felinda-value-marquee-track)::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .felinda-value-marquee-track {
+    animation: none !important;
+    transform: none !important;
   }
 }
 

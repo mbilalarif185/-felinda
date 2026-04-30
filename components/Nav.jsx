@@ -14,8 +14,9 @@ export default function Nav({ activeHref = "/" }) {
           return (
             <div key={item.label} className="group relative">
               <span
+                tabIndex={0}
                 aria-haspopup="menu"
-                className={`flex cursor-default items-center gap-1 transition ${
+                className={`flex cursor-default items-center gap-1 outline-none transition focus-visible:ring-2 focus-visible:ring-gold/80 focus-visible:ring-offset-2 ${
                   childIsActive ? "text-ink" : "hover:text-ink"
                 }`}
               >
@@ -29,7 +30,7 @@ export default function Nav({ activeHref = "/" }) {
 
               {/* Dropdown panel — uses a small pt-3 buffer so the cursor can
                   travel between trigger and panel without losing hover */}
-              <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+              <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                 <ul
                   role="menu"
                   className="min-w-[200px] overflow-hidden rounded-md border border-[#e9dfda] bg-white py-2 shadow-[0_12px_30px_rgba(120,90,80,0.12)]"

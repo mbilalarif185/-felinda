@@ -88,11 +88,20 @@ function JewelCorner({ className = "" }) {
  *
  * Props:
  *   title       — string, the large heading
- *   breadcrumb  — array of { label, href? } items (last item is treated as the current page)
+ *   subtitle         — optional softer second line beneath the H1
+ *   extendedBottom   — extra padding below breadcrumbs when a main card overlaps the hero (bespoke gallery)
+ *   breadcrumb       — array of { label, href? } items (last item is treated as the current page)
  */
-export default function PageHero({ title, breadcrumb = [] }) {
+export default function PageHero({
+  title,
+  subtitle,
+  breadcrumb = [],
+  extendedBottom = false,
+}) {
+  const bottomPad = extendedBottom ? "pb-20 md:pb-28" : "pb-6";
+
   return (
-    <section className="relative overflow-hidden bg-[#f6f0ec] px-6 pb-6 pt-12">
+    <section className={`relative overflow-hidden bg-[#f6f0ec] px-6 pt-12 ${bottomPad}`}>
       <JewelCorner className="left-0 top-0 h-[310px] w-[310px]" />
       <JewelCorner className="right-0 top-0 h-[310px] w-[310px] scale-x-[-1]" />
 
@@ -101,13 +110,11 @@ export default function PageHero({ title, breadcrumb = [] }) {
           {title}
         </h1>
 
-        <div className="mt-7 flex items-center justify-center gap-4">
-          <span className="block h-[2px] w-20 rounded-full bg-[#e3c8bf] md:w-28" />
-          <span className="flex h-[14px] w-[14px] items-center justify-center text-[16px] leading-none text-[#d49a92]">
-            ✦
-          </span>
-          <span className="block h-[2px] w-20 rounded-full bg-[#e3c8bf] md:w-28" />
-        </div>
+        {subtitle ? (
+          <p className="mt-5 max-w-[640px] font-serif text-[18px] font-light leading-snug tracking-[0.01em] text-[#78675f] md:text-[22px]">
+            {subtitle}
+          </p>
+        ) : null}
 
         {breadcrumb.length > 0 && (
           <nav

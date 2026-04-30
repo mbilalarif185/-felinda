@@ -1,10 +1,15 @@
 import LegalPage from "@/components/LegalPage";
+import { CONTACT } from "@/lib/contact";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { termsMeta } from "@/lib/seo/meta-copy";
 
-export const metadata = {
-  title: "Terms & Conditions — Felinda Jewelry",
-  description:
-    "The terms that govern your relationship with Felinda Jewelry — bespoke commissions, payments, delivery, after-care and more.",
-};
+export const metadata = buildPageMetadata({
+  absoluteTitle: termsMeta.absoluteTitle,
+  description: termsMeta.description,
+  path: "/terms-and-conditions",
+});
+
+export const revalidate = 86400;
 
 const sections = [
   {
@@ -33,7 +38,7 @@ const sections = [
       <>
         <p>
           Felinda Jewelry is a private bespoke atelier registered in
-          Malaysia, operating from Bangsar, Kuala Lumpur. References to
+          Malaysia, operating from {CONTACT.address}. References to
           &ldquo;Felinda&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; and
           &ldquo;our&rdquo; mean Felinda Jewelry; references to
           &ldquo;you&rdquo; and &ldquo;your&rdquo; mean the visitor or client
@@ -187,7 +192,7 @@ const sections = [
     body: (
       <>
         <p>
-          To the fullest extent permitted by law, Felinda's total liability
+          To the fullest extent permitted by law, Felinda&rsquo;s total liability
           arising from any commission or use of this Site is limited to the
           value of the commission in question. We are not liable for
           indirect, consequential or sentimental loss.
@@ -218,13 +223,13 @@ const sections = [
           us:
         </p>
         <p>
-          Maison Felinda · Bangsar, Kuala Lumpur
+          {CONTACT.address}
           <br />
-          <a href="mailto:atelier@felindajewelry.com">
-            atelier@felindajewelry.com
+          <a href="mailto:info@felindajewelry.com">
+            info@felindajewelry.com
           </a>
           <br />
-          +60 3 2201 0088
+          +60 16-825 7826
         </p>
       </>
     ),

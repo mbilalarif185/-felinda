@@ -1,44 +1,56 @@
 import Link from "next/link";
 
+import { CONTACT } from "@/lib/contact";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { contactMeta } from "@/lib/seo/meta-copy";
 
-export const metadata = {
-  title: "Contact — Felinda Jewelry",
-  description:
-    "Reserve a private visit at the Felinda atelier — a concierge booking experience for bespoke jewelry consultations.",
-};
+export const metadata = buildPageMetadata({
+  absoluteTitle: contactMeta.absoluteTitle,
+  description: contactMeta.description,
+  path: "/contact",
+});
+
+export const revalidate = 86400;
 
 const valueStrip = [
   "Private Atelier",
   "By Appointment Only",
   "Founder-Led Conversation",
-  "Kuala Lumpur · Malaysia",
+  "Petaling Jaya · Selangor",
   "Reply Within 1 — 2 Days",
 ];
 
 const reachOut = [
   {
     label: "WhatsApp",
-    value: "+60 12 345 6789",
+    value: CONTACT.whatsappDisplay,
     note: "For swift, intimate conversations and bookings.",
-    href: "https://wa.me/60123456789",
+    href: CONTACT.whatsappWaMe,
     cta: "Open Chat",
   },
   {
     label: "Email",
-    value: "atelier@felinda.com",
+    value: CONTACT.email,
     note: "For considered enquiries and references.",
-    href: "mailto:atelier@felinda.com",
+    href: `mailto:${CONTACT.email}`,
     cta: "Compose",
   },
   {
     label: "Instagram",
-    value: "@felinda.jewelry",
+    value: "@felindajewelrymy",
     note: "A quiet visual journal of creations and atelier days.",
-    href: "https://instagram.com/felinda.jewelry",
+    href: CONTACT.instagram,
     cta: "Follow",
+  },
+  {
+    label: "Facebook",
+    value: "Felinda Jewelry",
+    note: "Updates, events, and behind-the-scenes from the atelier.",
+    href: CONTACT.facebook,
+    cta: "Visit Page",
   },
 ];
 
@@ -46,7 +58,7 @@ const journey = [
   {
     no: "01",
     title: "Write",
-    text: "Share the day, hour, and intention behind the piece you imagine.",
+    text: "Share the day, your preferred 45-minute window, and the intention behind the piece you imagine.",
   },
   {
     no: "02",
@@ -61,7 +73,7 @@ const journey = [
 ];
 
 const directory = [
-  ["Atelier", "Kuala Lumpur, Malaysia"],
+  ["Atelier", "Petaling Jaya, Selangor, Malaysia"],
   ["Open", "Tuesday — Saturday"],
   ["Hours", "11:00 — 18:00"],
   ["Reply", "Within 1 — 2 days"],
@@ -84,11 +96,11 @@ export default function ContactPage() {
                 The Concierge
               </div>
               <h1 className="felinda-serif max-w-xl text-5xl leading-[0.98] tracking-[-0.02em] lg:text-7xl">
-                Reserve your hour at the atelier.
+                Reserve your visit at the atelier.
               </h1>
               <p className="felinda-sans mt-6 max-w-xl text-lg leading-8 text-muted">
-                Choose a day, an hour, and a quiet intention. Each visit is
-                arranged personally by the atelier — no automated calendars,
+                Choose a day on the calendar, a 45-minute window, and a quiet
+                intention. Each visit is arranged personally by the atelier —
                 no rushed conversations. Only the space to begin something
                 considered.
               </p>
@@ -101,7 +113,7 @@ export default function ContactPage() {
                   Reserve a Visit
                 </Link>
                 <a
-                  href="https://wa.me/60123456789"
+                  href={CONTACT.whatsappWaMe}
                   target="_blank"
                   rel="noreferrer"
                   className="felinda-sans rounded-full border border-line bg-white px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-ink transition hover:bg-shell"
@@ -203,7 +215,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {reachOut.map((r) => (
               <a
                 key={r.label}

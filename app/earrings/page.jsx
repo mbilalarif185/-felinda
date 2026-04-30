@@ -1,32 +1,52 @@
 import CreationsPage from "@/components/CreationsPage";
+import EarringsStorySections from "@/components/earrings/EarringsStorySections";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  earringsFaqJsonLd,
+  earringsIntroConsultationHref,
+  earringsIntroCtaConsultation,
+  earringsIntroCtaJourney,
+  earringsIntroHeadline,
+  earringsIntroJourneyHref,
+  earringsIntroParagraphs,
+  earringsJourneyCta,
+  earringsPageMeta,
+} from "@/lib/content/earrings-page";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata = {
-  title: "Earrings — Felinda Jewelry",
-  description:
-    "Felinda's earring atelier — luminous studs, drops and hoops, hand-finished in rose gold and pink gemstones.",
-};
+export const metadata = buildPageMetadata({
+  absoluteTitle: earringsPageMeta.absoluteTitle,
+  description: earringsPageMeta.description,
+  path: "/earrings",
+});
+
+export const revalidate = 86400;
 
 const earringFiles = [
-  
-  "bracelet-malaysia__18k-gold-south-sea-mabe-pearl-diamond-earrings.webp",
-  "buy-jewellery-online-malaysia__anya-18k-gold-tahitian-pearl-diamond-earrings.webp",
-  "couple-ring-malaysia__18k-spinel-studs.webp",
-  "diamond-ring-malaysia__18k-gold-diamond-studs.webp",
-  "earrings-malaysia__18k-gold-halo-diamond-studs.webp",
-  "engagement-ring-malaysia__18k-citrine-with-diamond-studs.webp",
-  "gold-bangle-malaysia__18k-gold-south-sea-mabe-pearl-diamond-royal-earrings.webp",
-  "gold-ring-malaysia__18k-gold-double-sided-earrings-yellow-zircons.webp",
-  "jade-jewellery-malaysia__18k-diamond-long-studs.webp",
-  "jewelry-online-malaysia__anya-18k-gold-south-sea-pearl-diamond-earrings.webp",
-  "men-gold-ring-malaysia__18k-fj-diamond-hoop.webp",
-  "necklace-malaysia__18k-gold-fresh-water-pearl-dangling-earrings.webp",
-  "pearl-necklace-malaysia__18k-diamond-hoop-earrings.webp",
-  "pendant-malaysia__18k-gold-south-sea-mabe-pearl-diamond-royal-earrings.webp",
-  "silver-jewellery-malaysia__18k-gold-diamond-studs.webp",
+  "FJ Insta- Floral Earrings.webp",
+  "FJ Insta- Golden South Sea Earrings.webp",
+  "FJ Insta-Akoya Earrings.webp",
+  "FJ Insta-ANYA Earrings-2.webp",
+  "FJ Insta-ANYA Earrings-3.webp",
+  "FJ Insta-Dangling Pearl Earrings-3.webp",
+  "FJ Insta-Dangling Pearl Earrings-4.webp",
+  "FJ Insta-Dangling Pearl Earrings.webp",
+  "FJ Insta-Double sided earrings.webp",
+  "FJ Insta-FJ Diamond Hoop.webp",
+  "FJ Insta-Jade Diamond earrings.webp",
+  "FJ Insta-Mabe Earrings 2.webp",
+  "FJ Insta-Mabe Earrings.webp",
+  "FJ Insta-Red Ruby Earring 2.webp",
+  "FJ Insta-Red Ruby Earring.webp",
+  "FJ Insta-Rose Diamond Dangling Earrings.webp",
+  "FJ Insta-Royal Mabe Earrings-B.webp",
+  "FJ Insta-Scapolite earrings.webp",
+  "FJ Insta-Spinel Studs.webp",
+  "FJ Insta-Tahitian earrings.webp",
 ];
 
 function titleFromFilename(filename) {
-  const base = filename.replace(/\.webp$/i, "");
+  const base = filename.replace(/\.(webp|jpg|jpeg|png)$/i, "");
   const productPart = base.includes("__") ? base.split("__").pop() : base;
   return productPart
     .replace(/[-_]+/g, " ")
@@ -42,16 +62,38 @@ const galleryItems = earringFiles.map((file) => ({
 
 export default function EarringsPage() {
   return (
-    <CreationsPage
-      title="Earrings"
-      activeHref="/earrings"
-      breadcrumb={[
-        { label: "Home", href: "/" },
-        { label: "Our Creations" },
-        { label: "Earrings" },
-      ]}
-      description="From whisper-soft studs to sweeping chandeliers, every Felinda earring is sculpted to catch the light at every turn — radiant pink gemstones, hand-set in our signature rose gold."
-      galleryItems={galleryItems}
-    />
+    <>
+      <JsonLd data={earringsFaqJsonLd()} />
+      <CreationsPage
+        title="Earrings"
+        introHeadlineSerif={earringsIntroHeadline.serif}
+        introHeadlineScript={earringsIntroHeadline.script}
+        activeHref="/earrings"
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Our Creations" },
+          { label: "Earrings" },
+        ]}
+        description=""
+        
+        introParagraphs={earringsIntroParagraphs}
+        galleryItems={galleryItems}
+        middleContent={<EarringsStorySections />}
+        showDualIntroCtas
+        introDualLeadWithJourney
+        introPrimaryCtaLabel={earringsIntroCtaConsultation}
+        introSecondaryCtaLabel={earringsIntroCtaJourney}
+        introOutlineCtaHref={earringsIntroJourneyHref}
+        introSolidCtaHref={earringsIntroConsultationHref}
+        ctaTitle={earringsJourneyCta.title}
+        ctaBody={earringsJourneyCta.body}
+        ctaStripButtonLabel={earringsJourneyCta.stripButtonLabel}
+        ctaStripSecondaryLabel={earringsJourneyCta.stripSecondaryLabel}
+        ctaStripPrimaryHref={earringsIntroConsultationHref}
+        ctaStripSecondaryHref={earringsIntroJourneyHref}
+        ctaStripPreserveCase
+        benefitsFooterHidden
+      />
+    </>
   );
 }
