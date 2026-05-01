@@ -73,7 +73,7 @@ function isSameDay(a, b) {
 
 function isBookableDay(date) {
   const t = startOfDay(date);
-  const today = startOfDay(new Date());
+  const today = startOfDay(todayInAtelierTimeZone());
   if (t < today) return false;
   return BOOKABLE_WEEKDAYS.has(t.getDay());
 }
@@ -86,7 +86,7 @@ function firstBookableOnOrAfter(fromDate) {
     if (isBookableDay(d)) return new Date(d);
     d.setDate(d.getDate() + 1);
   }
-  return startOfDay(new Date());
+  return startOfDay(todayInAtelierTimeZone());
 }
 
 function monthMatrix(year, month) {
@@ -105,8 +105,25 @@ function monthMatrix(year, month) {
 const monthShort = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const dayShort = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+const ATELIER_TIME_ZONE = "Asia/Kuala_Lumpur";
+
+function todayInAtelierTimeZone() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: ATELIER_TIME_ZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+
+  const year = Number(parts.find((part) => part.type === "year")?.value);
+  const month = Number(parts.find((part) => part.type === "month")?.value);
+  const day = Number(parts.find((part) => part.type === "day")?.value);
+
+  return new Date(year, month - 1, day);
+}
+
 function initialBookableDate() {
-  const tomorrow = new Date();
+  const tomorrow = todayInAtelierTimeZone();
   tomorrow.setDate(tomorrow.getDate() + 1);
   return firstBookableOnOrAfter(tomorrow);
 }
@@ -246,8 +263,10 @@ export default function ContactForm() {
                 type="button"
                 onClick={() => shiftCalendarMonth(-1)}
                 disabled={
-                  calendarMonth.getFullYear() === new Date().getFullYear() &&
-                  calendarMonth.getMonth() === new Date().getMonth()
+                  calendarMonth.getFullYear() ===
+                    todayInAtelierTimeZone().getFullYear() &&
+                  calendarMonth.getMonth() ===
+                    todayInAtelierTimeZone().getMonth()
                 }
                 className="felinda-sans rounded-full border border-line px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-ink transition hover:bg-shell disabled:cursor-not-allowed disabled:opacity-40"
               >

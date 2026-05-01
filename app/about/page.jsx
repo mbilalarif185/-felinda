@@ -427,7 +427,7 @@ export default function AboutPage() {
                   <div className="overflow-hidden rounded-[2rem] border border-line bg-white p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
                     <div className="relative h-[500px] overflow-hidden rounded-[1.5rem] lg:h-[640px]">
                       <Image
-                        src="/images/custom-ring-malaysia.webp"
+                        src="/images/felinda-jewelry/Custom-Rings/Wedding Brands/custom-ring-malaysia__felinda-17.webp"
                         alt="Founder portrait — Felinda"
                         fill
                         sizes="(min-width: 1024px) 40vw, 90vw"
