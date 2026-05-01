@@ -234,14 +234,14 @@ export default function MobileMenu({
           </button>
         </div>
 
-        <div className="flex shrink-0 flex-col items-center px-6 pb-6">
+        <div className="flex shrink-0 flex-col items-center px-4 pb-5 sm:px-6 sm:pb-6">
           <Logo />
         </div>
 
         {/* Nav links — scrollable, accordions for groups */}
         <nav
           aria-label="Mobile primary"
-          className="flex-1 overflow-y-auto overscroll-contain px-6 pb-4"
+          className="flex-1 overflow-y-auto overscroll-contain px-4 pb-4 sm:px-6"
         >
           <ul className="mx-auto flex w-full max-w-sm flex-col items-stretch">
             {rows.map((row, i) => {
@@ -259,7 +259,7 @@ export default function MobileMenu({
                         color: isActive ? COLORS.rose : COLORS.ink,
                         transitionDelay: stagger,
                       }}
-                      className={`felinda-serif group flex min-h-[52px] items-center justify-center px-4 py-2.5 text-2xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:text-3xl ${
+                      className={`felinda-serif group flex min-h-[50px] items-center justify-center px-4 py-2.5 text-xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:min-h-[52px] sm:text-2xl md:text-3xl ${
                         open
                           ? "translate-y-0 opacity-100"
                           : "translate-y-4 opacity-0"
@@ -303,7 +303,7 @@ export default function MobileMenu({
                       color: containsActive ? COLORS.rose : COLORS.ink,
                       transitionDelay: stagger,
                     }}
-                    className={`felinda-serif group flex min-h-[52px] w-full items-center justify-center gap-3 px-4 py-2.5 text-2xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:text-3xl ${
+                    className={`felinda-serif group flex min-h-[50px] w-full items-center justify-center gap-3 px-4 py-2.5 text-xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:min-h-[52px] sm:text-2xl md:text-3xl ${
                       open
                         ? "translate-y-0 opacity-100"
                         : "translate-y-4 opacity-0"
@@ -373,7 +373,7 @@ export default function MobileMenu({
         </nav>
 
         {/* CTA + social icons */}
-        <div className="shrink-0 border-t px-6 pb-8 pt-5 sm:pb-10"
+        <div className="shrink-0 border-t px-4 pb-8 pt-5 sm:px-6 sm:pb-10"
              style={{ borderColor: COLORS.line }}>
           <div
             className={`flex flex-col items-center gap-5 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
@@ -389,7 +389,7 @@ export default function MobileMenu({
               href={ctaHref}
               onClick={close}
               style={{ backgroundColor: COLORS.rose, color: COLORS.white }}
-              className="felinda-sans inline-flex w-full max-w-xs items-center justify-center gap-3 rounded-full px-8 py-3.5 text-[12px] font-medium uppercase tracking-[0.28em] shadow-[0_10px_30px_rgba(216,162,154,0.35)] transition hover:opacity-90 focus:opacity-90"
+              className="felinda-sans inline-flex w-full max-w-xs items-center justify-center gap-3 rounded-full px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.16em] shadow-[0_10px_30px_rgba(216,162,154,0.35)] transition hover:opacity-90 focus:opacity-90 sm:text-[12px] sm:tracking-[0.28em]"
             >
               {ctaLabel}
               <span aria-hidden>→</span>

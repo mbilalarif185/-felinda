@@ -183,7 +183,7 @@ const signatureMoments = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-cream text-ink">
+    <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
       <Header activeHref="/about" />
 
       <main>
@@ -193,9 +193,9 @@ export default function AboutPage() {
         />
 
         {/* ════════ INTRO LEAD — cream, transitions out of the hero ════════ */}
-        <section className="bg-[#f6f0ec] pb-16 pt-2 lg:pb-20">
-          <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
-            <p className="felinda-serif text-xl leading-[1.7] text-[#5b4d44] lg:text-2xl lg:leading-[1.7]">
+        <section className="bg-[#f6f0ec] pb-12 pt-2 sm:pb-16 lg:pb-20">
+          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-10">
+            <p className="felinda-serif text-[18px] leading-[1.7] text-[#5b4d44] sm:text-xl lg:text-2xl lg:leading-[1.7]">
               Felinda is a founder led private atelier a place where fine jewelry is created without
                haste, without compromise, and without ever losing sight of the person it is made for.
             </p>
@@ -203,22 +203,22 @@ export default function AboutPage() {
         </section>
 
         {/* ════════ VALUE STRIP — soft cream, rose accents (matches the banner) ════════ */}
-        <section className="bg-[#f6f0ec] pb-24 lg:pb-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+        <section className="bg-[#f6f0ec] pb-12 sm:pb-24 lg:pb-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+            <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-3 lg:gap-8">
               {valueStrip.map((item, i) => (
                 <div
                   key={item.title}
-                  className="flex flex-col items-center rounded-[1.75rem] border border-[#e7dbd5] bg-[#fbf7f4] px-8 py-12 text-center shadow-[0_8px_28px_rgba(120,90,80,0.05)] lg:px-10 lg:py-16"
+                  className="min-w-0 flex flex-col items-center rounded-[1.5rem] border border-[#e7dbd5] bg-[#fbf7f4] px-5 py-7 text-center shadow-[0_8px_28px_rgba(120,90,80,0.05)] sm:rounded-[1.75rem] sm:px-8 sm:py-12 lg:px-10 lg:py-16"
                 >
-                  <div className="felinda-sans text-[11px] uppercase tracking-[0.32em] text-[#cf938b]">
+                  <div className="felinda-sans text-[11px] uppercase tracking-[0.22em] text-[#cf938b] sm:tracking-[0.32em]">
                     No. 0{i + 1}
                   </div>
                   <Mark className="mt-4 h-4 w-12 text-[#cf938b]/80" />
-                  <h3 className="felinda-serif mt-5 text-3xl leading-snug text-[#3a2f28]">
+                  <h3 className="felinda-serif mt-4 break-words text-[30px] leading-tight text-[#3a2f28] sm:mt-5 sm:text-3xl sm:leading-snug">
                     {item.title}
                   </h3>
-                  <p className="felinda-sans mt-4 max-w-xs text-[15px] leading-7 text-[#7b6b62]">
+                  <p className="felinda-sans mt-3 w-full max-w-none break-words text-[14px] leading-7 text-[#7b6b62] sm:mt-4 sm:max-w-xs sm:text-[15px]">
                     {item.text}
                   </p>
                 </div>
@@ -228,20 +228,20 @@ export default function AboutPage() {
         </section>
 
         {/* ════════ THE FOUR PILLARS — LIGHT, FORMAL ════════ */}
-        <section id="story" className="bg-cream py-24 lg:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <section id="story" className="bg-cream py-16 sm:py-24 lg:py-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="text-center">
               <Mark className="mx-auto h-4 w-12 text-clay" />
-              <div className="felinda-sans mt-5 text-xs uppercase tracking-[0.32em] text-clay">
+              <div className="felinda-sans mt-5 text-xs uppercase tracking-[0.22em] text-clay sm:tracking-[0.32em]">
                 The Four Pillars
               </div>
-              <h2 className="felinda-serif mt-4 text-4xl leading-tight lg:text-6xl">
+              <h2 className="felinda-serif mt-4 text-[32px] leading-tight sm:text-4xl lg:text-6xl">
                 The Beliefs that Shape Every Piece.
               </h2>
               <Flourish className="mx-auto mt-8 h-3 w-48 text-clay/70 lg:w-60" />
             </div>
 
-            <div className="mt-20 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+            <div className="mt-12 grid grid-cols-1 gap-10 sm:mt-20 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4 lg:gap-10">
               {craftPillars.map(({ Icon, title, text }) => (
                 <div key={title} className="text-center">
                   <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-line bg-white text-clay shadow-[0_8px_25px_rgba(72,49,41,0.05)]">
@@ -260,13 +260,13 @@ export default function AboutPage() {
         </section>
 
         {/* ════════ EDITORIAL STORY — IMAGE + TEXT, ASYMMETRIC ════════ */}
-        <section className="relative overflow-hidden bg-shell py-24 lg:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
-            <div className="grid grid-cols-12 gap-10 lg:gap-16">
-              <div className="col-span-12 lg:col-span-5">
+        <section className="relative overflow-x-hidden bg-shell py-16 sm:py-24 lg:py-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+            <div className="flex flex-col gap-10 lg:grid lg:grid-cols-12 lg:gap-16">
+              <div className="w-full lg:col-span-5">
                 <div className="relative">
                   <div className="overflow-hidden rounded-[2rem] border border-line bg-white p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
-                    <div className="relative h-[500px] overflow-hidden rounded-[1.5rem] lg:h-[640px]">
+                    <div className="relative h-[360px] overflow-hidden rounded-[1.5rem] sm:h-[500px] lg:h-[640px]">
                       <Image
                         src="/images/malaysia.webp"
                         alt="Felinda atelier studio"
@@ -277,41 +277,41 @@ export default function AboutPage() {
                     </div>
                   </div>
                   {/* floating caption card */}
-                  <div className="absolute -bottom-5 -right-5 max-w-[220px] rounded-[1.25rem] border border-line bg-cream p-5 shadow-[0_14px_35px_rgba(72,49,41,0.1)] lg:-right-8">
-                    <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
+                  <div className="absolute bottom-3 right-3 max-w-[180px] rounded-[1.25rem] border border-line bg-cream p-4 shadow-[0_14px_35px_rgba(72,49,41,0.1)] sm:max-w-[220px] sm:p-5 lg:-right-8 lg:-bottom-5">
+                    <div className="felinda-sans text-[10px] uppercase tracking-[0.18em] text-clay sm:text-xs sm:tracking-[0.22em]">
                       Plate I
                     </div>
-                    <div className="felinda-serif mt-2 text-xl leading-snug text-ink">
+                    <div className="felinda-serif mt-2 text-lg leading-snug text-ink sm:text-xl">
                       The working studio
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="col-span-12 lg:col-span-7">
+              <div className="mx-auto w-full min-w-0 max-w-[760px] lg:col-span-7 lg:max-w-none">
                 <Mark className="h-4 w-12 text-clay" />
-                <div className="felinda-sans mt-5 text-xs uppercase tracking-[0.32em] text-clay">
+                <div className="felinda-sans mt-5 text-xs uppercase tracking-[0.22em] text-clay sm:tracking-[0.32em]">
                   Our Story
                 </div>
-                <h2 className="felinda-serif mt-4 text-4xl leading-tight lg:text-6xl">
+                <h2 className="felinda-serif mt-3 text-[30px] leading-[1.15] sm:mt-4 sm:text-4xl sm:leading-tight lg:text-6xl">
                     Not a brand  
                   <br />
                   A <span className="italic text-rose">belief</span> in doing things properly.
                 </h2>
 
-                <div className="mt-10 space-y-6">
+                <div className="mt-7 space-y-4 sm:mt-10 sm:space-y-6">
                   {signatureMoments.map((m) => (
                     <article
                       key={m.eyebrow}
-                      className="rounded-[1.5rem] border border-line bg-white p-7 shadow-[0_10px_30px_rgba(72,49,41,0.04)]"
+                      className="w-full max-w-full min-w-0 overflow-hidden rounded-[1.5rem] border border-line bg-white p-4 shadow-[0_10px_30px_rgba(72,49,41,0.04)] sm:p-7"
                     >
-                      <div className="felinda-sans text-xs uppercase tracking-[0.28em] text-rose">
+                      <div className="felinda-sans text-[10px] uppercase tracking-[0.16em] text-rose sm:text-xs sm:tracking-[0.28em]">
                         {m.eyebrow}
                       </div>
-                      <h3 className="felinda-serif mt-3 text-2xl leading-snug text-ink lg:text-3xl">
+                      <h3 className="felinda-serif mt-2 min-w-0 break-words text-[16px] leading-snug text-ink sm:mt-3 sm:text-2xl lg:text-3xl">
                         {m.title}
                       </h3>
-                      <p className="felinda-sans mt-3 text-[15px] leading-7 text-muted">
+                      <p className="felinda-sans mt-2 min-w-0 whitespace-normal break-words text-[14px] leading-7 text-muted [overflow-wrap:anywhere] sm:mt-3 sm:text-[15px]">
                         {m.text}
                       </p>
                     </article>
@@ -323,7 +323,7 @@ export default function AboutPage() {
         </section>
 
         {/* ════════ DARK FEATURE CARDS ════════ */}
-        <section className="relative overflow-hidden bg-ink py-24 text-cream lg:py-32">
+        <section className="relative overflow-hidden bg-ink py-16 text-cream sm:py-24 lg:py-32">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.08]"
             style={{
@@ -332,13 +332,13 @@ export default function AboutPage() {
             }}
           />
 
-          <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="text-center">
               <Mark className="mx-auto h-4 w-12 text-rose" />
-              <div className="felinda-sans mt-5 text-xs uppercase tracking-[0.32em] text-rose">
+              <div className="felinda-sans mt-5 text-xs uppercase tracking-[0.22em] text-rose sm:tracking-[0.32em]">
                 The Felinda Promise
               </div>
-              <h2 className="felinda-serif mt-4 text-4xl leading-tight text-cream lg:text-6xl">
+              <h2 className="felinda-serif mt-4 text-[32px] leading-tight text-cream sm:text-4xl lg:text-6xl">
                 Three Things we will never compromise
               </h2>
               <Flourish className="mx-auto mt-8 h-3 w-48 text-rose/80 lg:w-60" />
@@ -361,16 +361,16 @@ export default function AboutPage() {
               ].map((p) => (
                 <article
                   key={p.no}
-                  className="group relative overflow-hidden rounded-[2rem] border border-cream/15 bg-white/[0.04] p-8 backdrop-blur-sm transition hover:border-rose/40 lg:p-10"
+                  className="group relative min-w-0 overflow-hidden rounded-[2rem] border border-cream/15 bg-white/[0.04] p-6 backdrop-blur-sm transition hover:border-rose/40 sm:p-8 lg:p-10"
                 >
-                  <div className="felinda-serif text-7xl leading-none text-rose/30 transition group-hover:text-rose/60">
+                  <div className="felinda-serif text-6xl leading-none text-rose/30 transition group-hover:text-rose/60 sm:text-7xl">
                     {p.no}
                   </div>
-                  <h3 className="felinda-serif mt-4 text-3xl leading-snug text-cream">
+                  <h3 className="felinda-serif mt-4 min-w-0 break-words text-3xl leading-snug text-cream">
                     {p.title}
                   </h3>
                   <Mark className="mt-4 h-3 w-10 text-rose/80" />
-                  <p className="felinda-sans mt-5 text-[15px] leading-7 text-cream/70">
+                  <p className="felinda-sans mt-5 min-w-0 break-words text-[15px] leading-7 text-cream/70 [overflow-wrap:anywhere]">
                     {p.text}
                   </p>
                 </article>
@@ -380,14 +380,14 @@ export default function AboutPage() {
         </section>
 
         {/* ════════ FOUNDER PORTRAIT — INTIMATE, LIGHT ════════ */}
-        <section className="bg-cream py-24 lg:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <section className="bg-cream py-16 sm:py-24 lg:py-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="grid grid-cols-12 gap-10 lg:gap-16">
               <div className="col-span-12 lg:col-span-7">
-                <div className="felinda-sans text-xs uppercase tracking-[0.32em] text-clay">
+                <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay sm:tracking-[0.32em]">
                   The Hand Behind the Work
                 </div>
-                <h2 className="felinda-serif mt-4 text-4xl leading-tight lg:text-6xl">
+                <h2 className="felinda-serif mt-4 text-[34px] leading-tight sm:text-4xl lg:text-6xl">
                   Founder-led,
                   <br />
                   in every <span className="italic text-rose">Sense of the Word</span>
@@ -395,11 +395,11 @@ export default function AboutPage() {
 
                 <Flourish className="mt-8 h-3 w-48 text-clay/70 lg:w-60" />
 
-                <p className="felinda-serif mt-10 text-2xl leading-relaxed text-ink lg:text-3xl">
+                <p className="felinda-serif mt-8 text-[26px] leading-relaxed text-ink sm:mt-10 sm:text-2xl lg:text-3xl">
                   &ldquo;I am not interested in making beautiful things quickly. I am interested in making the right thing once, completely, for the person who will carry it for the rest of their life..&rdquo;
                 </p>
 
-                <p className="felinda-sans mt-8 max-w-xl text-lg leading-8 text-muted">
+                <p className="felinda-sans mt-8 max-w-xl text-[17px] leading-8 text-muted sm:text-lg">
                   The founder of Felinda came to jewelry through an obsession not with adornment, 
                   but with precision. With the question of how much intention a small object can 
                   carry. With the discovery that a ring or a pendant, made properly, can hold a
@@ -425,7 +425,7 @@ export default function AboutPage() {
               <div className="col-span-12 lg:col-span-5">
                 <div className="relative">
                   <div className="overflow-hidden rounded-[2rem] border border-line bg-white p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
-                    <div className="relative h-[500px] overflow-hidden rounded-[1.5rem] lg:h-[640px]">
+                    <div className="relative h-[360px] overflow-hidden rounded-[1.5rem] sm:h-[500px] lg:h-[640px]">
                       <Image
                         src="/images/felinda-jewelry/Custom-Rings/Wedding Brands/custom-ring-malaysia__felinda-17.webp"
                         alt="Founder portrait — Felinda"
@@ -456,34 +456,34 @@ export default function AboutPage() {
         <section className="relative overflow-hidden border-y border-line bg-shell">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-roseSoft/25 blur-3xl" />
 
-          <div className="relative mx-auto max-w-5xl px-6 py-28 text-center lg:px-10 lg:py-36">
+          <div className="relative mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-28 lg:px-10 lg:py-36">
             <Crest className="mx-auto h-14 w-14 text-rose lg:h-16 lg:w-16" />
             <Mark className="mx-auto mt-6 h-4 w-12 text-clay" />
-            <p className="felinda-serif mt-8 text-3xl leading-[1.2] text-ink lg:text-6xl">
+            <p className="felinda-serif mt-8 text-[33px] leading-[1.2] text-ink sm:text-3xl lg:text-6xl">
               A jewelry house should feel less like a catalog
               <br />
               and more like a{" "}
               <span className="italic text-rose">private letter.</span>
             </p>
             <Flourish className="mx-auto mt-10 h-3 w-48 text-clay/70 lg:w-60" />
-            <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.32em] text-clay">
+            <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.22em] text-clay sm:tracking-[0.32em]">
               The Felinda Approach
             </div>
           </div>
         </section>
 
         {/* ════════ CLOSING CTA ════════ */}
-        <section className="bg-ink py-24 text-cream lg:py-28">
-          <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
-            <div className="felinda-sans text-xs uppercase tracking-[0.32em] text-rose">
+        <section className="bg-ink py-16 text-cream sm:py-24 lg:py-28">
+          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-10">
+            <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-rose sm:tracking-[0.32em]">
               Begin
             </div>
-            <h2 className="felinda-serif mt-4 text-4xl leading-tight text-cream lg:text-6xl">
+            <h2 className="felinda-serif mt-4 text-[32px] leading-tight text-cream sm:text-4xl lg:text-6xl">
               A piece of your own,
               <br />
               in your <span className="italic text-roseSoft">own time.</span>
             </h2>
-            <p className="felinda-sans mx-auto mt-6 max-w-xl text-lg leading-8 text-cream/70">
+            <p className="felinda-sans mx-auto mt-6 max-w-xl text-[17px] leading-8 text-cream/70 sm:text-lg">
               Reach the atelier when you&rsquo;re ready. The first
               conversation is the only step you need to take today.
             </p>
@@ -504,7 +504,7 @@ export default function AboutPage() {
             </div>
 
             <Flourish className="mx-auto mt-14 h-3 w-48 text-rose/60 lg:w-60" />
-            <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.32em] text-cream/50">
+            <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.2em] text-cream/50 sm:tracking-[0.32em]">
               Felinda Atelier · Petaling Jaya · MMXXVI
             </div>
           </div>

@@ -98,20 +98,20 @@ export default function PageHero({
   breadcrumb = [],
   extendedBottom = false,
 }) {
-  const bottomPad = extendedBottom ? "pb-20 md:pb-28" : "pb-6";
+  const bottomPad = extendedBottom ? "pb-16 sm:pb-20 md:pb-28" : "pb-6";
 
   return (
-    <section className={`relative overflow-hidden bg-[#f6f0ec] px-6 pt-12 ${bottomPad}`}>
-      <JewelCorner className="left-0 top-0 h-[310px] w-[310px]" />
-      <JewelCorner className="right-0 top-0 h-[310px] w-[310px] scale-x-[-1]" />
+    <section className={`relative overflow-hidden bg-[#f6f0ec] px-4 pt-10 sm:px-6 sm:pt-12 ${bottomPad}`}>
+      <JewelCorner className="left-0 top-0 h-[230px] w-[230px] sm:h-[310px] sm:w-[310px]" />
+      <JewelCorner className="right-0 top-0 h-[230px] w-[230px] scale-x-[-1] sm:h-[310px] sm:w-[310px]" />
 
       <div className="relative z-10 mx-auto flex max-w-[980px] flex-col items-center text-center">
-        <h1 className="font-serif text-[40px] font-light leading-none tracking-[-0.02em] text-[#4e4039] md:text-[66px]">
+        <h1 className="font-serif text-[32px] font-light leading-none tracking-[-0.02em] text-[#4e4039] sm:text-[40px] md:text-[66px]">
           {title}
         </h1>
 
         {subtitle ? (
-          <p className="mt-5 max-w-[640px] font-serif text-[18px] font-light leading-snug tracking-[0.01em] text-[#78675f] md:text-[22px]">
+          <p className="mt-4 max-w-[640px] font-serif text-[16px] font-light leading-snug tracking-[0.01em] text-[#78675f] sm:mt-5 sm:text-[18px] md:text-[22px]">
             {subtitle}
           </p>
         ) : null}
@@ -119,7 +119,7 @@ export default function PageHero({
         {breadcrumb.length > 0 && (
           <nav
             aria-label="Breadcrumb"
-            className="mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[15px] leading-none text-[#8e7a72] md:text-[17px]"
+            className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-[13px] leading-none text-[#8e7a72] sm:mt-7 sm:gap-x-3 sm:text-[15px] md:text-[17px]"
           >
             {breadcrumb.map((item, i) => {
               const isLast = i === breadcrumb.length - 1;

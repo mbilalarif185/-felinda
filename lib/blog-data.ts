@@ -39,7 +39,7 @@ excerpt: How proportion, patina, and patience shape a piece that feels unmistaka
 authorName: Felinda Atelier
 authorRole: Design studio
 publishedAt: "2025-11-12"
-featuredImage: /images/felinda-jewelry/EarRings/Earrings-scaled-e1654064933410.webp
+featuredImage: /images/felinda-jewelry/EarRings/FJ Insta-Red Ruby Earring.webp
 readingMinutes: 7
 tags:
   - bespoke
@@ -69,7 +69,7 @@ excerpt: From lustre to surface and silhouette, a practical guide to selecting p
 authorName: Felinda Atelier
 authorRole: Design studio
 publishedAt: "2025-09-03"
-featuredImage: /images/felinda-jewelry/Pearl-Series/Pearls-in-malaysia.webp
+featuredImage: /images/felinda-jewelry/Pearl-Series/FJ Insta-Akoya Necklace.webp
 readingMinutes: 6
 tags:
   - pearls
@@ -102,7 +102,7 @@ excerpt: A transparent look at milestones, timelines, and the decisions that kee
 authorName: Felinda Atelier
 authorRole: Design studio
 publishedAt: "2025-06-21"
-featuredImage: /images/felinda-jewelry/Custom-Rings/Engagement Rings/jewelry-online-malaysia__18k-oval-engagement-ring.webp
+featuredImage: /images/felinda-jewelry/Custom-Rings/Engagement Rings/FJ Insta-Engagement ring 63.webp
 readingMinutes: 8
 tags:
   - rings
@@ -134,7 +134,7 @@ excerpt: Spacing, clasp strategy, and weight pairing—small choices that keep d
 authorName: Felinda Atelier
 authorRole: Design studio
 publishedAt: "2025-04-08"
-featuredImage: /images/felinda-jewelry/Pendants-Necklaces/Pendant-and-Necklaces-in-KL.webp
+featuredImage: /images/felinda-jewelry/Pendants-Necklaces/FJ Insta-Sun and Moon Pendant.webp
 readingMinutes: 5
 tags:
   - styling

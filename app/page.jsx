@@ -31,12 +31,17 @@ const HomeTestimonialSlider = dynamic(
   }
 );
 
-export const metadata = buildPageMetadata({
-  absoluteTitle: homeMeta.absoluteTitle,
-  description: homeMeta.description,
-  path: "/",
-  ogImage: heroFeatured.src,
-});
+export const metadata = {
+  ...buildPageMetadata({
+    absoluteTitle: homeMeta.absoluteTitle,
+    description: homeMeta.description,
+    path: "/",
+    ogImage: heroFeatured.src,
+  }),
+  verification: {
+    google: "SaMCE1pImIZgYHQW_3A6jOkcJOFur-oCy_G7yI8CGfU",
+  },
+};
 
 export const revalidate = 3600;
 

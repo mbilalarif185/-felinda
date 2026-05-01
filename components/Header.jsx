@@ -12,7 +12,7 @@ export default function Header({ activeHref = "/", overlay = false }) {
 
   return (
     <header className={`${positioning} ${tone} transition-colors duration-500`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5 lg:px-10">
         <Logo overlay={overlay} />
         <Nav activeHref={activeHref} overlay={overlay} />
         <MobileMenu activeHref={activeHref} overlay={overlay} />

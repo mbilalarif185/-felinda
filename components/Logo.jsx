@@ -16,7 +16,7 @@ export default function Logo({ overlay = false }) {
         width={320}
         height={100}
         priority
-        className={`h-14 w-auto max-h-16 object-contain object-left md:h-16 md:max-h-20 ${
+        className={`h-12 w-auto max-h-14 object-contain object-left sm:h-14 sm:max-h-16 md:h-16 md:max-h-20 ${
           overlay ? "brightness-0 invert" : ""
         }`}
       />
