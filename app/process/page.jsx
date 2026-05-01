@@ -42,7 +42,7 @@ const steps = [
     icon: PencilRuler,
     week: "Week 2",
     title: "Concept & Sketch",
-    body: "Designers translate the brief into hand-drawn concepts and proportion studies. Together we choose a direction, refine silhouette and detail, and lock the creative line before stones and metal are committed.",
+    body: "Designers translate the brief into hand drawn concepts and proportion studies. Together we choose a direction, refine silhouette and detail, and lock the creative line before stones and metal are committed.",
     deliverables: [
       "Hand-rendered concept routes",
       "Chosen direction refined on paper",
@@ -105,23 +105,23 @@ const standards = [
     body: "18k rose, yellow and white gold refined from recycled origin, never newly mined.",
   },
   {
-    title: "Hand-set, never mass-produced",
+    title: "Hand set, never mass-produced",
     body: "Every Felinda piece is finished at one bench, by one jeweller, start to finish.",
   },
   {
     title: "Lifetime craftsmanship promise",
-    body: "Re-polishing, re-rhodium and prong-tightening, complimentary, for as long as you wear it.",
+    body: "Repolishing, rerhodium and prong tightening, complimentary, for as long as you wear it.",
   },
 ];
 
 const faqs = [
   {
     q: "How long does a bespoke piece take?",
-    a: "We plan around a six-week arc from consultation to handover for many studio commissions. Complex high-jewellery pieces, multi-stone sourcing, or heirloom reworks can run longer; you receive a written timeline before work begins.",
+    a: "We plan around a six week arc from consultation to handover for many studio commissions. Complex high jewellery pieces, multi stone sourcing, or heirloom reworks can run longer; you receive a written timeline before work begins.",
   },
   {
     q: "Can I bring my own stones or old jewellery?",
-    a: "Yes. Many of our most loved pieces begin as a grandmother's pearls or an inherited diamond. We'll evaluate, re-cut if needed, and design around them.",
+    a: "Many of our most loved pieces begin as a grandmother's pearls or an inherited diamond. We'll evaluate, re cut if needed, and design around them.",
   },
   {
     q: "What's the typical investment?",
@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     q: "Do you ship internationally?",
-    a: "We ship insured, white-glove worldwide. Virtual consultations are available across time zones; in-person fittings are by appointment in Petaling Jaya, Selangor.",
+    a: "We ship insured, white glove worldwide. Virtual consultations are available across time zones; in person fittings are by appointment in Petaling Jaya, Selangor.",
   },
 ];
 
@@ -337,7 +337,7 @@ export default function DesignProcessPage() {
                     Ready for your first conversation?
                   </h3>
                   <p className="mt-1 text-[16px] text-[#807069] md:text-[18px]">
-                    A private 60-minute session in the studio or by video. No
+                    A private 45-minute session in the studio or by video. No
                     obligation to proceed.
                   </p>
                 </div>

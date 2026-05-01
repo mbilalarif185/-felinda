@@ -50,7 +50,7 @@ export default function BanglesAndBraceletsPage() {
         { label: "Our Creations" },
         { label: "Bangles & Bracelets" },
       ]}
-      description="Sculpted cuffs, eternity tennis lines and stackable bands — Felinda bangles and bracelets are built to move with you, balancing weight and warmth on every wrist."
+      description="Sculpted cuffs, eternity tennis lines and stackable bands. Felinda bangles and bracelets are built to move with you, balancing weight and warmth on every wrist."
       galleryItems={galleryItems}
     />
   );

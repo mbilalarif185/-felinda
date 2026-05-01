@@ -42,7 +42,7 @@ export default function BlogPage() {
               Stories from the bench
             </h1>
             <p className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-muted">
-              Craft, care, and the small decisions that make fine jewelry feel personal—written for clients and
+              Craft, care, and the small decisions that make fine jewelry feel personal, written for clients and
               fellow enthusiasts.
             </p>
           </div>

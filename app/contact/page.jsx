@@ -20,7 +20,7 @@ const valueStrip = [
   "By Appointment Only",
   "Founder-Led Conversation",
   "Petaling Jaya · Selangor",
-  "Reply Within 1 — 2 Days",
+  "Reply Within One to Two Days",
 ];
 
 const reachOut = [
@@ -68,15 +68,15 @@ const journey = [
   {
     no: "03",
     title: "Atelier Visit",
-    text: "When ready, you are invited to the atelier — by appointment only.",
+    text: "When ready, you are invited to the atelier by appointment only.",
   },
 ];
 
 const directory = [
   ["Atelier", "Petaling Jaya, Selangor, Malaysia"],
-  ["Open", "Tuesday — Saturday"],
-  ["Hours", "11:00 — 18:00"],
-  ["Reply", "Within 1 — 2 days"],
+  ["Open", "Tuesday to Saturday"],
+  ["Hours", "11:00 to 18:00"],
+  ["Reply", "Within one to two days"],
 ];
 
 export default function ContactPage() {
@@ -84,14 +84,14 @@ export default function ContactPage() {
     <div className="min-h-screen bg-cream text-ink">
       <Header activeHref="/contact" />
 
-      <main>
+      <main className="min-w-0">
         {/* ─── HERO ─── */}
         <section className="relative overflow-hidden">
           <div className="pointer-events-none absolute left-[-120px] top-10 h-72 w-72 rounded-full bg-roseSoft/20 blur-3xl" />
           <div className="pointer-events-none absolute right-0 top-20 h-80 w-80 rounded-full bg-roseSoft/20 blur-3xl" />
 
-          <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
-            <div className="flex flex-col justify-center">
+          <div className="mx-auto grid min-w-0 max-w-7xl gap-14 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-10 lg:py-28">
+            <div className="flex min-w-0 flex-col justify-center">
               <div className="felinda-sans mb-6 text-xs uppercase tracking-[0.28em] text-clay">
                 The Concierge
               </div>
@@ -100,8 +100,8 @@ export default function ContactPage() {
               </h1>
               <p className="felinda-sans mt-6 max-w-xl text-lg leading-8 text-muted">
                 Choose a day on the calendar, a 45-minute window, and a quiet
-                intention. Each visit is arranged personally by the atelier —
-                no rushed conversations. Only the space to begin something
+                intention. Each visit is arranged personally by the atelier.
+                No rushed conversations, only the space to begin something
                 considered.
               </p>
 
@@ -123,26 +123,26 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="relative flex items-center justify-center">
-              <div className="relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/80 bg-white p-4 shadow-[0_20px_70px_rgba(72,49,41,0.08)]">
-                <div className="rounded-[1.5rem] bg-gradient-to-b from-[#F4E9E5] via-[#F8F3F1] to-[#EEE3DE] p-8 lg:p-10">
+            <div className="relative flex w-full min-w-0 flex-col items-stretch lg:block">
+              <div className="relative mx-auto w-full max-w-xl min-w-0 overflow-hidden rounded-[2rem] border border-white/80 bg-white p-3 shadow-[0_20px_70px_rgba(72,49,41,0.08)] sm:p-4">
+                <div className="rounded-[1.5rem] bg-gradient-to-b from-[#F4E9E5] via-[#F8F3F1] to-[#EEE3DE] p-5 sm:p-8 lg:p-10">
                   <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
                     Atelier Directory
                   </div>
-                  <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-7">
+                  <div className="mt-6 grid min-w-0 grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-7">
                     {directory.map(([k, v]) => (
-                      <div key={k}>
+                      <div key={k} className="min-w-0">
                         <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
                           {k}
                         </div>
-                        <div className="felinda-serif mt-2 text-2xl text-ink">
+                        <div className="felinda-serif mt-2 break-words text-xl leading-snug text-ink sm:text-2xl [overflow-wrap:anywhere]">
                           {v}
                         </div>
                       </div>
                     ))}
                   </div>
                   <div className="mt-8 border-t border-line pt-6">
-                    <p className="felinda-sans text-[15px] leading-7 text-muted">
+                    <p className="felinda-sans text-[15px] leading-7 text-muted [overflow-wrap:anywhere]">
                       The full address is shared upon confirmation of your
                       visit, preserving the calm of the space.
                     </p>
@@ -150,11 +150,11 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="absolute -bottom-2 left-2 rounded-[1.5rem] border border-line bg-white/95 p-5 shadow-[0_10px_30px_rgba(72,49,41,0.08)] lg:bottom-6 lg:left-0">
+              <div className="relative z-10 mx-auto mt-5 w-full max-w-xl shrink-0 rounded-[1.5rem] border border-line bg-white/95 p-4 shadow-[0_10px_30px_rgba(72,49,41,0.08)] sm:p-5 lg:absolute lg:bottom-6 lg:left-0 lg:mt-0 lg:w-auto lg:max-w-sm lg:px-5">
                 <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
                   Concierge Live
                 </div>
-                <div className="felinda-serif mt-2 text-2xl text-ink">
+                <div className="felinda-serif mt-2 text-xl text-ink sm:text-2xl">
                   Open by appointment
                 </div>
               </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
 
         {/* ─── VALUE STRIP (matches homepage) ─── */}
         <section className="border-y border-line bg-white/70">
-          <div className="mx-auto grid max-w-7xl gap-6 px-6 py-5 text-center lg:grid-cols-5 lg:px-10">
+          <div className="mx-auto grid min-w-0 max-w-7xl gap-6 px-4 py-5 text-center sm:px-6 lg:grid-cols-5 lg:px-10">
             {valueStrip.map((item) => (
               <div
                 key={item}
@@ -178,7 +178,7 @@ export default function ContactPage() {
 
         {/* ─── BOOKING SECTION ─── */}
         <section id="book" className="bg-shell py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto min-w-0 max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
@@ -199,7 +199,7 @@ export default function ContactPage() {
         </section>
 
         {/* ─── DIRECT REACH (cards, homepage style) ─── */}
-        <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+        <section className="mx-auto min-w-0 max-w-7xl px-4 py-24 sm:px-6 lg:px-10">
           <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
@@ -256,7 +256,7 @@ export default function ContactPage() {
 
         {/* ─── JOURNEY (process-style, homepage rhythm) ─── */}
         <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="mx-auto min-w-0 max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="mx-auto max-w-3xl text-center">
               <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
                 After You Reach Out
@@ -265,7 +265,7 @@ export default function ContactPage() {
                 What happens next
               </h2>
               <p className="felinda-sans mt-5 text-lg leading-8 text-muted">
-                A clear, unhurried path — nothing about the journey is
+                A clear, unhurried path. Nothing about the journey is
                 automated, scripted, or rushed.
               </p>
             </div>
@@ -293,7 +293,7 @@ export default function ContactPage() {
 
         {/* ─── ATELIER NOTE (testimonial-style band, homepage rhythm) ─── */}
         <section className="bg-[#F8F2EE] py-24">
-          <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
+          <div className="mx-auto min-w-0 max-w-5xl px-4 text-center sm:px-6 lg:px-10">
             <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
               From the Atelier
             </div>

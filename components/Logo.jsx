@@ -9,7 +9,7 @@ import { SITE_LOGO_PATH } from "@/lib/constants/site";
  */
 export default function Logo({ overlay = false }) {
   return (
-    <Link href="/" aria-label="Felinda Jewelry — Home" className="flex items-center">
+    <Link href="/" aria-label="Felinda Jewelry home" className="flex items-center">
       <Image
         src={SITE_LOGO_PATH}
         alt="Felinda Jewelry"

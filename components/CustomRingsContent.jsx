@@ -546,7 +546,7 @@ export default function CustomRingsContent() {
           </>
         ) : (
           <div className="mt-12 rounded-[18px] border border-dashed border-[#eee3de] bg-[#fefcfa] py-16 text-center text-[15px] text-[#8a7a71]">
-            No pieces in this category yet — please check back soon.
+            No pieces in this category yet. Please check back soon.
           </div>
         )}
 

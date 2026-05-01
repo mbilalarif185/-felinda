@@ -246,7 +246,7 @@ export default function TermsAndConditionsPage() {
         { label: "Terms & Conditions" },
       ]}
       updatedAt="Updated · April 2026"
-      intro="The terms that govern your relationship with Felinda Jewelry — bespoke commissions, payments, delivery, after-care and the lifetime promise that follows every piece home."
+      intro="The terms that govern your relationship with Felinda Jewelry: bespoke commissions, payments, delivery, after-care and the lifetime promise that follows every piece home."
       sections={sections}
     />
   );

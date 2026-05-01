@@ -35,7 +35,7 @@ const RAW_POSTS: string[] = [
   `---
 slug: the-quiet-language-of-bespoke-jewelry
 title: The quiet language of bespoke jewelry
-excerpt: How proportion, patina, and patience shape a piece that feels unmistakably yours—without shouting for attention.
+excerpt: How proportion, patina, and patience shape a piece that feels unmistakably yours, without shouting for attention.
 authorName: Felinda Atelier
 authorRole: Design studio
 publishedAt: "2025-11-12"
@@ -51,13 +51,13 @@ tags:
 
 Bespoke work begins where catalog design ends: with your story, your skin tone, the way you move, and the occasions you want to mark.
 
-We sketch in pencil before we touch metal. We consider **weight**, **balance**, and how light will catch a facet at dinner—not only under showroom spots.
+We sketch in pencil before we touch metal. We consider **weight**, **balance**, and how light will catch a facet at dinner, not only under showroom spots.
 
 ### Three principles we return to
 
-1. **Restraint** — ornament that earns its place.
-2. **Longevity** — alloys and stones chosen for life, not seasons.
-3. **Fit** — comfort you forget you are wearing.
+1. **Restraint:** ornament that earns its place.
+2. **Longevity:** alloys and stones chosen for life, not seasons.
+3. **Fit:** comfort you forget you are wearing.
 
 > The best compliment is not "Where did you buy that?" but "That is *so* you."
 
@@ -84,7 +84,7 @@ tags:
 ### Surface and shape
 
 - **Surface**: tiny blemishes are natural; clouds that dull the skin are not.
-- **Shape**: baroque can feel modern; rounds read classic. There is no wrong answer—only *your* vocabulary.
+- **Shape**: baroque can feel modern; rounds read classic. There is no wrong answer, only *your* vocabulary.
 
 ### Wear and care
 
@@ -97,7 +97,7 @@ Pearl + diamond + warm gold = evening without trying too hard.
 Explore our [pearl creations](/pearl-creations) for inspiration.`,
   `---
 slug: custom-rings-from-first-sketch-to-final-polish
-title: Custom rings—from first sketch to final polish
+title: Custom rings from first sketch to final polish
 excerpt: A transparent look at milestones, timelines, and the decisions that keep a custom ring both beautiful and wearable.
 authorName: Felinda Atelier
 authorRole: Design studio
@@ -120,7 +120,7 @@ tags:
 
 ### Wearability checks
 
-We validate **stack height**, **palm clearance**, and prong geometry for daily life—not only the reveal moment.
+We validate **stack height**, **palm clearance**, and prong geometry for daily life, not only the reveal moment.
 
 #### Sizing and seasons
 
@@ -130,7 +130,7 @@ See [custom rings](/custom-rings) for starting points and mood boards.`,
   `---
 slug: layering-necklaces-without-the-tangle
 title: Layering necklaces without the tangle
-excerpt: Spacing, clasp strategy, and weight pairing—small choices that keep delicate layers feeling effortless.
+excerpt: "Spacing, clasp strategy, and weight pairing: small choices that keep delicate layers feeling effortless."
 authorName: Felinda Atelier
 authorRole: Design studio
 publishedAt: "2025-04-08"
@@ -148,7 +148,7 @@ Aim for **2–4 cm** between station lengths. If two pendants sit at the same he
 
 ### Weight pairing
 
-Heavier chains anchor lighter ones. Mixing ultra-fine chains of similar weight invites knots—especially in humidity.
+Heavier chains anchor lighter ones. Mixing ultra-fine chains of similar weight invites knots, especially in humidity.
 
 - Use a **detangler** for two-layer days.
 - Alternate textures: one smooth snake, one cable.

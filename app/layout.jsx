@@ -31,7 +31,7 @@ const greatVibes = Great_Vibes({
 export const metadata = {
   ...buildRootMetadata(),
   title: {
-    default: `${SITE_NAME} — Bespoke Fine Jewelry Atelier`,
+    default: `${SITE_NAME} · Bespoke Fine Jewelry Atelier`,
     template: `%s · ${SITE_NAME}`,
   },
   description: DEFAULT_DESCRIPTION,

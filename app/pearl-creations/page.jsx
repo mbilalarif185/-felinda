@@ -65,7 +65,7 @@ export default function PearlCreationsPage() {
         { label: "Our Creations" },
         { label: "Pearl Creations" },
       ]}
-      description="South Sea lustre, the rosy glow of Akoya, the soft baroque shapes of freshwater — every Felinda pearl is hand-selected and reimagined into pieces that feel as quietly modern as they are timeless."
+      description="South Sea lustre, the rosy glow of Akoya, the soft baroque shapes of freshwater: every Felinda pearl is hand-selected and reimagined into pieces that feel as quietly modern as they are timeless."
       galleryItems={galleryItems}
     />
   );

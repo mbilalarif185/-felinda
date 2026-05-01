@@ -45,7 +45,7 @@ export default function RegalRevivalsPage() {
         { label: "Our Creations" },
         { label: "Regal Revivals" },
       ]}
-      description="A private collection of limited heritage designs, museum-grade gemstones and one-of-a-kind couture commissions — Felinda's most personal work, reserved for those who collect quietly and forever."
+      description="A private collection of limited heritage designs, museum-grade gemstones and one-of-a-kind couture commissions. Felinda's most personal work, reserved for those who collect quietly and forever."
       galleryItems={galleryItems}
     />
   );

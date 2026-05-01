@@ -43,7 +43,7 @@ function buildFortyFiveMinuteSlots() {
     for (let m = DAY_START_MIN; m + 45 <= endCap; m += 45) {
       slots.push({
         id: `slot-${m}`,
-        hours: `${formatClock(m)} — ${formatClock(m + 45)}`,
+        hours: `${formatClock(m)} to ${formatClock(m + 45)}`,
       });
     }
   };
@@ -167,11 +167,11 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="grid grid-cols-12 gap-10 lg:gap-14">
+    <div className="grid min-w-0 grid-cols-12 gap-8 sm:gap-10 lg:gap-14">
       {/* ───── LIVE CALLING CARD PREVIEW ───── */}
-      <aside className="col-span-12 lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
-        <div className="overflow-hidden rounded-[2rem] border border-line bg-white p-6 shadow-[0_16px_50px_rgba(72,49,41,0.05)]">
-          <div className="rounded-[1.5rem] bg-gradient-to-b from-[#F4E9E5] via-[#F8F3F1] to-[#EEE3DE] p-8 lg:p-10">
+      <aside className="col-span-12 min-w-0 max-w-full lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
+        <div className="box-border w-full max-w-full overflow-hidden rounded-[2rem] border border-line bg-white p-4 shadow-[0_16px_50px_rgba(72,49,41,0.05)] sm:p-6">
+          <div className="box-border w-full max-w-full rounded-[1.5rem] bg-gradient-to-b from-[#F4E9E5] via-[#F8F3F1] to-[#EEE3DE] p-5 sm:p-8 lg:p-10">
             <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
               Calling Card
             </div>
@@ -180,7 +180,7 @@ export default function ContactForm() {
               <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
                 For
               </div>
-              <div className="felinda-serif mt-2 text-3xl text-ink">
+              <div className="felinda-serif mt-2 max-w-full break-words text-2xl text-ink sm:text-3xl">
                 {name.trim() || "(your name)"}
               </div>
               <div className="felinda-sans mt-2 text-[15px] leading-7 text-muted">
@@ -217,11 +217,11 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="mt-7 rounded-[1.25rem] border border-line bg-white/80 p-5">
+            <div className="mt-7 box-border w-full max-w-full rounded-[1.25rem] border border-line bg-white/80 p-4 sm:p-5">
               <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
                 Personal Note
               </div>
-              <p className="felinda-sans mt-3 min-h-[3.5rem] text-[15px] leading-7 text-muted">
+              <p className="felinda-sans mt-3 min-h-[3.5rem] max-w-full break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere]">
                 {note.trim()
                   ? note.trim()
                   : "Your words will appear here as you write..."}
@@ -243,7 +243,7 @@ export default function ContactForm() {
       {/* ───── BOOKING FORM ───── */}
       <form
         onSubmit={handleSubmit}
-        className="col-span-12 space-y-14 lg:col-span-7"
+        className="col-span-12 min-w-0 max-w-full space-y-14 lg:col-span-7"
       >
         {/* STEP 01 — DAY (calendar: any week / month) */}
         <section>
@@ -253,12 +253,12 @@ export default function ContactForm() {
           <h3 className="felinda-serif text-3xl leading-tight">
             A day at the atelier
           </h3>
-          <p className="felinda-sans mt-3 max-w-xl text-[15px] leading-7 text-muted">
-            Tuesday — Saturday only. Use the arrows to move to another month or week.
+          <p className="felinda-sans mt-3 max-w-full break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere] sm:max-w-xl">
+            Tuesday to Saturday only. Use the arrows to move to another month or week.
           </p>
 
-          <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-line bg-white p-4 sm:p-6">
-            <div className="flex items-center justify-between gap-3">
+          <div className="mt-6 box-border w-full max-w-full overflow-hidden rounded-[1.5rem] border border-line bg-white p-3 sm:p-6">
+            <div className="flex min-w-0 items-center justify-between gap-1.5 sm:gap-3">
               <button
                 type="button"
                 onClick={() => shiftCalendarMonth(-1)}
@@ -268,17 +268,17 @@ export default function ContactForm() {
                   calendarMonth.getMonth() ===
                     todayInAtelierTimeZone().getMonth()
                 }
-                className="felinda-sans rounded-full border border-line px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-ink transition hover:bg-shell disabled:cursor-not-allowed disabled:opacity-40"
+                className="felinda-sans shrink-0 rounded-full border border-line px-2.5 py-2 text-[10px] font-medium uppercase tracking-[0.1em] text-ink transition hover:bg-shell disabled:cursor-not-allowed disabled:opacity-40 sm:px-4 sm:text-xs sm:tracking-[0.14em]"
               >
                 Previous
               </button>
-              <div className="felinda-serif text-center text-xl text-ink sm:text-2xl">
+              <div className="felinda-serif min-w-0 flex-1 px-0.5 text-center text-[15px] leading-tight text-ink sm:flex-none sm:px-2 sm:text-xl md:text-2xl">
                 {monthShort[calendarMonth.getMonth()]} {calendarMonth.getFullYear()}
               </div>
               <button
                 type="button"
                 onClick={() => shiftCalendarMonth(1)}
-                className="felinda-sans rounded-full border border-line px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-ink transition hover:bg-shell"
+                className="felinda-sans shrink-0 rounded-full border border-line px-2.5 py-2 text-[10px] font-medium uppercase tracking-[0.1em] text-ink transition hover:bg-shell sm:px-4 sm:text-xs sm:tracking-[0.14em]"
               >
                 Next
               </button>
@@ -333,9 +333,9 @@ export default function ContactForm() {
           <h3 className="felinda-serif text-3xl leading-tight">
             45-minute windows
           </h3>
-          <p className="felinda-sans mt-3 max-w-xl text-[15px] leading-7 text-muted">
+          <p className="felinda-sans mt-3 max-w-full break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere] sm:max-w-xl">
             Forty-five minute appointments from {formatClock(DAY_START_MIN)} to{" "}
-            {formatClock(DAY_END_MIN)} — at least {MIN_TIME_SLOTS} windows offered
+            {formatClock(DAY_END_MIN)}, with at least {MIN_TIME_SLOTS} windows offered
             each day.
           </p>
 
@@ -450,7 +450,7 @@ export default function ContactForm() {
         {/* SUBMIT */}
         <div className="flex flex-col items-stretch gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="felinda-sans text-xs uppercase tracking-[0.18em] text-[#8B7A73]">
-            Confirmation arrives within 1 — 2 days
+            Confirmation arrives within one to two days
           </div>
           <button
             type="submit"
@@ -474,7 +474,7 @@ export default function ContactForm() {
 
 function Field({ label, value, onChange, placeholder, type = "text", required, className = "" }) {
   return (
-    <label className={"block " + className}>
+    <label className={"block min-w-0 " + className}>
       <span className="felinda-sans mb-2 block text-xs uppercase tracking-[0.22em] text-clay">
         {label}
       </span>

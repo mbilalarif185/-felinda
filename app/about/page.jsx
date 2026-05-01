@@ -183,10 +183,10 @@ const signatureMoments = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-cream text-ink">
+    <div className="min-h-screen bg-cream text-ink">
       <Header activeHref="/about" />
 
-      <main>
+      <main className="min-w-0">
         <PageHero
           title="About Felinda"
           breadcrumb={[{ label: "Home", href: "/" }, { label: "About" }]}
@@ -353,7 +353,7 @@ export default function AboutPage() {
                 {
                   no: "02",
                   title: "Time",
-                  text: "A Felinda piece is finished when it is right — not when a production schedule demands it. If a stone needs to be recut, a proportion reconsidered, or a setting rebuilt, that is what happens. The work is never hurried toward a deadline it has not earned."                },
+                  text: "A Felinda piece is finished when it is right, not when a production schedule demands it. If a stone needs to be recut, a proportion reconsidered, or a setting rebuilt, that is what happens. The work is never hurried toward a deadline it has not earned."                },
                 {
                   no: "03",
                   title: "Integrity of Material",
@@ -381,37 +381,36 @@ export default function AboutPage() {
 
         {/* ════════ FOUNDER PORTRAIT — INTIMATE, LIGHT ════════ */}
         <section className="bg-cream py-16 sm:py-24 lg:py-32">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-            <div className="grid grid-cols-12 gap-10 lg:gap-16">
-              <div className="col-span-12 lg:col-span-7">
+          <div className="mx-auto box-border w-full max-w-7xl px-4 sm:px-6 lg:px-10">
+            {/* Mobile: plain column (no 12-col grid) so text can shrink to viewport; lg: two-column grid */}
+            <div className="flex w-full min-w-0 flex-col gap-10 lg:grid lg:grid-cols-12 lg:gap-16">
+              <div className="w-full min-w-0 max-w-full lg:col-span-7">
                 <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay sm:tracking-[0.32em]">
                   The Hand Behind the Work
                 </div>
-                <h2 className="felinda-serif mt-4 text-[34px] leading-tight sm:text-4xl lg:text-6xl">
+                <h2 className="felinda-serif mt-4 max-w-full break-words text-[32px] leading-[1.15] sm:text-4xl sm:leading-tight lg:text-6xl">
                   Founder-led,
                   <br />
                   in every <span className="italic text-rose">Sense of the Word</span>
                 </h2>
 
-                <Flourish className="mt-8 h-3 w-48 text-clay/70 lg:w-60" />
+                <Flourish className="mt-8 block h-3 w-full max-w-[12rem] text-clay/70 sm:max-w-[15rem]" />
 
-                <p className="felinda-serif mt-8 text-[26px] leading-relaxed text-ink sm:mt-10 sm:text-2xl lg:text-3xl">
-                  &ldquo;I am not interested in making beautiful things quickly. I am interested in making the right thing once, completely, for the person who will carry it for the rest of their life..&rdquo;
+                <p className="felinda-serif mt-8 max-w-full hyphens-auto break-words text-[20px] leading-[1.45] text-ink [overflow-wrap:anywhere] sm:mt-10 sm:text-2xl sm:leading-relaxed lg:text-3xl">
+                  &ldquo;I am not interested in making beautiful things quickly. I am interested in making the right thing once, completely, for the person who will carry it for the rest of their life.&rdquo;
                 </p>
 
-                <p className="felinda-sans mt-8 max-w-xl text-[17px] leading-8 text-muted sm:text-lg">
-                  The founder of Felinda came to jewelry through an obsession not with adornment, 
-                  but with precision. With the question of how much intention a small object can 
-                  carry. With the discovery that a ring or a pendant, made properly, can hold a
-                   specific quality of light, a specific memory, a specific person and keep them 
-                   close in a way that nothing else quite manages.
-
-                  
+                <p className="felinda-sans mt-8 max-w-full hyphens-auto break-words text-[15px] leading-[1.7] text-muted [overflow-wrap:anywhere] sm:max-w-xl sm:text-[17px] sm:leading-8 lg:text-lg">
+                  The founder of Felinda came to jewelry through an obsession not with adornment,
+                  but with precision. With the question of how much intention a small object can carry.
+                  With the discovery that a ring or a pendant, made properly, can hold a specific
+                  quality of light, a specific memory, a specific person and keep them close in a way
+                  that nothing else quite manages.
                 </p>
 
-                <div className="mt-10 flex items-center gap-5 border-t border-line pt-7">
-                  <Crest className="h-12 w-12 text-clay" />
-                  <div>
+                <div className="mt-10 flex min-w-0 items-center gap-5 border-t border-line pt-7">
+                  <Crest className="h-12 w-12 shrink-0 text-clay" />
+                  <div className="min-w-0">
                     <div className="felinda-serif text-2xl italic text-ink">
                       Felinda
                     </div>
@@ -422,13 +421,13 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="col-span-12 lg:col-span-5">
+              <div className="col-span-12 min-w-0 max-w-full lg:col-span-5">
                 <div className="relative">
                   <div className="overflow-hidden rounded-[2rem] border border-line bg-white p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
                     <div className="relative h-[360px] overflow-hidden rounded-[1.5rem] sm:h-[500px] lg:h-[640px]">
                       <Image
                         src="/images/felinda-jewelry/Custom-Rings/Wedding Brands/custom-ring-malaysia__felinda-17.webp"
-                        alt="Founder portrait — Felinda"
+                        alt="Founder portrait, Felinda"
                         fill
                         sizes="(min-width: 1024px) 40vw, 90vw"
                         className="object-cover"

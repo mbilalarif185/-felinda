@@ -79,13 +79,13 @@ const videoTestimonials = [
 const writtenTestimonials = [
   {
     quote:
-      "Felinda took a single sketch on a napkin and turned it into the most personal piece I own. Every detail — the rose-gold weight, the way the centre stone catches afternoon light — feels like it was always meant for me.",
+      "Felinda took a single sketch on a napkin and turned it into the most personal piece I own. Every detail, from the rose-gold weight to the way the centre stone catches afternoon light, feels like it was always meant for me.",
     name: "Adriana K.",
     role: "Bespoke pendant client",
   },
   {
     quote:
-      "I came in with my grandmother's old pearls in a tissue and left with a heirloom my daughter will one day fight her sisters over. The team treated the stones — and the story — with so much care.",
+      "I came in with my grandmother's old pearls in a tissue and left with a heirloom my daughter will one day fight her sisters over. The team treated the stones and the story with so much care.",
     name: "Datin Suraya",
     role: "Pearl restoration",
   },
@@ -134,7 +134,7 @@ export default function TestimonialsPage() {
 
               <p className="mx-auto mt-7 max-w-[760px] font-serif text-[18px] leading-[1.8] text-[#78675f] md:text-[20px]">
                 Every Felinda piece begins with a conversation and ends with a
-                story. These are a few of the people who carry ours — in their
+                story. These are a few of the people who carry ours in their
                 own words, and on film.
               </p>
 
@@ -152,7 +152,7 @@ export default function TestimonialsPage() {
             <div className="mt-12">
               <div className="mb-6 flex items-end justify-between gap-4">
                 <h3 className="font-serif text-[26px] font-light text-[#4f413a] md:text-[34px]">
-                  In their own words — on film.
+                  In their own words, on film.
                 </h3>
                 <span className="hidden text-[13px] uppercase tracking-[0.18em] text-[#a89a92] md:inline">
                   Click to play

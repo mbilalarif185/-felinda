@@ -41,7 +41,7 @@ export default function YouTubeCard({ url, title, name, role }) {
 
   // hqdefault is a sensible balance of size and quality across all videos.
   // (maxresdefault is sharper but doesn't exist for every video.)
-  const thumb = `https://i.ytimg.com/vi/${id}/hqdefault.webp`;
+  const thumb = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 
   return (
     <figure className="group overflow-hidden rounded-[18px] border border-[#eee3de] bg-[#fefcfa] shadow-[0_4px_15px_rgba(90,70,60,0.04)] transition hover:shadow-[0_10px_30px_rgba(90,70,60,0.08)]">
