@@ -1,33 +1,21 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-const CONTACT_INBOX =
-  process.env.CONTACT_INBOX_EMAIL || "info@felindajewelry.com";
+const CONTACT_INBOX = "bilal.cressoft@gmail.com";
+const FROM_EMAIL =
+  process.env.SMTP_USER || "test@cressoftmarketing.ae";
 
-/**
- * POST /api/contact
- * Sends booking enquiries via Resend (https://resend.com).
- *
- * Required for production:
- *   RESEND_API_KEY=re_xxxxx
- *
- * Optional:
- *   CONTACT_INBOX_EMAIL=you@yourdomain.com   (defaults to Felinda inbox above)
- *   RESEND_FROM_EMAIL="Felinda Jewelry <bookings@yourverifieddomain.com>"
- *     — must use a domain you verify in Resend; for tests Resend provides onboarding@resend.dev
- */
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || "cressoftmarketing.ae",
+  port: Number(process.env.SMTP_PORT) || 465,
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER || "test@cressoftmarketing.ae",
+    pass: process.env.SMTP_PASS || "test@231",
+  },
+});
+
 export async function POST(request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json(
-      {
-        ok: false,
-        message:
-          "Contact form is not configured yet. Add RESEND_API_KEY to your server environment.",
-      },
-      { status: 503 }
-    );
-  }
-
   let body;
   try {
     body = await request.json();
@@ -70,10 +58,6 @@ export async function POST(request) {
     );
   }
 
-  const from =
-    process.env.RESEND_FROM_EMAIL ||
-    "Felinda Website <onboarding@resend.dev>";
-
   const lines = [
     `New atelier visit request (felindajewelry.com contact form)`,
     ``,
@@ -97,30 +81,23 @@ export async function POST(request) {
     )
     .join("");
 
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from,
+  try {
+    await transporter.sendMail({
+      from: `Felinda Website <${FROM_EMAIL}>`,
       to: [CONTACT_INBOX],
-      reply_to: email.trim(),
+      replyTo: email.trim(),
       subject: `Visit request · ${name.trim()}`,
       text,
       html: `<div style="font-family:system-ui,sans-serif;font-size:15px;line-height:1.6;color:#2B2321">${html}</div>`,
-    }),
-  });
-
-  const payload = await res.json().catch(() => ({}));
-
-  if (!res.ok) {
-    const msg =
-      payload?.message ||
-      payload?.error?.message ||
-      "Could not send message. Please try again or use WhatsApp.";
-    return NextResponse.json({ ok: false, message: msg }, { status: 502 });
+    });
+  } catch {
+    return NextResponse.json(
+      {
+        ok: false,
+        message: "Could not send message. Please try again or use WhatsApp.",
+      },
+      { status: 502 }
+    );
   }
 
   return NextResponse.json({ ok: true });
