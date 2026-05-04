@@ -51,7 +51,7 @@ export default function CustomRingsPage() {
       <div className="min-h-screen bg-[#f6f0ec] text-[#56463f]">
         <PageHero
           title="Custom Rings"
-          subtitle={customRingsHeroSubtitle}
+          
           breadcrumb={[
             { label: "Home", href: "/" },
             { label: "Custom Rings" },

@@ -141,6 +141,7 @@ export default function ContactForm() {
   const [phone, setPhone] = useState("");
   const [note, setNote] = useState("");
   const [status, setStatus] = useState("idle");
+  const [formError, setFormError] = useState("");
 
   const intentionLabel = intentions.find((i) => i.id === intention)?.label ?? "—";
   const timeLabel = timeSlots.find((t) => t.id === selectedTime);
@@ -160,10 +161,40 @@ export default function ContactForm() {
     setSelectedDate(startOfDay(d));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setFormError("");
     setStatus("sending");
-    setTimeout(() => setStatus("sent"), 800);
+    const visitLabel = dayObj
+      ? `${dayShort[dayObj.getDay()]}, ${dayObj.getDate()} ${monthShort[dayObj.getMonth()]} ${dayObj.getFullYear()}`
+      : "";
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          note: note.trim(),
+          intention: intentionLabel,
+          visitDate: visitLabel,
+          timeWindow: timeLabel?.hours ?? "",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(
+          data.message || "Something went wrong. Please try WhatsApp or email."
+        );
+      }
+      setStatus("sent");
+    } catch (err) {
+      setStatus("idle");
+      setFormError(
+        err instanceof Error ? err.message : "Could not send. Please try again."
+      );
+    }
   };
 
   return (
@@ -460,6 +491,12 @@ export default function ContactForm() {
             {status === "sending" ? "Sending..." : "Reserve the Visit"}
           </button>
         </div>
+
+        {formError ? (
+          <div className="felinda-sans rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-[15px] leading-7 text-red-900">
+            {formError}
+          </div>
+        ) : null}
 
         {status === "sent" && (
           <div className="felinda-sans rounded-2xl border border-roseSoft/60 bg-[#FBF1ED] px-5 py-4 text-[15px] leading-7 text-[#7A4A40]">

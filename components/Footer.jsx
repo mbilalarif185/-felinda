@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import Logo from "@/components/Logo";
 import { CONTACT } from "@/lib/contact";
 
 function InstagramIcon({ size = 17 }) {
@@ -56,14 +57,10 @@ export default function Footer() {
     <footer className="border-t border-line bg-cream">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:px-10">
         <div>
-          <div className="felinda-serif text-3xl tracking-[0.3em] text-rose">
-            FELINDA
-          </div>
-          <div className="felinda-serif mt-1 text-xs tracking-[0.55em] text-rose">
-            JEWELRY
-          </div>
+          <Logo priority={false} variant="footer" />
           <p className="felinda-sans mt-5 max-w-sm text-[15px] leading-7 text-muted">
-            A private bespoke jewelry atelier. Handcrafted fine jewelry, made one story at a time.
+            A private bespoke jewelry atelier.
+Fine jewelry, handcrafted one story at a time. Each piece entirely its own.
           </p>
 
           <ul className="mt-6 flex items-center gap-3" aria-label="Follow Felinda">
@@ -147,7 +144,7 @@ export default function Footer() {
 
         <div>
           <div className="felinda-sans text-sm font-semibold uppercase tracking-[0.14em] text-ink">
-            Studio
+            BOUTIQUE
           </div>
           <p className="felinda-sans mt-4 text-[15px] leading-7 text-muted">
             {CONTACT.address}
@@ -160,7 +157,7 @@ export default function Footer() {
       <div className="border-t border-line/70">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-xs uppercase tracking-[0.18em] text-muted lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div>
-            © {new Date().getFullYear()} Felinda Jewelry • By appointment only
+            © {new Date().getFullYear()} Felinda Jewelry I MONOS ENTERPRISE ( LA0077524-A ) • By appointment only
             {" "}
             Developed by{" "}
             <Link

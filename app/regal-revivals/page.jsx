@@ -11,13 +11,15 @@ export const metadata = buildPageMetadata({
 export const revalidate = 86400;
 
 const archiveFiles = [
-  "jewelry-online-malaysia__felinda-jewelry-01.webp",
-  "buy-jewellery-online-malaysia__felinda-jewelry-02.webp",
-  "silver-jewellery-malaysia__felinda-jewelry-03.webp",
-  "diamond-ring-malaysia__felinda-jewelry-04.webp",
-  "gold-ring-malaysia__felinda-jewelry-05.webp",
-  "necklace-malaysia__felinda-jewelry-06.webp",
-  "earrings-malaysia__felinda-jewelry-07.webp",
+  "IMG_1399.webp",
+  "IMG_1400.webp",
+  "IMG_6208.webp",
+  "IMG_6209.webp",
+  "IMG_6210.webp",
+  "IMG_6211.webp",
+  "IMG_6212.webp",
+  "IMG_6302.webp",
+  "IMG_6303.webp",
 ];
 
 function titleFromFilename(filename) {
@@ -45,7 +47,7 @@ export default function RegalRevivalsPage() {
         { label: "Our Creations" },
         { label: "Regal Revivals" },
       ]}
-      description="A private collection of limited heritage designs, museum-grade gemstones and one-of-a-kind couture commissions. Felinda's most personal work, reserved for those who collect quietly and forever."
+      description="A private collection of heritage inspired designs, museum grade gemstones, and one-of a kind couture commissions. Felinda’s most intimate work reserved for those who collect quietly, and for a lifetime."
       galleryItems={galleryItems}
     />
   );

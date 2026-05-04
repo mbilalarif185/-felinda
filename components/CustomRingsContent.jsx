@@ -55,20 +55,33 @@ const scriptAccent = {
 const whyIcons = [Sparkles, Gem, ShieldCheck, CalendarDays];
 
 const filters = [
+  "The Felinda Signature",
   "Daring Dazzlers",
-  "Men's Rings",
+  "Men's Collection",
   "Wedding Rings",
   "Engagement Rings",
 ];
 
 const categoryFolders = {
+  "The Felinda Signature": "Felinda's Signature",
   "Daring Dazzlers": "daring-dazzlers",
-  "Men's Rings": "Men's Rings",
+  "Men's Collection": "Men's Rings",
   "Wedding Rings": "Wedding Brands",
   "Engagement Rings": "Engagement Rings",
 };
 
 const galleryFilesByCategory = {
+  "The Felinda Signature": [
+    "FJ Insta-AIYANA Signature Ring 4.webp",
+    "FJ Insta-AIYANA Signature Ring 12.webp",
+    "FJ Insta-AIYANA Signature Ring 13.webp",
+    "FJ Insta-AIYANA Signature Ring 15.webp",
+    "FJ Insta-AIYANA Signature Ring 16.webp",
+    "FJ Insta-AIYANA Signature Ring 17.webp",
+    "FJ Insta-AIYANA Signature Ring 18.webp",
+    "FJ Insta-AIYANA Signature Ring2.webp",
+    "FJ Insta-Chrysoprase Ring.webp",
+  ],
   "Daring Dazzlers": [
     "Aquamarine Vintage Ring 2.webp",
     "FJ Insta- Bi colour sapphire Rng 3.webp",
@@ -127,7 +140,7 @@ const galleryFilesByCategory = {
     "FJ Insta-Tanzanite Rng 4.webp",
     "FJ Insta-Triple Ring 8.webp",
   ],
-  "Men's Rings": [
+  "Men's Collection": [
     "FJ Insta- Horse Brooch.webp",
     "FJ Insta- Watermelon Tourmaline Pendant Necklace 1.webp",
     "FJ Insta-Citrine Mens Ring.webp",

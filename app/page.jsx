@@ -58,16 +58,16 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 lg:grid-cols-2 lg:px-10 lg:py-28">
             <div className="flex flex-col justify-center">
               <div className="felinda-sans mb-6 text-xs uppercase tracking-[0.28em] text-clay">
-                Fine Jewelry, Made for One
+                FINE JEWELRY, MADE FOR YOU
               </div>
               <h1 className="felinda-serif max-w-xl text-5xl leading-[0.98] tracking-[-0.02em] lg:text-7xl">
                 You are not like everyone else 
-                Neither is what you wear.
+                your jewelry shouldn’t be either
               </h1>
               <p className="felinda-sans mt-6 max-w-xl text-lg leading-8 text-muted">
-                Felinda is a private atelier where fine jewelry is conceived around a single person, 
-                a single story, and a single moment that deserves to endure. We do not design collections.
-                 We design for you.
+                Felinda is a private atelier where fine jewelry is conceived around one person, 
+                one story, and a moment meant to endure. We do not design collections. 
+                We design for you.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-4">
@@ -143,22 +143,22 @@ export default function HomePage() {
 
           <div className="flex flex-col justify-center">
             <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
-              The Story of Felinda
+              THE STORY OF FELINDA
             </div>
             <h2 className="felinda-serif max-w-xl text-4xl leading-tight lg:text-6xl">
-              Jewelry That Holds The Things Words Cannot.
+              Jewelry That Holds What Words Cannot.
             </h2>
             <p className="felinda-sans mt-6 max-w-2xl text-lg leading-8 text-muted">
-              Founded on an obsession with design and an unwillingness to settle for the impersonal, 
-              Felinda draws inspiration from the world at its most quietly extraordinary the 
-              structural grace of great architecture, the irreproducible patterns found 
-              in nature, the way certain colours hold light differently at different hours of the day.
+             At Felinda, every piece begins with you.
+              Your story. Your moment. Your meaning.
+              We do not follow trends, and we do not design for the masses. Each creation is conceived
+              for one shaped by intention, guided by emotion, and brought to life through uncompromising 
+              craftsmanship.
             </p>
             <p className="felinda-sans mt-4 max-w-2xl text-lg leading-8 text-muted">
-              Every piece that leaves this atelier has been shaped by your story. The gemstones are 
-              chosen for their character, not their convenience. The metalwork is executed by hand, 
-              not habit. And the result is
-               something that does not merely accessorise you it belongs to you, in the deepest sense.
+              Every gemstone is chosen for its character. Every line is deliberate. Every detail exists for a reason.
+This is not jewelry made to be worn and forgotten.
+It is made to be remembered an extension of who you are, and a moment that endures.
             </p>
             <div className="mt-8">
               <Link
@@ -183,39 +183,39 @@ export default function HomePage() {
                 </h2>
               </div>
               <p className="felinda-sans max-w-xl text-lg leading-8 text-muted">
-                A selection of recent bespoke commissions each conceived in collaboration, 
-                each one impossible to replicate.
+               A curated selection of recent bespoke commissions, 
+               each created in close collaboration and designed to exist only once.
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-7 md:grid-cols-2 md:gap-6 xl:grid-cols-4 xl:gap-5">
               {creations.map((item) => (
                 <article
                   key={item.title}
-                  className="flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-line bg-white shadow-[0_10px_35px_rgba(72,49,41,0.05)] transition hover:shadow-[0_18px_45px_rgba(72,49,41,0.08)]"
+                  className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-line/90 bg-white shadow-[0_8px_30px_rgba(72,49,41,0.04)] ring-1 ring-black/[0.02] transition duration-300 hover:-translate-y-0.5 hover:border-line hover:shadow-[0_20px_50px_rgba(72,49,41,0.09)]"
                 >
-                  <div className="relative h-80 w-full shrink-0">
+                  <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-[#f3ece8]">
                     <Image
                       src={item.image}
                       alt={item.alt}
                       fill
                       sizes="(min-width: 1280px) 22vw, (min-width: 768px) 45vw, 90vw"
-                      className="object-cover"
+                      className="object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
+                  <div className="flex flex-1 flex-col border-t border-line/50 bg-white px-6 pb-6 pt-6">
+                    <div className="felinda-sans text-[11px] font-medium uppercase tracking-[0.2em] text-muted">
                       {item.tag}
                     </div>
-                    <h3 className="felinda-serif mt-3 text-3xl leading-tight">
+                    <h3 className="felinda-serif mt-3 text-2xl leading-[1.15] tracking-[-0.01em] text-ink md:text-[1.65rem]">
                       {item.title}
                     </h3>
-                    <p className="felinda-sans mt-3 flex-1 text-[15px] leading-7 text-muted">
+                    <p className="felinda-sans mt-3.5 flex-1 text-[15px] leading-[1.65] text-muted">
                       {item.desc}
                     </p>
                     <Link
                       href={item.href}
-                      className="felinda-sans mt-6 inline-flex w-full shrink-0 items-center justify-center rounded-full bg-rose px-5 py-3 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90"
+                      className="felinda-sans mt-7 inline-flex w-full shrink-0 items-center justify-center rounded-full border border-line bg-white px-5 py-3 text-sm font-medium tracking-[0.04em] text-ink transition hover:border-rose/40 hover:bg-shell"
                     >
                       View collection
                     </Link>
@@ -230,15 +230,18 @@ export default function HomePage() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
               
-              How It Works
+              HOW IT WORKS
             </div>
             <h2 className="felinda-serif text-4xl lg:text-6xl">
               Unhurried Considered Entirely Yours
             </h2>
             <p className="felinda-sans mt-5 text-lg leading-8 text-muted">
               
-              The Felinda process was designed to feel the opposite of a transaction.
-              It moves at the pace of trust and it does not end until the piece is exactly right.
+            Unhurried. Considered. Entirely Yours.
+The Felinda process is designed to feel the opposite of a transaction. It unfolds at the
+ pace of trust, guided by conversation, intention, and detail. It is only complete when 
+ every element 
+feels exactly right because nothing leaves the atelier until it belongs fully to you.
             </p>
           </div>
 
@@ -273,9 +276,9 @@ export default function HomePage() {
               </h2>
                <p className="felinda-sans mt-5 text-lg leading-8 text-muted">
               
-             Not sure where to begin? Every Felinda 
-             category is a door into the same intimate experience one that ends with
-              something made only for you.
+             If you are unsure where to begin, each Felinda category serves as a
+              doorway into the same intimate experience one that concludes with a
+               piece made exclusively for you.
             </p>
             </div>
 
@@ -300,11 +303,11 @@ export default function HomePage() {
                         className="object-cover transition duration-500 group-hover:scale-[1.04]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 p-7 text-white">
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 min-w-0 p-7 text-white">
                         <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-white/80">
                           {item.subtitle}
                         </div>
-                        <div className="felinda-serif mt-3 text-4xl leading-tight">
+                        <div className="felinda-serif mt-3 w-full max-w-full text-[clamp(1rem,2.4vw+0.65rem,2.25rem)] leading-[1.12] tracking-[-0.02em] whitespace-nowrap">
                           {item.title}
                         </div>
                         <span className="felinda-sans mt-6 inline-flex w-fit rounded-full border border-white/60 bg-white/10 px-5 py-3 text-sm tracking-[0.04em] text-white backdrop-blur transition group-hover:bg-white/20">
@@ -325,7 +328,7 @@ export default function HomePage() {
               Client Voices
             </div>
             <h2 className="felinda-serif text-4xl lg:text-6xl">
-              The Proof is in What They Keep Closest
+              What They Keep Closest
             </h2>
 
             <HomeTestimonialSlider items={homeTestimonials} />

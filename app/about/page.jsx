@@ -137,14 +137,14 @@ function IconHand() {
 
 const valueStrip = [
   {
-    title: "Appointment Only",
-    text: "The atelier does not operate as a storefront. Every engagement begins with a direct conversation private, personal, and without distraction."  },
+    title: "By Appointment Only",
+    text: "Felinda operates beyond the traditional storefront. Every engagement begins with a private conversation personal, considered, and entirely without distraction."},
   {
-    title: "Made by One Pair of Hands",
-    text: "There is no delegation here. The founder is present at every stage from the earliest conversation through to the moment the finished piece is placed in your hands."  },
+    title: "Creative Direction by Felinda ",
+    text: "Every piece is shaped under Felinda’s direction from the initial concept to the final form. Supported by a trusted atelier team, each creation remains true to her vision, standards, and design philosophy."},
   {
     title: "Designed to Be Inherited",
-    text: "Nothing at Felinda is made for a season. Every commission is conceived with the weight of decades in mind a piece to be returned to, not replaced."  },
+    text: "Nothing at Felinda is created for a moment alone. Each commission is conceived with the weight of time made to be returned to, not replaced."},
 ];
 
 const craftPillars = [
@@ -168,18 +168,18 @@ const craftPillars = [
 
 const signatureMoments = [
   {
-    eyebrow: "I · The Beginning",
-    title: "Before There was a Name, There was a Standard.",
-    text: "Felinda did not begin with a business plan. It began with a refusal a refusal to make jewelry that was merely acceptable, that filled a brief without filling a need, that looked like something rather than meaning something. From the very first piece, the work was shaped by a single question: is this exactly right? Not good. Not close. Exactly right."  },
+    eyebrow: "I · THE BEGINNING",
+    title: "Before There Was a Name, There Was a Standard",
+    text: "Felinda did not begin as a business. It began as a refusal a refusal to accept the ordinary, to create what is expected, or to settle for what is simply enough. From the very first piece, everything has been measured against a single question: is this exactly right? Not good. Not almost. Exactly right."},
   {
-    eyebrow: "II · The Practice",
-    title: "One Maker One Client One Piece at a Time",
-    text: "There is no team behind the curtain at Felinda. There is no factory floor, no production quota, no handoff point where the founder's attention ends and a process begins. Every commission from the first sketch to the final polish is held by a single set of hands. This is not a limitation. It is the entire point. The intimacy of that involvement is what makes a Felinda piece feel different from anything else in the world."  },
+    eyebrow: "II · THE PRACTICE",
+    title: "One Vision. One Client. One Piece at a Time",
+    text: "No production lines. No excess. No dilution of intent. Every piece is approached with precision and purpose—guided from first sketch to final form with unwavering attention. This is not about volume. It is about getting it exactly right."},
   {
     eyebrow: "III · The Intention",
     title: "Made to Outlive the Moment",
-    text: "Trends are a distraction Felinda has no interest in following. The atelier creates pieces designed to remain meaningful not just in the week they are received, but in the decade they are worn and the generation they are passed to. That requires a different kind of discipline one that asks not is this beautiful now? but will this still be the right object in thirty years?  It almost always takes longer. It is always worth it."  },
-];
+    text: "Trends are a distraction. Felinda does not follow them.Each piece is created to endure beyond the moment, beyond the years, beyond the person it was first made for.It demands a different standard: not is this beautiful now? but will this still be right in thirty years? It takes longer. It is worth it. "},
+    ];
 
 export default function AboutPage() {
   return (
@@ -196,8 +196,10 @@ export default function AboutPage() {
         <section className="bg-[#f6f0ec] pb-12 pt-2 sm:pb-16 lg:pb-20">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-10">
             <p className="felinda-serif text-[18px] leading-[1.7] text-[#5b4d44] sm:text-xl lg:text-2xl lg:leading-[1.7]">
-              Felinda is a founder led private atelier a place where fine jewelry is created without
-               haste, without compromise, and without ever losing sight of the person it is made for.
+              Felinda is a founder led private atelier, where fine jewelry is created without haste,
+               without compromise, 
+              and always in quiet devotion to the individual it is made for.
+               
             </p>
           </div>
         </section>
@@ -205,20 +207,20 @@ export default function AboutPage() {
         {/* ════════ VALUE STRIP — soft cream, rose accents (matches the banner) ════════ */}
         <section className="bg-[#f6f0ec] pb-12 sm:pb-24 lg:pb-32">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-            <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+            <div className="grid grid-cols-1 items-stretch gap-5 sm:gap-6 lg:grid-cols-3 lg:gap-7">
               {valueStrip.map((item, i) => (
                 <div
                   key={item.title}
-                  className="min-w-0 flex flex-col items-center rounded-[1.5rem] border border-[#e7dbd5] bg-[#fbf7f4] px-5 py-7 text-center shadow-[0_8px_28px_rgba(120,90,80,0.05)] sm:rounded-[1.75rem] sm:px-8 sm:py-12 lg:px-10 lg:py-16"
+                  className="group min-w-0 flex h-full flex-col items-center rounded-[1.5rem] border border-line/80 bg-white px-5 py-8 text-center shadow-[0_10px_36px_rgba(72,49,41,0.05)] ring-1 ring-black/[0.02] transition duration-300 sm:rounded-[1.75rem] sm:px-8 sm:py-10 lg:px-9 lg:py-12 hover:border-line hover:shadow-[0_16px_44px_rgba(72,49,41,0.08)]"
                 >
-                  <div className="felinda-sans text-[11px] uppercase tracking-[0.22em] text-[#cf938b] sm:tracking-[0.32em]">
+                  <div className="felinda-sans text-[11px] font-medium uppercase tracking-[0.24em] text-rose/90 sm:tracking-[0.3em]">
                     No. 0{i + 1}
                   </div>
-                  <Mark className="mt-4 h-4 w-12 text-[#cf938b]/80" />
-                  <h3 className="felinda-serif mt-4 break-words text-[30px] leading-tight text-[#3a2f28] sm:mt-5 sm:text-3xl sm:leading-snug">
+                  <Mark className="mt-3.5 h-4 w-12 shrink-0 text-rose/70" />
+                  <h3 className="felinda-serif mt-4 break-words text-[28px] leading-[1.12] text-ink sm:mt-5 sm:text-[30px] sm:leading-snug">
                     {item.title}
                   </h3>
-                  <p className="felinda-sans mt-3 w-full max-w-none break-words text-[14px] leading-7 text-[#7b6b62] sm:mt-4 sm:max-w-xs sm:text-[15px]">
+                  <p className="felinda-sans mt-3 w-full max-w-sm flex-1 text-[14px] leading-[1.65] text-[#6b5e56] sm:mt-4 sm:max-w-none sm:text-[15px]">
                     {item.text}
                   </p>
                 </div>
@@ -227,37 +229,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ════════ THE FOUR PILLARS — LIGHT, FORMAL ════════ */}
-        <section id="story" className="bg-cream py-16 sm:py-24 lg:py-32">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-            <div className="text-center">
-              <Mark className="mx-auto h-4 w-12 text-clay" />
-              <div className="felinda-sans mt-5 text-xs uppercase tracking-[0.22em] text-clay sm:tracking-[0.32em]">
-                The Four Pillars
-              </div>
-              <h2 className="felinda-serif mt-4 text-[32px] leading-tight sm:text-4xl lg:text-6xl">
-                The Beliefs that Shape Every Piece.
-              </h2>
-              <Flourish className="mx-auto mt-8 h-3 w-48 text-clay/70 lg:w-60" />
-            </div>
-
-            <div className="mt-12 grid grid-cols-1 gap-10 sm:mt-20 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4 lg:gap-10">
-              {craftPillars.map(({ Icon, title, text }) => (
-                <div key={title} className="text-center">
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-line bg-white text-clay shadow-[0_8px_25px_rgba(72,49,41,0.05)]">
-                    <Icon />
-                  </div>
-                  <h3 className="felinda-serif mt-7 text-2xl leading-snug text-ink lg:text-[1.7rem]">
-                    {title}
-                  </h3>
-                  <p className="felinda-sans mt-5 text-[15px] leading-7 text-muted">
-                    {text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      
 
         {/* ════════ EDITORIAL STORY — IMAGE + TEXT, ASYMMETRIC ════════ */}
         <section className="relative overflow-x-hidden bg-shell py-16 sm:py-24 lg:py-32">
@@ -294,9 +266,9 @@ export default function AboutPage() {
                   Our Story
                 </div>
                 <h2 className="felinda-serif mt-3 text-[30px] leading-[1.15] sm:mt-4 sm:text-4xl sm:leading-tight lg:text-6xl">
-                    Not a brand  
+                    Not a brand  but a
                   <br />
-                  A <span className="italic text-rose">belief</span> in doing things properly.
+                  <span className="italic text-rose">belief</span> in doing things properly.
                 </h2>
 
                 <div className="mt-7 space-y-4 sm:mt-10 sm:space-y-6">
@@ -339,7 +311,7 @@ export default function AboutPage() {
                 The Felinda Promise
               </div>
               <h2 className="felinda-serif mt-4 text-[32px] leading-tight text-cream sm:text-4xl lg:text-6xl">
-                Three Things we will never compromise
+                Three Things We Will Never Compromise
               </h2>
               <Flourish className="mx-auto mt-8 h-3 w-48 text-rose/80 lg:w-60" />
             </div>
@@ -349,15 +321,15 @@ export default function AboutPage() {
                 {
                   no: "01",
                   title: "Discretion",
-                  text: "Your commission, your conversations, and your story belong to you. Felinda does not showcase client work without permission, does not share personal details, and does not treat what you share as material for a portfolio. What passes between client and atelier stays there.",                },
+                  text: "What is shared with Felinda remains with Felinda. No exposure. No exceptions."},
                 {
                   no: "02",
                   title: "Time",
-                  text: "A Felinda piece is finished when it is right, not when a production schedule demands it. If a stone needs to be recut, a proportion reconsidered, or a setting rebuilt, that is what happens. The work is never hurried toward a deadline it has not earned."                },
+                  text: "A piece is finished only when it is right. Not when it is scheduled."},
                 {
                   no: "03",
                   title: "Integrity of Material",
-                  text: "Only stones and metals that meet the atelier's own standard make it into a Felinda piece. That standard is not defined by a certificate or a category. It is defined by what the founder would accept for themselves which means it is exceptionally high."                },
+                  text: "Only what meets the atelier’s highest standard is accepted. Nothing less."},
               ].map((p) => (
                 <article
                   key={p.no}
@@ -426,7 +398,7 @@ export default function AboutPage() {
                   <div className="overflow-hidden rounded-[2rem] border border-line bg-white p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
                     <div className="relative h-[360px] overflow-hidden rounded-[1.5rem] sm:h-[500px] lg:h-[640px]">
                       <Image
-                        src="/images/felinda-jewelry/Custom-Rings/Wedding Brands/custom-ring-malaysia__felinda-17.webp"
+                        src="/images/felinda-jewelry/buy-a-ring-in-malaysia.webp"
                         alt="Founder portrait, Felinda"
                         fill
                         sizes="(min-width: 1024px) 40vw, 90vw"
@@ -460,9 +432,9 @@ export default function AboutPage() {
             <Mark className="mx-auto mt-6 h-4 w-12 text-clay" />
             <p className="felinda-serif mt-8 text-[33px] leading-[1.2] text-ink sm:text-3xl lg:text-6xl">
               A jewelry house should feel less like a catalog
-              <br />
+              
               and more like a{" "}
-              <span className="italic text-rose">private letter.</span>
+              <span className="italic text-rose">private letter.</span> written for one.
             </p>
             <Flourish className="mx-auto mt-10 h-3 w-48 text-clay/70 lg:w-60" />
             <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.22em] text-clay sm:tracking-[0.32em]">
@@ -483,8 +455,7 @@ export default function AboutPage() {
               in your <span className="italic text-roseSoft">own time.</span>
             </h2>
             <p className="felinda-sans mx-auto mt-6 max-w-xl text-[17px] leading-8 text-cream/70 sm:text-lg">
-              Reach the atelier when you&rsquo;re ready. The first
-              conversation is the only step you need to take today.
+              Reach out to the atelier when you are ready. The first conversation is the only step you need to take today.
             </p>
 
             <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -504,7 +475,7 @@ export default function AboutPage() {
 
             <Flourish className="mx-auto mt-14 h-3 w-48 text-rose/60 lg:w-60" />
             <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.2em] text-cream/50 sm:tracking-[0.32em]">
-              Felinda Atelier · Petaling Jaya · MMXXVI
+              Felinda Atelier · Petaling Jaya · 2026
             </div>
           </div>
         </section>
