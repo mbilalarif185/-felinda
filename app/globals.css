@@ -6,6 +6,11 @@
   color-scheme: light;
   --gold: #c9a96e;
   --noir: #15110f;
+  /* Build-safe font variables (no network fetch). */
+  --font-inter: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-cormorant: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-great-vibes: "Brush Script MT", "Segoe Script", "Apple Chancery", cursive;
 }
 
 html,

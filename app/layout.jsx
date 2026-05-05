@@ -1,32 +1,10 @@
-import { Cormorant_Garamond, Inter, Great_Vibes } from "next/font/google";
-
 import JsonLd from "@/components/seo/JsonLd";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 import { absoluteUrl, DEFAULT_DESCRIPTION, SITE_LOGO_PATH, SITE_NAME } from "@/lib/constants/site";
 import { rootJsonLdGraph } from "@/lib/seo/json-ld";
 import { buildRootMetadata } from "@/lib/seo/metadata";
 
 import "./globals.css";
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const greatVibes = Great_Vibes({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-great-vibes",
-  display: "swap",
-});
 
 export const metadata = {
   ...buildRootMetadata(),
@@ -86,11 +64,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${inter.variable} ${greatVibes.variable}`}
     >
       <body className="min-h-screen bg-cream text-ink antialiased">
         <JsonLd data={rootJsonLdGraph()} />
         {children}
+        <WhatsAppFloatingButton />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const CONTACT_INBOX = "bilal.cressoft@gmail.com";
+const CONTACT_INBOX = "info@felindajewelry.com";
 const FROM_EMAIL =
   process.env.SMTP_USER || "test@cressoftmarketing.ae";
 
