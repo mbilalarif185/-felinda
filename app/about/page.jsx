@@ -373,11 +373,7 @@ export default function AboutPage() {
                 </p>
 
                 <p className="felinda-sans mt-8 max-w-full hyphens-auto break-words text-[15px] leading-[1.7] text-muted [overflow-wrap:anywhere] sm:max-w-xl sm:text-[17px] sm:leading-8 lg:text-lg">
-                  The founder of Felinda came to jewelry through an obsession not with adornment,
-                  but with precision. With the question of how much intention a small object can carry.
-                  With the discovery that a ring or a pendant, made properly, can hold a specific
-                  quality of light, a specific memory, a specific person and keep them close in a way
-                  that nothing else quite manages.
+                  Felinda began not with adornment, but with precision. With an obsession for how much meaning a small object can hold. And with the quiet realisation that jewelry, when made with intention, can preserve light, memory, and presence long after the moment itself has passed.
                 </p>
 
                 <div className="mt-10 flex min-w-0 items-center gap-5 border-t border-line pt-7">
