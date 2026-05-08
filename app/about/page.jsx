@@ -430,7 +430,7 @@ export default function AboutPage() {
               A jewelry house should feel less like a catalog
               
               and more like a{" "}
-              <span className="italic text-rose">private letter.</span> written for one.
+              <span className="italic text-rose">private letter</span> written for one.
             </p>
             <Flourish className="mx-auto mt-10 h-3 w-48 text-clay/70 lg:w-60" />
             <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.22em] text-clay sm:tracking-[0.32em]">
