@@ -222,15 +222,15 @@ export default function ContactPage() {
                 href={r.href}
                 target={r.href.startsWith("http") ? "_blank" : undefined}
                 rel={r.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group overflow-hidden rounded-[1.75rem] border border-line bg-white p-7 shadow-[0_10px_35px_rgba(72,49,41,0.05)] transition hover:shadow-[0_18px_45px_rgba(72,49,41,0.08)]"
+                className="group min-w-0 overflow-hidden rounded-[1.75rem] border border-line bg-white p-7 shadow-[0_10px_35px_rgba(72,49,41,0.05)] transition hover:shadow-[0_18px_45px_rgba(72,49,41,0.08)]"
               >
                 <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
                   {r.label}
                 </div>
-                <h3 className="felinda-serif mt-3 text-3xl leading-tight">
+                <h3 className="felinda-serif mt-3 min-w-0 break-words text-3xl leading-tight [overflow-wrap:anywhere]">
                   {r.value}
                 </h3>
-                <p className="felinda-sans mt-3 text-[15px] leading-7 text-muted">
+                <p className="felinda-sans mt-3 break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere]">
                   {r.note}
                 </p>
                 <div className="felinda-sans mt-6 inline-flex items-center gap-2 text-sm font-medium tracking-[0.04em] text-ink transition group-hover:text-rose">

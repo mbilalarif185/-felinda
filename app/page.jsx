@@ -286,7 +286,7 @@ feels exactly right because nothing leaves the atelier until it belongs fully to
               {categories.map((item) => (
                 <article
                   key={item.title}
-                  className="group relative overflow-hidden rounded-[2rem] border border-line bg-[linear-gradient(180deg,#f8f1ee_0%,#f4e7e3_100%)] p-4 shadow-[0_12px_35px_rgba(72,49,41,0.05)]"
+                  className="group relative min-w-0 overflow-hidden rounded-[2rem] border border-line bg-[linear-gradient(180deg,#f8f1ee_0%,#f4e7e3_100%)] p-4 shadow-[0_12px_35px_rgba(72,49,41,0.05)]"
                 >
                   <Link
                     href={item.href}
@@ -303,14 +303,17 @@ feels exactly right because nothing leaves the atelier until it belongs fully to
                         className="object-cover transition duration-500 group-hover:scale-[1.04]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 min-w-0 p-7 text-white">
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 min-w-0 p-5 text-white sm:p-7">
                         <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-white/80">
                           {item.subtitle}
                         </div>
-                        <div className="felinda-serif mt-3 w-full max-w-full text-[clamp(1rem,2.4vw+0.65rem,2.25rem)] leading-[1.12] tracking-[-0.02em] whitespace-nowrap">
+                        <div
+                          className="felinda-serif mt-3 w-full max-w-full whitespace-nowrap text-[clamp(1rem,0.75vw+0.8rem,1.65rem)] leading-[1.12] tracking-[-0.015em]"
+                          title={item.title}
+                        >
                           {item.title}
                         </div>
-                        <span className="felinda-sans mt-6 inline-flex w-fit rounded-full border border-white/60 bg-white/10 px-5 py-3 text-sm tracking-[0.04em] text-white backdrop-blur transition group-hover:bg-white/20">
+                        <span className="felinda-sans mt-5 inline-flex w-fit rounded-full border border-white/60 bg-white/10 px-5 py-3 text-sm tracking-[0.04em] text-white backdrop-blur transition group-hover:bg-white/20 sm:mt-6">
                           Explore
                         </span>
                       </div>
