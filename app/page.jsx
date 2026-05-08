@@ -237,7 +237,7 @@ It is made to be remembered an extension of who you are, and a moment that endur
             </h2>
             <p className="felinda-sans mt-5 text-lg leading-8 text-muted">
               
-            Unhurried. Considered. Entirely Yours.
+            
 The Felinda process is designed to feel the opposite of a transaction. It unfolds at the
  pace of trust, guided by conversation, intention, and detail. It is only complete when 
  every element 
