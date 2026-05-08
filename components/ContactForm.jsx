@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { CONTACT } from "@/lib/contact";
 
@@ -142,6 +142,51 @@ export default function ContactForm() {
   const [note, setNote] = useState("");
   const [status, setStatus] = useState("idle");
   const [formError, setFormError] = useState("");
+  const [captchaId, setCaptchaId] = useState("");
+  const [captchaPrompt, setCaptchaPrompt] = useState("");
+  const [captchaAnswer, setCaptchaAnswer] = useState("");
+  const [captchaLoading, setCaptchaLoading] = useState(false);
+
+  useEffect(() => {
+    const loadCaptcha = async () => {
+      setCaptchaLoading(true);
+      try {
+        const res = await fetch("/api/contact/captcha", { cache: "no-store" });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data?.captchaId || !data?.prompt) {
+          throw new Error("Could not load captcha.");
+        }
+        setCaptchaId(data.captchaId);
+        setCaptchaPrompt(data.prompt);
+      } catch {
+        setCaptchaId("");
+        setCaptchaPrompt("Could not load challenge. Please refresh it.");
+      } finally {
+        setCaptchaLoading(false);
+      }
+    };
+
+    loadCaptcha();
+  }, []);
+
+  const refreshCaptcha = async () => {
+    setCaptchaAnswer("");
+    setCaptchaLoading(true);
+    try {
+      const res = await fetch("/api/contact/captcha", { cache: "no-store" });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.captchaId || !data?.prompt) {
+        throw new Error("Could not refresh captcha.");
+      }
+      setCaptchaId(data.captchaId);
+      setCaptchaPrompt(data.prompt);
+    } catch {
+      setCaptchaId("");
+      setCaptchaPrompt("Could not load challenge. Please refresh it.");
+    } finally {
+      setCaptchaLoading(false);
+    }
+  };
 
   const intentionLabel = intentions.find((i) => i.id === intention)?.label ?? "—";
   const timeLabel = timeSlots.find((t) => t.id === selectedTime);
@@ -164,6 +209,10 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError("");
+    if (!captchaId || !captchaAnswer.trim()) {
+      setFormError("Please complete the captcha before sending.");
+      return;
+    }
     setStatus("sending");
     const visitLabel = dayObj
       ? `${dayShort[dayObj.getDay()]}, ${dayObj.getDate()} ${monthShort[dayObj.getMonth()]} ${dayObj.getFullYear()}`
@@ -180,6 +229,8 @@ export default function ContactForm() {
           intention: intentionLabel,
           visitDate: visitLabel,
           timeWindow: timeLabel?.hours ?? "",
+          captchaId,
+          captchaAnswer: captchaAnswer.trim(),
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -189,8 +240,10 @@ export default function ContactForm() {
         );
       }
       setStatus("sent");
+      setCaptchaAnswer("");
     } catch (err) {
       setStatus("idle");
+      await refreshCaptcha();
       setFormError(
         err instanceof Error ? err.message : "Could not send. Please try again."
       );
@@ -480,16 +533,45 @@ export default function ContactForm() {
 
         {/* SUBMIT */}
         <div className="flex flex-col items-stretch gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <div className="felinda-sans text-xs uppercase tracking-[0.18em] text-[#8B7A73]">
-            Confirmation arrives within one to two days
+          <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="felinda-sans text-xs uppercase tracking-[0.18em] text-[#8B7A73]">
+              Confirmation arrives within one to two days
+            </div>
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="felinda-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90 disabled:opacity-60"
+            >
+              {status === "sending" ? "Sending..." : "Reserve the Visit"}
+            </button>
           </div>
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="felinda-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90 disabled:opacity-60"
-          >
-            {status === "sending" ? "Sending..." : "Reserve the Visit"}
-          </button>
+        </div>
+
+        <div className="rounded-2xl border border-line bg-white p-4">
+          <div className="felinda-sans text-xs uppercase tracking-[0.18em] text-clay">
+            Captcha
+          </div>
+          <div className="mt-2 flex flex-wrap items-center gap-3">
+            <div className="felinda-sans text-[15px] text-ink">
+              {captchaPrompt || "Loading challenge..."}
+            </div>
+            <button
+              type="button"
+              onClick={refreshCaptcha}
+              disabled={captchaLoading}
+              className="felinda-sans rounded-full border border-line px-4 py-2 text-xs uppercase tracking-[0.12em] text-ink transition hover:bg-shell disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              {captchaLoading ? "Loading..." : "Refresh"}
+            </button>
+          </div>
+          <input
+            type="text"
+            value={captchaAnswer}
+            onChange={(e) => setCaptchaAnswer(e.target.value)}
+            required
+            placeholder="Type your answer"
+            className="felinda-sans mt-3 w-full rounded-2xl border border-line bg-white px-5 py-4 text-[15px] text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
+          />
         </div>
 
         {formError ? (

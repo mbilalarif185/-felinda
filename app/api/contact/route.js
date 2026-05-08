@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { verifyCaptchaChallenge } from "@/lib/simpleCaptchaStore";
 
 const CONTACT_INBOX = "info@felindajewelry.com";
 const FROM_EMAIL =
@@ -34,6 +35,8 @@ export async function POST(request) {
     intention,
     visitDate,
     timeWindow,
+    captchaId,
+    captchaAnswer,
   } = body;
 
   if (
@@ -54,6 +57,25 @@ export async function POST(request) {
   if (!emailRegex.test(email.trim())) {
     return NextResponse.json(
       { ok: false, message: "Please enter a valid email address." },
+      { status: 400 }
+    );
+  }
+
+  if (
+    typeof captchaId !== "string" ||
+    !captchaId.trim() ||
+    typeof captchaAnswer !== "string" ||
+    !captchaAnswer.trim()
+  ) {
+    return NextResponse.json(
+      { ok: false, message: "Please complete the captcha challenge." },
+      { status: 400 }
+    );
+  }
+
+  if (!verifyCaptchaChallenge(captchaId, captchaAnswer)) {
+    return NextResponse.json(
+      { ok: false, message: "Captcha verification failed. Please try again." },
       { status: 400 }
     );
   }
