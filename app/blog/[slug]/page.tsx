@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               alt={post.title}
               fill
               priority
-              className="object-cover"
+              className={post.imageFit === "contain" ? "object-contain" : "object-cover"}
               sizes="(max-width: 1024px) 100vw, 56rem"
             />
           </div>

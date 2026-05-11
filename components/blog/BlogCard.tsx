@@ -20,7 +20,7 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
             fill
             priority={priority}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
+            className={`${post.imageFit === "contain" ? "object-contain" : "object-cover"} transition duration-700 ease-out group-hover:scale-[1.03]`}
           />
         </div>
         <div className="flex flex-1 flex-col gap-3 p-6">
