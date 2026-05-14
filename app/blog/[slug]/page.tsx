@@ -33,12 +33,21 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     return { title: "Article not found" };
   }
 
-  const base = buildPageMetadata({
-    title: post.title,
-    description: post.excerpt,
-    path: `/blog/${post.slug}`,
-    ogImage: post.featuredImage,
-  });
+  const base = post.metaTitle
+    ? buildPageMetadata({
+        absoluteTitle: post.metaTitle,
+        description: post.excerpt,
+        path: `/blog/${post.slug}`,
+        ogImage: post.featuredImage,
+        keywords: post.seoKeywords,
+      })
+    : buildPageMetadata({
+        title: post.title,
+        description: post.excerpt,
+        path: `/blog/${post.slug}`,
+        ogImage: post.featuredImage,
+        keywords: post.seoKeywords,
+      });
 
   return {
     ...base,
@@ -116,7 +125,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <h1 className="mt-4 font-serif text-4xl font-medium leading-tight tracking-tight text-ink sm:text-5xl">
                 {post.title}
               </h1>
-              <p className="mt-6 font-sans text-lg leading-relaxed text-muted">{post.excerpt}</p>
             </header>
           </div>
         </article>

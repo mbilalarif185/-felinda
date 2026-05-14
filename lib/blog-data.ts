@@ -9,6 +9,7 @@ export type BlogAuthor = {
 export type BlogPost = {
   slug: string;
   title: string;
+  metaTitle?: string;
   excerpt: string;
   author: BlogAuthor;
   publishedAt: string;
@@ -16,12 +17,14 @@ export type BlogPost = {
   imageFit?: "cover" | "contain";
   readingMinutes: number;
   tags: string[];
+  seoKeywords: string[];
   contentMarkdown: string;
 };
 
 type PostFrontmatter = {
   slug: string;
   title: string;
+  metaTitle?: string;
   excerpt: string;
   authorName: string;
   authorRole?: string;
@@ -31,9 +34,203 @@ type PostFrontmatter = {
   imageFit?: "cover" | "contain";
   readingMinutes?: number;
   tags?: string[];
+  seoKeywords?: string[];
 };
 
 const RAW_POSTS: string[] = [
+  `---
+slug: white-gold-vs-yellow-gold-vs-rose-gold-ring
+title: "White Gold vs Yellow Gold vs Rose Gold Ring: Which Metal Is Right for Your Custom Jewellery"
+metaTitle: "White Gold vs Yellow Gold vs Rose Gold Ring Malaysia Guide"
+excerpt: White gold, yellow gold, or rose gold ring? Compare durability, skin tone matching & cultural fit to choose the best metal for your custom ring in Malaysia.
+authorName: Felinda Atelier
+authorRole: Design studio
+publishedAt: "2026-05-15"
+featuredImage: /images/Blog/White Gold vs Yellow Gold Vs Rose Gold Ring.webp
+imageFit: contain
+readingMinutes: 12
+tags:
+  - gold ring Malaysia
+  - white gold
+  - yellow gold
+  - rose gold
+  - custom jewellery
+  - bespoke
+seoKeywords:
+  - rose gold ring Malaysia
+  - white gold ring Malaysia
+  - yellow gold ring Malaysia
+  - custom gold ring Malaysia
+  - gold ring Malaysia
+  - best gold for engagement ring Malaysia
+  - 18k gold ring Malaysia
+  - rose gold vs white gold
+  - gold ring skin tone
+  - gold ring durability
+  - gold purity Malaysia
+  - metal type for rings
+  - bespoke ring Malaysia
+  - custom engagement ring Malaysia
+  - gold jewellery Malaysia
+---
+
+You have made the decision to commission a custom ring, whether you are ordering an engagement ring, a wedding band, or a meaningful personal gift. You know what your design looks like, but now comes the question that stops nearly every buyer cold:
+
+**What type of gold should I choose?**
+
+Is it a rose gold ring? White gold? Or yellow gold? Three different alloys, three very different visual stories. And because this ring will be worn every day for the rest of your life, the metal you choose makes a real difference to how much you enjoy wearing it.
+
+This guide has been written specifically for ring buyers in Malaysia. Culture, climate, skin tone, and lifestyle all influence which metal will suit you best, and at Felinda we discuss this with every client before any design work begins. Choosing the right gold is not only about looks — it is about how the ring fits into the way you live.
+
+## First: What Is Gold Actually Made Of?
+
+Pure 24K gold is too soft for everyday wear. It scratches easily, bends out of shape, and wears thin over time. To make gold strong enough for fine jewellery, it is alloyed with other metals. The proportion of pure gold to alloy determines the **karat**, and the type of alloy used determines the **colour** of the gold.
+
+This is why all of our fine jewellery at Felinda, including bespoke commissions, is made in **18K gold**. At 18K, the metal is 75% pure gold — enough to retain its investment value, warmth, and prestige, with the durability to stand up to daily wear in Malaysia's hot and humid climate.
+
+A quick reference for gold in the Malaysian market:
+
+- **24K**: Pure gold. Too soft for rings, used in investment bars and traditional gold ornaments.
+- **22K**: High purity, still soft for ring construction. Common in Indian and traditional Malay wedding ornaments.
+- **18K**: The standard for fine jewellery. The right balance between purity, durability, and craftsmanship.
+- **14K**: Lower purity, very durable. Uncommon in fine jewellery in Malaysia.
+
+With that in mind, let's look at the three colours and why one may or may not be the right choice for you.
+
+## Yellow Gold: The Classic Choice
+
+Yellow gold is the most familiar colour for a gold ring in Malaysia. It is the classic, culturally rooted choice for the vast majority of buyers. With the right design, it reads as timelessly elegant and quietly modern at the same time.
+
+### How It Works
+
+When gold is alloyed with silver and copper, you get yellow gold. An 18K yellow gold alloy produces a warm, rich tone that is noticeably more refined than lower karat yellow golds.
+
+### Who It Suits
+
+If you have a light olive or warm skin tone — which describes a large portion of the Malaysian population — yellow gold will enhance rather than overpower your complexion. It complements skin with golden, peachy, or amber undertones beautifully.
+
+Those drawn to vintage or heritage looks also tend to gravitate to yellow gold. It has been used for generations in fine jewellery and works exceptionally well with intricate hand engraving, milgrain detailing, and Art Deco inspired settings.
+
+### Cultural Context in Malaysia
+
+In Chinese and Malay culture, gold carries deep meaning. It signifies wealth, blessing, and continuity. Couples looking for an engagement ring that reflects both heritage and personal taste often choose yellow gold. It is also the most natural metal for remodelling or creating bespoke pieces that incorporate **family gold**.
+
+### Practical Considerations
+
+Yellow gold is the easiest of the three metals to live with. It does not lose its colour over time. The colour you see on the day you collect your ring will be the same in ten years. It may develop a soft patina, which many people see as character rather than wear.
+
+## White Gold: The Contemporary Standard
+
+For the last two decades, white gold has been the dominant choice in fine jewellery, and for good reason. It has a sleek, modern presence, it pairs beautifully with diamonds, and it suits the cleaner architectural styles that define current ring design.
+
+### What It Is
+
+White gold begins as yellow gold alloyed with white metals — typically palladium or nickel — and is then plated with **rhodium**, a bright, mirror-white metal. Without the rhodium plating, white gold has a soft greyish or champagne tone underneath.
+
+### Who It Suits
+
+White gold flatters cool and neutral skin tones — those with pink, rosy, or bluish undertones. It also suits anyone who prefers an understated, contemporary look rather than a traditional gold tone.
+
+For engagement rings in the Malaysian market, white gold has long been the favourite. Its neutral surface lets a centre diamond do the talking. A diamond set in white gold reads brighter and crisper than the same stone set in yellow or rose gold.
+
+### The Rhodium Question
+
+Here is the honest truth: white gold requires more maintenance than yellow or rose gold. The rhodium plating wears down with everyday contact. Depending on your lifestyle, you may need to have your ring **re-plated every one to three years** to keep it at its brightest white.
+
+At Felinda, we share this honestly with every client before the design is finalised. Re-plating is straightforward and affordable, but it is an ongoing commitment, and you should know that before choosing white gold for daily wear.
+
+### Platinum vs White Gold
+
+Many clients ask about platinum, especially when comparing white-toned metals. Platinum is naturally white, requires no plating, is denser than white gold, and is significantly more hard-wearing — but it also costs noticeably more. For most custom ring commissions, 18K white gold strikes an excellent balance of look, longevity, and price. When clients want to weigh both options, we walk through them together during the consultation.
+
+## Rose Gold: The Modern Romantic
+
+Rose gold has been one of the most talked-about metals in modern fine jewellery. Many predicted it would be a passing trend, but it has proven its staying power. Its soft blush tone reads as both modern and timeless at once.
+
+### What It Is
+
+Rose gold gets its colour from a higher proportion of **copper** in the alloy. The more copper, the deeper and more saturated the pink. Different jewellers use different recipes, so the exact tone of rose gold varies — some leaning peachy, others distinctly pink. At Felinda, our 18K rose gold is blended to produce a warm, refined blush rather than an over-saturated pink.
+
+### Who Looks Beautiful in Rose Gold
+
+Rose gold is remarkably universal. Its warm copper tones flatter cool, warm, and neutral skin tones alike, which is why it is often the safest "I look great in it" choice for clients who are unsure.
+
+Aesthetically, rose gold is arguably the most expressive of the three metals. Its blush hue suits delicate and feminine designs, organic motifs such as leaves and flowers, and detailed pavé work. In Malaysia, custom rose gold rings have become increasingly popular among women who want something a little more personal than traditional yellow or white gold.
+
+### Practical Considerations
+
+Thanks to its copper content, rose gold is the **most scratch-resistant** of the three. It does not require rhodium plating, so its colour stays consistent for life. The trade-off is that the higher copper content can occasionally cause a reaction in people with sensitive skin or metal allergies. If you know your skin reacts to copper or brass, please let us know during your consultation so we can plan accordingly.
+
+## Choosing by Skin Tone: A Practical Guide
+
+Skin tone and metal pairing is one of the most common questions we hear at Felinda. Here is a simple guide for Malaysian buyers:
+
+- **Fair / light skin with cool undertones** (pink, bluish) — **White gold** sits cleanly against the skin.
+- **Fair / light skin with warm undertones** (peachy, golden) — **Rose gold or yellow gold** brings warmth.
+- **Medium / tan skin, neutral to warm** — **Rose gold or yellow gold** glows beautifully.
+- **Olive skin, warm undertones** — **Yellow gold or rose gold** harmonises with the complexion.
+- **Deep / dark skin, warm undertones** — **Yellow gold** is richly, unmistakably beautiful.
+
+That said, skin tone is a guideline, not a rule. At Felinda, we always encourage clients to try samples against their wrist before committing. The best metal is ultimately the one that feels right to you.
+
+## How Metal Choice Affects Bespoke Design
+
+This is a point that most general guides overlook, and where bespoke expertise matters most. Different metals behave differently on the bench, which means your choice of metal directly influences what is possible in your custom design.
+
+- **Yellow gold** is the most workable of the three. It is the natural choice for elaborate hand engraving, fine milgrain edges, and sculptural detail. If your custom design carries intricate surface work, yellow gold lets a craftsperson push the detail further.
+- **White gold** is harder than yellow gold. It holds crisp, clean lines exceptionally well and is excellent for prong settings. If your design is architectural in spirit — sharp angles and restrained ornament — white gold reads the cleanest.
+- **Rose gold** sits in the middle. The copper content adds strength and structural integrity, which makes it well-suited to delicate but load-bearing settings: knife-edge bands, intricate lattice work, and pavé settings with many small diamonds.
+
+During your design consultation at Felinda, we discuss metal and design together. The right metal is the one that serves the design, not chosen in isolation.
+
+## Gold Ring Care Tips: Making Your Choice Last
+
+Whichever metal you choose, a few habits will keep your ring at its best in Malaysia's humid climate:
+
+- **Remove your ring before swimming.** Both chlorine and salt water degrade gold alloys over time.
+- **Avoid contact with harsh chemicals.** Cleaning agents, hand sanitiser, and perfume can dull the finish.
+- **Store gold pieces separately.** Keep each ring in its own soft pouch to prevent scratching against other jewellery.
+- **Clean gently at home.** Warm water, a drop of mild dish soap, and a soft-bristled toothbrush is all you need.
+- **Schedule an annual professional clean.** We recommend bringing every Felinda bespoke piece in once a year for a check-up.
+- **For white gold, plan for rhodium re-plating** every one to two years, depending on wear.
+
+## Which Gold Is Right for You?
+
+There are no wrong answers here, which is why a proper conversation matters more than an online quiz.
+
+- **Yellow gold** — if you value tradition, heritage, and warmth, or if your skin has olive or golden undertones. It is the easiest of the three to maintain, and it carries deep cultural resonance for many Malaysian families.
+- **White gold** — if you prefer a clean, modern, polished look that lets a diamond or coloured stone read at its brightest. It does require periodic re-plating, but it delivers a sleek, contemporary feel.
+- **Rose gold** — if you want a piece that feels romantic and a little more personal while still reading as timelessly stylish. It is exceptionally hard-wearing and holds its colour permanently.
+
+If you are still undecided, the best next step is a conversation in person. At Felinda, we have long been the destination for custom-made gold rings in Malaysia. We bring out metal samples, talk through your design ideas, hold colour swatches against your wrist, and make sure you commit to a piece that you will cherish for life.
+
+[Book your consultation with Felinda Jewelry](/contact).
+
+Related reading: [How to Repurpose Heirloom Jewellery in Malaysia](/blog/how-to-repurpose-or-redesign-old-jewellery) · [Custom Engagement Rings Malaysia](/custom-rings) · [Bespoke Process](/bespoke)
+
+## Frequently Asked Questions
+
+### Is rose gold more expensive than yellow or white gold in Malaysia?
+
+Not significantly. Because all three are typically 18K gold, the base material cost is essentially the same. Price differences come from craftsmanship and design complexity rather than the colour of the metal. White gold may carry a small additional lifetime cost due to periodic rhodium re-plating.
+
+### Which gold is most durable for everyday wear in Malaysia's humid climate?
+
+Rose gold is technically the most durable of the three, as its copper alloy content makes it harder and more scratch-resistant. White gold is close behind. Yellow gold is the softest, but at 18K it is perfectly suited for daily wear — the key is choosing a well-crafted piece with a band thickness that matches your lifestyle.
+
+### Can I mix metals in a custom ring design, for example rose gold and white gold together?
+
+Yes, and it is a beautiful design choice. Two-tone and three-tone rings combine metals within a single piece, often using white gold for the prong setting and rose or yellow gold for the band. We design these regularly at Felinda, and they work particularly well for couples who cannot quite agree on a single metal.
+
+### Will white gold turn yellow over time?
+
+White gold itself does not turn yellow, but the rhodium plating that gives it its bright white finish will gradually wear away with daily contact, revealing the slightly warm grey or champagne tone of the gold beneath. Re-plating every one to two years restores it fully. Proper care — avoiding harsh chemicals and removing your ring before swimming — extends the time between re-platings significantly.
+
+## Ready to Choose Your Perfect Metal?
+
+The right gold is not just about colour. It is about how it feels on your hand, how it suits your skin, and how it will wear through the years of your life. At Felinda, we walk every client through this decision in person, with sample metals, a real design conversation, and no pressure.
+
+[Book your private consultation at our atelier in Dataran Sunway, Petaling Jaya](/contact), and leave knowing exactly what your custom ring will be made of.`,
   `---
 slug: how-to-repurpose-or-redesign-old-jewellery
 title: "How to Repurpose or Redesign Old Jewellery: Giving Your Heirloom Pieces a New Life"
@@ -335,6 +532,7 @@ function parsePost(raw: string): BlogPost {
   return {
     slug: d.slug,
     title: d.title,
+    metaTitle: d.metaTitle,
     excerpt: d.excerpt,
     author: {
       name: d.authorName,
@@ -346,6 +544,7 @@ function parsePost(raw: string): BlogPost {
     imageFit: d.imageFit,
     readingMinutes: readingMinutesFromMarkdown(body, d.readingMinutes),
     tags: Array.isArray(d.tags) ? d.tags.map(String) : [],
+    seoKeywords: Array.isArray(d.seoKeywords) ? d.seoKeywords.map(String) : [],
     contentMarkdown: body,
   };
 }
