@@ -6,6 +6,7 @@ import { termsMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: termsMeta.absoluteTitle,
   description: termsMeta.description,
+  keywords: termsMeta.keywords,
   path: "/terms-and-conditions",
 });
 

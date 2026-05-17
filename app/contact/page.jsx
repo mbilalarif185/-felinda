@@ -10,6 +10,7 @@ import { contactMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: contactMeta.absoluteTitle,
   description: contactMeta.description,
+  keywords: contactMeta.keywords,
   path: "/contact",
 });
 

@@ -10,6 +10,7 @@ import { blogMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: blogMeta.absoluteTitle,
   description: blogMeta.description,
+  keywords: blogMeta.keywords,
   path: "/blog",
 });
 

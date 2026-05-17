@@ -21,6 +21,7 @@ import { processMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: processMeta.absoluteTitle,
   description: processMeta.description,
+  keywords: processMeta.keywords,
   path: "/process",
 });
 

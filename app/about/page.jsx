@@ -10,6 +10,7 @@ import { aboutMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: aboutMeta.absoluteTitle,
   description: aboutMeta.description,
+  keywords: aboutMeta.keywords,
   path: "/about",
 });
 

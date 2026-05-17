@@ -16,6 +16,7 @@ import { breadcrumbJsonLd, pageWebSiteJsonLd, productJsonLd } from "@/lib/seo/js
 export const metadata = buildPageMetadata({
   absoluteTitle: customRingsPageMeta.absoluteTitle,
   description: customRingsPageMeta.description,
+  keywords: customRingsPageMeta.keywords,
   path: "/custom-rings",
 });
 

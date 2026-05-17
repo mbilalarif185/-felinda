@@ -6,6 +6,7 @@ import { privacyMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: privacyMeta.absoluteTitle,
   description: privacyMeta.description,
+  keywords: privacyMeta.keywords,
   path: "/privacy-policy",
 });
 

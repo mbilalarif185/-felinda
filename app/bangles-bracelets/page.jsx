@@ -5,6 +5,7 @@ import { banglesBraceletsMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: banglesBraceletsMeta.absoluteTitle,
   description: banglesBraceletsMeta.description,
+  keywords: banglesBraceletsMeta.keywords,
   path: "/bangles-bracelets",
 });
 

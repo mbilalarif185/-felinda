@@ -17,6 +17,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 export const metadata = buildPageMetadata({
   absoluteTitle: pendantsNecklacesPageMeta.absoluteTitle,
   description: pendantsNecklacesPageMeta.description,
+  keywords: pendantsNecklacesPageMeta.keywords,
   path: "/pendants-necklaces",
 });
 

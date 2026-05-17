@@ -5,6 +5,7 @@ import { pearlCreationsMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: pearlCreationsMeta.absoluteTitle,
   description: pearlCreationsMeta.description,
+  keywords: pearlCreationsMeta.keywords,
   path: "/pearl-creations",
 });
 

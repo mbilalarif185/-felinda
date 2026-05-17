@@ -35,6 +35,7 @@ export const metadata = {
   ...buildPageMetadata({
     absoluteTitle: homeMeta.absoluteTitle,
     description: homeMeta.description,
+    keywords: homeMeta.keywords,
     path: "/",
     ogImage: heroFeatured.src,
   }),

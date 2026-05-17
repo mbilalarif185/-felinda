@@ -12,6 +12,7 @@ import { testimonialsMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: testimonialsMeta.absoluteTitle,
   description: testimonialsMeta.description,
+  keywords: testimonialsMeta.keywords,
   path: "/testimonials",
 });
 

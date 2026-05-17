@@ -5,6 +5,7 @@ import { regalRevivalsMeta } from "@/lib/seo/meta-copy";
 export const metadata = buildPageMetadata({
   absoluteTitle: regalRevivalsMeta.absoluteTitle,
   description: regalRevivalsMeta.description,
+  keywords: regalRevivalsMeta.keywords,
   path: "/regal-revivals",
 });
 
