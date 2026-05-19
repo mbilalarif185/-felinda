@@ -51,7 +51,7 @@ export default function BanglesAndBraceletsPage() {
         { label: "Our Creations" },
         { label: "Bangles & Bracelets" },
       ]}
-      description="From sculpted cuffs to tennis lines and stackable bands, each bracelet is created to move with you—balancing weight, form, and ease in every detail."
+      description="From sculpted cuffs to tennis lines and stackable bands, each bracelet is created to move with you — balancing weight, form, and ease in every detail."
       galleryItems={galleryItems}
     />
   );

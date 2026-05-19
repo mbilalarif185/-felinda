@@ -26,7 +26,7 @@ function CtaButton({ href, className, children }) {
 export default function ConsultationCTA({
   eyebrow = "Begin Here",
   title = "The Right Piece Doesn’t Exist Yet Let’s Make It.",
-  description = "Most people who reach out to us arrive with something between certainty and feeling—a moment they know is coming, a person they wish to honour, or an idea that has not yet taken full form. That is exactly where the process begins.",
+  description = "Most people who reach out to us arrive with something between certainty and feeling — a moment they know is coming, a person they wish to honour, or an idea that has not yet taken full form. That is exactly where the process begins.",
   note = "By appointment only • Private • One-on-One Consultations • Serving clients\nAcross Malaysia",
   primary = { label: "Book Your Private Appointment", href: consultationBookingHref },
   secondary = { label: "Send a WhatsApp Message", href: CONTACT.whatsappWaMe },

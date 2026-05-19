@@ -233,7 +233,7 @@ It is made to be remembered — an extension of who you are, and a moment that e
             </h2>
             <p className="felinda-sans mt-5 text-lg leading-8 text-muted">
               
-                The Felinda process is designed to feel the opposite of a transaction. It unfolds at the pace of trust, guided by conversation, intention, and detail. It is only complete when every element feels exactly right—because nothing leaves the atelier until it belongs fully to you.
+                The Felinda process is designed to feel the opposite of a transaction. It unfolds at the pace of trust, guided by conversation, intention, and detail. It is only complete when every element feels exactly right — because nothing leaves the atelier until it belongs fully to you.
 
             </p>
           </div>
@@ -269,7 +269,7 @@ It is made to be remembered — an extension of who you are, and a moment that e
               </h2>
                <p className="felinda-sans mt-5 text-lg leading-8 text-muted">
               
-             If you are unsure where to begin, each Felinda category serves as a doorway into the same intimate experience—one that concludes with a piece made exclusively for you
+             If you are unsure where to begin, each Felinda category serves as a doorway into the same intimate experience — one that concludes with a piece made exclusively for you
             </p>
             </div>
 

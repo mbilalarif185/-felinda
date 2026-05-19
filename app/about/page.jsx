@@ -139,13 +139,13 @@ function IconHand() {
 const valueStrip = [
   {
     title: "By Appointment Only",
-    text: "Felinda operates beyond the traditional storefront. Every engagement begins with a private conversation—personal, considered, and entirely without distraction."},
+    text: "Felinda operates beyond the traditional storefront. Every engagement begins with a private conversation — personal, considered, and entirely without distraction."},
   {
     title: "Creative Direction by Felinda ",
-    text: "Every piece is shaped under Felinda’s direction—from the initial concept to the final form. Supported by a trusted atelier team, each creation remains true to her vision, standards, and design philosophy."},
+    text: "Every piece is shaped under Felinda’s direction — from the initial concept to the final form. Supported by a trusted atelier team, each creation remains true to her vision, standards, and design philosophy."},
   {
     title: "Designed to Be Inherited",
-    text: "Nothing at Felinda is created for a moment alone. Each commission is conceived with the weight of time—made to be returned to, not replaced."},
+    text: "Nothing at Felinda is created for a moment alone. Each commission is conceived with the weight of time — made to be returned to, not replaced."},
 ];
 
 const craftPillars = [
@@ -171,15 +171,15 @@ const signatureMoments = [
   {
     eyebrow: "I · THE BEGINNING",
     title: "Before There Was a Name, There Was a Standard.",
-    text: "Felinda did not begin as a business. It began as a refusal—a refusal to accept the ordinary, to create what is expected, or to settle for what is simply enough. From the very first piece, everything has been measured against a single question: is this exactly right? Not good. Not almost. Exactly right."},
+    text: "Felinda did not begin as a business. It began as a refusal — a refusal to accept the ordinary, to create what is expected, or to settle for what is simply enough. From the very first piece, everything has been measured against a single question: is this exactly right? Not good. Not almost. Exactly right."},
   {
     eyebrow: "II · THE PRACTICE",
     title: "One Vision. One Client. One Piece at a Time.",
-    text: "No production lines. No excess. No dilution of intent. Every piece is approached with precision and purpose—guided from first sketch to final form with unwavering attention. This is not about volume. It is about getting it exactly right."},
+    text: "No production lines. No excess. No dilution of intent. Every piece is approached with precision and purpose — guided from first sketch to final form with unwavering attention. This is not about volume. It is about getting it exactly right."},
   {
     eyebrow: "III · The Intention",
     title: "Made to Outlive the Moment",
-    text: "Trends are a distraction. Felinda does not follow them. Each piece is created to endure—beyond the moment, beyond the years, beyond the person it was first made for. It demands a different standard: not is this beautiful now? but will this still be right in thirty years? It takes longer. It is worth it."},
+    text: "Trends are a distraction. Felinda does not follow them. Each piece is created to endure — beyond the moment, beyond the years, beyond the person it was first made for. It demands a different standard: not is this beautiful now? but will this still be right in thirty years? It takes longer. It is worth it."},
     ];
 
 export default function AboutPage() {
@@ -372,7 +372,7 @@ export default function AboutPage() {
                 </p>
 
                 <p className="felinda-sans mt-8 max-w-full hyphens-auto break-words text-[15px] leading-[1.7] text-muted [overflow-wrap:anywhere] sm:max-w-xl sm:text-[17px] sm:leading-8 lg:text-lg">
-                  Felinda began not with adornment, but with precision. With an obsession for how much meaning a small object can hold. And with the quiet realisation that jewelry, when made with intention, can preserve light, memory, and presence—long after the moment itself has passed.
+                  Felinda began not with adornment, but with precision. With an obsession for how much meaning a small object can hold. And with the quiet realisation that jewelry, when made with intention, can preserve light, memory, and presence — long after the moment itself has passed.
                 </p>
 
                 <div className="mt-10 flex min-w-0 items-center gap-5 border-t border-line pt-7">

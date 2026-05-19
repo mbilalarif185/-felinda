@@ -39,7 +39,7 @@ const galleryItems = archiveFiles.map((file) => ({
 }));
 
 const REGAL_REVIVALS_DESCRIPTION =
-  "A private collection of heritage-inspired designs, museum-grade gemstones, and one-of-a-kind couture commissions. Felinda's most intimate work\u2014reserved for those who collect quietly, and for a lifetime.";
+  "A private collection of heritage-inspired designs, museum - grade gemstones, and one-of-a-kind couture commissions. Felinda's most intimate work - reserved for those who collect quietly, and for a lifetime.";
 
 export default function RegalRevivalsPage() {
   return (
