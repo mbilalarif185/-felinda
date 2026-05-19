@@ -156,18 +156,21 @@ Fine jewelry, handcrafted one story at a time. Each piece entirely its own.
       </div>
       <div className="border-t border-line/70">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-xs uppercase tracking-[0.18em] text-muted lg:flex-row lg:items-center lg:justify-between lg:px-10">
-          <div>
-            © {new Date().getFullYear()} Felinda Jewelry I MONOS ENTERPRISE ( LA0077524-A ) • By appointment only
-            {" "}
-            Developed by{" "}
-            <Link
-              href="https://cressoft.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-ink underline decoration-muted/50 underline-offset-2 transition hover:text-rose hover:decoration-rose/60"
-            >
-              Cressoft
-            </Link>
+          <div className="flex flex-col gap-1.5">
+            <div>
+              © {new Date().getFullYear()} Felinda Jewelry I MONOS ENTERPRISE ( LA0077524-A ) • By appointment only
+            </div>
+            <div>
+              DEVELOPED BY{" "}
+              <Link
+                href="https://cressoft.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink underline decoration-muted/50 underline-offset-2 transition hover:text-rose hover:decoration-rose/60"
+              >
+                CRESSOFT
+              </Link>
+            </div>
           </div>
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <li>

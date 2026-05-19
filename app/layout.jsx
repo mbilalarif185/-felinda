@@ -62,9 +62,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-    >
+    <html lang="en">
       <body className="min-h-screen bg-cream text-ink antialiased">
         <JsonLd data={rootJsonLdGraph()} />
         {children}

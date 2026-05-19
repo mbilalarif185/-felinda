@@ -62,13 +62,10 @@ export default function HomePage() {
                 FINE JEWELRY, MADE FOR YOU
               </div>
               <h1 className="felinda-serif max-w-xl text-5xl leading-[0.98] tracking-[-0.02em] lg:text-7xl">
-                You are not like everyone else 
-                your jewelry shouldn’t be either
+                You Are Not Like Everyone Else — Your Jewelry Shouldn’t Be Either
               </h1>
               <p className="felinda-sans mt-6 max-w-xl text-lg leading-8 text-muted">
-                Felinda is a private atelier where fine jewelry is conceived around one person, 
-                one story, and a moment meant to endure. We do not design collections. 
-                We design for you.
+               Felinda is a private atelier where fine jewelry is conceived around one person, one story, and a moment meant to endure. We do not design collections. We design for you.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-4">
@@ -151,15 +148,13 @@ export default function HomePage() {
             </h2>
             <p className="felinda-sans mt-6 max-w-2xl text-lg leading-8 text-muted">
              At Felinda, every piece begins with you.
-              Your story. Your moment. Your meaning.
-              We do not follow trends, and we do not design for the masses. Each creation is conceived
-              for one shaped by intention, guided by emotion, and brought to life through uncompromising 
-              craftsmanship.
+Your story. Your moment. Your meaning.
+We do not follow trends, and we do not design for the masses. Each creation is conceived for one — shaped by intention, guided by emotion, and brought to life through uncompromising craftsmanship.
             </p>
             <p className="felinda-sans mt-4 max-w-2xl text-lg leading-8 text-muted">
-              Every gemstone is chosen for its character. Every line is deliberate. Every detail exists for a reason.
+             Every gemstone is chosen for its character. Every line is deliberate. Every detail exists for a reason.
 This is not jewelry made to be worn and forgotten.
-It is made to be remembered an extension of who you are, and a moment that endures.
+It is made to be remembered — an extension of who you are, and a moment that endures.
             </p>
             <div className="mt-8">
               <Link
@@ -184,8 +179,7 @@ It is made to be remembered an extension of who you are, and a moment that endur
                 </h2>
               </div>
               <p className="felinda-sans max-w-xl text-lg leading-8 text-muted">
-               A curated selection of recent bespoke commissions, 
-               each created in close collaboration and designed to exist only once.
+              A curated selection of recent bespoke commissions, each created in close collaboration and designed to exist only once.
               </p>
             </div>
 
@@ -234,15 +228,13 @@ It is made to be remembered an extension of who you are, and a moment that endur
               HOW IT WORKS
             </div>
             <h2 className="felinda-serif text-4xl lg:text-6xl">
-              Unhurried Considered Entirely Yours
+              Unhurried. Considered. Entirely Yours.
+
             </h2>
             <p className="felinda-sans mt-5 text-lg leading-8 text-muted">
               
-            
-The Felinda process is designed to feel the opposite of a transaction. It unfolds at the
- pace of trust, guided by conversation, intention, and detail. It is only complete when 
- every element 
-feels exactly right because nothing leaves the atelier until it belongs fully to you.
+                The Felinda process is designed to feel the opposite of a transaction. It unfolds at the pace of trust, guided by conversation, intention, and detail. It is only complete when every element feels exactly right—because nothing leaves the atelier until it belongs fully to you.
+
             </p>
           </div>
 
@@ -277,9 +269,7 @@ feels exactly right because nothing leaves the atelier until it belongs fully to
               </h2>
                <p className="felinda-sans mt-5 text-lg leading-8 text-muted">
               
-             If you are unsure where to begin, each Felinda category serves as a
-              doorway into the same intimate experience one that concludes with a
-               piece made exclusively for you.
+             If you are unsure where to begin, each Felinda category serves as a doorway into the same intimate experience—one that concludes with a piece made exclusively for you
             </p>
             </div>
 

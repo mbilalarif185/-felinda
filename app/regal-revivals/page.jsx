@@ -38,6 +38,9 @@ const galleryItems = archiveFiles.map((file) => ({
   image: `/images/felinda-jewelry/Regal-Revivals/${encodeURIComponent(file)}`,
 }));
 
+const REGAL_REVIVALS_DESCRIPTION =
+  "A private collection of heritage-inspired designs, museum-grade gemstones, and one-of-a-kind couture commissions. Felinda's most intimate work\u2014reserved for those who collect quietly, and for a lifetime.";
+
 export default function RegalRevivalsPage() {
   return (
     <CreationsPage
@@ -48,7 +51,7 @@ export default function RegalRevivalsPage() {
         { label: "Our Creations" },
         { label: "Regal Revivals" },
       ]}
-      description="A private collection of heritage inspired designs, museum grade gemstones, and one-of a kind couture commissions. Felinda’s most intimate work reserved for those who collect quietly, and for a lifetime."
+      description={REGAL_REVIVALS_DESCRIPTION}
       galleryItems={galleryItems}
     />
   );

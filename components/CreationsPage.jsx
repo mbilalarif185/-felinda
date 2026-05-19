@@ -58,7 +58,7 @@ const defaultBenefits = [
  *   ctaStripPrimaryHref     — solid strip button when two CTAs; sole strip link when one (default: WhatsApp for default “journey” label)
  *   ctaStripSecondaryHref   — outline strip button when two CTAs (default: WhatsApp)
  *   introHeadlineSerif      — optional first line of intro H2 (default: “Designed”)
- *   introHeadlineScript     — optional script-accent line of intro H2 (default: “for Felinda”)
+ *   introHeadlineScript     — optional italic rose accent line of intro H2 (default: “for Felinda”)
  */
 export default function CreationsPage({
   title,
@@ -124,14 +124,7 @@ export default function CreationsPage({
     >
       <h2 className="font-serif text-[44px] font-light leading-[1.05] tracking-[-0.03em] text-[#4f413a] md:text-[64px]">
         {introHeadlineSerif}{" "}
-        <span
-          className="text-[#d59a92]"
-          style={{
-            fontFamily: "var(--font-great-vibes), 'Great Vibes', 'Allura', cursive",
-            fontWeight: 400,
-            fontStyle: "italic",
-          }}
-        >
+        <span className="font-normal italic text-[#d59a92]">
           {introHeadlineScript}
         </span>
       </h2>

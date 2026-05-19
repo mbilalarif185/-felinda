@@ -154,15 +154,7 @@ export default function DesignProcessPage() {
             <div className="mx-auto max-w-[900px] text-center">
               <h2 className="font-serif text-[40px] font-light leading-[1.05] tracking-[-0.03em] text-[#4f413a] md:text-[60px]">
                 Six weeks,{" "}
-                <span
-                  className="text-[#d59a92]"
-                  style={{
-                    fontFamily:
-                      "var(--font-great-vibes), 'Great Vibes', 'Allura', cursive",
-                    fontWeight: 400,
-                    fontStyle: "italic",
-                  }}
-                >
+                <span className="font-normal italic text-[#d59a92]">
                   one heirloom
                 </span>
                 .

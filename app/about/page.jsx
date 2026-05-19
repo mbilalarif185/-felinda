@@ -139,13 +139,13 @@ function IconHand() {
 const valueStrip = [
   {
     title: "By Appointment Only",
-    text: "Felinda operates beyond the traditional storefront. Every engagement begins with a private conversation personal, considered, and entirely without distraction."},
+    text: "Felinda operates beyond the traditional storefront. Every engagement begins with a private conversation—personal, considered, and entirely without distraction."},
   {
     title: "Creative Direction by Felinda ",
-    text: "Every piece is shaped under Felinda’s direction from the initial concept to the final form. Supported by a trusted atelier team, each creation remains true to her vision, standards, and design philosophy."},
+    text: "Every piece is shaped under Felinda’s direction—from the initial concept to the final form. Supported by a trusted atelier team, each creation remains true to her vision, standards, and design philosophy."},
   {
     title: "Designed to Be Inherited",
-    text: "Nothing at Felinda is created for a moment alone. Each commission is conceived with the weight of time made to be returned to, not replaced."},
+    text: "Nothing at Felinda is created for a moment alone. Each commission is conceived with the weight of time—made to be returned to, not replaced."},
 ];
 
 const craftPillars = [
@@ -170,16 +170,16 @@ const craftPillars = [
 const signatureMoments = [
   {
     eyebrow: "I · THE BEGINNING",
-    title: "Before There Was a Name, There Was a Standard",
-    text: "Felinda did not begin as a business. It began as a refusal a refusal to accept the ordinary, to create what is expected, or to settle for what is simply enough. From the very first piece, everything has been measured against a single question: is this exactly right? Not good. Not almost. Exactly right."},
+    title: "Before There Was a Name, There Was a Standard.",
+    text: "Felinda did not begin as a business. It began as a refusal—a refusal to accept the ordinary, to create what is expected, or to settle for what is simply enough. From the very first piece, everything has been measured against a single question: is this exactly right? Not good. Not almost. Exactly right."},
   {
     eyebrow: "II · THE PRACTICE",
-    title: "One Vision. One Client. One Piece at a Time",
+    title: "One Vision. One Client. One Piece at a Time.",
     text: "No production lines. No excess. No dilution of intent. Every piece is approached with precision and purpose—guided from first sketch to final form with unwavering attention. This is not about volume. It is about getting it exactly right."},
   {
     eyebrow: "III · The Intention",
     title: "Made to Outlive the Moment",
-    text: "Trends are a distraction. Felinda does not follow them.Each piece is created to endure beyond the moment, beyond the years, beyond the person it was first made for.It demands a different standard: not is this beautiful now? but will this still be right in thirty years? It takes longer. It is worth it. "},
+    text: "Trends are a distraction. Felinda does not follow them. Each piece is created to endure—beyond the moment, beyond the years, beyond the person it was first made for. It demands a different standard: not is this beautiful now? but will this still be right in thirty years? It takes longer. It is worth it."},
     ];
 
 export default function AboutPage() {
@@ -197,9 +197,7 @@ export default function AboutPage() {
         <section className="bg-[#f6f0ec] pb-12 pt-2 sm:pb-16 lg:pb-20">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-10">
             <p className="felinda-serif text-[18px] leading-[1.7] text-[#5b4d44] sm:text-xl lg:text-2xl lg:leading-[1.7]">
-              Felinda is a founder led private atelier, where fine jewelry is created without haste,
-               without compromise, 
-              and always in quiet devotion to the individual it is made for.
+              Felinda is a founder-led private atelier, where fine jewelry is created without haste, without compromise, and always in quiet devotion to the individual it is made for.
                
             </p>
           </div>
@@ -370,11 +368,11 @@ export default function AboutPage() {
                 <Flourish className="mt-8 block h-3 w-full max-w-[12rem] text-clay/70 sm:max-w-[15rem]" />
 
                 <p className="felinda-serif mt-8 max-w-full hyphens-auto break-words text-[20px] leading-[1.45] text-ink [overflow-wrap:anywhere] sm:mt-10 sm:text-2xl sm:leading-relaxed lg:text-3xl">
-                  &ldquo;I am not interested in making beautiful things quickly. I am interested in making the right thing once, completely, for the person who will carry it for the rest of their life.&rdquo;
+                  &ldquo;“I am not interested in making beautiful things quickly. I am interested in making the right thing once—fully—for the person who will carry it for a lifetime.&rdquo;
                 </p>
 
                 <p className="felinda-sans mt-8 max-w-full hyphens-auto break-words text-[15px] leading-[1.7] text-muted [overflow-wrap:anywhere] sm:max-w-xl sm:text-[17px] sm:leading-8 lg:text-lg">
-                  Felinda began not with adornment, but with precision. With an obsession for how much meaning a small object can hold. And with the quiet realisation that jewelry, when made with intention, can preserve light, memory, and presence long after the moment itself has passed.
+                  Felinda began not with adornment, but with precision. With an obsession for how much meaning a small object can hold. And with the quiet realisation that jewelry, when made with intention, can preserve light, memory, and presence—long after the moment itself has passed.
                 </p>
 
                 <div className="mt-10 flex min-w-0 items-center gap-5 border-t border-line pt-7">
@@ -428,10 +426,10 @@ export default function AboutPage() {
             <Crest className="mx-auto h-14 w-14 text-rose lg:h-16 lg:w-16" />
             <Mark className="mx-auto mt-6 h-4 w-12 text-clay" />
             <p className="felinda-serif mt-8 text-[33px] leading-[1.2] text-ink sm:text-3xl lg:text-6xl">
-              A jewelry house should feel less like a catalog
+              A jewelry house should feel less like a catalog,
               
               and more like a{" "}
-              <span className="italic text-rose">private letter</span> written for one.
+              <span className="italic text-rose">private letter-</span>written for one.
             </p>
             <Flourish className="mx-auto mt-10 h-3 w-48 text-clay/70 lg:w-60" />
             <div className="felinda-sans mt-6 text-xs uppercase tracking-[0.22em] text-clay sm:tracking-[0.32em]">

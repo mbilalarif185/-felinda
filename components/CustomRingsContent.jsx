@@ -46,12 +46,6 @@ import {
   customRingsTabBySlug,
 } from "@/lib/customRingsTabs";
 
-const scriptAccent = {
-  fontFamily: "var(--font-great-vibes), 'Great Vibes', 'Allura', cursive",
-  fontWeight: 400,
-  fontStyle: "italic",
-};
-
 const whyIcons = [Sparkles, Gem, ShieldCheck, CalendarDays];
 
 const filters = [
@@ -356,7 +350,7 @@ export default function CustomRingsContent() {
         <div className="mx-auto max-w-[900px] text-center">
           <h2 className="font-serif text-[44px] font-light leading-[1.05] tracking-[-0.03em] text-[#4f413a] md:text-[64px]">
             {customRingsIntroHeadline.beforeScript}{" "}
-            <span className="text-[#d59a92]" style={scriptAccent}>
+            <span className="font-normal italic text-[#d59a92]">
               {customRingsIntroHeadline.script}
             </span>
           </h2>
