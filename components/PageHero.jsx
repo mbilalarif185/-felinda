@@ -1,9 +1,10 @@
 import Link from "next/link";
 
-function JewelCorner({ className = "" }) {
+function JewelCorner({ className = "", "aria-hidden": ariaHidden }) {
   return (
     <div
       className={`pointer-events-none absolute text-[#e4bfb4] opacity-80 ${className}`}
+      aria-hidden={ariaHidden}
     >
       <svg viewBox="0 0 300 300" className="h-full w-full" fill="none">
         <g
@@ -91,19 +92,28 @@ function JewelCorner({ className = "" }) {
  *   subtitle         — optional softer second line beneath the H1
  *   extendedBottom   — extra padding below breadcrumbs when a main card overlaps the hero (bespoke gallery)
  *   breadcrumb       — array of { label, href? } items (last item is treated as the current page)
+ *   hideCornerArt    — omit left/right jewelry wireframe ornaments (e.g. About page)
  */
 export default function PageHero({
   title,
   subtitle,
   breadcrumb = [],
   extendedBottom = false,
+  hideCornerArt = false,
 }) {
   const bottomPad = extendedBottom ? "pb-16 sm:pb-20 md:pb-28" : "pb-6";
+  const cornerVisibility = hideCornerArt ? "hidden" : "";
 
   return (
     <section className={`relative overflow-hidden bg-[#f6f0ec] px-4 pt-10 sm:px-6 sm:pt-12 ${bottomPad}`}>
-      <JewelCorner className="left-0 top-0 h-[230px] w-[230px] sm:h-[310px] sm:w-[310px]" />
-      <JewelCorner className="right-0 top-0 h-[230px] w-[230px] scale-x-[-1] sm:h-[310px] sm:w-[310px]" />
+      <JewelCorner
+        className={`left-0 top-0 h-[230px] w-[230px] sm:h-[310px] sm:w-[310px] ${cornerVisibility}`}
+        aria-hidden={hideCornerArt}
+      />
+      <JewelCorner
+        className={`right-0 top-0 h-[230px] w-[230px] scale-x-[-1] sm:h-[310px] sm:w-[310px] ${cornerVisibility}`}
+        aria-hidden={hideCornerArt}
+      />
 
       <div className="relative z-10 mx-auto flex max-w-[980px] flex-col items-center text-center">
         <h1 className="font-serif text-[32px] font-light leading-none tracking-[-0.02em] text-[#4e4039] sm:text-[40px] md:text-[66px]">
