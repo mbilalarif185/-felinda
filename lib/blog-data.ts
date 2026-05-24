@@ -73,164 +73,185 @@ seoKeywords:
   - Felinda jewelry Malaysia
 ---
 
-Proposing is something you would like to do. However, you would like your proposal to be meaningful and not simply about looking nice but being special to her as well. One of the things you are not going to do to achieve this is to walk into a mall or shop and pick something out of a display case.
+Proposing is something you would like to do. However, you would like your proposal to be meaningful and not simply about looking nice but being special to her as well. One of the things you aren’t going to do to achieve this is to walk into a mall or shop and pick something out of a display case.
 
-You are right about this; a custom-made engagement ring will be a much more unique and personalised option than what might be available in stores. You can determine the design, the stone, the metal, and your budget. You do not have to settle on something because that is what happens to be available. When she sees it for the first time, it is the only one like it that exists, and it is made specifically for her.
+You’re right about this; a [custom-made engagement ring](https://www.felindajewelry.com/custom-rings) will be a much more unique and personalised option than what might be available in stores. You can determine the design, the stone, the metal, and your budget. You don’t have to settle on something because that is what happens to be available. When she sees it for the first time, it is the only one like it that exists, and it is made specifically for her.
 
 If you have never ordered a fine piece of jewellery before, the ordering process might be unfamiliar to you. How should you begin? Which decisions need to be made? How long will it take? What can you do to ensure you maintain the element of surprise?
 
-This guide is a complete reference for each step of the engagement ring design process in Malaysia, from starting with an idea through having the finished ring in your possession — written for first-time buyers.
+This document is a complete reference for each step of the engagement ring design process in Malaysia, from starting with an idea through having the finished ring in your possession, and is a guide for first-time buyers.
 
-## Step 1: Start with a Budget Range, Not a Fixed Number
+Step 1: Start with a Budget Range, Not a Fixed Number
 
-To begin, you should create a **realistic budget range**, not a firm upper limit, before doing anything else. That is important because your choices of gemstone, metal, and how complicated the setting is depend on each other, so a budget range that is flexible by even 10–15% will allow your jeweller to help you find the best possible combination within your budget.
+To begin, you should create a "realistic budget range", not a firm upper limit, before doing anything else. That is important because your choices of gemstone, metal and how complicated the setting is, depend on each other, so a budget range that is flexible by even 10–15% will allow your jeweller to help you find the best possible combination within your budget.
 
 A custom made engagement ring from a high-end jewellery store in Malaysia typically starts at RM3,000 and goes up depending on the centre stone and complexity of design. You can get a well-made 18K gold engagement ring with either a good quality moissanite or another type of semi-precious centre stone, for a moderately priced mid-priced budget. If you want to spend more money, the centre stone will likely be a natural diamond, especially if you want it to be over 0.5 carat and have strong colour and clarity.
 
-Here is the honest truth: a carefully thought out bespoke engagement ring at a moderate cost is going to look and feel much more special than a mass-produced engagement ring that costs twice as much. You are paying for the craftsmanship, not just for the material.
+Here's the honest truth, a carefully thought out bespoke engagement ring at a moderate cost is going to look and feel much more special than a mass-produced engagement ring that costs twice as much. You're paying for the craftsmanship, not just for the material.
 
 A framework for planning your budget:
 
-- Spend **50%–65%** of your budget on the centre stone
-- Spend **25%–35%** of your budget on the setting and the band
-- Keep **10%** of your budget for any design changes or size adjustments you might need after delivery
+•         Spend 50%-65% of your budget on the centre stone
 
-## Step 2: Learn the Four Ring Design Decisions
+•         Spend 25%-35% of your budget on the setting and the band
+
+•         Keep 10% of your budget for any design changes or size adjustments you might need to make after the ring is delivered to you
+
+Step 2: Learn the Four Ring Design Decisions
 
 There are four major decisions regarding all engagement rings. Being aware of those decisions prior to seeing a jeweller means you will have knowledge of what you want before entering the store and leaving with a ring that will satisfy you.
 
-### The Size of Your Centre Gemstone
+The Size of your Center Gemstone
 
-The size of your centre stone (or gem) is the most important component to consider. In Malaysia, the most popular gemstones for engagement rings are:
+The size of your center stone (or gem) is the most important component to consider. In Malaysia, the most popular gemstone for engagement rings are:
 
-**Diamond**
+Diamond
 
-The most commonly used gemstone is the diamond. When buying a diamond, you should be familiar with the 4Cs: Cut, Colour, Clarity, and Carat. If your budget permits, the soundest decision you could make would be to prioritise Cut above all else, because an exceptionally cut diamond will outshine a diamond of higher colour or clarity that is cut poorly.
+The most commonly used gemstone is the Diamond. When buying a diamond, you should be familiar with the 4Cs; Cut, Colour, Clarity and Carat. If your budget permits, the Soundest decision you could make would be to choose to prioritise Cut above all else, because an exceptionally cut diamond will outshine a diamond that is of higher Colour/Clarity because it is cut poorly.
 
-**Moissanite**
+Moissanite
 
-Moissanite is a lab-created stone that replicates the same beauty as the diamond but at a much lower cost. More and more Malaysian couples are choosing moissanite as their centre stone — a diamond alternative with the same splendour at a fraction of the cost.
+The second most popular gemstone for engagement rings is the Moissanite. The Moissanite is a lab created stone that replicates the same beauty as the Diamond but at a much lower cost. More and more Malaysian couples are searching for the Moissanite as their centre stone for A diamond alternative that has the same splendour but at a fraction of the cost.
 
-**Sapphire**
+Sapphire
 
-Sapphire is a great choice if you want colour in addition to the durability needed for everyday wear. The most commonly desired sapphire for engagement rings is deep blue; however, there are pink, yellow, and white sapphires — the actual colour is up to the woman you are purchasing for. With the right setting, sapphire can be one of the more romantic stones.
+The third most popular engagement ring centre stone is the Sapphire. The sapphire is a great choice if you want to have colour in addition to the durability needed for everyday wear. The most commonly desired sapphire for engagement rings are deep blue however, there are pink, yellow, and white sapphires; therefore, the actual colour is up to the woman you are purchasing for! As well, when the right setting is placed in, the sapphire can be considered one of the more romantic stones.
 
-**Ruby and Emerald**
+Ruby & Emerald
 
-For the daring, ruby and emerald bring more consideration into the design and can be even more stunning when used in the right setting — a fabulous choice for a partner whose personality is unconventional.
+For the daring, Ruby and Emerald are gemstones that bring more consideration into the design and can be even more stunning when used in the right setting. A fabulous choice for a partner whose personality is unconventional.
 
-At Felinda, we will find gemstones to fit your requirements — not just use something from stock.
+At Felinda, we will find gemstones to fit your requirements – not just use something from stock.
 
-### The Metal
+The Metal
 
-You have three different options for gold: yellow, white, and rose. Each has its own unique qualities and maintenance. A more in-depth breakdown can be found in our [gold comparison guide](/blog/white-gold-vs-yellow-gold-vs-rose-gold-ring), but here is a summary:
+You have three different options, for gold; yellow, white & rose. Each has its own unique qualities and maintenance. A more in-depth breakdown can be found in our Gold Comparison Guide but here's a summary;
 
-- **Yellow gold** is warm and traditional, closely associated with culture, and requires less maintenance.
-- **White gold** is the latest and most modern, with a crisp and clean style that serves as a backdrop for diamonds — though it needs periodic re-plating.
-- **Rose gold** is romantic and flattering on all skin tones. It is also the hardest of all three options.
+Yellow gold is warm and traditional and closely associated with culture, therefore less maintenance.
 
-Our custom wedding rings are always made in **18K gold** — the benchmark for fine jewellery in terms of purity and longevity.
+White gold is the latest and most modern. It has crisp and clean style but only serves as a backdrop for diamonds, hence the need for regular replating of the surface.
 
-Related reading: [Rose Gold vs White Gold vs Yellow Gold — Which Is Right for Your Ring?](/blog/white-gold-vs-yellow-gold-vs-rose-gold-ring)
+Rose gold is romantic and flatteringly suited to all skin tones. It is also the hardest of all three options.
 
-### The Setting Style
+Our custom wedding rings are always made in 18K gold, this being the benchmark for fine jewellery in terms of purity and longevity.
 
-The way in which a stone sits on the ring will greatly determine the overall appearance of the design. The following are the most often used engagement ring setting styles:
+Related reading: [Rose Gold vs White Gold vs Yellow Gold - Which Is Right for Your Ring?](https://www.felindajewelry.com/blog/white-gold-vs-yellow-gold-vs-rose-gold-ring)
 
-- **Solitaire:** A single stone tells a story all by itself. Simple and sophisticated — a classic engagement ring design.
-- **Halo or pavé:** Smaller accent diamonds that surround the centre stone produce a larger, brighter appearance. Best suited for maximum visibility.
-- **Three-stone:** A large centre stone with two smaller stones flanking it — often read as past, present, and future.
-- **Bezel:** A metal rim surrounds the main stone instead of prongs. More modern and smooth; well suited for active daily wear.
-- **Vintage / intricate:** Milgrain edges, hand engraving, Art Deco, and floral motifs — for a partner who loves detailed design and avoids mainstream pieces.
+The Setting Style
 
-### The Band Profile
+The way in which a stone sits on the ring will greatly determine the overall appearance of the design and how it looks as a whole. The following are the most often used engagement ring setting styles:
 
-The band profile is something that is generally overlooked but plays an important role in how a ring feels and looks. A knife-edge band is sleek and dramatic, while a comfort-fit rounded band is more comfortable for someone who has never worn a ring. A twisted or split-shank band adds an interesting architectural element. Many features discussed during the design process affect the finished piece in ways you may not think about until you see your first ring.
+Solitaire: A single stone tells a story all by itself. Simple and sophisticated with regards to design, this is considered a classic engagement ring design.
 
-## Step 3: Gather References — But Loosely
+Halo or Pave': Smaller accent diamonds that surround (or hide) the main stone (the centre) produce a larger appearance with regards to how bright or shiny the overall look of the ring will be. Best suited for making the ring as visible as possible.
 
-Create a collection of visual reference materials prior to your consultation — Pinterest boards, Instagram posts, screenshots, and anything that represents design elements that inspire you. You do not need a fully developed idea; collect enough examples to foster a discussion.
+Three-Stone: Consisting of a large centre stone and two smaller stones you would typically find flanking the large centre stone; thus resulting in a round look to the grouping of the three stones. Each stone is best defined together by a memory (second stone), present (first stone), and future (third stone).
 
-Similarly, collect examples of designs your partner does not like. If she does not like yellow gold, that narrows the scope quickly because you have learned something about her preferences.
+Bezel: A metal rim that surrounds the main stone instead of having prongs that hold the main stone in place. A bezel set stone provides a more modern and smooth appearance than a pronged stone. A bezelled ring is the best suited setting for a person who may wear an engagement ring every day and is an active person.
 
-If you already have her ring size, bring this information to your meeting. If you do not (because the proposal is likely a surprise), we can estimate the size and resize after the proposal — an automatic part of the final design process.
+Vintage/Intricate: Milgrain edges, Hand engraving, Art Deco, and floral motifs. This is for your spouse-to-be that loves detailed design and does not purchase anything mainstream.
 
-## Step 4: Book a Consultation at a Bespoke Atelier
+The Band Profile
 
-This is where a private jewellery studio differs fundamentally from a chain store. Your appointment at Felinda will **not** be a sales appointment; it will be a conversation about designing an item of jewellery.
+The band profile is something that is generally overlooked but plays an important role in how a ring feels and looks. A knife-edge band is very sleek and dramatic, while a comfort-fit rounded band is more comfortable for someone who has never worn a ring. A twisted or split-shank band will add an interesting architectural element. Many features discussed during the designing process of your ring will affect the overall look of the finished piece, some of which you may not think about until after your first ring.
+
+Step 3: Gather References: But Loosely
+
+Create a collection of visual reference materials prior to your consultation. Examples include Pinterest boards; Instagram posts; screenshots; etc., that represent design elements that inspire you, and that could be discussed during your meeting. You do not need to have a fully developed idea; rather, collect enough examples of what you want to use to foster a discussion.
+
+Similarly, collect examples of your partner's designs that they don’t like. For example, if you partner does not like yellow gold, this provides insight into narrowing the scope of options for her design fairly quickly because you’ve learned something about her preferences.
+
+If you already have her ring size, please bring this information with you to your meeting; however, if you do not have this information (given that your proposal is likely to be a surprise), then we can estimate the size and resize after the proposal; this will be an automatic part of the final design process.
+
+Step 4: Book a Consultation at a Bespoke Atelier
+
+This is where a private jewelry studio differs fundamentally from a chain store. Your appointment at Felinda will NOT be a sales appointment; it will be a conversation about designing an item of jewelry.
 
 The first appointment at Felinda will include:
 
-- Discussion about your partner's personality, lifestyle, and aesthetic choices
-- Discussion about your budget and how to allocate money for the most impact
-- An opportunity to see stones in natural light, as they will look in everyday wear
-- Metal samples against your wrist, so you can see tone and finish
-- An introduction to design direction — refining a reference you love or designing something entirely new
+Discussion about your partner's personality, lifestyle, and aesthetic choices
 
-There is no pressure and no commitment. We spend as long as it takes to get your design direction right, without rushing into a design that does not meet your expectations.
+Discussion about your budget and how to allocate the money to get the most impact
 
-**What to bring:**
+An opportunity to see stones being presented in natural light and how they would look under the way everyday people wear their jewelry
 
-- Visual references you have collected
-- An approximate budget
-- Your partner's ring size, if you have it
-- Any stones or heirloom gold you may want to use in the design
+The opportunity to see metal samples against your own wrist, allowing you to see what the tone and finish will look like.
 
-## Step 5: The Design and Approval Process
+An introduction to design direction; that could mean making changes to a reference piece you really like or designing something totally new from what you give us as your design direction.
+
+There is no pressure on you and no commitment. We would like to spend as long as it takes to get your design direction perfect, and then not rush into a design that does not meet your expectations.
+
+What to bring:
+
+Visual references you have collected (pictures or examples of designs you have found)
+
+An approximate budget
+
+Your partner's ring size if you have it
+
+Any stones or heirloom gold that you may want to use for this design
+
+Step 5: The Design and Approval Process
 
 With your brief confirmed, Felinda follows four design phases:
 
-1. **Design sketches and rendered images:** We develop concepts from your brief and send them for feedback. Most commissioned rings are digitally rendered first so you can envision the finished piece in three dimensions before any metal is used.
-2. **Refinements:** Most commissions have one to two rounds of revision before finalisation — we want you to be absolutely happy with the design that will be created.
-3. **Final approval and craftsmanship:** Once you approve the final design, craftsmanship begins in our workshop. We do not outsource or mass produce.
-4. **Final fitting and delivery:** You pick up your ring and see the finished product for the first time. Minor size adjustments may be made at this stage if necessary.
+Design sketches and rendered images: Felinda will develop design concepts based upon your brief and will send them to you for feedback. The vast majority of commissioned rings will be digitally rendered first so that you may envision how the finished product will look in three dimensions before any metal is used.
 
-## Step 6: Timeline Planning — Do Not Leave This Late
+Refinements: Most commissioned rings have one to two rounds of revising your designs before they are finalised. This is to be expected as we want you to be absolutely happy with the design that will be created for you.
 
-Most first-time customers underestimate this step. A custom proposal ring cannot be hurried without losing quality, and the most stressful commissions are always those that start too close to the proposal date.
+Final approvals and start of craftsmanship: Once you are happy with the final design, craftsmanship begins on your ring (crafted by hand in our workshop; we do not outsource or mass produce).
 
-The typical custom engagement ring commission takes **4–6 weeks** from approved design to delivery at Felinda; intricate hand-engraving, multiple stone settings, and complex metalwork take longer.
+Final fitting and delivery: You will pick up your ring(s) and see the finished product for the first time. Minor size adjustments may be made at this stage if necessary.
 
-After consulting with us, allow these time frames for your proposal:
+Step 6: Timeline Planning: Do Not Leave This Late
 
-- **At least 8 weeks** before your proposal date — begin the consultation process
-- **2 weeks** for design development and approval
-- **4–6 weeks** for craftsmanship and finishing
-- **1 week** buffer for refinements if any arise
+Most of the time, first-time customers underestimate this step. A custom proposal ring is not something that can be created hurriedly without losing quality, and the most stressful commissions are always all of those that start too close to the date of the proposal.
 
-If you will be proposing during a popular period (Valentine's Day, her birthday, or your anniversary), start earlier than you think. December and February are always peak seasons for our business.
+The amount of time required for the typical custom engagement ring commission to be completed is 4-6 weeks from when the design was approved by Felinda to when it is delivered; however, because the more expensive the design is (i.e., intricate or complex hand-engraving, multiple stone settings, and intricate metalwork), the longer it will take.
 
-Related reading: [How to Repurpose Heirloom Jewellery in Malaysia](/blog/how-to-repurpose-or-redesign-old-jewellery) · [Custom Engagement Rings Malaysia](/custom-rings) · [Bespoke Process](/bespoke)
+After consulting with us, expect to allow for these time frames in your proposal:
 
-## What Makes a Felinda Ring Different?
+At least 8 weeks prior to your proposal date begin the consultation process.
 
-Felinda is an exclusive, appointment-only workshop. We only accept a small number of commission projects at a time and do not create rings at high volume. Each ring we create is unique — made for a specific individual and their relationship at a specific moment in time.
+2 weeks for the development and approval of designs.
 
-This is not a marketing gimmick; it is how we choose to do business. The rings we create cannot be produced in a factory setting or sold from a mall. Creating a ring worth wearing every day for the rest of your life — and possibly passing to future generations — takes time, skill, and a jeweller's undivided attention.
+4-6 weeks for craftsmanship and finishing of the ring.
 
-## Frequently Asked Questions
+1 week of buffer time for refinements in the event that any arise.
 
-### What is the average price for a custom engagement ring made in Malaysia?
+If you will be proposing during a popular time period (i.e, Valentine’s Day, your wife-to-be’s birthday, or your wedding anniversary), consider starting earlier than you think is enough time to make a custom ring. December and February are always peak seasons for our business.
 
-From a fine jewellery atelier, custom-made engagement rings generally start at RM3,000 depending on your choice of gems, metals, and depth of design. The main stone will typically be between 50% and 65% of the overall cost. At Felinda we work closely with you to find the best selection within your budget, with complete transparency and no pressure to go beyond it — no hidden costs, and we are always upfront about what each option will cost.
+More for You: [How to Repurpose Heirloom Jewellery in Malaysia | Bespoke Wedding Bands Malaysia](https://www.felindajewelry.com/blog/how-to-repurpose-or-redesign-old-jewellery)
 
-### How do I find out the size of the engagement ring without ruining the surprise?
+What Makes a Felinda Ring Different?
 
-Some options include borrowing an existing ring she wears on her ring finger; asking a relative or close friend who may know her size; or having us estimate based on her overall size (then resize after the proposal). Most rings can be resized up to two sizes without disrupting the overall shape or design of the ring.
+Felinda is an exclusive, appointment-only workshop. We only accept a small number of commission projects at a time and do not create rings at high volume. Each of the rings we create are unique, having been made for a specific individual and their relationship at a specific moment in time.
 
-### Is it possible to use a family diamond or heirloom stone in my custom engagement ring?
+This is not a marketing gimmick; this is how we choose to do business. The rings we create cannot be produced in a factory setting or sold from a mall. Creating a ring that is worth wearing every day for the rest of your life - and possibly passing along to future generations - takes time, skill and a jeweller’s undivided attention.
 
-Yes — this is a very special part of what we can do. If you have an inherited diamond, sapphire, or any other heirloom gemstone, we will evaluate its condition, grade, and suitability for your chosen design, then create a piece that incorporates your family stone. The sentimental value of using a family stone cannot be matched by any newly purchased stone. Bring the stone to your first appointment and we will handle everything from there.
+FAQs
 
-## Ready to Begin?
+What is the average price for a custom engagement ring made in Malaysia?
 
-If you want to create a custom engagement ring in Malaysia, it does not have to be stressful. With the right help, designing the perfect ring for your future wife can become one of the most enjoyable parts of planning your proposal — and at the end you will have created something unique to her that cannot be found anywhere else in the world.
+From a fine jewellery atelier, custom-made engagement rings generally can be purchased starting at RM3,000 depending on your choice of gems, metals, and depth of design elements. The main stone will typically be between 50% and 65% of the overall cost of the ring. When you visit with us at Felinda we will work closely with you to find the best possible selection based on your specified budget with complete transparency and zero pressure to go beyond your budget. We will not add in any hidden costs and will always be upfront with what it will cost for each option we present.
 
-At Felinda, we have guided many first-time customers through the entire process of designing and creating a custom engagement ring. We know the questions you have not thought of yet, and we know how to interpret "I want something that feels like her" into a beautiful engagement ring she will cherish forever.
+How do I find out the size of the engagement ring without ruining the surprise for my partner?
 
-The first step is a casual conversation with one of our experts.
+One of the most frequent questions we get asked is how you can find the ring size of your future fiancée without blowing the surprise of her engagement. Some options include, borrowing an existing ring that your future fiancée wears on her ring finger; ask a relative or close friend who may know her size; or have us estimate her size based on her overall size (and then resize after the proposal). Most rings that you purchase can be resized up to 2 sizes without disrupting the overall shape/design of the ring.
 
-[Book your private engagement ring consultation at our atelier in Dataran Sunway, Petaling Jaya](/contact) — by appointment only, because your ring deserves more than a counter visit.`,
+Is it possible to use a family diamond or heirloom stone in my custom engagement ring?
+
+Yes, definitely, this is a very special part of what we can do for you. If you have an inherited diamond, sapphire, or any other heirloom gemstone, we will evaluate its condition, grade, and suitability for the design you've chosen for your ring, then create a design that incorporates your family stone. There is no replacement for the sentimental value that is associated with using a family stone in a way that cannot be matched by any other newly purchased stone. Bring the stone to your first appointment with us, and we will handle everything else from that point on.
+
+Ready to Begin?
+
+If you want to create a custom engagement ring in Malaysia, it doesn't have to be stressful. With the right help, the experience of creating the perfect ring for your future wife can become one of the most enjoyable aspects of planning your proposal, especially since at the end of the journey you will have created something that is unique to her and cannot be found anywhere else in the world.
+
+At Felinda, we have guided many first-time customers through the entire process of designing and creating a custom engagement ring. We know what questions you haven't thought about yet, and we also know how to interpret "I want something that feels like her" into a beautiful engagement ring that she will cherish forever.
+
+The first thing you need to do is have a casual conversation with one of our experts.
+
+[Book Your Private Engagement Ring Consultation](https://www.felindajewelry.com/contact): By appointment only:  because your ring deserves more than a counter visit.`,
   `---
 slug: white-gold-vs-yellow-gold-vs-rose-gold-ring
 title: "White Gold vs Yellow Gold vs Rose Gold Ring: Which Metal Is Right for Your Custom Jewellery"

@@ -191,7 +191,6 @@ export default function AboutPage() {
         <PageHero
           title="About Felinda"
           breadcrumb={[{ label: "Home", href: "/" }, { label: "About" }]}
-          hideCornerArt={true}
         />
 
         {/* ════════ INTRO LEAD — cream, transitions out of the hero ════════ */}
@@ -372,8 +371,8 @@ export default function AboutPage() {
                   &ldquo;I am not interested in making beautiful things quickly. I am interested in making the right thing once—fully—for the person who will carry it for a lifetime.&rdquo;
                 </p>
 
-                <p className="felinda-sans mt-8 max-w-full hyphens-auto break-words text-[15px] leading-[1.7] text-muted [overflow-wrap:anywhere] sm:max-w-xl sm:text-[17px] sm:leading-8 lg:text-lg">
-                  Felinda began not with adornment, but with precision. With an <br></br>obsession for how much meaning a small object can hold. And with the quiet realisation that jewelry, when made with intention, can preserve light, memory, and presence — long after the moment itself has passed.
+                <p className="felinda-sans mt-8 max-w-full text-pretty hyphens-none text-[15px] leading-[1.7] text-muted sm:max-w-xl sm:text-[17px] sm:leading-8 lg:text-lg">
+                  Felinda began not with adornment, but with precision. With an obsession for how much meaning a small object can hold. And with the quiet realisation that jewelry, when made with intention, can preserve light, memory, and presence — long after the moment itself has passed.
                 </p>
 
                 <div className="mt-10 flex min-w-0 items-center gap-5 border-t border-line pt-7">

@@ -11,7 +11,6 @@ import { homeMeta } from "@/lib/seo/meta-copy";
 import {
   heroFeatured,
   founderPortrait,
-  valueStrip,
   creations,
   processSteps,
   categories,
@@ -105,25 +104,6 @@ export default function HomePage() {
                   Crafted for your story
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          className="border-y border-line bg-white/70"
-          aria-label="What defines Felinda"
-        >
-          <p className="sr-only">{valueStrip.join(". ")}.</p>
-          <div className="overflow-hidden py-5">
-            <div
-              className="felinda-value-marquee-track felinda-sans flex w-max flex-nowrap items-center gap-x-12 whitespace-nowrap text-sm tracking-[0.08em] text-muted md:gap-x-16 lg:gap-x-20"
-              aria-hidden="true"
-            >
-              {[...valueStrip, ...valueStrip].map((item, i) => (
-                <span key={`${item}-${i}`} className="shrink-0">
-                  {item}
-                </span>
-              ))}
             </div>
           </div>
         </section>
