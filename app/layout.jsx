@@ -1,4 +1,5 @@
 import JsonLd from "@/components/seo/JsonLd";
+import MetaPixel from "@/components/seo/MetaPixel";
 import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 import { absoluteUrl, DEFAULT_DESCRIPTION, SITE_LOGO_PATH, SITE_NAME } from "@/lib/constants/site";
 import { rootJsonLdGraph } from "@/lib/seo/json-ld";
@@ -63,6 +64,9 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <MetaPixel />
+      </head>
       <body className="min-h-screen bg-cream text-ink antialiased">
         <JsonLd data={rootJsonLdGraph()} />
         {children}
