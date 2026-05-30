@@ -11,7 +11,7 @@ export default async function sitemap() {
     priority: path === "/" ? 1 : 0.7,
   }));
 
-  const posts = getAllPosts();
+  const posts = await getAllPosts();
   const blogEntries = posts.map((post) => ({
     url: absoluteUrl(`/blog/${post.slug}`),
     lastModified: new Date(post.publishedAt),

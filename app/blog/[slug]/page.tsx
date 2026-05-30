@@ -10,7 +10,12 @@ import AuthorBox from "@/components/blog/AuthorBox";
 import BlogContent from "@/components/blog/BlogContent";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import JsonLd from "@/components/seo/JsonLd";
-import { formatBlogDate, getAllSlugs, getPostBySlug, getRelatedPosts } from "@/lib/blog-data";
+import {
+  formatBlogDate,
+  getAllSlugs,
+  getPostBySlug,
+  getRelatedPosts,
+} from "@/lib/blog-data";
 import { absoluteUrl } from "@/lib/constants/site";
 import { renderMarkdown } from "@/lib/render-markdown";
 import { breadcrumbJsonLd, pageWebSiteJsonLd } from "@/lib/seo/json-ld";
@@ -23,29 +28,33 @@ type BlogPostPageProps = {
 export const revalidate = 86400;
 
 export async function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) {
     return { title: "Article not found" };
   }
 
+  const seoDescription = post.metaDescription ?? post.excerpt;
+  const ogImage = post.ogImage ?? post.featuredImage;
+
   const base = post.metaTitle
     ? buildPageMetadata({
         absoluteTitle: post.metaTitle,
-        description: post.excerpt,
+        description: seoDescription,
         path: `/blog/${post.slug}`,
-        ogImage: post.featuredImage,
+        ogImage,
         keywords: post.seoKeywords,
       })
     : buildPageMetadata({
         title: post.title,
-        description: post.excerpt,
+        description: seoDescription,
         path: `/blog/${post.slug}`,
-        ogImage: post.featuredImage,
+        ogImage,
         keywords: post.seoKeywords,
       });
 
@@ -62,11 +71,11 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) notFound();
 
   const html = await renderMarkdown(post.contentMarkdown);
-  const related = getRelatedPosts(slug);
+  const related = await getRelatedPosts(slug);
 
   return (
     <>
