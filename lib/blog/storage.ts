@@ -2,7 +2,7 @@ import "server-only";
 
 import { readFile, writeFile, mkdir } from "fs/promises";
 import path from "path";
-import { get, put } from "@vercel/blob";
+import { get, head, put } from "@vercel/blob";
 
 import type { BlogPostRecord, BlogPostsFile } from "@/lib/blog/types";
 
@@ -49,22 +49,21 @@ function pickNewerPosts(remote: BlogPostsFile | null, local: BlogPostsFile): Blo
 }
 
 async function readBlobJson(): Promise<unknown | null> {
-  const attempts: Array<{ access: "private" | "public"; useCache?: boolean }> = [
-    { access: "private", useCache: false },
-    { access: "public" },
-  ];
-
-  for (const opts of attempts) {
-    try {
-      const result = await get(BLOB_POSTS_PATH, opts);
-      if (!result || result.statusCode !== 200 || !result.stream) continue;
+  try {
+    const result = await get(BLOB_POSTS_PATH, { access: "public" });
+    if (result?.statusCode === 200 && result.stream) {
       const text = await new Response(result.stream).text();
       return JSON.parse(text) as unknown;
-    } catch {
-      continue;
     }
+  } catch {
+    // fall through to cache-busted URL fetch
   }
-  return null;
+
+  const meta = await head(BLOB_POSTS_PATH);
+  if (!meta?.url) return null;
+  const res = await fetch(`${meta.url}?_=${Date.now()}`, { cache: "no-store" });
+  if (!res.ok) return null;
+  return (await res.json()) as unknown;
 }
 
 async function readFromBlob(): Promise<BlogPostsFile | null> {
@@ -81,7 +80,7 @@ async function writeToBlob(file: BlogPostsFile): Promise<void> {
     throw new Error("BLOB_READ_WRITE_TOKEN is required for remote blog storage.");
   }
   await put(BLOB_POSTS_PATH, JSON.stringify(file, null, 2), {
-    access: "private",
+    access: "public",
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
@@ -122,13 +121,13 @@ export async function saveAllRecords(posts: BlogPostRecord[]): Promise<void> {
     posts,
   };
 
-  if (usesRemoteBlogStorage()) {
-    await writeToBlob(file);
-  }
   try {
     await writeToDisk(file);
   } catch (err) {
     if (!usesRemoteBlogStorage()) throw err;
+  }
+  if (usesRemoteBlogStorage()) {
+    await writeToBlob(file);
   }
 }
 

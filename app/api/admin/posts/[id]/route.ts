@@ -75,11 +75,17 @@ export async function PUT(request: Request, context: RouteContext) {
 
   const next = [...posts];
   next[index] = updated;
-  await saveAllRecords(next);
-  revalidateBlogPaths(updated.slug);
-  if (existing.slug !== updated.slug) revalidateBlogPaths(existing.slug);
-
-  return NextResponse.json({ ok: true, post: updated });
+  try {
+    await saveAllRecords(next);
+    revalidateBlogPaths(updated.slug);
+    if (existing.slug !== updated.slug) revalidateBlogPaths(existing.slug);
+    return NextResponse.json({ ok: true, post: updated });
+  } catch (err) {
+    console.error("[admin/posts PUT]", err);
+    const message =
+      err instanceof Error ? err.message : "Could not save post. Check server logs.";
+    return NextResponse.json({ ok: false, message }, { status: 500 });
+  }
 }
 
 export async function DELETE(_request: Request, context: RouteContext) {
@@ -89,7 +95,14 @@ export async function DELETE(_request: Request, context: RouteContext) {
   const posts = await loadAllRecords();
   const removed = posts.find((p) => p.id === id);
   if (!removed) return NextResponse.json({ ok: false, message: "Not found." }, { status: 404 });
-  await saveAllRecords(posts.filter((p) => p.id !== id));
-  revalidateBlogPaths(removed.slug);
-  return NextResponse.json({ ok: true });
+  try {
+    await saveAllRecords(posts.filter((p) => p.id !== id));
+    revalidateBlogPaths(removed.slug);
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("[admin/posts DELETE]", err);
+    const message =
+      err instanceof Error ? err.message : "Could not delete post. Check server logs.";
+    return NextResponse.json({ ok: false, message }, { status: 500 });
+  }
 }

@@ -66,8 +66,14 @@ export async function POST(request: Request) {
     updatedAt: now,
   };
 
-  await saveAllRecords([record, ...posts]);
-  if (record.status === "published") revalidateBlogPaths(record.slug);
-
-  return NextResponse.json({ ok: true, post: record });
+  try {
+    await saveAllRecords([record, ...posts]);
+    if (record.status === "published") revalidateBlogPaths(record.slug);
+    return NextResponse.json({ ok: true, post: record });
+  } catch (err) {
+    console.error("[admin/posts POST]", err);
+    const message =
+      err instanceof Error ? err.message : "Could not save post. Check server logs.";
+    return NextResponse.json({ ok: false, message }, { status: 500 });
+  }
 }

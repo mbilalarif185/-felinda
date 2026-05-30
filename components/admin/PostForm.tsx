@@ -139,7 +139,13 @@ export default function PostForm({ mode, initial }: PostFormProps) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
-    const data = await res.json();
+    let data: { ok?: boolean; errors?: Record<string, string>; message?: string } = {};
+    try {
+      const text = await res.text();
+      if (text) data = JSON.parse(text) as typeof data;
+    } catch {
+      data = {};
+    }
     setSaving(false);
     if (!res.ok) {
       if (data.errors) setErrors(data.errors);
