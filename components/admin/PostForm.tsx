@@ -7,6 +7,7 @@ import { useCallback, useMemo, useState } from "react";
 
 import AdminShell from "@/components/admin/AdminShell";
 import MarkdownEditor from "@/components/admin/MarkdownEditor";
+import { normalizeMarkdownExternalLinks } from "@/lib/blog/normalize-markdown-links";
 import { slugifyTitle } from "@/lib/blog/slug";
 import type { BlogPostRecord, BlogPostStatus } from "@/lib/blog/types";
 
@@ -109,7 +110,7 @@ export default function PostForm({ mode, initial }: PostFormProps) {
       title: form.title,
       slug: form.slug || autoSlug,
       excerpt: form.excerpt,
-      contentMarkdown: form.contentMarkdown,
+      contentMarkdown: normalizeMarkdownExternalLinks(form.contentMarkdown),
       authorName: form.authorName,
       authorRole: form.authorRole || undefined,
       authorAvatar: form.authorAvatar || undefined,
@@ -339,6 +340,11 @@ export default function PostForm({ mode, initial }: PostFormProps) {
           {errors.contentMarkdown ? (
             <p className="font-sans text-sm text-red-700">{errors.contentMarkdown}</p>
           ) : null}
+          <p className="font-sans text-xs text-muted">
+            External links need a full URL, e.g.{" "}
+            <code className="rounded bg-shell px-1">https://cressoft.net</code> — bare domains like{" "}
+            <code className="rounded bg-shell px-1">cressoft.net</code> are auto-fixed on save.
+          </p>
           <MarkdownEditor
             value={form.contentMarkdown}
             onChange={(v) => update("contentMarkdown", v)}
