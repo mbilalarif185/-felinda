@@ -2,7 +2,7 @@ import "server-only";
 
 import { readFile, writeFile, mkdir } from "fs/promises";
 import path from "path";
-import { get, head, put } from "@vercel/blob";
+import { get, put } from "@vercel/blob";
 
 import type { BlogPostRecord, BlogPostsFile } from "@/lib/blog/types";
 
@@ -21,31 +21,56 @@ function normalizeFile(data: unknown): BlogPostsFile {
     "posts" in data &&
     Array.isArray((data as BlogPostsFile).posts)
   ) {
-    return { version: 1, posts: (data as BlogPostsFile).posts };
+    const raw = data as BlogPostsFile;
+    return { version: 1, savedAt: raw.savedAt, posts: raw.posts };
   }
   return emptyFile();
 }
 
+function fileTimestamp(file: BlogPostsFile): number {
+  const t = file.savedAt ? Date.parse(file.savedAt) : NaN;
+  return Number.isNaN(t) ? 0 : t;
+}
+
+/** Prefer the copy that was saved most recently (fixes stale Blob CDN vs fresh disk). */
+function pickNewerPosts(remote: BlogPostsFile | null, local: BlogPostsFile): BlogPostRecord[] {
+  if (!remote?.posts.length) return local.posts;
+  if (!local.posts.length) return remote.posts;
+
+  const remoteTs = fileTimestamp(remote);
+  const localTs = fileTimestamp(local);
+
+  if (remoteTs === 0 && localTs === 0) {
+    return remote.posts.length <= local.posts.length ? remote.posts : local.posts;
+  }
+  if (remoteTs === 0) return local.posts;
+  if (localTs === 0) return remote.posts;
+  return remoteTs >= localTs ? remote.posts : local.posts;
+}
+
 async function readBlobJson(): Promise<unknown | null> {
-  const result = await get(BLOB_POSTS_PATH, { access: "public" });
-  if (!result || result.statusCode !== 200 || !result.stream) return null;
-  const text = await new Response(result.stream).text();
-  return JSON.parse(text) as unknown;
+  const attempts: Array<{ access: "private" | "public"; useCache?: boolean }> = [
+    { access: "private", useCache: false },
+    { access: "public" },
+  ];
+
+  for (const opts of attempts) {
+    try {
+      const result = await get(BLOB_POSTS_PATH, opts);
+      if (!result || result.statusCode !== 200 || !result.stream) continue;
+      const text = await new Response(result.stream).text();
+      return JSON.parse(text) as unknown;
+    } catch {
+      continue;
+    }
+  }
+  return null;
 }
 
 async function readFromBlob(): Promise<BlogPostsFile | null> {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return null;
   try {
-    try {
-      return normalizeFile(await readBlobJson());
-    } catch {
-      // Fallback: public blob URLs are CDN-cached; bust cache when SDK read fails.
-      const meta = await head(BLOB_POSTS_PATH);
-      if (!meta?.url) return null;
-      const res = await fetch(`${meta.url}?_=${Date.now()}`, { cache: "no-store" });
-      if (!res.ok) return null;
-      return normalizeFile(await res.json());
-    }
+    return normalizeFile(await readBlobJson());
   } catch {
     return null;
   }
@@ -56,11 +81,10 @@ async function writeToBlob(file: BlogPostsFile): Promise<void> {
     throw new Error("BLOB_READ_WRITE_TOKEN is required for remote blog storage.");
   }
   await put(BLOB_POSTS_PATH, JSON.stringify(file, null, 2), {
-    access: "public",
+    access: "private",
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
-    // Minimum TTL so overwrites propagate quickly (default is ~1 month on the CDN).
     cacheControlMaxAge: 60,
   });
 }
@@ -84,14 +108,20 @@ export function usesRemoteBlogStorage(): boolean {
 }
 
 export async function loadAllRecords(): Promise<BlogPostRecord[]> {
-  const remote = await readFromBlob();
-  if (remote && remote.posts.length > 0) return remote.posts;
   const local = await readFromDisk();
-  return local.posts;
+  if (!usesRemoteBlogStorage()) return local.posts;
+
+  const remote = await readFromBlob();
+  return pickNewerPosts(remote, local);
 }
 
 export async function saveAllRecords(posts: BlogPostRecord[]): Promise<void> {
-  const file: BlogPostsFile = { version: 1, posts };
+  const file: BlogPostsFile = {
+    version: 1,
+    savedAt: new Date().toISOString(),
+    posts,
+  };
+
   if (usesRemoteBlogStorage()) {
     await writeToBlob(file);
   }

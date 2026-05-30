@@ -26,5 +26,7 @@ export type BlogPostRecord = {
 
 export type BlogPostsFile = {
   version: 1;
+  /** Set on every save; used to pick the newest copy when Blob CDN and disk disagree. */
+  savedAt?: string;
   posts: BlogPostRecord[];
 };

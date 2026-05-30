@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import type { BlogPostRecord } from "@/lib/blog/types";
@@ -12,7 +11,6 @@ type PostListProps = {
 };
 
 export default function PostList({ initialPosts }: PostListProps) {
-  const router = useRouter();
   const [posts, setPosts] = useState(initialPosts);
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -28,7 +26,7 @@ export default function PostList({ initialPosts }: PostListProps) {
       return;
     }
     setPosts((prev) => prev.filter((p) => p.id !== id));
-    router.refresh();
+    // Do not router.refresh() here — a stale Blob CDN read would re-insert the deleted post.
   }
 
   if (posts.length === 0) {
