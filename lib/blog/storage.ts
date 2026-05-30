@@ -2,7 +2,7 @@ import "server-only";
 
 import { readFile, writeFile, mkdir } from "fs/promises";
 import path from "path";
-import { head, put } from "@vercel/blob";
+import { get, head, put } from "@vercel/blob";
 
 import type { BlogPostRecord, BlogPostsFile } from "@/lib/blog/types";
 
@@ -26,14 +26,26 @@ function normalizeFile(data: unknown): BlogPostsFile {
   return emptyFile();
 }
 
+async function readBlobJson(): Promise<unknown | null> {
+  const result = await get(BLOB_POSTS_PATH, { access: "public" });
+  if (result.statusCode !== 200 || !result.stream) return null;
+  const text = await new Response(result.stream).text();
+  return JSON.parse(text) as unknown;
+}
+
 async function readFromBlob(): Promise<BlogPostsFile | null> {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return null;
   try {
-    const meta = await head(BLOB_POSTS_PATH);
-    if (!meta?.url) return null;
-    const res = await fetch(meta.url, { cache: "no-store" });
-    if (!res.ok) return null;
-    return normalizeFile(await res.json());
+    try {
+      return normalizeFile(await readBlobJson());
+    } catch {
+      // Fallback: public blob URLs are CDN-cached; bust cache when SDK read fails.
+      const meta = await head(BLOB_POSTS_PATH);
+      if (!meta?.url) return null;
+      const res = await fetch(`${meta.url}?_=${Date.now()}`, { cache: "no-store" });
+      if (!res.ok) return null;
+      return normalizeFile(await res.json());
+    }
   } catch {
     return null;
   }
@@ -48,6 +60,8 @@ async function writeToBlob(file: BlogPostsFile): Promise<void> {
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
+    // Minimum TTL so overwrites propagate quickly (default is ~1 month on the CDN).
+    cacheControlMaxAge: 60,
   });
 }
 

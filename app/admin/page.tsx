@@ -2,6 +2,8 @@ import AdminShell from "@/components/admin/AdminShell";
 import PostList from "@/components/admin/PostList";
 import { loadAllRecords } from "@/lib/blog/storage";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboardPage() {
   const posts = await loadAllRecords();
   const sorted = [...posts].sort(
