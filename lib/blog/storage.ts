@@ -28,7 +28,7 @@ function normalizeFile(data: unknown): BlogPostsFile {
 
 async function readBlobJson(): Promise<unknown | null> {
   const result = await get(BLOB_POSTS_PATH, { access: "public" });
-  if (result.statusCode !== 200 || !result.stream) return null;
+  if (!result || result.statusCode !== 200 || !result.stream) return null;
   const text = await new Response(result.stream).text();
   return JSON.parse(text) as unknown;
 }
