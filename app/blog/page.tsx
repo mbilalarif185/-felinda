@@ -24,7 +24,7 @@ export default async function BlogPage() {
       <JsonLd
         data={pageWebSiteJsonLd({
           path: "/blog",
-          name: "Felinda Journal",
+          name: "Auréa Journal",
           description: blogMeta.description,
         })}
       />

@@ -9,7 +9,7 @@ import Logo from "./Logo";
 import { CONTACT } from "@/lib/contact";
 import { navItems } from "@/lib/navigation";
 
-// Felinda brand palette (mirrors tailwind.config.js — inline so the menu
+// Auréa brand palette (mirrors tailwind.config.js — inline so the menu
 // stays correct even if Tailwind tokens get reverted by OneDrive sync).
 const COLORS = {
   cream: "#FBF8F6",
@@ -259,7 +259,7 @@ export default function MobileMenu({
                         color: isActive ? COLORS.rose : COLORS.ink,
                         transitionDelay: stagger,
                       }}
-                      className={`felinda-serif group flex min-h-[50px] items-center justify-center px-4 py-2.5 text-xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:min-h-[52px] sm:text-2xl md:text-3xl ${
+                      className={`auréa-serif group flex min-h-[50px] items-center justify-center px-4 py-2.5 text-xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:min-h-[52px] sm:text-2xl md:text-3xl ${
                         open
                           ? "translate-y-0 opacity-100"
                           : "translate-y-4 opacity-0"
@@ -303,7 +303,7 @@ export default function MobileMenu({
                       color: containsActive ? COLORS.rose : COLORS.ink,
                       transitionDelay: stagger,
                     }}
-                    className={`felinda-serif group flex min-h-[50px] w-full items-center justify-center gap-3 px-4 py-2.5 text-xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:min-h-[52px] sm:text-2xl md:text-3xl ${
+                    className={`auréa-serif group flex min-h-[50px] w-full items-center justify-center gap-3 px-4 py-2.5 text-xl font-light tracking-[-0.005em] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:min-h-[52px] sm:text-2xl md:text-3xl ${
                       open
                         ? "translate-y-0 opacity-100"
                         : "translate-y-4 opacity-0"
@@ -356,7 +356,7 @@ export default function MobileMenu({
                                     ? COLORS.rose
                                     : COLORS.muted,
                                 }}
-                                className="felinda-sans flex min-h-[40px] items-center justify-center px-4 py-2 text-[15px] tracking-[0.02em] transition hover:!text-[var(--rose,#D8A29A)]"
+                                className="auréa-sans flex min-h-[40px] items-center justify-center px-4 py-2 text-[15px] tracking-[0.02em] transition hover:!text-[var(--rose,#D8A29A)]"
                               >
                                 {child.label}
                               </Link>
@@ -389,7 +389,7 @@ export default function MobileMenu({
               href={ctaHref}
               onClick={close}
               style={{ backgroundColor: COLORS.rose, color: COLORS.white }}
-              className="felinda-sans inline-flex w-full max-w-xs items-center justify-center gap-3 rounded-full px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.16em] shadow-[0_10px_30px_rgba(216,162,154,0.35)] transition hover:opacity-90 focus:opacity-90 sm:text-[12px] sm:tracking-[0.28em]"
+              className="auréa-sans inline-flex w-full max-w-xs items-center justify-center gap-3 rounded-full px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.16em] shadow-[0_10px_30px_rgba(216,162,154,0.35)] transition hover:opacity-90 focus:opacity-90 sm:text-[12px] sm:tracking-[0.28em]"
             >
               {ctaLabel}
               <span aria-hidden>→</span>
@@ -398,7 +398,7 @@ export default function MobileMenu({
             {/* Social icons — Facebook & Instagram */}
             <div className="flex flex-col items-center gap-2">
               <span
-                className="felinda-sans text-[10px] uppercase"
+                className="auréa-sans text-[10px] uppercase"
                 style={{ color: COLORS.clay, letterSpacing: "0.28em" }}
               >
                 Follow

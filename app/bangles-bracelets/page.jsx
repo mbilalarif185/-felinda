@@ -12,18 +12,18 @@ export const metadata = buildPageMetadata({
 export const revalidate = 86400;
 
 const bangleFiles = [
-  "FJ Insta- Movable Diamond Bracele.webp",
-  "FJ Insta-18k Jade Bangle 2.webp",
-  "FJ Insta-18k Jade Bracelet.webp",
-  "FJ Insta-18k Pop Bangle.webp",
-  "FJ Insta-18k Twist Bangle.webp",
-  "FJ Insta-Akoya bracelet.webp",
-  "FJ Insta-Gemsone Jade Bangle.webp",
-  "FJ Insta-Guinevere Bangle2.webp",
-  "FJ Insta-Name Bracelet.webp",
-  "FJ Insta-Opal bracelet.webp",
-  "FJ Insta-Ruby Bracelet.webp",
-  "FJ Insta-Star bracelet-1.webp",
+  "aurea-piece-1.webp",
+  "aurea-piece-2.webp",
+  "aurea-piece-3.webp",
+  "aurea-piece-4.webp",
+  "aurea-piece-5.webp",
+  "aurea-piece-6.webp",
+  "gold-bangle.webp",
+  "aurea-piece-7.webp",
+  "aurea-piece-8.webp",
+  "aurea-piece-9.webp",
+  "aurea-piece-10.webp",
+  "aurea-piece-11.webp",
 ];
 
 function titleFromFilename(filename) {
@@ -38,7 +38,7 @@ function titleFromFilename(filename) {
 
 const galleryItems = bangleFiles.map((file) => ({
   title: titleFromFilename(file),
-  image: `/images/felinda-jewelry/Bangles-Bracelets/${encodeURIComponent(file)}`,
+  image: `/images/aurea-jewellery/Bangles-Bracelets/${encodeURIComponent(file)}`,
 }));
 
 export default function BanglesAndBraceletsPage() {

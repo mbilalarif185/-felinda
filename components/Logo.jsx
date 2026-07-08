@@ -1,7 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-
-import { SITE_LOGO_PATH } from "@/lib/constants/site";
 
 /**
  * @param {object} props
@@ -18,19 +15,19 @@ export default function Logo({
 }) {
   const sizeStyles =
     variant === "footer"
-      ? "h-10 w-auto max-h-11 object-contain object-left sm:h-11 sm:max-h-12 md:h-12 md:max-h-14"
-      : "h-12 w-auto max-h-14 object-contain object-left sm:h-14 sm:max-h-16 md:h-16 md:max-h-20";
+      ? "text-2xl"
+      : "text-3xl sm:text-4xl";
+
+  const textColor = overlay ? "text-cream" : "text-ink";
 
   return (
-    <Link href="/" aria-label="Felinda Jewelry home" className="flex items-center">
-      <Image
-        src={SITE_LOGO_PATH}
-        alt="Felinda Jewelry"
-        width={320}
-        height={100}
-        priority={priority}
-        className={`${sizeStyles} ${overlay ? "brightness-0 invert" : ""} ${className}`.trim()}
-      />
+    <Link href="/" aria-label="Auréa Jewellery home" className={`flex flex-col items-start ${className}`.trim()}>
+      <span className={`auréa-serif leading-none tracking-tight ${sizeStyles} ${textColor}`}>
+        Auréa
+      </span>
+      <span className={`text-[0.65em] font-medium tracking-[0.2em] uppercase mt-1 ${textColor}`}>
+        Jewellery
+      </span>
     </Link>
   );
 }

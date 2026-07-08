@@ -19,7 +19,7 @@ const sections = [
     body: (
       <>
         <p>
-          Felinda Jewelry (&ldquo;Felinda&rdquo;, &ldquo;we&rdquo;,
+          Auréa Jewellery (&ldquo;Auréa&rdquo;, &ldquo;we&rdquo;,
           &ldquo;us&rdquo; or &ldquo;our&rdquo;) is a private bespoke jewelry
           atelier based in Petaling Jaya, Selangor, Malaysia. We respect your privacy and
           are committed to protecting the personal information you share with
@@ -55,7 +55,7 @@ const sections = [
             <strong>Order &amp; payment information</strong> — the items
             commissioned, deposits and balance payments, and transaction
             references. Card details are processed by our payment partners and
-            are never stored by Felinda.
+            are never stored by Auréa.
           </li>
           <li>
             <strong>Website usage</strong> — IP address, browser type, pages
@@ -177,8 +177,8 @@ const sections = [
         </ul>
         <p>
           To exercise any of these rights, please write to us at{" "}
-          <a href="mailto:info@felindajewelry.com">
-            info@felindajewelry.com
+          <a href="mailto:info@auréajewelry.com">
+            info@auréajewelry.com
           </a>
           .
         </p>
@@ -211,8 +211,8 @@ const sections = [
         <p>
           {CONTACT.address}
           <br />
-          <a href="mailto:info@felindajewelry.com">
-            info@felindajewelry.com
+          <a href="mailto:info@auréajewelry.com">
+            info@auréajewelry.com
           </a>
           <br />
           +60 16-825 7826
@@ -232,7 +232,7 @@ export default function PrivacyPolicyPage() {
         { label: "Privacy Policy" },
       ]}
       updatedAt="Updated · April 2026"
-      intro="Felinda Jewelry is committed to protecting the privacy of every client and visitor. This page sets out, in plain language, what we collect, how we use it, and the choices you have."
+      intro="Auréa Jewellery is committed to protecting the privacy of every client and visitor. This page sets out, in plain language, what we collect, how we use it, and the choices you have."
       sections={sections}
     />
   );

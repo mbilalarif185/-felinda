@@ -20,7 +20,7 @@ const sections = [
       <>
         <p>
           These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern your use
-          of the Felinda Jewelry website (&ldquo;Site&rdquo;) and the
+          of the Auréa Jewellery website (&ldquo;Site&rdquo;) and the
           services we provide as a private bespoke jewelry atelier. By
           browsing the Site, booking a consultation or commissioning a piece,
           you agree to be bound by these Terms.
@@ -38,10 +38,10 @@ const sections = [
     body: (
       <>
         <p>
-          Felinda Jewelry is a private bespoke atelier registered in
+          Auréa Jewellery is a private bespoke atelier registered in
           Malaysia, operating from {CONTACT.address}. References to
-          &ldquo;Felinda&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; and
-          &ldquo;our&rdquo; mean Felinda Jewelry; references to
+          &ldquo;Auréa&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; and
+          &ldquo;our&rdquo; mean Auréa Jewellery; references to
           &ldquo;you&rdquo; and &ldquo;your&rdquo; mean the visitor or client
           accepting these Terms.
         </p>
@@ -89,7 +89,7 @@ const sections = [
           metal and gemstone market rates at the time of issue. We accept
           bank transfer and major card payments through our payment partners;
           card details are processed by the partner and never stored by
-          Felinda.
+          Auréa.
         </p>
       </>
     ),
@@ -120,7 +120,7 @@ const sections = [
     body: (
       <>
         <p>
-          Many Felinda commissions incorporate stones or jewellery our
+          Many Auréa commissions incorporate stones or jewellery our
           clients already own. These are received against a written receipt
           and held in our insured studio safe.
         </p>
@@ -158,7 +158,7 @@ const sections = [
     body: (
       <>
         <p>
-          Every Felinda piece carries a lifetime craftsmanship promise.
+          Every Auréa piece carries a lifetime craftsmanship promise.
           Re-polishing, re-rhodium plating and prong-tightening are
           complimentary, for as long as you wear the piece. Damage caused by
           accident, misuse or third-party alteration is not covered, but we
@@ -174,8 +174,8 @@ const sections = [
       <>
         <p>
           All sketches, CAD renders, photography and written content
-          published by Felinda — on this Site or elsewhere — remain the
-          intellectual property of Felinda Jewelry and may not be reproduced
+          published by Auréa — on this Site or elsewhere — remain the
+          intellectual property of Auréa Jewellery and may not be reproduced
           without written permission.
         </p>
         <p>
@@ -193,7 +193,7 @@ const sections = [
     body: (
       <>
         <p>
-          To the fullest extent permitted by law, Felinda&rsquo;s total liability
+          To the fullest extent permitted by law, Auréa&rsquo;s total liability
           arising from any commission or use of this Site is limited to the
           value of the commission in question. We are not liable for
           indirect, consequential or sentimental loss.
@@ -226,8 +226,8 @@ const sections = [
         <p>
           {CONTACT.address}
           <br />
-          <a href="mailto:info@felindajewelry.com">
-            info@felindajewelry.com
+          <a href="mailto:info@auréajewelry.com">
+            info@auréajewelry.com
           </a>
           <br />
           +60 16-825 7826
@@ -247,7 +247,7 @@ export default function TermsAndConditionsPage() {
         { label: "Terms & Conditions" },
       ]}
       updatedAt="Updated · April 2026"
-      intro="The terms that govern your relationship with Felinda Jewelry: bespoke commissions, payments, delivery, after-care and the lifetime promise that follows every piece home."
+      intro="The terms that govern your relationship with Auréa Jewellery: bespoke commissions, payments, delivery, after-care and the lifetime promise that follows every piece home."
       sections={sections}
     />
   );

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { verifyCaptchaChallenge } from "@/lib/simpleCaptchaStore";
 
-const CONTACT_INBOX = "info@felindajewelry.com";
+const CONTACT_INBOX = "info@auréajewelry.com";
 const FROM_EMAIL =
   process.env.SMTP_USER || "test@cressoftmarketing.ae";
 
@@ -81,7 +81,7 @@ export async function POST(request) {
   }
 
   const lines = [
-    `New atelier visit request (felindajewelry.com contact form)`,
+    `New atelier visit request (auréajewelry.com contact form)`,
     ``,
     `Name: ${name.trim()}`,
     `Email: ${email.trim()}`,
@@ -105,7 +105,7 @@ export async function POST(request) {
 
   try {
     await transporter.sendMail({
-      from: `Felinda Website <${FROM_EMAIL}>`,
+      from: `Auréa Website <${FROM_EMAIL}>`,
       to: [CONTACT_INBOX],
       replyTo: email.trim(),
       subject: `Visit request · ${name.trim()}`,

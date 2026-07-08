@@ -27,7 +27,7 @@ export default function BespokeStorySections() {
     <div className="mt-14 space-y-16 md:space-y-20">
     
 
-      {/* Why Felinda */}
+      {/* Why Auréa */}
       <section aria-labelledby="bespoke-why-heading">
         <SectionShell>
           <div className="text-center">

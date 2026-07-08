@@ -37,7 +37,7 @@ function LoginForm() {
         className="w-full max-w-md space-y-6 rounded-2xl border border-line bg-ivory/80 p-8 shadow-sm"
       >
         <div>
-          <p className="font-sans text-xs font-medium uppercase tracking-luxe text-muted">Felinda CMS</p>
+          <p className="font-sans text-xs font-medium uppercase tracking-luxe text-muted">Auréa CMS</p>
           <h1 className="mt-2 font-serif text-3xl text-ink">Sign in</h1>
           <p className="mt-2 font-sans text-sm text-muted">Blog management for authorized staff only.</p>
         </div>

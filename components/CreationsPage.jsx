@@ -36,7 +36,7 @@ const defaultBenefits = [
  *   breadcrumb         — array of { label, href? } items for the hero breadcrumb
  *   activeHref         — current route, used to highlight the nav
  *   description        — intro paragraph when introParagraphs is not provided
- *   introParagraphs    — optional multiple intro paragraphs under "Designed for Felinda"
+ *   introParagraphs    — optional multiple intro paragraphs under "Designed for Auréa"
  *   galleryItems       — array of { title, image } items for the photo grid
  *   galleryFirst       — when true, gallery appears at the top of the card, then intro and optional middle content
  *   middleContent      — optional React node (e.g. bespoke story sections) rendered after intro, before CTA strip
@@ -58,7 +58,7 @@ const defaultBenefits = [
  *   ctaStripPrimaryHref     — solid strip button when two CTAs; sole strip link when one (default: WhatsApp for default “journey” label)
  *   ctaStripSecondaryHref   — outline strip button when two CTAs (default: WhatsApp)
  *   introHeadlineSerif      — optional first line of intro H2 (default: “Designed”)
- *   introHeadlineScript     — optional italic rose accent line of intro H2 (default: “for Felinda”)
+ *   introHeadlineScript     — optional italic rose accent line of intro H2 (default: “for Auréa”)
  */
 export default function CreationsPage({
   title,
@@ -68,7 +68,7 @@ export default function CreationsPage({
   description,
   introParagraphs,
   introHeadlineSerif = "Designed",
-  introHeadlineScript = "for Felinda",
+  introHeadlineScript = "for Auréa",
   galleryItems = [],
   galleryFirst = false,
   middleContent = null,

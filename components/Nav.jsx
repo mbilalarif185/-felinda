@@ -4,7 +4,7 @@ import { navItems } from "@/lib/navigation";
 
 export default function Nav({ activeHref = "/" }) {
   return (
-    <nav className="felinda-sans hidden items-center gap-8 text-sm text-[#5F5550] lg:flex">
+    <nav className="auréa-sans hidden items-center gap-8 text-sm text-[#5F5550] lg:flex">
       {navItems.map((item) => {
         // ── Parent with dropdown (not clickable) ──
         if (item.children?.length) {

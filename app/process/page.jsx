@@ -76,7 +76,7 @@ const steps = [
     icon: Hammer,
     week: "Week 5",
     title: "Atelier craft",
-    body: "Goldsmiths cast, file, set and polish entirely by hand on the bench. Settings are checked under loupe; every junction between metal and stone is finished to Felinda standard before final polish.",
+    body: "Goldsmiths cast, file, set and polish entirely by hand on the bench. Settings are checked under loupe; every junction between metal and stone is finished to Auréa standard before final polish.",
     deliverables: [
       "Hand fabrication & stone setting",
       "In-process bench checks",
@@ -107,7 +107,7 @@ const standards = [
   },
   {
     title: "Hand set, never mass-produced",
-    body: "Every Felinda piece is finished at one bench, by one jeweller, start to finish.",
+    body: "Every Auréa piece is finished at one bench, by one jeweller, start to finish.",
   },
   {
     title: "Lifetime craftsmanship promise",
@@ -260,7 +260,7 @@ export default function DesignProcessPage() {
                   Our quiet standards
                 </h3>
                 <p className="mx-auto mt-4 max-w-[620px] text-[16px] text-[#78675f] md:text-[17px]">
-                  The non-negotiables behind every Felinda piece: the things we
+                  The non-negotiables behind every Auréa piece: the things we
                   do whether you ask or not.
                 </p>
               </div>

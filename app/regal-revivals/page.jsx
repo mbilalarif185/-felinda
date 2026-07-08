@@ -35,11 +35,11 @@ function titleFromFilename(filename) {
 
 const galleryItems = archiveFiles.map((file) => ({
   title: titleFromFilename(file),
-  image: `/images/felinda-jewelry/Regal-Revivals/${encodeURIComponent(file)}`,
+  image: `/images/aurea-jewellery/Regal-Revivals/${encodeURIComponent(file)}`,
 }));
 
 const REGAL_REVIVALS_DESCRIPTION =
-  "A private collection of heritage-inspired designs, museum - grade gemstones, and one-of-a-kind couture commissions. Felinda's most intimate work - reserved for those who collect quietly, and for a lifetime.";
+  "A private collection of heritage-inspired designs, museum - grade gemstones, and one-of-a-kind couture commissions. Auréa's most intimate work - reserved for those who collect quietly, and for a lifetime.";
 
 export default function RegalRevivalsPage() {
   return (

@@ -24,26 +24,26 @@ export const metadata = buildPageMetadata({
 export const revalidate = 86400;
 
 const earringFiles = [
-  "FJ Insta- Floral Earrings.webp",
-  "FJ Insta- Golden South Sea Earrings.webp",
-  "FJ Insta-Akoya Earrings.webp",
-  "FJ Insta-ANYA Earrings-2.webp",
-  "FJ Insta-ANYA Earrings-3.webp",
-  "FJ Insta-Dangling Pearl Earrings-3.webp",
-  "FJ Insta-Dangling Pearl Earrings-4.webp",
-  "FJ Insta-Dangling Pearl Earrings.webp",
-  "FJ Insta-Double sided earrings.webp",
-  "FJ Insta-FJ Diamond Hoop.webp",
-  "FJ Insta-Jade Diamond earrings.webp",
-  "FJ Insta-Mabe Earrings 2.webp",
-  "FJ Insta-Mabe Earrings.webp",
-  "FJ Insta-Red Ruby Earring 2.webp",
-  "FJ Insta-Red Ruby Earring.webp",
-  "FJ Insta-Rose Diamond Dangling Earrings.webp",
-  "FJ Insta-Royal Mabe Earrings-B.webp",
-  "FJ Insta-Scapolite earrings.webp",
-  "FJ Insta-Spinel Studs.webp",
-  "FJ Insta-Tahitian earrings.webp",
+  "aurea-piece-150.webp",
+  "aurea-piece-151.webp",
+  "aurea-piece-152.webp",
+  "aurea-piece-153.webp",
+  "aurea-piece-154.webp",
+  "aurea-piece-155.webp",
+  "aurea-piece-156.webp",
+  "aurea-piece-157.webp",
+  "aurea-piece-158.webp",
+  "aurea-piece-159.webp",
+  "aurea-piece-160.webp",
+  "aurea-piece-161.webp",
+  "aurea-piece-162.webp",
+  "aurea-piece-163.webp",
+  "aurea-piece-164.webp",
+  "aurea-piece-165.webp",
+  "aurea-piece-166.webp",
+  "drop-earrings.webp",
+  "aurea-piece-167.webp",
+  "aurea-piece-168.webp",
 ];
 
 function titleFromFilename(filename) {
@@ -58,7 +58,7 @@ function titleFromFilename(filename) {
 
 const galleryItems = earringFiles.map((file) => ({
   title: titleFromFilename(file),
-  image: `/images/felinda-jewelry/EarRings/${encodeURIComponent(file)}`,
+  image: `/images/aurea-jewellery/EarRings/${encodeURIComponent(file)}`,
 }));
 
 export default function EarringsPage() {

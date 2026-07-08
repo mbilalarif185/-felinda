@@ -45,7 +45,7 @@ function toFormState(initial?: BlogPostRecord): FormState {
     slugTouched: Boolean(initial?.slug),
     excerpt: initial?.excerpt ?? "",
     contentMarkdown: initial?.contentMarkdown ?? "",
-    authorName: initial?.authorName ?? "Felinda Atelier",
+    authorName: initial?.authorName ?? "Auréa Atelier",
     authorRole: initial?.authorRole ?? "Design studio",
     authorAvatar: initial?.authorAvatar ?? "",
     publishedAt: initial?.publishedAt?.slice(0, 10) ?? today,

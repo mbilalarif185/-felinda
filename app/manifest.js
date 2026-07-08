@@ -3,9 +3,9 @@ import { SITE_LOGO_PATH, SITE_NAME } from "@/lib/constants/site";
 export default function manifest() {
   return {
     name: SITE_NAME,
-    short_name: "Felinda",
+    short_name: "Auréa",
     description:
-      "Luxury bespoke jewelry atelier in Malaysia for custom rings, earrings, necklaces, and heirloom fine jewelry.",
+      "Auréa Jewellery — handcrafted rings, necklaces, earrings and bracelets from our London studio. Ethically sourced, beautifully made.",
     start_url: "/",
     display: "standalone",
     background_color: "#FBF8F6",

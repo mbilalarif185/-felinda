@@ -256,56 +256,56 @@ export default function ContactForm() {
       <aside className="col-span-12 min-w-0 max-w-full lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
         <div className="box-border w-full max-w-full overflow-hidden rounded-[2rem] border border-line bg-white p-4 shadow-[0_16px_50px_rgba(72,49,41,0.05)] sm:p-6">
           <div className="box-border w-full max-w-full rounded-[1.5rem] bg-gradient-to-b from-[#F4E9E5] via-[#F8F3F1] to-[#EEE3DE] p-5 sm:p-8 lg:p-10">
-            <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
+            <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
               Calling Card
             </div>
 
             <div className="mt-6">
-              <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
+              <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                 For
               </div>
-              <div className="felinda-serif mt-2 max-w-full break-words text-2xl text-ink sm:text-3xl">
+              <div className="auréa-serif mt-2 max-w-full break-words text-2xl text-ink sm:text-3xl">
                 {name.trim() || "(your name)"}
               </div>
-              <div className="felinda-sans mt-2 text-[15px] leading-7 text-muted">
+              <div className="auréa-sans mt-2 text-[15px] leading-7 text-muted">
                 {email.trim() || "your email here"}
               </div>
             </div>
 
             <div className="mt-7 grid grid-cols-2 gap-6">
               <div>
-                <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
+                <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                   Visit
                 </div>
-                <div className="felinda-serif mt-2 text-2xl text-ink">
+                <div className="auréa-serif mt-2 text-2xl text-ink">
                   {dayObj
                     ? `${dayShort[dayObj.getDay()]}, ${dayObj.getDate()} ${monthShort[dayObj.getMonth()]}`
                     : "—"}
                 </div>
               </div>
               <div>
-                <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
+                <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                   Time (45 min)
                 </div>
-                <div className="felinda-serif mt-2 text-2xl text-ink">
+                <div className="auréa-serif mt-2 text-2xl text-ink">
                   {timeLabel?.hours ?? "—"}
                 </div>
               </div>
               <div className="col-span-2">
-                <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
+                <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                   Intention
                 </div>
-                <div className="felinda-serif mt-2 text-2xl text-ink">
+                <div className="auréa-serif mt-2 text-2xl text-ink">
                   {intentionLabel}
                 </div>
               </div>
             </div>
 
             <div className="mt-7 box-border w-full max-w-full rounded-[1.25rem] border border-line bg-white/80 p-4 sm:p-5">
-              <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
+              <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                 Personal Note
               </div>
-              <p className="felinda-sans mt-3 min-h-[3.5rem] max-w-full break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere]">
+              <p className="auréa-sans mt-3 min-h-[3.5rem] max-w-full break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere]">
                 {note.trim()
                   ? note.trim()
                   : "Your words will appear here as you write..."}
@@ -313,11 +313,11 @@ export default function ContactForm() {
             </div>
 
             <div className="mt-7 flex items-center justify-between border-t border-line pt-5">
-              <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
+              <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                 Atelier Mark
               </div>
-              <div className="felinda-sans text-xs uppercase tracking-[0.22em] text-clay">
-                Felinda · KL
+              <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
+                Auréa · KL
               </div>
             </div>
           </div>
@@ -331,13 +331,13 @@ export default function ContactForm() {
       >
         {/* STEP 01 — DAY (calendar: any week / month) */}
         <section>
-          <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
+          <div className="auréa-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
             01 · Choose a Visit
           </div>
-          <h3 className="felinda-serif text-3xl leading-tight">
+          <h3 className="auréa-serif text-3xl leading-tight">
             A day at the atelier
           </h3>
-          <p className="felinda-sans mt-3 max-w-full break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere] sm:max-w-xl">
+          <p className="auréa-sans mt-3 max-w-full break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere] sm:max-w-xl">
             Tuesday to Saturday only. Use the arrows to move to another month or week.
           </p>
 
@@ -352,24 +352,24 @@ export default function ContactForm() {
                   calendarMonth.getMonth() ===
                     todayInAtelierTimeZone().getMonth()
                 }
-                className="felinda-sans shrink-0 rounded-full border border-line px-2.5 py-2 text-[10px] font-medium uppercase tracking-[0.1em] text-ink transition hover:bg-shell disabled:cursor-not-allowed disabled:opacity-40 sm:px-4 sm:text-xs sm:tracking-[0.14em]"
+                className="auréa-sans shrink-0 rounded-full border border-line px-2.5 py-2 text-[10px] font-medium uppercase tracking-[0.1em] text-ink transition hover:bg-shell disabled:cursor-not-allowed disabled:opacity-40 sm:px-4 sm:text-xs sm:tracking-[0.14em]"
               >
                 Previous
               </button>
-              <div className="felinda-serif min-w-0 flex-1 px-0.5 text-center text-[15px] leading-tight text-ink sm:flex-none sm:px-2 sm:text-xl md:text-2xl">
+              <div className="auréa-serif min-w-0 flex-1 px-0.5 text-center text-[15px] leading-tight text-ink sm:flex-none sm:px-2 sm:text-xl md:text-2xl">
                 {monthShort[calendarMonth.getMonth()]} {calendarMonth.getFullYear()}
               </div>
               <button
                 type="button"
                 onClick={() => shiftCalendarMonth(1)}
-                className="felinda-sans shrink-0 rounded-full border border-line px-2.5 py-2 text-[10px] font-medium uppercase tracking-[0.1em] text-ink transition hover:bg-shell sm:px-4 sm:text-xs sm:tracking-[0.14em]"
+                className="auréa-sans shrink-0 rounded-full border border-line px-2.5 py-2 text-[10px] font-medium uppercase tracking-[0.1em] text-ink transition hover:bg-shell sm:px-4 sm:text-xs sm:tracking-[0.14em]"
               >
                 Next
               </button>
             </div>
 
             <div
-              className="mt-4 grid grid-cols-7 gap-1 text-center felinda-sans text-[11px] font-medium uppercase tracking-[0.12em] text-clay sm:text-xs"
+              className="mt-4 grid grid-cols-7 gap-1 text-center auréa-sans text-[11px] font-medium uppercase tracking-[0.12em] text-clay sm:text-xs"
               role="row"
             >
               {dayShort.map((d) => (
@@ -393,7 +393,7 @@ export default function ContactForm() {
                     disabled={!bookable}
                     onClick={() => selectDate(cell)}
                     className={
-                      "felinda-sans flex aspect-square items-center justify-center rounded-xl text-sm font-medium transition sm:text-base " +
+                      "auréa-sans flex aspect-square items-center justify-center rounded-xl text-sm font-medium transition sm:text-base " +
                       (active
                         ? "bg-rose text-white shadow-[0_6px_20px_rgba(216,162,154,0.35)]"
                         : bookable
@@ -411,19 +411,19 @@ export default function ContactForm() {
 
         {/* STEP 02 — TIME (45-minute slots, minimum {MIN_TIME_SLOTS}) */}
         <section>
-          <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
+          <div className="auréa-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
             02 · Choose a time
           </div>
-          <h3 className="felinda-serif text-3xl leading-tight">
+          <h3 className="auréa-serif text-3xl leading-tight">
             45-minute windows
           </h3>
-          <p className="felinda-sans mt-3 max-w-full break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere] sm:max-w-xl">
+          <p className="auréa-sans mt-3 max-w-full break-words text-[15px] leading-7 text-muted [overflow-wrap:anywhere] sm:max-w-xl">
             Forty-five minute appointments from {formatClock(DAY_START_MIN)} to{" "}
             {formatClock(DAY_END_MIN)}, with at least {MIN_TIME_SLOTS} windows offered
             each day.
           </p>
 
-          <div className="felinda-sans mt-6 max-h-[min(320px,50vh)] overflow-y-auto rounded-[1.25rem] border border-line bg-white p-3 sm:p-4">
+          <div className="auréa-sans mt-6 max-h-[min(320px,50vh)] overflow-y-auto rounded-[1.25rem] border border-line bg-white p-3 sm:p-4">
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
               {timeSlots.map((t) => {
                 const active = selectedTime === t.id;
@@ -449,10 +449,10 @@ export default function ContactForm() {
 
         {/* STEP 03 — INTENTION */}
         <section>
-          <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
+          <div className="auréa-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
             03 · Your Intention
           </div>
-          <h3 className="felinda-serif text-3xl leading-tight">
+          <h3 className="auréa-serif text-3xl leading-tight">
             What brings you here
           </h3>
 
@@ -465,7 +465,7 @@ export default function ContactForm() {
                   type="button"
                   onClick={() => setIntention(it.id)}
                   className={
-                    "felinda-sans rounded-full border px-6 py-3.5 text-sm font-medium tracking-[0.04em] transition " +
+                    "auréa-sans rounded-full border px-6 py-3.5 text-sm font-medium tracking-[0.04em] transition " +
                     (active
                       ? "border-rose bg-rose text-white"
                       : "border-line bg-white text-ink hover:bg-shell")
@@ -476,17 +476,17 @@ export default function ContactForm() {
               );
             })}
           </div>
-          <p className="felinda-sans mt-4 text-[15px] leading-7 text-muted">
+          <p className="auréa-sans mt-4 text-[15px] leading-7 text-muted">
             {intentions.find((i) => i.id === intention)?.hint}
           </p>
         </section>
 
         {/* STEP 04 — DETAILS & NOTE */}
         <section>
-          <div className="felinda-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
+          <div className="auréa-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
             04 · Your Details
           </div>
-          <h3 className="felinda-serif text-3xl leading-tight">
+          <h3 className="auréa-serif text-3xl leading-tight">
             A few details &amp; a note
           </h3>
 
@@ -517,7 +517,7 @@ export default function ContactForm() {
           </div>
 
           <div className="mt-5">
-            <div className="felinda-sans mb-2 text-xs uppercase tracking-[0.22em] text-clay">
+            <div className="auréa-sans mb-2 text-xs uppercase tracking-[0.22em] text-clay">
               A Personal Note
             </div>
             <textarea
@@ -526,7 +526,7 @@ export default function ContactForm() {
               rows={5}
               required
               placeholder="The story, the gemstone, or the feeling you'd like the piece to hold..."
-              className="felinda-sans w-full resize-none rounded-2xl border border-line bg-white px-5 py-4 text-[15px] leading-7 text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
+              className="auréa-sans w-full resize-none rounded-2xl border border-line bg-white px-5 py-4 text-[15px] leading-7 text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
             />
           </div>
         </section>
@@ -534,13 +534,13 @@ export default function ContactForm() {
         {/* SUBMIT */}
         <div className="flex flex-col items-stretch gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="felinda-sans text-xs uppercase tracking-[0.18em] text-[#8B7A73]">
+            <div className="auréa-sans text-xs uppercase tracking-[0.18em] text-[#8B7A73]">
               Confirmation arrives within one to two days
             </div>
             <button
               type="submit"
               disabled={status === "sending"}
-              className="felinda-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90 disabled:opacity-60"
+              className="auréa-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90 disabled:opacity-60"
             >
               {status === "sending" ? "Sending..." : "Reserve the Visit"}
             </button>
@@ -548,18 +548,18 @@ export default function ContactForm() {
         </div>
 
         <div className="rounded-2xl border border-line bg-white p-4">
-          <div className="felinda-sans text-xs uppercase tracking-[0.18em] text-clay">
+          <div className="auréa-sans text-xs uppercase tracking-[0.18em] text-clay">
             Captcha
           </div>
           <div className="mt-2 flex flex-wrap items-center gap-3">
-            <div className="felinda-sans text-[15px] text-ink">
+            <div className="auréa-sans text-[15px] text-ink">
               {captchaPrompt || "Loading challenge..."}
             </div>
             <button
               type="button"
               onClick={refreshCaptcha}
               disabled={captchaLoading}
-              className="felinda-sans rounded-full border border-line px-4 py-2 text-xs uppercase tracking-[0.12em] text-ink transition hover:bg-shell disabled:cursor-not-allowed disabled:opacity-50"
+              className="auréa-sans rounded-full border border-line px-4 py-2 text-xs uppercase tracking-[0.12em] text-ink transition hover:bg-shell disabled:cursor-not-allowed disabled:opacity-50"
             >
               {captchaLoading ? "Loading..." : "Refresh"}
             </button>
@@ -570,18 +570,18 @@ export default function ContactForm() {
             onChange={(e) => setCaptchaAnswer(e.target.value)}
             required
             placeholder="Type your answer"
-            className="felinda-sans mt-3 w-full rounded-2xl border border-line bg-white px-5 py-4 text-[15px] text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
+            className="auréa-sans mt-3 w-full rounded-2xl border border-line bg-white px-5 py-4 text-[15px] text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
           />
         </div>
 
         {formError ? (
-          <div className="felinda-sans rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-[15px] leading-7 text-red-900">
+          <div className="auréa-sans rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-[15px] leading-7 text-red-900">
             {formError}
           </div>
         ) : null}
 
         {status === "sent" && (
-          <div className="felinda-sans rounded-2xl border border-roseSoft/60 bg-[#FBF1ED] px-5 py-4 text-[15px] leading-7 text-[#7A4A40]">
+          <div className="auréa-sans rounded-2xl border border-roseSoft/60 bg-[#FBF1ED] px-5 py-4 text-[15px] leading-7 text-[#7A4A40]">
             Your calling card has been received. The atelier will personally
             confirm your appointment within one to two days.
           </div>
@@ -594,7 +594,7 @@ export default function ContactForm() {
 function Field({ label, value, onChange, placeholder, type = "text", required, className = "" }) {
   return (
     <label className={"block min-w-0 " + className}>
-      <span className="felinda-sans mb-2 block text-xs uppercase tracking-[0.22em] text-clay">
+      <span className="auréa-sans mb-2 block text-xs uppercase tracking-[0.22em] text-clay">
         {label}
       </span>
       <input
@@ -603,7 +603,7 @@ function Field({ label, value, onChange, placeholder, type = "text", required, c
         onChange={(e) => onChange(e.target.value)}
         required={required}
         placeholder={placeholder}
-        className="felinda-sans w-full rounded-2xl border border-line bg-white px-5 py-4 text-[15px] text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
+        className="auréa-sans w-full rounded-2xl border border-line bg-white px-5 py-4 text-[15px] text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
       />
     </label>
   );

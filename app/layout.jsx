@@ -10,8 +10,8 @@ import "./globals.css";
 export const metadata = {
   ...buildRootMetadata(),
   title: {
-    default: `${SITE_NAME} · Bespoke Fine Jewelry Atelier`,
-    template: `%s · ${SITE_NAME}`,
+    default: `${SITE_NAME} | Crafted for Eternity`,
+    template: `%s | ${SITE_NAME}`,
   },
   description: DEFAULT_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -19,12 +19,12 @@ export const metadata = {
   creator: SITE_NAME,
   category: "jewelry",
   keywords: [
-    "luxury jewelry Malaysia",
+    "luxury jewelry",
     "bespoke jewelry",
     "custom rings",
     "fine jewelry atelier",
-    "handmade jewelry Malaysia",
-    "Felinda Jewelry",
+    "handmade jewelry",
+    "Auréa Jewellery",
   ],
   formatDetection: {
     email: false,
@@ -39,8 +39,8 @@ export const metadata = {
   manifest: "/manifest.webmanifest",
   twitter: {
     card: "summary_large_image",
-    site: "@felindajewelrymy",
-    creator: "@felindajewelrymy",
+    site: "@aureajewellery",
+    creator: "@aureajewellery",
   },
   robots: {
     index: true,

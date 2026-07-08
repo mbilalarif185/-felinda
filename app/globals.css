@@ -24,11 +24,11 @@ body {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
 }
 
-.felinda-serif {
+.auréa-serif {
   font-family: var(--font-cormorant), "Cormorant Garamond", serif;
 }
 
-.felinda-sans {
+.auréa-sans {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
 }
 
@@ -37,7 +37,7 @@ html {
 }
 
 /* Homepage value strip — excluded from reduced-motion * reset so it can still scroll */
-@keyframes felinda-value-strip-marquee {
+@keyframes auréa-value-strip-marquee {
   0% {
     transform: translate3d(0, 0, 0);
   }
@@ -46,41 +46,41 @@ html {
   }
 }
 
-.felinda-value-marquee-track {
+.auréa-value-marquee-track {
   display: flex;
   width: max-content;
   flex-wrap: nowrap;
   align-items: center;
   column-gap: 3rem;
   white-space: nowrap;
-  animation: felinda-value-strip-marquee 42s linear infinite;
+  animation: auréa-value-strip-marquee 42s linear infinite;
   will-change: transform;
 }
 
 @media (min-width: 768px) {
-  .felinda-value-marquee-track {
+  .auréa-value-marquee-track {
     column-gap: 4rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .felinda-value-marquee-track {
+  .auréa-value-marquee-track {
     column-gap: 5rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* Do not target .felinda-value-marquee-track — global duration:0.001ms kills horizontal marquees */
-  *:not(.felinda-value-marquee-track),
-  *:not(.felinda-value-marquee-track)::before,
-  *:not(.felinda-value-marquee-track)::after {
+  /* Do not target .auréa-value-marquee-track — global duration:0.001ms kills horizontal marquees */
+  *:not(.auréa-value-marquee-track),
+  *:not(.auréa-value-marquee-track)::before,
+  *:not(.auréa-value-marquee-track)::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
 
-  .felinda-value-marquee-track {
+  .auréa-value-marquee-track {
     animation: none !important;
     transform: none !important;
   }

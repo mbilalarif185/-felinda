@@ -50,7 +50,7 @@ export default function YouTubeCard({ url, title, name, role }) {
           <iframe
             className="absolute inset-0 h-full w-full"
             src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`}
-            title={title || "Felinda testimonial"}
+            title={title || "Auréa testimonial"}
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -65,7 +65,7 @@ export default function YouTubeCard({ url, title, name, role }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={thumb}
-              alt={title || "Felinda testimonial"}
+              alt={title || "Auréa testimonial"}
               loading="lazy"
               decoding="async"
               className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"

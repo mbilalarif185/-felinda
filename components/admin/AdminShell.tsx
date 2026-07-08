@@ -25,7 +25,7 @@ export default function AdminShell({ children, title }: AdminShellProps) {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
           <div>
             <p className="font-sans text-xs font-medium uppercase tracking-luxe text-muted">
-              Felinda CMS
+              Auréa CMS
             </p>
             <h1 className="font-serif text-xl text-ink">{title ?? "Blog admin"}</h1>
           </div>

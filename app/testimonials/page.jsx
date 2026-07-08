@@ -48,7 +48,7 @@ const videoTestimonials = [
   {
     url: "https://youtu.be/mC-8U4HbFtA",
     title: "Behind the atelier doors",
-    name: "Felinda Studio",
+    name: "Auréa Studio",
     role: "Studio film",
   },
   {
@@ -72,7 +72,7 @@ const videoTestimonials = [
   {
     url: "https://youtu.be/HvF6Mh5Cpno",
     title: "The making of a signature piece",
-    name: "Felinda Atelier",
+    name: "Auréa Atelier",
     role: "Studio film",
   },
 ];
@@ -80,7 +80,7 @@ const videoTestimonials = [
 const writtenTestimonials = [
   {
     quote:
-      "Felinda took a single sketch on a napkin and turned it into the most personal piece I own. Every detail, from the rose-gold weight to the way the centre stone catches afternoon light, feels like it was always meant for me.",
+      "Auréa took a single sketch on a napkin and turned it into the most personal piece I own. Every detail, from the rose-gold weight to the way the centre stone catches afternoon light, feels like it was always meant for me.",
     name: "Adriana K.",
     role: "Bespoke pendant client",
   },
@@ -124,7 +124,7 @@ export default function TestimonialsPage() {
               </h2>
 
               <p className="mx-auto mt-7 max-w-[760px] font-serif text-[18px] leading-[1.8] text-[#78675f] md:text-[20px]">
-                Every Felinda piece begins with a conversation and ends with a
+                Every Auréa piece begins with a conversation and ends with a
                 story. These are a few of the people who carry ours in their
                 own words, and on film.
               </p>
@@ -204,7 +204,7 @@ export default function TestimonialsPage() {
                 </div>
                 <div>
                   <h3 className="font-serif text-[26px] font-light text-[#54463f] md:text-[34px]">
-                    Begin your own Felinda story.
+                    Begin your own Auréa story.
                   </h3>
                   <p className="mt-1 text-[16px] text-[#807069] md:text-[18px]">
                     A private consultation, in studio or online.
