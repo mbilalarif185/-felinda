@@ -4,18 +4,26 @@
 
 :root {
   color-scheme: light;
-  --gold: #c9a96e;
+  --gold: #b08a4a;
   --noir: #15110f;
-  /* Build-safe font variables (no network fetch). */
+  /* Build-safe font variables (no network fetch). Prefer high-contrast
+     system serifs before Georgia so the display voice reads as an atelier
+     hand, not a browser default. If next/font is wired up later, the
+     --font-* variables it injects override these transparently. */
   --font-inter: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-cormorant: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-cormorant: "Cormorant Garamond", "Cormorant", "Hoefler Text",
+    "Baskerville", "Iowan Old Style", "Palatino Linotype", Palatino, ui-serif,
+    Georgia, "Times New Roman", serif;
+  /* Register / ledger voice — typewriter mono carries the hallmark data. */
+  --font-ledger: "SFMono-Regular", ui-monospace, "SF Mono", "Menlo", "Consolas",
+    "Liberation Mono", "Courier New", monospace;
 }
 
 html,
 body {
-  background-color: #FBF8F6;
-  color: #2B2321;
+  background-color: #0a0a0a;
+  color: #f3efe6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,6 +38,145 @@ body {
 
 .auréa-sans {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
+}
+
+/* --- The register / hallmark voice ------------------------------------ */
+.ledger {
+  font-family: var(--font-ledger);
+  font-feature-settings: "tnum" 1;
+}
+
+/* Small-caps register label: REF. / DATE / № — used for ledger metadata */
+.ledger-label {
+  font-family: var(--font-ledger);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Hairline rule with a centred gold pip — the register's divider mark */
+.hallmark-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--gold);
+}
+.hallmark-rule::before,
+.hallmark-rule::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+/* The hallmark stamp block — gold-ruled, mono, "one of one" */
+.hallmark {
+  font-family: var(--font-ledger);
+  border: 1px solid rgba(176, 138, 74, 0.55);
+  color: var(--gold);
+  line-height: 1.5;
+}
+
+/* Nocturnal hero: warm ink base + a single gemstone glow, plus a faint
+   grain so the dark ground reads like velvet rather than flat black. */
+.atelier-night {
+  background:
+    radial-gradient(
+      120% 90% at 78% 18%,
+      rgba(58, 39, 48, 0.9) 0%,
+      rgba(28, 21, 18, 0) 60%
+    ),
+    radial-gradient(
+      90% 70% at 12% 92%,
+      rgba(176, 138, 74, 0.14) 0%,
+      rgba(28, 21, 18, 0) 55%
+    ),
+    #1c1512;
+}
+.atelier-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+}
+
+/* Scroll-reveal for register entries — reduced-motion is handled by the
+   global reset below (duration collapses, content stays visible). */
+@keyframes ledgerReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================================================
+   "Timeless Elegance" luxe homepage — black + gold, glassmorphism.
+   Scoped under .luxe so nothing here leaks into the other pages.
+   =================================================================== */
+.luxe {
+  background: #0a0a0a;
+  color: #f3efe6;
+}
+.luxe ::selection {
+  background: rgba(212, 175, 55, 0.28);
+  color: #fff;
+}
+
+/* Hero luxury dark gradient (#0A0A0A → #1A1A1A) */
+.luxe-hero-bg {
+  background:
+    radial-gradient(
+      60% 50% at 50% 30%,
+      rgba(212, 175, 55, 0.1) 0%,
+      rgba(10, 10, 10, 0) 60%
+    ),
+    linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+/* Gold foil text — used sparingly on the display headline accents */
+.luxe-gold-text {
+  background: linear-gradient(
+    92deg,
+    #9e7b23 0%,
+    #d4af37 32%,
+    #f4e6b0 52%,
+    #d4af37 72%,
+    #9e7b23 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glassmorphism card surface */
+.luxe-glass {
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Thin gold divider with centred diamond pip */
+.luxe-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: #d4af37;
+}
+.luxe-rule::before,
+.luxe-rule::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, currentColor);
+  opacity: 0.5;
+}
+.luxe-rule::after {
+  background: linear-gradient(90deg, currentColor, transparent);
 }
 
 html {

@@ -254,8 +254,8 @@ export default function ContactForm() {
     <div className="grid min-w-0 grid-cols-12 gap-8 sm:gap-10 lg:gap-14">
       {/* ───── LIVE CALLING CARD PREVIEW ───── */}
       <aside className="col-span-12 min-w-0 max-w-full lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
-        <div className="box-border w-full max-w-full overflow-hidden rounded-[2rem] border border-line bg-white p-4 shadow-[0_16px_50px_rgba(72,49,41,0.05)] sm:p-6">
-          <div className="box-border w-full max-w-full rounded-[1.5rem] bg-gradient-to-b from-[#F4E9E5] via-[#F8F3F1] to-[#EEE3DE] p-5 sm:p-8 lg:p-10">
+        <div className="box-border w-full max-w-full overflow-hidden rounded-[2rem] border border-line bg-white/[0.05] p-4 shadow-[0_16px_50px_rgba(72,49,41,0.05)] sm:p-6">
+          <div className="box-border w-full max-w-full rounded-[1.5rem] bg-gradient-to-b from-[#161310] via-[#141414] to-[#211c17] p-5 sm:p-8 lg:p-10">
             <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
               Calling Card
             </div>
@@ -301,7 +301,7 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="mt-7 box-border w-full max-w-full rounded-[1.25rem] border border-line bg-white/80 p-4 sm:p-5">
+            <div className="mt-7 box-border w-full max-w-full rounded-[1.25rem] border border-line bg-white/[0.05] p-4 sm:p-5">
               <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                 Personal Note
               </div>
@@ -341,7 +341,7 @@ export default function ContactForm() {
             Tuesday to Saturday only. Use the arrows to move to another month or week.
           </p>
 
-          <div className="mt-6 box-border w-full max-w-full overflow-hidden rounded-[1.5rem] border border-line bg-white p-3 sm:p-6">
+          <div className="mt-6 box-border w-full max-w-full overflow-hidden rounded-[1.5rem] border border-line bg-white/[0.05] p-3 sm:p-6">
             <div className="flex min-w-0 items-center justify-between gap-1.5 sm:gap-3">
               <button
                 type="button"
@@ -395,10 +395,10 @@ export default function ContactForm() {
                     className={
                       "auréa-sans flex aspect-square items-center justify-center rounded-xl text-sm font-medium transition sm:text-base " +
                       (active
-                        ? "bg-rose text-white shadow-[0_6px_20px_rgba(216,162,154,0.35)]"
+                        ? "bg-luxeGold text-luxeBlack shadow-[0_6px_20px_rgba(216,162,154,0.35)]"
                         : bookable
                           ? "border border-transparent text-ink hover:border-rose/40 hover:bg-shell"
-                          : "cursor-not-allowed bg-[#faf8f7] text-muted/35")
+                          : "cursor-not-allowed bg-[#161310] text-muted/35")
                     }
                   >
                     {cell.getDate()}
@@ -423,7 +423,7 @@ export default function ContactForm() {
             each day.
           </p>
 
-          <div className="auréa-sans mt-6 max-h-[min(320px,50vh)] overflow-y-auto rounded-[1.25rem] border border-line bg-white p-3 sm:p-4">
+          <div className="auréa-sans mt-6 max-h-[min(320px,50vh)] overflow-y-auto rounded-[1.25rem] border border-line bg-white/[0.05] p-3 sm:p-4">
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
               {timeSlots.map((t) => {
                 const active = selectedTime === t.id;
@@ -435,8 +435,8 @@ export default function ContactForm() {
                     className={
                       "rounded-xl border px-3 py-3 text-left text-[13px] font-medium leading-snug tracking-[0.02em] transition sm:text-sm " +
                       (active
-                        ? "border-rose bg-rose text-white shadow-[0_8px_24px_rgba(216,162,154,0.28)]"
-                        : "border-line bg-[#fffdfb] text-ink hover:border-rose/35 hover:bg-shell")
+                        ? "border-rose bg-luxeGold text-luxeBlack shadow-[0_8px_24px_rgba(216,162,154,0.28)]"
+                        : "border-line bg-[#141414] text-ink hover:border-rose/35 hover:bg-shell")
                     }
                   >
                     {t.hours}
@@ -467,8 +467,8 @@ export default function ContactForm() {
                   className={
                     "auréa-sans rounded-full border px-6 py-3.5 text-sm font-medium tracking-[0.04em] transition " +
                     (active
-                      ? "border-rose bg-rose text-white"
-                      : "border-line bg-white text-ink hover:bg-shell")
+                      ? "border-rose bg-luxeGold text-luxeBlack"
+                      : "border-line bg-white/[0.05] text-ink hover:bg-shell")
                   }
                 >
                   {it.label}
@@ -526,7 +526,7 @@ export default function ContactForm() {
               rows={5}
               required
               placeholder="The story, the gemstone, or the feeling you'd like the piece to hold..."
-              className="auréa-sans w-full resize-none rounded-2xl border border-line bg-white px-5 py-4 text-[15px] leading-7 text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
+              className="auréa-sans w-full resize-none rounded-2xl border border-line bg-white/[0.05] px-5 py-4 text-[15px] leading-7 text-ink placeholder:text-[#6b665e] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
             />
           </div>
         </section>
@@ -534,20 +534,20 @@ export default function ContactForm() {
         {/* SUBMIT */}
         <div className="flex flex-col items-stretch gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="auréa-sans text-xs uppercase tracking-[0.18em] text-[#8B7A73]">
+            <div className="auréa-sans text-xs uppercase tracking-[0.18em] text-[#a89f95]">
               Confirmation arrives within one to two days
             </div>
             <button
               type="submit"
               disabled={status === "sending"}
-              className="auréa-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90 disabled:opacity-60"
+              className="auréa-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-luxeBlack transition hover:opacity-90 disabled:opacity-60"
             >
               {status === "sending" ? "Sending..." : "Reserve the Visit"}
             </button>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-line bg-white p-4">
+        <div className="rounded-2xl border border-line bg-white/[0.05] p-4">
           <div className="auréa-sans text-xs uppercase tracking-[0.18em] text-clay">
             Captcha
           </div>
@@ -570,7 +570,7 @@ export default function ContactForm() {
             onChange={(e) => setCaptchaAnswer(e.target.value)}
             required
             placeholder="Type your answer"
-            className="auréa-sans mt-3 w-full rounded-2xl border border-line bg-white px-5 py-4 text-[15px] text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
+            className="auréa-sans mt-3 w-full rounded-2xl border border-line bg-white/[0.05] px-5 py-4 text-[15px] text-ink placeholder:text-[#6b665e] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
           />
         </div>
 
@@ -581,7 +581,7 @@ export default function ContactForm() {
         ) : null}
 
         {status === "sent" && (
-          <div className="auréa-sans rounded-2xl border border-roseSoft/60 bg-[#FBF1ED] px-5 py-4 text-[15px] leading-7 text-[#7A4A40]">
+          <div className="auréa-sans rounded-2xl border border-roseSoft/60 bg-[#14100c] px-5 py-4 text-[15px] leading-7 text-[#e8ce8b]">
             Your calling card has been received. The atelier will personally
             confirm your appointment within one to two days.
           </div>
@@ -603,7 +603,7 @@ function Field({ label, value, onChange, placeholder, type = "text", required, c
         onChange={(e) => onChange(e.target.value)}
         required={required}
         placeholder={placeholder}
-        className="auréa-sans w-full rounded-2xl border border-line bg-white px-5 py-4 text-[15px] text-ink placeholder:text-[#B8A9A2] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
+        className="auréa-sans w-full rounded-2xl border border-line bg-white/[0.05] px-5 py-4 text-[15px] text-ink placeholder:text-[#6b665e] outline-none transition focus:border-rose focus:ring-4 focus:ring-roseSoft/30"
       />
     </label>
   );

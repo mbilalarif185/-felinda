@@ -7,7 +7,7 @@ export default function BlogPostLoading() {
       <Header activeHref="/blog" />
       <main>
         <div className="border-b border-line/80 bg-shell/20">
-          <div className="mx-auto max-w-3xl px-6 pb-12 pt-10 lg:px-10 lg:pt-14">
+          <div className="mx-auto max-w-3xl px-6 pb-12 pt-28 lg:px-10 lg:pt-32">
             <div className="h-4 w-36 animate-pulse rounded bg-line" />
             <div className="mt-10 space-y-3">
               <div className="h-3 w-48 animate-pulse rounded bg-line" />

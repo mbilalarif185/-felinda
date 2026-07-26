@@ -54,7 +54,7 @@ const allImgs = [...allWebps, ...allJpgs];
 
 allImgs.forEach(filePath => {
   const basename = path.basename(filePath);
-  if (basename.includes('FJ Insta') || basename.includes('Felinda')) {
+  if (basename.includes('FJ Insta') || basename.includes('Aurea')) {
     const ext = path.extname(basename);
     const newBasename = `aurea-piece-${genericCounter}.webp`;
     genericCounter++;

@@ -30,7 +30,7 @@ export default function BlogError({
           <button
             type="button"
             onClick={() => reset()}
-            className="rounded-full border border-ink bg-ink px-6 py-2.5 font-sans text-sm font-medium text-cream transition hover:bg-noir"
+            className="rounded-full border border-luxeGold bg-luxeGold px-6 py-2.5 font-sans text-sm font-medium text-luxeBlack transition hover:bg-luxeGoldSoft"
           >
             Try again
           </button>

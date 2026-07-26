@@ -91,7 +91,7 @@ export default function ContactPage() {
           <div className="pointer-events-none absolute left-[-120px] top-10 h-72 w-72 rounded-full bg-roseSoft/20 blur-3xl" />
           <div className="pointer-events-none absolute right-0 top-20 h-80 w-80 rounded-full bg-roseSoft/20 blur-3xl" />
 
-          <div className="mx-auto grid min-w-0 max-w-7xl gap-14 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-10 lg:py-28">
+          <div className="mx-auto grid min-w-0 max-w-7xl gap-14 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:px-10 lg:pb-28 lg:pt-40">
             <div className="flex min-w-0 flex-col justify-center">
               <div className="auréa-sans mb-6 text-xs uppercase tracking-[0.28em] text-clay">
                 The Concierge
@@ -109,7 +109,7 @@ export default function ContactPage() {
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
                   href="#book"
-                  className="auréa-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90"
+                  className="auréa-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-luxeBlack transition hover:opacity-90"
                 >
                   Reserve a Visit
                 </Link>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   href={CONTACT.whatsappWaMe}
                   target="_blank"
                   rel="noreferrer"
-                  className="auréa-sans rounded-full border border-line bg-white px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-ink transition hover:bg-shell"
+                  className="auréa-sans rounded-full border border-line bg-white/[0.05] px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-ink transition hover:bg-shell"
                 >
                   Chat on WhatsApp
                 </a>
@@ -125,8 +125,8 @@ export default function ContactPage() {
             </div>
 
             <div className="relative flex w-full min-w-0 flex-col items-stretch lg:block">
-              <div className="relative mx-auto w-full max-w-xl min-w-0 overflow-hidden rounded-[2rem] border border-white/80 bg-white p-3 shadow-[0_20px_70px_rgba(72,49,41,0.08)] sm:p-4">
-                <div className="rounded-[1.5rem] bg-gradient-to-b from-[#F4E9E5] via-[#F8F3F1] to-[#EEE3DE] p-5 sm:p-8 lg:p-10">
+              <div className="relative mx-auto w-full max-w-xl min-w-0 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-3 shadow-[0_20px_70px_rgba(72,49,41,0.08)] sm:p-4">
+                <div className="rounded-[1.5rem] bg-gradient-to-b from-[#161310] via-[#141414] to-[#211c17] p-5 sm:p-8 lg:p-10">
                   <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                     Atelier Directory
                   </div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="relative z-10 mx-auto mt-5 w-full max-w-xl shrink-0 rounded-[1.5rem] border border-line bg-white/95 p-4 shadow-[0_10px_30px_rgba(72,49,41,0.08)] sm:p-5 lg:absolute lg:bottom-6 lg:left-0 lg:mt-0 lg:w-auto lg:max-w-sm lg:px-5">
+              <div className="relative z-10 mx-auto mt-5 w-full max-w-xl shrink-0 rounded-[1.5rem] border border-line bg-white/[0.05] p-4 shadow-[0_10px_30px_rgba(72,49,41,0.08)] sm:p-5 lg:absolute lg:bottom-6 lg:left-0 lg:mt-0 lg:w-auto lg:max-w-sm lg:px-5">
                 <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                   Concierge Live
                 </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
         </section>
 
         {/* ─── VALUE STRIP (matches homepage) ─── */}
-        <section className="border-y border-line bg-white/70">
+        <section className="border-y border-line bg-white/[0.05]">
           <div className="mx-auto grid min-w-0 max-w-7xl gap-6 px-4 py-5 text-center sm:px-6 lg:grid-cols-5 lg:px-10">
             {valueStrip.map((item) => (
               <div
@@ -223,7 +223,7 @@ export default function ContactPage() {
                 href={r.href}
                 target={r.href.startsWith("http") ? "_blank" : undefined}
                 rel={r.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group min-w-0 overflow-hidden rounded-[1.75rem] border border-line bg-white p-7 shadow-[0_10px_35px_rgba(72,49,41,0.05)] transition hover:shadow-[0_18px_45px_rgba(72,49,41,0.08)]"
+                className="group min-w-0 overflow-hidden rounded-[1.75rem] border border-line bg-white/[0.05] p-7 shadow-[0_10px_35px_rgba(72,49,41,0.05)] transition hover:shadow-[0_18px_45px_rgba(72,49,41,0.08)]"
               >
                 <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-clay">
                   {r.label}
@@ -256,7 +256,7 @@ export default function ContactPage() {
         </section>
 
         {/* ─── JOURNEY (process-style, homepage rhythm) ─── */}
-        <section className="bg-white py-24">
+        <section className="bg-white/[0.05] py-24">
           <div className="mx-auto min-w-0 max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="mx-auto max-w-3xl text-center">
               <div className="auréa-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
@@ -275,9 +275,9 @@ export default function ContactPage() {
               {journey.map((step) => (
                 <div
                   key={step.no}
-                  className="relative overflow-hidden rounded-[1.75rem] border border-line bg-white p-7 shadow-[0_10px_35px_rgba(72,49,41,0.04)]"
+                  className="relative overflow-hidden rounded-[1.75rem] border border-line bg-white/[0.05] p-7 shadow-[0_10px_35px_rgba(72,49,41,0.04)]"
                 >
-                  <div className="auréa-serif absolute right-4 top-1 text-7xl text-[#F2E6E1]">
+                  <div className="auréa-serif absolute right-4 top-1 text-7xl text-[#161310]">
                     {step.no}
                   </div>
                   <div className="relative z-10">
@@ -293,7 +293,7 @@ export default function ContactPage() {
         </section>
 
         {/* ─── ATELIER NOTE (testimonial-style band, homepage rhythm) ─── */}
-        <section className="bg-[#F8F2EE] py-24">
+        <section className="bg-[#121212] py-24">
           <div className="mx-auto min-w-0 max-w-5xl px-4 text-center sm:px-6 lg:px-10">
             <div className="auréa-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
               From the Atelier
@@ -302,7 +302,7 @@ export default function ContactPage() {
               A note before we meet
             </h2>
 
-            <div className="mt-12 rounded-[2rem] border border-line bg-white px-8 py-12 shadow-[0_12px_35px_rgba(72,49,41,0.05)] lg:px-16">
+            <div className="mt-12 rounded-[2rem] border border-line bg-white/[0.05] px-8 py-12 shadow-[0_12px_35px_rgba(72,49,41,0.05)] lg:px-16">
               <div className="auréa-serif text-5xl text-rose">“</div>
               <p className="auréa-serif mt-4 text-3xl leading-relaxed text-ink lg:text-4xl">
                 Every conversation is read personally, and answered in the same

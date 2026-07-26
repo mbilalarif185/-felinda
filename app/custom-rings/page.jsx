@@ -49,7 +49,7 @@ export default function CustomRingsPage() {
       />
       <Header activeHref="/custom-rings" />
 
-      <div className="min-h-screen bg-[#f6f0ec] text-[#56463f]">
+      <div className="min-h-screen bg-[#0a0a0a] text-[#d7d1c6]">
         <PageHero
           title="Custom Rings"
           
@@ -62,7 +62,7 @@ export default function CustomRingsPage() {
         <Suspense
           fallback={
             <section className="relative z-10 px-6 pb-12">
-              <div className="mx-auto h-[min(420px,50vh)] max-w-[1320px] animate-pulse rounded-[30px] border border-[#e7dbd5] bg-[#fbf7f4]/80" />
+              <div className="mx-auto h-[min(420px,50vh)] max-w-[1320px] animate-pulse rounded-[30px] border border-[#26221e] bg-[#121212]/80" />
             </section>
           }
         >

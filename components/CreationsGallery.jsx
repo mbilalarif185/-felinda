@@ -67,7 +67,7 @@ export default function CreationsGallery({ items = [] }) {
 
   if (items.length === 0) {
     return (
-      <div className="mt-12 rounded-[18px] border border-dashed border-[#eee3de] bg-[#fefcfa] py-16 text-center text-[15px] text-[#8a7a71]">
+      <div className="mt-12 rounded-[18px] border border-dashed border-[#211c17] bg-[#141414] py-16 text-center text-[15px] text-[#a89f95]">
         No pieces in this category yet. Please check back soon.
       </div>
     );
@@ -82,7 +82,7 @@ export default function CreationsGallery({ items = [] }) {
             key={item.image}
             onClick={() => setLightboxIndex(index)}
             aria-label={`View ${item.title}`}
-            className="group block overflow-hidden rounded-[18px] border border-[#eee3de] bg-[#fefcfa] text-left shadow-[0_4px_15px_rgba(90,70,60,0.04)] transition hover:shadow-[0_10px_28px_rgba(110,90,80,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d29189]"
+            className="group block overflow-hidden rounded-[18px] border border-[#211c17] bg-[#141414] text-left shadow-[0_4px_15px_rgba(90,70,60,0.04)] transition hover:shadow-[0_10px_28px_rgba(110,90,80,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
           >
             <div className="relative aspect-[1.22/1] overflow-hidden">
               <Image
@@ -105,12 +105,12 @@ export default function CreationsGallery({ items = [] }) {
             onClick={() =>
               setVisibleCount((n) => Math.min(n + PAGE_STEP, items.length))
             }
-            className="inline-flex items-center gap-2 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-3 text-[14px] tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[15px]"
+            className="inline-flex items-center gap-2 rounded-[10px] border border-[#6b5a2e] bg-transparent px-8 py-3 text-[14px] tracking-[0.04em] text-[#d4af37] transition hover:bg-[#d4af37] hover:text-luxeBlack md:px-10 md:text-[15px]"
           >
             VIEW MORE
             <ChevronDown size={16} />
           </button>
-          <span className="text-[13px] text-[#8a7a71]">
+          <span className="text-[13px] text-[#a89f95]">
             Showing {paginatedItems.length} of {items.length}
           </span>
         </div>
@@ -133,7 +133,7 @@ export default function CreationsGallery({ items = [] }) {
                 closeLightbox();
               }}
               aria-label="Close"
-              className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full text-white/90 transition hover:bg-white/10 hover:text-white md:right-8 md:top-8"
+              className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full text-white/90 transition hover:bg-white/[0.05] hover:text-white md:right-8 md:top-8"
             >
               <X size={26} strokeWidth={1.6} />
             </button>
@@ -147,7 +147,7 @@ export default function CreationsGallery({ items = [] }) {
                     showPrev();
                   }}
                   aria-label="Previous image"
-                  className="absolute left-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white md:left-6"
+                  className="absolute left-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/[0.05] hover:text-white md:left-6"
                 >
                   <ChevronLeft size={32} strokeWidth={1.6} />
                 </button>
@@ -159,7 +159,7 @@ export default function CreationsGallery({ items = [] }) {
                     showNext();
                   }}
                   aria-label="Next image"
-                  className="absolute right-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white md:right-6"
+                  className="absolute right-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/[0.05] hover:text-white md:right-6"
                 >
                   <ChevronRight size={32} strokeWidth={1.6} />
                 </button>

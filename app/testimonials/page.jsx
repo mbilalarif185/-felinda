@@ -103,7 +103,7 @@ export default function TestimonialsPage() {
     <>
       <Header activeHref="/testimonials" />
 
-      <main className="min-h-screen bg-[#f6f0ec] text-[#56463f]">
+      <main className="min-h-screen bg-[#0a0a0a] text-[#d7d1c6]">
         <PageHero
           title="Stories from our Clients"
           breadcrumb={[
@@ -114,22 +114,22 @@ export default function TestimonialsPage() {
 
         {/* Intro card */}
         <section className="relative z-10 px-6 pb-12">
-          <div className="mx-auto max-w-[1320px] rounded-[30px] border border-[#e7dbd5] bg-[#fbf7f4] px-6 py-10 shadow-[0_10px_30px_rgba(110,90,80,0.04)] md:px-10 md:py-12">
+          <div className="mx-auto max-w-[1320px] rounded-[30px] border border-[#26221e] bg-[#121212] px-6 py-10 shadow-[0_10px_30px_rgba(110,90,80,0.04)] md:px-10 md:py-12">
             {/* Lead */}
             <div className="mx-auto max-w-[900px] text-center">
-              <h2 className="font-serif text-[40px] font-light leading-[1.05] tracking-[-0.03em] text-[#4f413a] md:text-[60px]">
+              <h2 className="font-serif text-[40px] font-light leading-[1.05] tracking-[-0.03em] text-[#f3efe6] md:text-[60px]">
                 Worn,{" "}
-                <span className="font-normal italic text-[#d59a92]">loved</span>
+                <span className="font-normal italic text-[#d4af37]">loved</span>
                 , passed on.
               </h2>
 
-              <p className="mx-auto mt-7 max-w-[760px] font-serif text-[18px] leading-[1.8] text-[#78675f] md:text-[20px]">
+              <p className="mx-auto mt-7 max-w-[760px] font-serif text-[18px] leading-[1.8] text-[#b8b2a6] md:text-[20px]">
                 Every Auréa piece begins with a conversation and ends with a
                 story. These are a few of the people who carry ours in their
                 own words, and on film.
               </p>
 
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-2 text-[#c88f87]">
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-2 text-[#d4af37]">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={18} fill="currentColor" strokeWidth={0} />
                 ))}
@@ -142,7 +142,7 @@ export default function TestimonialsPage() {
             {/* Video grid */}
             <div className="mt-12">
               <div className="mb-6 flex items-end justify-between gap-4">
-                <h3 className="font-serif text-[26px] font-light text-[#4f413a] md:text-[34px]">
+                <h3 className="font-serif text-[26px] font-light text-[#f3efe6] md:text-[34px]">
                   In their own words, on film.
                 </h3>
                 <span className="hidden text-[13px] uppercase tracking-[0.18em] text-[#a89a92] md:inline">
@@ -164,8 +164,8 @@ export default function TestimonialsPage() {
             </div>
 
             {/* Written testimonials */}
-            <div className="mt-12 border-t border-[#ece1dc] pt-10">
-              <h3 className="mb-6 text-center font-serif text-[26px] font-light text-[#4f413a] md:text-[34px]">
+            <div className="mt-12 border-t border-[#26221e] pt-10">
+              <h3 className="mb-6 text-center font-serif text-[26px] font-light text-[#f3efe6] md:text-[34px]">
                 Written reflections
               </h3>
 
@@ -173,21 +173,21 @@ export default function TestimonialsPage() {
                 {writtenTestimonials.map((t, i) => (
                   <article
                     key={i}
-                    className="relative flex flex-col overflow-hidden rounded-[18px] border border-[#eee3de] bg-[#fefcfa] p-7 shadow-[0_4px_15px_rgba(90,70,60,0.04)]"
+                    className="relative flex flex-col overflow-hidden rounded-[18px] border border-[#211c17] bg-[#141414] p-7 shadow-[0_4px_15px_rgba(90,70,60,0.04)]"
                   >
                     <Quote
-                      className="text-[#e9c8bf]"
+                      className="text-[#3a301c]"
                       size={32}
                       strokeWidth={1.5}
                     />
                     <p className="mt-4 font-serif text-[17px] leading-[1.75] text-[#6c5d56] md:text-[18px]">
                       “{t.quote}”
                     </p>
-                    <div className="mt-6 border-t border-[#ece1dc] pt-4">
-                      <div className="font-serif text-[18px] text-[#4f413a]">
+                    <div className="mt-6 border-t border-[#26221e] pt-4">
+                      <div className="font-serif text-[18px] text-[#f3efe6]">
                         {t.name}
                       </div>
-                      <div className="text-[14px] italic text-[#8e7b73]">
+                      <div className="text-[14px] italic text-[#a89f95]">
                         {t.role}
                       </div>
                     </div>
@@ -197,16 +197,16 @@ export default function TestimonialsPage() {
             </div>
 
             {/* CTA strip */}
-            <div className="mt-12 flex flex-col gap-5 rounded-[18px] border border-[#eaded8] bg-[#f8f3ef] px-6 py-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="mt-12 flex flex-col gap-5 rounded-[18px] border border-[#26221e] bg-[#121212] px-6 py-6 lg:flex-row lg:items-center lg:justify-between">
               <div className="flex items-center gap-5">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#dfc5bc] text-[#cf938b]">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#3a301c] text-[#d4af37]">
                   <CalendarDays size={22} strokeWidth={1.8} />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[26px] font-light text-[#54463f] md:text-[34px]">
+                  <h3 className="font-serif text-[26px] font-light text-[#e7e1d6] md:text-[34px]">
                     Begin your own Auréa story.
                   </h3>
-                  <p className="mt-1 text-[16px] text-[#807069] md:text-[18px]">
+                  <p className="mt-1 text-[16px] text-[#b8b2a6] md:text-[18px]">
                     A private consultation, in studio or online.
                   </p>
                 </div>
@@ -214,7 +214,7 @@ export default function TestimonialsPage() {
 
               <Link
                 href={consultationBookingHref}
-                className="inline-flex shrink-0 items-center justify-center gap-3 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[16px]"
+                className="inline-flex shrink-0 items-center justify-center gap-3 rounded-[10px] border border-[#6b5a2e] bg-transparent px-8 py-4 text-[14px] tracking-[0.04em] text-[#d4af37] transition hover:bg-[#d4af37] hover:text-luxeBlack md:px-10 md:text-[16px]"
               >
                 BOOK A CONSULTATION
                 <ArrowRight size={18} />

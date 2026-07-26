@@ -1,0 +1,414 @@
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ImageFrame from "@/components/ImageFrame";
+import Reveal from "@/components/Reveal";
+import HeroGemMount from "@/components/three/HeroGemMount";
+import { CONTACT, consultationBookingHref } from "@/lib/contact";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { homeMeta } from "@/lib/seo/meta-copy";
+import {
+  heroFeatured,
+  founderPortrait,
+  creations,
+  processSteps,
+  categories,
+  homeTestimonials,
+} from "@/lib/content";
+
+const HomeTestimonialSlider = dynamic(
+  () => import("@/components/HomeTestimonialSlider"),
+  {
+    loading: () => (
+      <div
+        className="mx-auto mt-12 min-h-[220px] max-w-3xl animate-pulse rounded-[2rem] border border-atelierHair bg-white/60"
+        role="status"
+        aria-label="Loading testimonials"
+      />
+    ),
+  }
+);
+
+export const metadata = {
+  ...buildPageMetadata({
+    absoluteTitle: homeMeta.absoluteTitle,
+    description: homeMeta.description,
+    keywords: homeMeta.keywords,
+    path: "/",
+    ogImage: heroFeatured.src,
+  }),
+  verification: {
+    google: "SaMCE1pImIZgYHQW_3A6jOkcJOFur-oCy_G7yI8CGfU",
+  },
+};
+
+export const revalidate = 3600;
+
+/** Zero-padded register reference, e.g. 1 -> "0001". */
+function ref(n) {
+  return String(n).padStart(4, "0");
+}
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-atelierIvory text-atelierInk">
+      <Header activeHref="/" />
+
+      <main>
+        {/* ── The register opens: nocturnal atelier tray ─────────────── */}
+        <section className="atelier-night relative overflow-hidden text-atelierIvory">
+          <div className="atelier-grain pointer-events-none absolute inset-0" />
+          {/* top + bottom gold hairlines frame the "cover" of the register */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-atelierGold/30" />
+
+          <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 pb-16 pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:pb-24 lg:pt-28">
+            <div className="animate-rise-in flex flex-col justify-center">
+              <div className="ledger-label flex flex-wrap items-center gap-x-3 gap-y-1 text-atelierGoldSoft">
+                <span>№</span>
+                <span className="h-3 w-px bg-atelierGoldSoft/40" />
+                <span>Kuala Lumpur</span>
+                <span className="h-3 w-px bg-atelierGoldSoft/40" />
+                <span>By Appointment</span>
+              </div>
+
+              <h1 className="auréa-serif mt-7 max-w-2xl text-[2.4rem] leading-[0.98] tracking-[-0.02em] sm:text-6xl sm:leading-[0.96] lg:text-[5.4rem]">
+                For one person.
+                <br />
+                Made once, and
+                <br />
+                <em className="italic text-atelierGoldSoft">never repeated.</em>
+              </h1>
+
+              <p className="auréa-sans mt-8 max-w-lg text-lg leading-8 text-atelierIvory/70">
+                Felinda is a private atelier in Kuala Lumpur where each piece is
+                conceived around a single person and a single moment — then
+                entered into the register and never made again.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href={consultationBookingHref}
+                  className="auréa-sans rounded-full bg-atelierGold px-7 py-3.5 text-sm font-medium tracking-[0.04em] text-atelierInk transition hover:bg-atelierGoldSoft"
+                >
+                  Reserve a consultation
+                </Link>
+                <a
+                  href="#register"
+                  className="auréa-sans rounded-full border border-atelierIvory/25 px-7 py-3.5 text-sm font-medium tracking-[0.04em] text-atelierIvory transition hover:border-atelierGoldSoft hover:text-atelierGoldSoft"
+                >
+                  Open the register
+                </a>
+              </div>
+            </div>
+
+            {/* The piece — a stone turning in the round, live in three.js.
+                Falls back to the photograph without WebGL; holds still for
+                visitors who prefer reduced motion. */}
+            <div className="animate-fade-in relative mx-auto w-full max-w-md lg:max-w-none">
+              <div className="relative h-[380px] sm:h-[460px] lg:h-[580px]">
+                {/* Grounding glow — the stone catches light on velvet */}
+                <div className="pointer-events-none absolute inset-0 [background:radial-gradient(45%_45%_at_58%_46%,rgba(203,174,123,0.22),transparent_70%)]" />
+                <HeroGemMount />
+              </div>
+
+              <div className="hallmark absolute -left-1 bottom-4 rounded-lg bg-atelierInk/85 px-4 py-3 text-center text-[0.65rem] tracking-[0.2em] backdrop-blur-sm sm:-left-3 lg:left-2">
+                <div className="text-atelierGoldSoft">№</div>
+                <div className="mt-1 text-atelierIvory">FELINDA</div>
+                <div className="my-1.5 h-px bg-atelierGold/40" />
+                <div className="text-atelierGoldSoft">ONE OF ONE</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Ledger strip — the entry's material record */}
+          <div className="relative border-t border-atelierGold/20">
+            <div className="ledger-label mx-auto flex max-w-7xl flex-wrap items-center gap-x-8 gap-y-2 px-6 py-5 text-atelierIvory/65 lg:px-10">
+              <span>Ref. {ref(1)}</span>
+              <span className="text-atelierGold/50">—</span>
+              <span>18k · Hand-set</span>
+              <span className="text-atelierGold/50">—</span>
+              <span>One of one</span>
+              <span className="text-atelierGold/50">—</span>
+              <span className="ml-auto">Est. Kuala Lumpur</span>
+            </div>
+          </div>
+        </section>
+
+        {/* ── The atelier's word: story band ─────────────────────────── */}
+        <section className="mx-auto grid max-w-7xl gap-14 px-6 py-24 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:px-10">
+          <Reveal className="relative">
+            <div className="absolute -inset-3 -z-10 rounded-[1.9rem] border border-atelierHair" />
+            <ImageFrame
+              src={founderPortrait.src}
+              alt={founderPortrait.alt}
+              className="h-[520px] lg:h-[680px]"
+              rounded="rounded-[1.5rem]"
+              sizes="(min-width: 1024px) 40vw, 90vw"
+            />
+          </Reveal>
+
+          <Reveal className="flex flex-col justify-center" delay={80}>
+            <div className="ledger-label text-atelierGold">
+              The story of Felinda
+            </div>
+            <h2 className="auréa-serif mt-5 max-w-xl text-4xl leading-[1.05] tracking-[-0.01em] lg:text-[3.75rem]">
+              Jewelry that holds
+              <br />
+              what words cannot.
+            </h2>
+            <div className="hallmark-rule mt-8 max-w-xs" />
+            <p className="auréa-sans mt-8 max-w-2xl text-lg leading-8 text-atelierMute">
+              Every piece begins with you — your story, your moment, your
+              meaning. We do not follow trends, and we do not design for the
+              masses. Each creation is conceived for one, shaped by intention
+              and brought to life through uncompromising craftsmanship.
+            </p>
+            <p className="auréa-sans mt-5 max-w-2xl text-lg leading-8 text-atelierMute">
+              Every gemstone is chosen for its character. Every line is
+              deliberate. This is not jewelry made to be worn and forgotten — it
+              is made to be remembered, an extension of who you are.
+            </p>
+            <div className="mt-9">
+              <Link
+                href="/about"
+                className="auréa-sans group inline-flex items-center gap-2 text-sm font-medium tracking-[0.04em] text-atelierInk"
+              >
+                <span className="border-b border-atelierGold pb-1 transition group-hover:border-atelierInk">
+                  Read the full story
+                </span>
+                <span aria-hidden className="text-atelierGold transition group-hover:translate-x-0.5">
+                  →
+                </span>
+              </Link>
+            </div>
+          </Reveal>
+        </section>
+
+        {/* ── The register: recent commissions as numbered entries ───── */}
+        <section id="register" className="scroll-mt-24 border-y border-atelierHair bg-atelierPorcelain py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <div className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <div className="ledger-label text-atelierGold">
+                  The register — recent commissions
+                </div>
+                <h2 className="auréa-serif mt-5 max-w-2xl text-4xl leading-[1.05] lg:text-[3.75rem]">
+                  Every piece, a private world.
+                </h2>
+              </div>
+              <p className="auréa-sans max-w-md text-[17px] leading-8 text-atelierMute lg:pb-2">
+                A selection of recent bespoke commissions — each created in close
+                collaboration, entered into the register, and designed to exist
+                only once.
+              </p>
+            </div>
+
+            <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-4">
+              {creations.map((item, i) => (
+                <Reveal
+                  as="article"
+                  key={item.title}
+                  delay={i * 90}
+                  className="group flex flex-col"
+                >
+                  <Link href={item.href} className="flex h-full flex-col">
+                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.25rem] bg-[#efe7dd]">
+                      <Image
+                        src={item.image}
+                        alt={item.alt}
+                        fill
+                        sizes="(min-width: 1280px) 22vw, (min-width: 640px) 45vw, 90vw"
+                        className="object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
+                      />
+                      <div className="ledger absolute left-3 top-3 rounded-full bg-atelierInk/70 px-3 py-1 text-[0.6rem] tracking-[0.18em] text-atelierIvory backdrop-blur-sm">
+                        REF. {ref(i + 1)}
+                      </div>
+                    </div>
+
+                    <div className="mt-5 flex flex-1 flex-col">
+                      <div className="ledger-label text-atelierMute">
+                        {item.tag}
+                      </div>
+                      <h3 className="auréa-serif mt-2.5 text-[1.6rem] leading-[1.1] tracking-[-0.01em] text-atelierInk">
+                        {item.title}
+                      </h3>
+                      <p className="auréa-sans mt-3 flex-1 text-[15px] leading-[1.6] text-atelierMute">
+                        {item.desc}
+                      </p>
+                      <div className="mt-5 flex items-center justify-between border-t border-atelierHair pt-4">
+                        <span className="ledger-label text-atelierGold">
+                          One of one
+                        </span>
+                        <span
+                          aria-hidden
+                          className="auréa-sans text-sm text-atelierInk transition group-hover:translate-x-0.5"
+                        >
+                          View →
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── The process: a genuine sequence, kept as a ledger ──────── */}
+        <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+          <div className="max-w-3xl">
+            <div className="ledger-label text-atelierGold">
+              How a commission is made
+            </div>
+            <h2 className="auréa-serif mt-5 text-4xl leading-[1.05] lg:text-[3.75rem]">
+              Unhurried. Considered.
+              <br className="hidden sm:block" /> Entirely yours.
+            </h2>
+            <p className="auréa-sans mt-6 text-lg leading-8 text-atelierMute">
+              The Felinda process is the opposite of a transaction. It unfolds at
+              the pace of trust — and nothing leaves the atelier until every
+              detail belongs fully to you.
+            </p>
+          </div>
+
+          <ol className="mt-16 space-y-0">
+            {processSteps.map((step, i) => (
+              <Reveal
+                as="li"
+                key={step.no}
+                delay={i * 70}
+                className="grid gap-2.5 border-t border-atelierHair py-9 lg:grid-cols-[7rem_16rem_1fr] lg:items-baseline lg:gap-10"
+              >
+                <div className="ledger text-sm tracking-[0.18em] text-atelierGold">
+                  {step.no} / 04
+                </div>
+                <h3 className="auréa-serif text-2xl leading-tight text-atelierInk lg:text-3xl">
+                  {step.title}
+                </h3>
+                <p className="auréa-sans max-w-2xl text-[16px] leading-8 text-atelierMute">
+                  {step.text}
+                </p>
+              </Reveal>
+            ))}
+          </ol>
+        </section>
+
+        {/* ── Points of entry: categories ────────────────────────────── */}
+        <section className="border-t border-atelierHair bg-atelierPorcelain py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <div className="mb-14 max-w-2xl">
+              <div className="ledger-label text-atelierGold">The collections</div>
+              <h2 className="auréa-serif mt-5 text-4xl leading-[1.05] lg:text-[3.75rem]">
+                Find your point of entry.
+              </h2>
+              <p className="auréa-sans mt-6 text-lg leading-8 text-atelierMute">
+                Unsure where to begin? Each category is a doorway into the same
+                intimate experience — one that concludes with a piece made
+                exclusively for you.
+              </p>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-3">
+              {categories.map((item, i) => (
+                <Reveal
+                  as="article"
+                  key={item.title}
+                  delay={i * 90}
+                  className="group relative overflow-hidden rounded-[1.5rem]"
+                >
+                  <Link
+                    href={item.href}
+                    className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-atelierGold focus-visible:ring-offset-2 focus-visible:ring-offset-atelierPorcelain"
+                    aria-label={`Explore ${item.title}`}
+                  >
+                    <div className="relative h-[440px] overflow-hidden rounded-[1.5rem]">
+                      <Image
+                        src={item.image}
+                        alt={item.alt}
+                        fill
+                        sizes="(min-width: 1024px) 31vw, 90vw"
+                        className="object-cover transition duration-700 group-hover:scale-[1.05]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-atelierInk/80 via-atelierInk/10 to-transparent" />
+                      <div className="absolute inset-x-0 bottom-0 p-6 text-atelierIvory sm:p-7">
+                        <div className="ledger-label text-atelierGoldSoft">
+                          {String(i + 1).padStart(2, "0")} · Category
+                        </div>
+                        <h3 className="auréa-serif mt-2 text-[1.85rem] leading-[1.1] tracking-[-0.01em]">
+                          {item.title}
+                        </h3>
+                        <span className="auréa-sans mt-4 inline-flex items-center gap-2 text-sm tracking-[0.04em] text-atelierIvory/90">
+                          <span className="border-b border-atelierGoldSoft/60 pb-0.5">
+                            Explore
+                          </span>
+                          <span aria-hidden className="transition group-hover:translate-x-0.5">
+                            →
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Client voices ──────────────────────────────────────────── */}
+        <section className="mx-auto max-w-5xl px-6 py-24 text-center lg:px-10">
+          <div className="ledger-label text-atelierGold">In their words</div>
+          <h2 className="auréa-serif mt-5 text-4xl leading-[1.05] lg:text-[3.75rem]">
+            What they keep closest.
+          </h2>
+          <HomeTestimonialSlider items={homeTestimonials} />
+        </section>
+
+        {/* ── Closing invitation — in the register's own voice ───────── */}
+        <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-10">
+          <div className="atelier-night relative overflow-hidden rounded-[2rem] px-8 py-16 text-center text-atelierIvory lg:px-16 lg:py-24">
+            <div className="atelier-grain pointer-events-none absolute inset-0" />
+            <div className="relative mx-auto max-w-3xl">
+              <div className="ledger-label text-atelierGoldSoft">
+                Begin your entry
+              </div>
+              <h2 className="auréa-serif mt-5 text-4xl leading-[1.05] lg:text-[3.75rem]">
+                The right piece doesn’t
+                <br className="hidden sm:block" /> exist yet. Let’s make it.
+              </h2>
+              <p className="auréa-sans mx-auto mt-6 max-w-2xl text-lg leading-8 text-atelierIvory/70">
+                Most people arrive with something between certainty and feeling —
+                a moment they know is coming, or an idea not yet fully formed.
+                That is exactly where the process begins.
+              </p>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <Link
+                  href={consultationBookingHref}
+                  className="auréa-sans rounded-full bg-atelierGold px-7 py-3.5 text-sm font-medium tracking-[0.04em] text-atelierInk transition hover:bg-atelierGoldSoft"
+                >
+                  Book your private appointment
+                </Link>
+                <a
+                  href={CONTACT.whatsappWaMe}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="auréa-sans rounded-full border border-atelierIvory/25 px-7 py-3.5 text-sm font-medium tracking-[0.04em] text-atelierIvory transition hover:border-atelierGoldSoft hover:text-atelierGoldSoft"
+                >
+                  Message us on WhatsApp
+                </a>
+              </div>
+              <div className="hallmark-rule mx-auto mt-12 max-w-sm text-atelierGoldSoft/60" />
+              <div className="ledger-label mt-6 text-atelierIvory/45">
+                By appointment · Private · One-on-one · Across Malaysia
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

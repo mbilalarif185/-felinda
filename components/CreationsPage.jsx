@@ -122,9 +122,9 @@ export default function CreationsPage({
     <div
       className={`mx-auto max-w-[900px] text-center ${overlapHeroCard ? "pt-10 md:pt-16" : ""}`}
     >
-      <h2 className="font-serif text-[44px] font-light leading-[1.05] tracking-[-0.03em] text-[#4f413a] md:text-[64px]">
+      <h2 className="font-serif text-[44px] font-light leading-[1.05] tracking-[-0.03em] text-[#f3efe6] md:text-[64px]">
         {introHeadlineSerif}{" "}
-        <span className="font-normal italic text-[#d59a92]">
+        <span className="font-normal italic text-[#d4af37]">
           {introHeadlineScript}
         </span>
       </h2>
@@ -133,7 +133,7 @@ export default function CreationsPage({
         {introPs.map((paragraph, i) => (
           <p
             key={i}
-            className="font-serif text-[18px] leading-[1.8] text-[#78675f] md:text-[20px] [&:last-of-type]:text-[#6e5c54]"
+            className="font-serif text-[18px] leading-[1.8] text-[#b8b2a6] md:text-[20px] [&:last-of-type]:text-[#b8b2a6]"
           >
             {paragraph}
           </p>
@@ -144,14 +144,14 @@ export default function CreationsPage({
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
           <Link
             href={introOutlineCtaHref}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#c88f87] transition hover:border-[#c88f87] hover:bg-[#fdf8f6] sm:w-auto md:text-[15px]"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] border border-[#6b5a2e] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#d4af37] transition hover:border-[#d4af37] hover:bg-[#141414] sm:w-auto md:text-[15px]"
           >
             {secondaryIntroLabel}
             <ArrowRight size={17} aria-hidden />
           </Link>
           <Link
             href={introSolidCtaHref}
-            className="inline-flex w-full items-center justify-center gap-3 rounded-[8px] bg-[#d29189] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] sm:w-auto md:text-[17px]"
+            className="inline-flex w-full items-center justify-center gap-3 rounded-[8px] bg-[#d4af37] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-luxeBlack shadow-sm transition hover:bg-[#e8ce8b] sm:w-auto md:text-[17px]"
           >
             <CalendarDays size={18} aria-hidden />
             {primaryIntroConsultLabel}
@@ -161,14 +161,14 @@ export default function CreationsPage({
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
           <Link
             href={introSolidCtaHref}
-            className="inline-flex w-full items-center justify-center gap-3 rounded-[8px] bg-[#d29189] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] sm:w-auto md:text-[17px]"
+            className="inline-flex w-full items-center justify-center gap-3 rounded-[8px] bg-[#d4af37] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-luxeBlack shadow-sm transition hover:bg-[#e8ce8b] sm:w-auto md:text-[17px]"
           >
             <CalendarDays size={18} aria-hidden />
             BOOK A CONSULTATION
           </Link>
           <Link
             href={introOutlineCtaHref}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#c88f87] transition hover:border-[#c88f87] hover:bg-[#fdf8f6] sm:w-auto md:text-[15px]"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] border border-[#6b5a2e] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#d4af37] transition hover:border-[#d4af37] hover:bg-[#141414] sm:w-auto md:text-[15px]"
           >
             {secondaryIntroLabel.toUpperCase()}
             <ArrowRight size={17} aria-hidden />
@@ -177,7 +177,7 @@ export default function CreationsPage({
       ) : (
         <Link
           href={introSolidCtaHref}
-          className="mt-9 inline-flex items-center gap-3 rounded-[8px] bg-[#d29189] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] md:text-[17px]"
+          className="mt-9 inline-flex items-center gap-3 rounded-[8px] bg-[#d4af37] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-luxeBlack shadow-sm transition hover:bg-[#e8ce8b] md:text-[17px]"
         >
           <CalendarDays size={18} aria-hidden />
           BOOK A CONSULTATION
@@ -195,15 +195,15 @@ export default function CreationsPage({
   const galleryBlock = <CreationsGallery items={galleryItems} />;
 
   const ctaStrip = (
-    <div className="mt-7 rounded-[18px] border border-[#eaded8] bg-[#f8f3ef] px-6 py-6">
+    <div className="mt-7 rounded-[18px] border border-[#26221e] bg-[#121212] px-6 py-6">
       <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex min-w-0 flex-1 items-center gap-5">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#dfc5bc] text-[#cf938b]">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#3a301c] text-[#d4af37]">
             <Gem size={22} strokeWidth={1.8} />
           </div>
           <div className="min-w-0">
-            <h3 className="font-serif text-[26px] font-light text-[#54463f] md:text-[38px]">{stripTitle}</h3>
-            <p className="mt-1 text-[16px] text-[#807069] md:text-[20px]">{stripBody}</p>
+            <h3 className="font-serif text-[26px] font-light text-[#e7e1d6] md:text-[38px]">{stripTitle}</h3>
+            <p className="mt-1 text-[16px] text-[#b8b2a6] md:text-[20px]">{stripBody}</p>
           </div>
         </div>
 
@@ -211,14 +211,14 @@ export default function CreationsPage({
           <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row sm:justify-end lg:w-auto">
             <Link
               href={ctaStripPrimaryHref}
-              className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#d29189] px-8 py-4 text-[14px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] md:px-10 md:text-[16px]"
+              className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#d4af37] px-8 py-4 text-[14px] font-medium tracking-[0.02em] text-luxeBlack shadow-sm transition hover:bg-[#e8ce8b] md:px-10 md:text-[16px]"
             >
               <CalendarDays size={18} aria-hidden />
               {stripPrimaryText}
             </Link>
             <Link
               href={ctaStripSecondaryHref}
-              className="inline-flex items-center justify-center gap-2 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[16px]"
+              className="inline-flex items-center justify-center gap-2 rounded-[10px] border border-[#6b5a2e] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#d4af37] transition hover:bg-[#d4af37] hover:text-luxeBlack md:px-10 md:text-[16px]"
             >
               {stripSecondaryText}
               <ArrowRight size={18} aria-hidden />
@@ -227,7 +227,7 @@ export default function CreationsPage({
         ) : (
           <Link
             href={ctaStripPrimaryHref}
-            className="inline-flex shrink-0 items-center justify-center gap-3 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[17px]"
+            className="inline-flex shrink-0 items-center justify-center gap-3 rounded-[10px] border border-[#6b5a2e] bg-transparent px-8 py-4 text-[14px] tracking-[0.04em] text-[#d4af37] transition hover:bg-[#d4af37] hover:text-luxeBlack md:px-10 md:text-[17px]"
           >
             {stripPrimaryText}
             <ArrowRight size={18} aria-hidden />
@@ -235,7 +235,7 @@ export default function CreationsPage({
         )}
       </div>
       {ctaStripDocCaptionLine ? (
-        <p className="mt-5 border-t border-[#eaded8] pt-4 text-center font-sans text-[12px] leading-relaxed text-[#9a8a82]">
+        <p className="mt-5 border-t border-[#26221e] pt-4 text-center font-sans text-[12px] leading-relaxed text-[#9a8a82]">
           {ctaStripDocCaptionLine}
         </p>
       ) : null}
@@ -243,16 +243,16 @@ export default function CreationsPage({
   );
 
   const benefitsBlock = (
-    <div className="mt-7 border-t border-[#ece1dc] pt-6">
+    <div className="mt-7 border-t border-[#26221e] pt-6">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
         {benefits.map((item, index) => {
           const Icon = defaultBenefitIcons[index] ?? Gem;
           return (
             <div key={`${item.title}-${index}`} className="flex items-start gap-4">
-              <Icon className="mt-1 shrink-0 text-[#d0938a]" size={22} />
+              <Icon className="mt-1 shrink-0 text-[#d4af37]" size={22} />
               <div>
-                <div className="font-serif text-[20px] font-light text-[#564840] md:text-[24px]">{item.title}</div>
-                <div className="text-[14px] italic text-[#8e7b73] md:text-[16px]">{item.subtitle}</div>
+                <div className="font-serif text-[20px] font-light text-[#d7d1c6] md:text-[24px]">{item.title}</div>
+                <div className="text-[14px] italic text-[#a89f95] md:text-[16px]">{item.subtitle}</div>
               </div>
             </div>
           );
@@ -284,7 +284,7 @@ export default function CreationsPage({
       />
       <Header activeHref={activeHref} />
 
-      <div className="min-h-screen bg-[#f6f0ec] text-[#56463f]">
+      <div className="min-h-screen bg-[#0a0a0a] pt-28 text-[#d7d1c6] sm:pt-32">
         <PageHero
           title={title}
           subtitle={heroSubtitle}
@@ -297,7 +297,7 @@ export default function CreationsPage({
             className={`relative z-10 px-6 pb-12 ${overlapHeroCard ? "-mt-10 md:-mt-14" : ""}`}
           >
             <div
-              className={`mx-auto max-w-[1320px] overflow-hidden border border-[#e7dbd5] bg-[#fbf7f4] px-6 py-10 md:px-10 md:py-12 ${
+              className={`mx-auto max-w-[1320px] overflow-hidden border border-[#26221e] bg-[#121212] px-6 py-10 md:px-10 md:py-12 ${
                 overlapHeroCard
                   ? "rounded-t-[2.5rem] rounded-b-[30px] shadow-[0_12px_40px_rgba(110,90,80,0.07)] md:rounded-t-[3rem] md:rounded-b-[30px]"
                   : "rounded-[30px] shadow-[0_10px_30px_rgba(110,90,80,0.04)]"
@@ -306,7 +306,7 @@ export default function CreationsPage({
               {galleryFirst ? (
                 <>
                   {galleryBlock}
-                  <div className="mt-12 border-t border-[#ece1dc]" />
+                  <div className="mt-12 border-t border-[#26221e]" />
                   {introBlock}
                   {middleContent ? <div className="mt-2">{middleContent}</div> : null}
                   {ctaStrip}
@@ -315,7 +315,7 @@ export default function CreationsPage({
               ) : (
                 <>
                   {introBlock}
-                  <div className="mt-12 border-t border-[#ece1dc]" />
+                  <div className="mt-12 border-t border-[#26221e]" />
                   {galleryBlock}
                   {middleContent ? <div className="mt-12">{middleContent}</div> : null}
                   {ctaStrip}

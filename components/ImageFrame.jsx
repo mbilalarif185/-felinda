@@ -11,7 +11,7 @@ export default function ImageFrame({
 }) {
   return (
     <div
-      className={`relative overflow-hidden border border-white bg-[#f6ede9] ${rounded} ${className}`}
+      className={`relative overflow-hidden border border-white/10 bg-[#1a1614] ${rounded} ${className}`}
     >
       <Image
         src={src}

@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
       <head>
         <MetaPixel />
       </head>
-      <body className="min-h-screen bg-cream text-ink antialiased">
+      <body className="min-h-screen bg-luxeBlack text-white antialiased">
         <JsonLd data={rootJsonLdGraph()} />
         {children}
         <WhatsAppFloatingButton />

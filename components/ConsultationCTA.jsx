@@ -33,7 +33,7 @@ export default function ConsultationCTA({
 }) {
   return (
     <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
-      <div className="rounded-[2.2rem] border border-line bg-white px-8 py-14 shadow-[0_16px_45px_rgba(72,49,41,0.05)] lg:px-16 lg:py-20">
+      <div className="rounded-[2.2rem] border border-line bg-white/[0.05] px-8 py-14 shadow-[0_16px_45px_rgba(72,49,41,0.05)] lg:px-16 lg:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <div className="auréa-sans mb-4 text-xs uppercase tracking-[0.28em] text-clay">
             {eyebrow}
@@ -45,19 +45,19 @@ export default function ConsultationCTA({
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <CtaButton
               href={primary.href}
-              className="auréa-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90"
+              className="auréa-sans rounded-full bg-rose px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-luxeBlack transition hover:opacity-90"
             >
               {primary.label}
             </CtaButton>
             <CtaButton
               href={secondary.href}
-              className="auréa-sans rounded-full border border-line bg-white px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-ink transition hover:bg-shell"
+              className="auréa-sans rounded-full border border-line bg-white/[0.05] px-6 py-3.5 text-sm font-medium tracking-[0.04em] text-ink transition hover:bg-shell"
             >
               {secondary.label}
             </CtaButton>
           </div>
           {note && (
-            <div className="auréa-sans mt-6 whitespace-pre-line text-xs uppercase tracking-[0.18em] text-[#8B7A73]">
+            <div className="auréa-sans mt-6 whitespace-pre-line text-xs uppercase tracking-[0.18em] text-[#a89f95]">
               {note}
             </div>
           )}

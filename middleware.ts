@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 
-const COOKIE_NAME = "felinda_admin_session";
+const COOKIE_NAME = "aurea_admin_session";
 
 function getSecret(): Uint8Array | null {
   const secret = process.env.ADMIN_SESSION_SECRET;

@@ -25,7 +25,7 @@ export default function BlogLoading() {
       <Header activeHref="/blog" />
       <main className="min-h-[60vh]">
         <section className="border-b border-line/80 bg-shell/30">
-          <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 pb-16 pt-32 lg:px-10 lg:pb-24 lg:pt-40">
             <div className="h-3 w-20 animate-pulse rounded bg-line" />
             <div className="mt-4 h-12 w-2/3 max-w-lg animate-pulse rounded-lg bg-line sm:h-14" />
             <div className="mt-6 space-y-2">

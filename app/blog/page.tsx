@@ -37,7 +37,7 @@ export default async function BlogPage() {
       <Header activeHref="/blog" />
       <main className="min-h-[60vh]">
         <section className="border-b border-line/80 bg-shell/30">
-          <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 pb-16 pt-32 lg:px-10 lg:pb-24 lg:pt-40">
             <p className="font-sans text-xs font-medium uppercase tracking-luxe text-muted">Journal</p>
             <h1 className="mt-3 max-w-3xl font-serif text-4xl font-medium tracking-tight text-ink sm:text-5xl lg:text-6xl">
               Stories from the bench

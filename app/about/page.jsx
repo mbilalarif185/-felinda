@@ -194,7 +194,7 @@ export default function AboutPage() {
         />
 
         {/* ════════ INTRO LEAD — cream, transitions out of the hero ════════ */}
-        <section className="bg-[#f6f0ec] pb-12 pt-2 sm:pb-16 lg:pb-20">
+        <section className="bg-[#0a0a0a] pb-12 pt-2 sm:pb-16 lg:pb-20">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-10">
             <p className="auréa-serif text-[18px] leading-[1.7] text-[#5b4d44] sm:text-xl lg:text-2xl lg:leading-[1.7]">
               Auréa is a founder-led private atelier, where fine jewelry is created without haste, without compromise, and always in quiet devotion to the individual it is made for.
@@ -204,13 +204,13 @@ export default function AboutPage() {
         </section>
 
         {/* ════════ VALUE STRIP — soft cream, rose accents (matches the banner) ════════ */}
-        <section className="bg-[#f6f0ec] pb-12 sm:pb-24 lg:pb-32">
+        <section className="bg-[#0a0a0a] pb-12 sm:pb-24 lg:pb-32">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="grid grid-cols-1 items-stretch gap-5 sm:gap-6 lg:grid-cols-3 lg:gap-7">
               {valueStrip.map((item, i) => (
                 <div
                   key={item.title}
-                  className="group min-w-0 flex h-full flex-col items-center rounded-[1.5rem] border border-line/80 bg-white px-5 py-8 text-center shadow-[0_10px_36px_rgba(72,49,41,0.05)] ring-1 ring-black/[0.02] transition duration-300 sm:rounded-[1.75rem] sm:px-8 sm:py-10 lg:px-9 lg:py-12 hover:border-line hover:shadow-[0_16px_44px_rgba(72,49,41,0.08)]"
+                  className="group min-w-0 flex h-full flex-col items-center rounded-[1.5rem] border border-line/80 bg-white/[0.05] px-5 py-8 text-center shadow-[0_10px_36px_rgba(72,49,41,0.05)] ring-1 ring-black/[0.02] transition duration-300 sm:rounded-[1.75rem] sm:px-8 sm:py-10 lg:px-9 lg:py-12 hover:border-line hover:shadow-[0_16px_44px_rgba(72,49,41,0.08)]"
                 >
                   <div className="auréa-sans text-[11px] font-medium uppercase tracking-[0.24em] text-rose/90 sm:tracking-[0.3em]">
                     No. 0{i + 1}
@@ -236,7 +236,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-10 lg:grid lg:grid-cols-12 lg:gap-16">
               <div className="w-full lg:col-span-5">
                 <div className="relative">
-                  <div className="overflow-hidden rounded-[2rem] border border-line bg-white p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
+                  <div className="overflow-hidden rounded-[2rem] border border-line bg-white/[0.05] p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
                     <div className="relative h-[360px] overflow-hidden rounded-[1.5rem] sm:h-[500px] lg:h-[640px]">
                       <Image
                         src="/images/malaysia.webp"
@@ -274,7 +274,7 @@ export default function AboutPage() {
                   {signatureMoments.map((m) => (
                     <article
                       key={m.eyebrow}
-                      className="w-full max-w-full min-w-0 overflow-hidden rounded-[1.5rem] border border-line bg-white p-4 shadow-[0_10px_30px_rgba(72,49,41,0.04)] sm:p-7"
+                      className="w-full max-w-full min-w-0 overflow-hidden rounded-[1.5rem] border border-line bg-white/[0.05] p-4 shadow-[0_10px_30px_rgba(72,49,41,0.04)] sm:p-7"
                     >
                       <div className="auréa-sans text-[10px] uppercase tracking-[0.16em] text-rose sm:text-xs sm:tracking-[0.28em]">
                         {m.eyebrow}
@@ -294,12 +294,12 @@ export default function AboutPage() {
         </section>
 
         {/* ════════ DARK FEATURE CARDS ════════ */}
-        <section className="relative overflow-hidden bg-ink py-16 text-cream sm:py-24 lg:py-32">
+        <section className="relative overflow-hidden bg-luxeCharcoal py-16 text-white sm:py-24 lg:py-32">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.08]"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 15% 25%, #D8A29A 0%, transparent 45%), radial-gradient(circle at 85% 75%, #E8C4BF 0%, transparent 45%)",
+                "radial-gradient(circle at 15% 25%, #D8A29A 0%, transparent 45%), radial-gradient(circle at 85% 75%, #3a301c 0%, transparent 45%)",
             }}
           />
 
@@ -309,7 +309,7 @@ export default function AboutPage() {
               <div className="auréa-sans mt-5 text-xs uppercase tracking-[0.22em] text-rose sm:tracking-[0.32em]">
                 The Auréa Promise
               </div>
-              <h2 className="auréa-serif mt-4 text-[32px] leading-tight text-cream sm:text-4xl lg:text-6xl">
+              <h2 className="auréa-serif mt-4 text-[32px] leading-tight text-white sm:text-4xl lg:text-6xl">
                 Three Things We Will Never Compromise
               </h2>
               <Flourish className="mx-auto mt-8 h-3 w-48 text-rose/80 lg:w-60" />
@@ -332,16 +332,16 @@ export default function AboutPage() {
               ].map((p) => (
                 <article
                   key={p.no}
-                  className="group relative min-w-0 overflow-hidden rounded-[2rem] border border-cream/15 bg-white/[0.04] p-6 backdrop-blur-sm transition hover:border-rose/40 sm:p-8 lg:p-10"
+                  className="group relative min-w-0 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 backdrop-blur-sm transition hover:border-rose/40 sm:p-8 lg:p-10"
                 >
                   <div className="auréa-serif text-6xl leading-none text-rose/30 transition group-hover:text-rose/60 sm:text-7xl">
                     {p.no}
                   </div>
-                  <h3 className="auréa-serif mt-4 min-w-0 break-words text-3xl leading-snug text-cream">
+                  <h3 className="auréa-serif mt-4 min-w-0 break-words text-3xl leading-snug text-white">
                     {p.title}
                   </h3>
                   <Mark className="mt-4 h-3 w-10 text-rose/80" />
-                  <p className="auréa-sans mt-5 min-w-0 break-words text-[15px] leading-7 text-cream/70 [overflow-wrap:anywhere]">
+                  <p className="auréa-sans mt-5 min-w-0 break-words text-[15px] leading-7 text-white/70 [overflow-wrap:anywhere]">
                     {p.text}
                   </p>
                 </article>
@@ -390,7 +390,7 @@ export default function AboutPage() {
 
               <div className="col-span-12 min-w-0 max-w-full lg:col-span-5">
                 <div className="relative">
-                  <div className="overflow-hidden rounded-[2rem] border border-line bg-white p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
+                  <div className="overflow-hidden rounded-[2rem] border border-line bg-white/[0.05] p-3 shadow-[0_22px_60px_rgba(72,49,41,0.1)]">
                     <div className="relative h-[360px] overflow-hidden rounded-[1.5rem] sm:h-[500px] lg:h-[640px]">
                       <Image
                         src="/images/aurea-jewellery/buy-a-ring-in-malaysia.webp"
@@ -439,37 +439,37 @@ export default function AboutPage() {
         </section>
 
         {/* ════════ CLOSING CTA ════════ */}
-        <section className="bg-ink py-16 text-cream sm:py-24 lg:py-28">
+        <section className="bg-luxeCharcoal py-16 text-white sm:py-24 lg:py-28">
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-10">
             <div className="auréa-sans text-xs uppercase tracking-[0.22em] text-rose sm:tracking-[0.32em]">
               Begin
             </div>
-            <h2 className="auréa-serif mt-4 text-[32px] leading-tight text-cream sm:text-4xl lg:text-6xl">
+            <h2 className="auréa-serif mt-4 text-[32px] leading-tight text-white sm:text-4xl lg:text-6xl">
               A piece of your own,
               <br />
               in your <span className="italic text-roseSoft">own time.</span>
             </h2>
-            <p className="auréa-sans mx-auto mt-6 max-w-xl text-[17px] leading-8 text-cream/70 sm:text-lg">
+            <p className="auréa-sans mx-auto mt-6 max-w-xl text-[17px] leading-8 text-white/70 sm:text-lg">
               Reach out to the atelier when you are ready. The first conversation is the only step you need to take today.
             </p>
 
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="auréa-sans rounded-full bg-rose px-7 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:opacity-90"
+                className="auréa-sans rounded-full bg-rose px-7 py-3.5 text-sm font-medium tracking-[0.04em] text-luxeBlack transition hover:opacity-90"
               >
                 Begin a Conversation
               </Link>
               <Link
                 href="/"
-                className="auréa-sans rounded-full border border-cream/40 bg-transparent px-7 py-3.5 text-sm font-medium tracking-[0.04em] text-cream transition hover:bg-cream/10"
+                className="auréa-sans rounded-full border border-luxeGold/30 bg-transparent px-7 py-3.5 text-sm font-medium tracking-[0.04em] text-white transition hover:bg-white/10"
               >
                 Return Home
               </Link>
             </div>
 
             <Flourish className="mx-auto mt-14 h-3 w-48 text-rose/60 lg:w-60" />
-            <div className="auréa-sans mt-6 text-xs uppercase tracking-[0.2em] text-cream/50 sm:tracking-[0.32em]">
+            <div className="auréa-sans mt-6 text-xs uppercase tracking-[0.2em] text-white/55 sm:tracking-[0.32em]">
               Auréa Atelier · Petaling Jaya · 2026
             </div>
           </div>

@@ -115,7 +115,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <Header activeHref="/blog" />
       <main>
         <article className="border-b border-line/80 bg-shell/20">
-          <div className="mx-auto max-w-3xl px-6 pb-12 pt-10 lg:px-10 lg:pt-14">
+          <div className="mx-auto max-w-3xl px-6 pb-12 pt-28 lg:px-10 lg:pt-32">
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 font-sans text-sm font-medium text-muted transition hover:text-ink"

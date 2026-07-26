@@ -1,15 +1,15 @@
 # Google Search Console Setup
 
 ## 1) Verify the property
-- Add and verify the domain property: `https://www.felindajewelry.com/`.
+- Add and verify the domain property: `https://www.aureajewellery.com/`.
 - Recommended method: DNS TXT record at your domain provider.
 
 ## 2) Submit sitemap
-- Sitemap URL: `https://www.felindajewelry.com/sitemap.xml`.
+- Sitemap URL: `https://www.aureajewellery.com/sitemap.xml`.
 - The project exposes this via App Router `app/sitemap.js`.
 
 ## 3) Confirm crawl and index readiness
-- `robots.txt` is available at `https://www.felindajewelry.com/robots.txt`.
+- `robots.txt` is available at `https://www.aureajewellery.com/robots.txt`.
 - Global metadata enables `index,follow` and large preview directives for Googlebot.
 - Legacy redirect pages use `noindex` to avoid duplicate index entries.
 

@@ -1,22 +1,13 @@
-import Logo from "./Logo";
-import MobileMenu from "./MobileMenu";
-import Nav from "./Nav";
+import Navbar from "@/components/luxe/sections/Navbar";
 
-export default function Header({ activeHref = "/", overlay = false }) {
-  const positioning = overlay
-    ? "fixed top-0 left-0 right-0 z-50"
-    : "sticky top-0 z-50";
-  const tone = overlay
-    ? "bg-transparent text-white"
-    : "bg-cream/85 backdrop-blur border-b border-line/80 text-ink";
-
-  return (
-    <header className={`${positioning} ${tone} transition-colors duration-500`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5 lg:px-10">
-        <Logo overlay={overlay} />
-        <Nav activeHref={activeHref} overlay={overlay} />
-        <MobileMenu activeHref={activeHref} overlay={overlay} />
-      </div>
-    </header>
-  );
+/**
+ * Site header. Unified with the homepage: every page now shares the same
+ * luxe fixed navbar (transparent on top, blur on scroll). The legacy
+ * `activeHref` / `overlay` props are accepted for backwards compatibility
+ * but no longer needed — the navbar handles its own state.
+ */
+export default function Header(props) {
+  // `props` (activeHref / overlay) accepted for backwards compatibility, unused.
+  void props;
+  return <Navbar />;
 }

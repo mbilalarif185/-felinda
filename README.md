@@ -1,4 +1,4 @@
-# Felinda Jewelry — Next.js Site
+# Auréa Jewelry — Next.js Site
 
 A bespoke fine-jewelry brand site built with **Next.js 15 (App Router)**, **React 19**, and **Tailwind CSS**.
 

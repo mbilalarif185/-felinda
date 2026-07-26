@@ -44,7 +44,7 @@ export default function YouTubeCard({ url, title, name, role }) {
   const thumb = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 
   return (
-    <figure className="group overflow-hidden rounded-[18px] border border-[#eee3de] bg-[#fefcfa] shadow-[0_4px_15px_rgba(90,70,60,0.04)] transition hover:shadow-[0_10px_30px_rgba(90,70,60,0.08)]">
+    <figure className="group overflow-hidden rounded-[18px] border border-[#211c17] bg-[#141414] shadow-[0_4px_15px_rgba(90,70,60,0.04)] transition hover:shadow-[0_10px_30px_rgba(90,70,60,0.08)]">
       <div className="relative aspect-video w-full overflow-hidden bg-[#1a1614]">
         {active ? (
           <iframe
@@ -71,7 +71,7 @@ export default function YouTubeCard({ url, title, name, role }) {
               className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
             />
             <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1a1614]/55 via-transparent to-transparent" />
-            <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-white/95 text-[#c88f87] shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition group-hover:scale-110 group-hover:bg-white">
+            <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-white/[0.05] text-[#d4af37] shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition group-hover:scale-110 group-hover:bg-white/[0.05]">
               <Play size={26} fill="currentColor" strokeWidth={0} className="ml-[3px]" />
             </span>
           </button>
@@ -81,12 +81,12 @@ export default function YouTubeCard({ url, title, name, role }) {
       {(name || title) && (
         <figcaption className="px-6 py-5">
           {title && (
-            <h3 className="font-serif text-[20px] font-light leading-snug text-[#4f413a] md:text-[22px]">
+            <h3 className="font-serif text-[20px] font-light leading-snug text-[#f3efe6] md:text-[22px]">
               {title}
             </h3>
           )}
           {(name || role) && (
-            <p className="mt-1 text-[14px] text-[#8e7b73] md:text-[15px]">
+            <p className="mt-1 text-[14px] text-[#a89f95] md:text-[15px]">
               {name}
               {name && role ? " · " : ""}
               <span className="italic">{role}</span>

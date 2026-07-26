@@ -2,7 +2,7 @@
 
 | Path | Primary intent | Target phrases (natural use) |
 |------|----------------|------------------------------|
-| `/` | Brand + atelier | Felinda Jewelry Malaysia, bespoke fine jewelry, handmade, Petaling Jaya, custom rings |
+| `/` | Brand + atelier | Auréa Jewelry Malaysia, bespoke fine jewelry, handmade, Petaling Jaya, custom rings |
 | `/about` | Trust / founder | bespoke jewelry atelier Malaysia, handmade fine jewelry |
 | `/contact` | Local booking | jewelry consultation Malaysia, Petaling Jaya atelier, appointment |
 | `/process` | How it works | bespoke process, custom jewelry timeline Malaysia |

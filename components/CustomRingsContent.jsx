@@ -345,12 +345,12 @@ export default function CustomRingsContent() {
 
   return (
     <section className="relative z-10 px-6 pb-12">
-      <div className="mx-auto max-w-[1320px] rounded-[30px] border border-[#e7dbd5] bg-[#fbf7f4] px-6 py-10 shadow-[0_10px_30px_rgba(110,90,80,0.04)] md:px-10 md:py-12">
+      <div className="mx-auto max-w-[1320px] rounded-[30px] border border-[#26221e] bg-[#121212] px-6 py-10 shadow-[0_10px_30px_rgba(110,90,80,0.04)] md:px-10 md:py-12">
         {/* ── Intro (typography matches CreationsPage) ── */}
         <div className="mx-auto max-w-[900px] text-center">
-          <h2 className="font-serif text-[44px] font-light leading-[1.05] tracking-[-0.03em] text-[#4f413a] md:text-[64px]">
+          <h2 className="font-serif text-[44px] font-light leading-[1.05] tracking-[-0.03em] text-[#f3efe6] md:text-[64px]">
             {customRingsIntroHeadline.beforeScript}{" "}
-            <span className="font-normal italic text-[#d59a92]">
+            <span className="font-normal italic text-[#d4af37]">
               {customRingsIntroHeadline.script}
             </span>
           </h2>
@@ -359,7 +359,7 @@ export default function CustomRingsContent() {
             {customRingsIntroParagraphs.map((para, idx) => (
               <p
                 key={idx}
-                className="font-serif text-[18px] leading-[1.8] text-[#78675f] md:text-[20px] [&:last-of-type]:text-[#6e5c54]"
+                className="font-serif text-[18px] leading-[1.8] text-[#b8b2a6] md:text-[20px] [&:last-of-type]:text-[#b8b2a6]"
               >
                 {para}
               </p>
@@ -369,14 +369,14 @@ export default function CustomRingsContent() {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
             <Link
               href={customRingsJourneyHref}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#c88f87] transition hover:border-[#c88f87] hover:bg-[#fdf8f6] sm:w-auto md:text-[15px]"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-[8px] border border-[#6b5a2e] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#d4af37] transition hover:border-[#d4af37] hover:bg-[#141414] sm:w-auto md:text-[15px]"
             >
               {customRingsIntroCtaJourney}
               <ArrowRight size={17} aria-hidden />
             </Link>
             <Link
               href={customRingsConsultationHref}
-              className="inline-flex w-full items-center justify-center gap-3 rounded-[8px] bg-[#d29189] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] sm:w-auto md:text-[17px]"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-[8px] bg-[#d4af37] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-luxeBlack shadow-sm transition hover:bg-[#e8ce8b] sm:w-auto md:text-[17px]"
             >
               <CalendarDays size={18} aria-hidden />
               {customRingsIntroCtaConsultation}
@@ -388,7 +388,7 @@ export default function CustomRingsContent() {
       
 
         {/* ── Divider ── */}
-        <div className="mt-12 border-t border-[#ece1dc]" />
+        <div className="mt-12 border-t border-[#26221e]" />
 
         {/* ── Filters (functional) ── */}
         <div className="mt-8 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
@@ -417,8 +417,8 @@ export default function CustomRingsContent() {
                   }}
                   className={
                     isActive
-                      ? "rounded-[8px] bg-[#d29189] px-7 py-3 text-[15px] text-white transition md:text-[16px]"
-                      : "text-[15px] text-[#73645c] transition hover:text-[#c88f87] md:text-[17px]"
+                      ? "rounded-[8px] bg-[#d4af37] px-7 py-3 text-[15px] text-luxeBlack transition md:text-[16px]"
+                      : "text-[15px] text-[#b8b2a6] transition hover:text-[#d4af37] md:text-[17px]"
                   }
                 >
                   {item}
@@ -433,7 +433,7 @@ export default function CustomRingsContent() {
               onClick={() => setSortOpen((open) => !open)}
               aria-haspopup="listbox"
               aria-expanded={sortOpen}
-              className="inline-flex items-center gap-3 rounded-[8px] border border-[#e5d8d2] bg-white px-5 py-3 text-[15px] text-[#7d6e67] transition hover:border-[#d49a92] md:text-[16px]"
+              className="inline-flex items-center gap-3 rounded-[8px] border border-[#26221e] bg-white/[0.05] px-5 py-3 text-[15px] text-[#7d6e67] transition hover:border-[#d4af37] md:text-[16px]"
             >
               <span>Sort by: {sort}</span>
               <ChevronDown
@@ -445,7 +445,7 @@ export default function CustomRingsContent() {
             {sortOpen && (
               <ul
                 role="listbox"
-                className="absolute right-0 z-20 mt-2 w-[210px] overflow-hidden rounded-[10px] border border-[#e5d8d2] bg-white shadow-[0_10px_28px_rgba(110,90,80,0.12)]"
+                className="absolute right-0 z-20 mt-2 w-[210px] overflow-hidden rounded-[10px] border border-[#26221e] bg-white/[0.05] shadow-[0_10px_28px_rgba(110,90,80,0.12)]"
               >
                 {sortOptions.map((option) => {
                   const isSelected = option === sort;
@@ -459,8 +459,8 @@ export default function CustomRingsContent() {
                         }}
                         className={`block w-full px-5 py-2.5 text-left text-[14px] transition ${
                           isSelected
-                            ? "bg-[#fbeeea] text-[#c88f87]"
-                            : "text-[#5a4d46] hover:bg-[#f8f1ec] hover:text-[#c88f87]"
+                            ? "bg-[#161310] text-[#d4af37]"
+                            : "text-[#cfc9be] hover:bg-[#121212] hover:text-[#d4af37]"
                         }`}
                       >
                         {option}
@@ -483,7 +483,7 @@ export default function CustomRingsContent() {
                   key={item.image}
                   onClick={() => setLightboxIndex(index)}
                   aria-label={`View ${item.title}`}
-                  className="group block overflow-hidden rounded-[18px] border border-[#eee3de] bg-[#fefcfa] text-left shadow-[0_4px_15px_rgba(90,70,60,0.04)] transition hover:shadow-[0_10px_28px_rgba(110,90,80,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d29189]"
+                  className="group block overflow-hidden rounded-[18px] border border-[#211c17] bg-[#141414] text-left shadow-[0_4px_15px_rgba(90,70,60,0.04)] transition hover:shadow-[0_10px_28px_rgba(110,90,80,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37]"
                 >
                   <div className="relative aspect-[1.22/1] overflow-hidden">
                     <Image
@@ -508,29 +508,29 @@ export default function CustomRingsContent() {
                       Math.min(n + PAGE_STEP, visibleItems.length)
                     )
                   }
-                  className="inline-flex items-center gap-2 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-3 text-[14px] tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[15px]"
+                  className="inline-flex items-center gap-2 rounded-[10px] border border-[#6b5a2e] bg-transparent px-8 py-3 text-[14px] tracking-[0.04em] text-[#d4af37] transition hover:bg-[#d4af37] hover:text-luxeBlack md:px-10 md:text-[15px]"
                 >
                   VIEW MORE
                   <ChevronDown size={16} />
                 </button>
-                <span className="text-[13px] text-[#8a7a71]">
+                <span className="text-[13px] text-[#a89f95]">
                   Showing {paginatedItems.length} of {visibleItems.length}
                 </span>
               </div>
             )}
           </>
         ) : (
-          <div className="mt-12 rounded-[18px] border border-dashed border-[#eee3de] bg-[#fefcfa] py-16 text-center text-[15px] text-[#8a7a71]">
+          <div className="mt-12 rounded-[18px] border border-dashed border-[#211c17] bg-[#141414] py-16 text-center text-[15px] text-[#a89f95]">
             No pieces in this category yet. Please check back soon.
           </div>
         )}
 
-          <div className="mt-14 border-t border-[#ece1dc] pt-12">
+          <div className="mt-14 border-t border-[#26221e] pt-12">
           <div className="mx-auto max-w-[720px] text-center">
-            <h2 className="font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#4f413a] md:text-[44px]">
+            <h2 className="font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#f3efe6] md:text-[44px]">
               {customRingsWhyTitle}
             </h2>
-            <p className="mx-auto mt-6 max-w-[720px] font-serif text-[17px] leading-[1.85] text-[#78675f] md:text-[19px]">
+            <p className="mx-auto mt-6 max-w-[720px] font-serif text-[17px] leading-[1.85] text-[#b8b2a6] md:text-[19px]">
               {customRingsWhyLead}
             </p>
           </div>
@@ -541,15 +541,15 @@ export default function CustomRingsContent() {
               return (
                 <div
                   key={pillar.title}
-                  className="group flex h-full min-h-[220px] flex-col rounded-[18px] border border-[#ebe0db] bg-[#fffdfb] p-6 shadow-[0_6px_22px_rgba(110,90,80,0.04)] transition duration-300 hover:border-[#dfc9c0] hover:shadow-[0_12px_32px_rgba(110,90,80,0.07)]"
+                  className="group flex h-full min-h-[220px] flex-col rounded-[18px] border border-[#26221e] bg-[#141414] p-6 shadow-[0_6px_22px_rgba(110,90,80,0.04)] transition duration-300 hover:border-[#dfc9c0] hover:shadow-[0_12px_32px_rgba(110,90,80,0.07)]"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#ead6d0] bg-[#fdf9f7] text-[#c88f87] transition group-hover:border-[#e0c4bc] group-hover:bg-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#3a301c] bg-[#161310] text-[#d4af37] transition group-hover:border-[#3a301c] group-hover:bg-white/[0.05]">
                     <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden />
                   </div>
-                  <h3 className="mt-5 font-serif text-[19px] font-light leading-snug text-[#4f413a] md:text-[21px]">
+                  <h3 className="mt-5 font-serif text-[19px] font-light leading-snug text-[#f3efe6] md:text-[21px]">
                     {pillar.title}
                   </h3>
-                  <p className="mt-3 flex-1 font-serif text-[14px] leading-relaxed text-[#756860] md:text-[15px]">
+                  <p className="mt-3 flex-1 font-serif text-[14px] leading-relaxed text-[#b8b2a6] md:text-[15px]">
                     {pillar.body}
                   </p>
                 </div>
@@ -560,12 +560,12 @@ export default function CustomRingsContent() {
 
 
         {/* ── Process (step typography matches BespokeStorySections) ── */}
-        <div className="mt-14 border-t border-[#ece1dc] pt-12">
+        <div className="mt-14 border-t border-[#26221e] pt-12">
           <div className="mx-auto max-w-[800px] text-center">
-            <h2 className="font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#4f413a] md:text-[44px]">
+            <h2 className="font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#f3efe6] md:text-[44px]">
               {customRingsProcessTitle}
             </h2>
-            <p className="mx-auto mt-6 max-w-[760px] font-serif text-[17px] leading-[1.85] text-[#78675f] md:text-[18px]">
+            <p className="mx-auto mt-6 max-w-[760px] font-serif text-[17px] leading-[1.85] text-[#b8b2a6] md:text-[18px]">
               {customRingsProcessSubtitle}
             </p>
           </div>
@@ -573,14 +573,14 @@ export default function CustomRingsContent() {
           <ol className="mx-auto mt-12 grid max-w-[1100px] list-none gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-6">
             {customRingsProcessSteps.map((step, index) => (
               <li key={step.title}>
-                <div className="flex h-full flex-col rounded-[16px] border border-[#eaded8] bg-[#fffdfb] px-5 py-6 text-center shadow-[0_4px_18px_rgba(110,90,80,0.04)] md:px-4 md:py-7">
-                  <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-[#dfc5bc] bg-[#fbf7f4] font-serif text-[15px] text-[#c88f87]">
+                <div className="flex h-full flex-col rounded-[16px] border border-[#26221e] bg-[#141414] px-5 py-6 text-center shadow-[0_4px_18px_rgba(110,90,80,0.04)] md:px-4 md:py-7">
+                  <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-[#3a301c] bg-[#121212] font-serif text-[15px] text-[#d4af37]">
                     {String(index + 1).padStart(2, "0")}
                   </div>
-                  <h3 className="mt-5 font-serif text-[19px] font-light leading-snug text-[#54463f] md:text-[21px]">
+                  <h3 className="mt-5 font-serif text-[19px] font-light leading-snug text-[#e7e1d6] md:text-[21px]">
                     {step.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-center font-serif text-[14px] leading-relaxed text-[#807069] md:text-[15px]">
+                  <p className="mt-3 flex-1 text-center font-serif text-[14px] leading-relaxed text-[#b8b2a6] md:text-[15px]">
                     {step.body}
                   </p>
                 </div>
@@ -590,17 +590,17 @@ export default function CustomRingsContent() {
         </div>
 
         {/* ── CTA strip (matches CreationsPage) ── */}
-        <div className="mt-7 rounded-[18px] border border-[#eaded8] bg-[#f8f3ef] px-6 py-6">
+        <div className="mt-7 rounded-[18px] border border-[#26221e] bg-[#121212] px-6 py-6">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex min-w-0 flex-1 items-center gap-5">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#dfc5bc] text-[#cf938b]">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#3a301c] text-[#d4af37]">
                 <Gem size={22} strokeWidth={1.8} aria-hidden />
               </div>
               <div className="min-w-0">
-                <h3 className="font-serif text-[26px] font-light text-[#54463f] md:text-[38px]">
+                <h3 className="font-serif text-[26px] font-light text-[#e7e1d6] md:text-[38px]">
                   {customRingsStripTitle}
                 </h3>
-                <p className="mt-1 text-[16px] text-[#807069] md:text-[20px]">
+                <p className="mt-1 text-[16px] text-[#b8b2a6] md:text-[20px]">
                   {customRingsStripBody}
                 </p>
               </div>
@@ -609,14 +609,14 @@ export default function CustomRingsContent() {
             <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row sm:justify-end lg:w-auto">
               <Link
                 href={customRingsJourneyHref}
-                className="inline-flex items-center justify-center gap-2 rounded-[10px] border border-[#ddbdb3] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#c88f87] transition hover:bg-[#c88f87] hover:text-white md:px-10 md:text-[16px]"
+                className="inline-flex items-center justify-center gap-2 rounded-[10px] border border-[#6b5a2e] bg-transparent px-8 py-4 text-[14px] font-medium tracking-[0.04em] text-[#d4af37] transition hover:bg-[#d4af37] hover:text-luxeBlack md:px-10 md:text-[16px]"
               >
                 {customRingsStripJourney}
                 <ArrowRight size={18} aria-hidden />
               </Link>
               <Link
                 href={customRingsConsultationHref}
-                className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#d29189] px-8 py-4 text-[14px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] md:px-10 md:text-[16px]"
+                className="inline-flex items-center justify-center gap-3 rounded-[10px] bg-[#d4af37] px-8 py-4 text-[14px] font-medium tracking-[0.02em] text-luxeBlack shadow-sm transition hover:bg-[#e8ce8b] md:px-10 md:text-[16px]"
               >
                 <CalendarDays size={18} aria-hidden />
                 {customRingsStripConsultation}
@@ -626,11 +626,11 @@ export default function CustomRingsContent() {
         </div>
 
         {/* ── FAQ ── */}
-        <div className="mt-12 border-t border-[#ece1dc] pt-10">
-          <h2 className="text-center font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#4f413a] md:text-[44px]">
+        <div className="mt-12 border-t border-[#26221e] pt-10">
+          <h2 className="text-center font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#f3efe6] md:text-[44px]">
             {customRingsFaqTitle}
           </h2>
-          <div className="mx-auto mt-8 max-w-[720px] divide-y divide-[#ece1dc] border-y border-[#ece1dc]">
+          <div className="mx-auto mt-8 max-w-[720px] divide-y divide-[#26221e] border-y border-[#26221e]">
             {customRingsFaqItems.map((item, i) => {
               const open = openFaqIndex === i;
               return (
@@ -639,19 +639,19 @@ export default function CustomRingsContent() {
                     type="button"
                     onClick={() => setOpenFaqIndex(open ? null : i)}
                     aria-expanded={open}
-                    className="flex w-full items-start justify-between gap-4 py-4 text-left transition hover:text-[#4f413a]"
+                    className="flex w-full items-start justify-between gap-4 py-4 text-left transition hover:text-[#f3efe6]"
                   >
-                    <span className="font-serif text-[18px] font-light leading-snug text-[#54463f] md:text-[20px]">
+                    <span className="font-serif text-[18px] font-light leading-snug text-[#e7e1d6] md:text-[20px]">
                       {item.question}
                     </span>
                     <ChevronDown
                       size={20}
-                      className={`mt-0.5 shrink-0 text-[#c88f87] transition-transform ${open ? "rotate-180" : ""}`}
+                      className={`mt-0.5 shrink-0 text-[#d4af37] transition-transform ${open ? "rotate-180" : ""}`}
                       aria-hidden
                     />
                   </button>
                   {open ? (
-                    <p className="pb-4 font-serif text-[16px] leading-[1.75] text-[#78675f] md:text-[17px]">
+                    <p className="pb-4 font-serif text-[16px] leading-[1.75] text-[#b8b2a6] md:text-[17px]">
                       {item.answer}
                     </p>
                   ) : null}
@@ -662,19 +662,19 @@ export default function CustomRingsContent() {
         </div>
 
         {/* ── Closing ── */}
-        <div className="mt-12 rounded-[20px] border border-[#e8d9d3] bg-gradient-to-b from-[#fffdfb] to-[#fbf6f3] px-6 py-10 text-center md:px-12 md:py-12">
-          <h2 className="font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#4f413a] md:text-[44px]">
+        <div className="mt-12 rounded-[20px] border border-[#26221e] bg-gradient-to-b from-[#141414] to-[#141414] px-6 py-10 text-center md:px-12 md:py-12">
+          <h2 className="font-serif text-[32px] font-light leading-tight tracking-[-0.02em] text-[#f3efe6] md:text-[44px]">
             {customRingsClosingTitle}
           </h2>
-          <p className="mx-auto mt-6 max-w-[560px] font-serif text-[18px] leading-[1.85] text-[#78675f] md:text-[20px]">
+          <p className="mx-auto mt-6 max-w-[560px] font-serif text-[18px] leading-[1.85] text-[#b8b2a6] md:text-[20px]">
             {customRingsClosingLead}
           </p>
-          <p className="mx-auto mt-5 max-w-[640px] font-serif text-[16px] leading-[1.85] text-[#78675f] md:text-[17px]">
+          <p className="mx-auto mt-5 max-w-[640px] font-serif text-[16px] leading-[1.85] text-[#b8b2a6] md:text-[17px]">
             {customRingsClosingBody}
           </p>
           <Link
             href={customRingsConsultationHref}
-            className="mt-9 inline-flex items-center gap-3 rounded-[8px] bg-[#d29189] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-white shadow-sm transition hover:bg-[#c5827a] md:text-[17px]"
+            className="mt-9 inline-flex items-center gap-3 rounded-[8px] bg-[#d4af37] px-8 py-4 text-[15px] font-medium tracking-[0.02em] text-luxeBlack shadow-sm transition hover:bg-[#e8ce8b] md:text-[17px]"
           >
             <CalendarDays size={18} aria-hidden />
             {customRingsIntroCtaConsultation}
@@ -699,7 +699,7 @@ export default function CustomRingsContent() {
               closeLightbox();
             }}
             aria-label="Close"
-            className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full text-white/90 transition hover:bg-white/10 hover:text-white md:right-8 md:top-8"
+            className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full text-white/90 transition hover:bg-white/[0.05] hover:text-white md:right-8 md:top-8"
           >
             <X size={26} strokeWidth={1.6} />
           </button>
@@ -713,7 +713,7 @@ export default function CustomRingsContent() {
                   showPrev();
                 }}
                 aria-label="Previous image"
-                className="absolute left-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white md:left-6"
+                className="absolute left-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/[0.05] hover:text-white md:left-6"
               >
                 <ChevronLeft size={32} strokeWidth={1.6} />
               </button>
@@ -725,7 +725,7 @@ export default function CustomRingsContent() {
                   showNext();
                 }}
                 aria-label="Next image"
-                className="absolute right-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white md:right-6"
+                className="absolute right-2 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/[0.05] hover:text-white md:right-6"
               >
                 <ChevronRight size={32} strokeWidth={1.6} />
               </button>
