@@ -124,6 +124,18 @@ export default function LuxeFooter() {
             </Link>
           </div>
         </div>
+
+        <p className="mt-6 text-center font-sans text-[0.62rem] uppercase tracking-[0.18em] text-luxeSmoke/55">
+          Digital craft by{" "}
+          <a
+            href="https://quantel.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-luxeSmoke/80 underline-offset-4 transition-colors hover:text-luxeGoldSoft hover:underline"
+          >
+            Quantel
+          </a>
+        </p>
       </div>
     </footer>
   );
